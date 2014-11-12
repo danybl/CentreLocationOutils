@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-3.3.3" 
+                   assembly="FirstSolution" 
+                   namespace="FirstSolution.Domain">
+ 
+<class name="Employe">
+    <id name="Id">
+      <generator class="guid" />
+    </id>
+    <property name="IdEmploye" />
+    <property name="Nom" />
+    <property name="Prenom" />
+    <property name="Telephone" />
+    <property name="Email" />
+    <property name="DateRecrutement" />
+<property name="Poste" />
+  </class>
+  
+</hibernate-mapping>
