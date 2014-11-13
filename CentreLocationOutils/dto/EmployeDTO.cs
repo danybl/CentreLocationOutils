@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CentreLocationOutils
 {
-    class EmployeDTO
+    public class EmployeDTO
     {
         public string IdEmploye{get;set;}
         public string Nom { get; set; }
