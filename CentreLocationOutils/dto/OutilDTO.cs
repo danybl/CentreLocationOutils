@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CentreLocationOutils.dto
 {
-    public class Outil
+    public class OutilDTO
     {
         public string IdOutils { get; set; }
         public string IdCategorie { get; set; }
