@@ -47,6 +47,7 @@
     <Compile Include="dto\AdresseDTOcs.cs" />
     <Compile Include="dto\CategorieDTO.cs" />
     <Compile Include="dto\ClientDTO.cs" />
+    <Compile Include="dto\DTO.cs" />
     <Compile Include="dto\EmployeDTO.cs" />
     <Compile Include="dto\FacturationDTO.cs" />
     <Compile Include="dto\LocationDTO.cs" />
