@@ -44,16 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dao\implementations\adresseDAO.cs" />
-    <Compile Include="dao\implementations\categorieDAO.cs" />
-    <Compile Include="dao\implementations\clientDAO.cs" />
+    <Compile Include="dao\implementations\AdresseDAO.cs" />
+    <Compile Include="dao\implementations\CategorieDAO.cs" />
+    <Compile Include="dao\implementations\ClientDAO.cs" />
     <Compile Include="dao\implementations\DAO.cs" />
-    <Compile Include="dao\implementations\employeDAO.cs" />
-    <Compile Include="dao\implementations\facturationDAO.cs" />
-    <Compile Include="dao\implementations\locationDAO.cs" />
-    <Compile Include="dao\implementations\outilDAO.cs" />
-    <Compile Include="dao\implementations\paiementDAO.cs" />
-    <Compile Include="dao\implementations\reservationDAO.cs" />
+    <Compile Include="dao\implementations\EmployeDAO.cs" />
+    <Compile Include="dao\implementations\FacturationDAO.cs" />
+    <Compile Include="dao\implementations\LocationDAO.cs" />
+    <Compile Include="dao\implementations\OutilDAO.cs" />
+    <Compile Include="dao\implementations\PaiementDAO.cs" />
+    <Compile Include="dao\implementations\ReservationDAO.cs" />
     <Compile Include="dao\interfaces\IAdresseDAO.cs" />
     <Compile Include="dao\interfaces\ICategorieDAO.cs" />
     <Compile Include="dao\interfaces\IClientDAO.cs" />

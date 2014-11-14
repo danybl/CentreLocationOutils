@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CentreLocationOutils.dao.implementations
 {
-    class reservationDAO
+    class ReservationDAO
     {
     }
 }
