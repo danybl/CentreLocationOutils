@@ -44,6 +44,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dao\implementations\adresseDAO.cs" />
+    <Compile Include="dao\implementations\categorieDAO.cs" />
+    <Compile Include="dao\implementations\clientDAO.cs" />
+    <Compile Include="dao\implementations\DAO.cs" />
+    <Compile Include="dao\implementations\employeDAO.cs" />
+    <Compile Include="dao\implementations\facturationDAO.cs" />
+    <Compile Include="dao\implementations\locationDAO.cs" />
+    <Compile Include="dao\implementations\outilDAO.cs" />
+    <Compile Include="dao\implementations\paiementDAO.cs" />
+    <Compile Include="dao\implementations\reservationDAO.cs" />
+    <Compile Include="dao\interfaces\IAdresseDAO.cs" />
+    <Compile Include="dao\interfaces\ICategorieDAO.cs" />
+    <Compile Include="dao\interfaces\IClientDAO.cs" />
+    <Compile Include="dao\interfaces\IDAO.cs" />
+    <Compile Include="dao\interfaces\IEmployeDAO.cs" />
+    <Compile Include="dao\interfaces\IFacturationDAO.cs" />
+    <Compile Include="dao\interfaces\ILocationDAO.cs" />
+    <Compile Include="dao\interfaces\IOutilDAO.cs" />
+    <Compile Include="dao\interfaces\IPaiementDAO.cs" />
+    <Compile Include="dao\interfaces\IReservationDAO.cs" />
     <Compile Include="dto\AdresseDTOcs.cs" />
     <Compile Include="dto\CategorieDTO.cs" />
     <Compile Include="dto\ClientDTO.cs" />
@@ -87,6 +107,7 @@
     <Content Include="applicationContext.xml" />
     <Content Include="dto\EmployeDTO.hbm.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
