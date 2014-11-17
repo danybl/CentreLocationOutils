@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CentreLocationOutils.dto;
 
 
 namespace CentreLocationOutils.dao.implementations
@@ -16,26 +17,27 @@ namespace CentreLocationOutils.dao.implementations
             + "FROM client "
             + "WHERE idClient = ?";
 
-        private static const String UPDATE_REQUEST = "UPDATE membre "
-            + "SET nom = ?, telephone = ?, limitePret = ?, nbPret = ? "
+        private static const String UPDATE_REQUEST = "UPDATE client "
+            + "SET nom = ?, prenom = ?, telephone = ?, email = ? "
             + "WHERE idMembre = ?";
 
-        private static const String DELETE_REQUEST = "DELETE FROM membre "
-            + "WHERE idMembre = ?";
+        private static const String DELETE_REQUEST = "DELETE FROM client "
+            + "WHERE idClient = ?";
 
-        private static const String GET_ALL_REQUEST = "SELECT idMembre, nom, telephone, limitePret, nbpret"
-            + " FROM membre";
+        private static const String GET_ALL_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
+            + "FROM client";
 
-        private static const String FIND_BY_NOM = "SELECT idMembre, nom, telephone, limitePret, nbpret"
-            + " FROM membre"
-            + " where nom like ?";
+        private static const String FIND_BY_NOM = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
+            + "FROM membre "
+            + "where nom like ?";
 
-        private static const String FIND_BY_TEL = "SELECT idMembre, nom, telephone, limitePret, nbpret"
-            + " FROM membre"
-            + " where telephone = ?";
+        //private static const String FIND_BY_TEL = "SELECT idClient, nom, telephone, limitePret, nbpret"
+        //    + " FROM membre"
+        //    + " where telephone = ?";
 
-        private static const String CREATE_PRIMARY_KEY = "SELECT SEQ_ID_MEMBRE.NEXTVAL from DUAL";
+        private static const String CREATE_PRIMARY_KEY = "SELECT SEQ_ID_CLIENT.NEXTVAL from DUAL";
 
-        //public 
+        public ClientDAO(Type membreDTO) : base(membreDTO) { } 
+        
     }
 }

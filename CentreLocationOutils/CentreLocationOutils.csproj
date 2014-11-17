@@ -73,6 +73,7 @@
     <Compile Include="dto\LocationDTO.cs" />
     <Compile Include="dto\OutilDTO.cs" />
     <Compile Include="dto\ReservationDTO.cs" />
+    <Compile Include="exception\InvalidDTOClassException.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
