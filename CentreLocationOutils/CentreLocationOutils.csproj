@@ -54,12 +54,14 @@
     <Compile Include="accueil.Designer.cs">
       <DependentUpon>accueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="CentreLocationOutils.cs" />
     <Compile Include="connexion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="connexion.Designer.cs">
       <DependentUpon>connexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Constants.cs" />
     <Compile Include="dao\implementations\AdresseDAO.cs" />
     <Compile Include="dao\implementations\CategorieDAO.cs" />
     <Compile Include="dao\implementations\ClientDAO.cs" />
@@ -112,9 +114,31 @@
     <Compile Include="exception\service\MissingLoanException.cs" />
     <Compile Include="exception\service\ServiceException.cs" />
     <Compile Include="exception\util\CentreCreateurException.cs" />
+    <Compile Include="facade\implementations\AdresseFacade.cs" />
+    <Compile Include="facade\implementations\CategorieFacade.cs" />
+    <Compile Include="facade\implementations\ClientFacade.cs" />
+    <Compile Include="facade\implementations\EmployeFacade.cs" />
+    <Compile Include="facade\implementations\Facade.cs" />
+    <Compile Include="facade\implementations\FacturationFacade.cs" />
+    <Compile Include="facade\implementations\LocationFacade.cs" />
+    <Compile Include="facade\implementations\OutilFacade.cs" />
+    <Compile Include="facade\implementations\PaiementFacade.cs" />
+    <Compile Include="facade\implementations\ReservationFacade.cs" />
+    <Compile Include="facade\interfaces\IAdresseFacade.cs" />
+    <Compile Include="facade\interfaces\ICategorieFacade.cs" />
+    <Compile Include="facade\interfaces\IClientFacade.cs" />
+    <Compile Include="facade\interfaces\IEmployeFacade.cs" />
+    <Compile Include="facade\interfaces\IFacade.cs" />
+    <Compile Include="facade\interfaces\IFacturationFacade.cs" />
+    <Compile Include="facade\interfaces\ILocationFacade.cs" />
+    <Compile Include="facade\interfaces\IOutilFacade.cs" />
+    <Compile Include="facade\interfaces\IPaiementFacade.cs" />
+    <Compile Include="facade\interfaces\IReservationFacade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="util\CentreCreateur.cs" />
+    <Compile Include="util\CentreLocationOutilsCreateur.cs" />
+    <Compile Include="util\FormatteurDate.cs" />
     <EmbeddedResource Include="accueil.resx">
       <DependentUpon>accueil.cs</DependentUpon>
     </EmbeddedResource>
