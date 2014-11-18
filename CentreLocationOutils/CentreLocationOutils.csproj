@@ -64,7 +64,7 @@
     <Compile Include="dao\interfaces\IOutilDAO.cs" />
     <Compile Include="dao\interfaces\IPaiementDAO.cs" />
     <Compile Include="dao\interfaces\IReservationDAO.cs" />
-    <Compile Include="db\Connexion.cs" />
+    <Compile Include="db\Connection.cs" />
     <Compile Include="dto\AdresseDTOcs.cs" />
     <Compile Include="dto\CategorieDTO.cs" />
     <Compile Include="dto\ClientDTO.cs" />
@@ -104,6 +104,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="util\CentreCreateur.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

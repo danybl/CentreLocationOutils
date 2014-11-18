@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.Common;
+using CentreLocationOutils.exception.db;
 
 namespace CentreLocationOutils.db
 {
-    public class Connexion
+    public class Connection
     {
         //private OracleConnection connection;
 
@@ -40,7 +41,7 @@ namespace CentreLocationOutils.db
 
     //private static const String SERVEUR_ACCESS_URL = "jdbc:postgresql:";
 
-        public Connexion(String typeServeur,
+        public Connection(String typeServeur,
         //string schema,
         string nomUtilisateur,
         string motPasse) {
@@ -48,7 +49,7 @@ namespace CentreLocationOutils.db
 
         try {
            // DbConnectionStringBuilder csb = new DbConnectionStringBuilder();
-            if(typeServeur.Equals(Connexion.TYPE_SERVEUR_LOCAL)) {
+            if(typeServeur.Equals(Connection.TYPE_SERVEUR_LOCAL)) {
                 connection= provider.CreateConnection();
                 connection.ConnectionString=@"Data Source=xe;User ID=" + nomUtilisateur + ";Password="+ motPasse+";Unicode=True";
 
@@ -56,7 +57,7 @@ namespace CentreLocationOutils.db
            // connection.
 
         }catch(DbException dbException){
-            throw new ConnectionException;
+            throw new ConnectionException();
         }
             
      /**
@@ -83,22 +84,13 @@ namespace CentreLocationOutils.db
      */
         public void close() {
        try{
-        rollback();
         getConnection().Close();
         Console.WriteLine("\nConnexion fermée"
             + " "
             + getConnection());
        }catch(DbException dbException){
-           throw new ConnectionException
+           throw new ConnectionException();
        }
-    }
-
-    /**
-     * Effectue un rollback sur la {@link java.sql.Connection} JDBC.
-     *
-     */
-    public void rollback() {
-        getConnection().rollback();
     }
 
     }
