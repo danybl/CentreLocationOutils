@@ -5,7 +5,21 @@ using System.Text;
 
 namespace CentreLocationOutils.exception.util
 {
-    class CLOCreateurException
+    public class CLOCreateurException : Exception
     {
+        /**
+      * Constructs a new exception with null as its detail message. The cause is not initialized, and may subsequently be initialized by a call
+      * to {@link java.lang.Throwable#initCause(java.lang.Throwable) Throwable.initCause(Throwable)}.
+      */
+        public CLOCreateurException() : base() { }
+        /**
+       * Constructs a new exception with the specified detail message. The cause is not initialized, and may subsequently be initialized by a call
+       * to {@link java.lang.Throwable#initCause(java.lang.Throwable) Throwable.initCause(Throwable)}.
+       * 
+       * @param message The detail message. The detail message is saved for later retrieval by the
+       *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
+       */
+        public CLOCreateurException(String message) : base(message) { }
     }
 }
+
