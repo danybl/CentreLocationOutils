@@ -5,13 +5,13 @@ using System.Text;
 
 namespace CentreLocationOutils.exception.util
 {
-    public class CLOCreateurException : Exception
+    public class CentreCreateurException : Exception
     {
         /**
       * Constructs a new exception with null as its detail message. The cause is not initialized, and may subsequently be initialized by a call
       * to {@link java.lang.Throwable#initCause(java.lang.Throwable) Throwable.initCause(Throwable)}.
       */
-        public CLOCreateurException() : base() { }
+        public CentreCreateurException() : base() { }
         /**
        * Constructs a new exception with the specified detail message. The cause is not initialized, and may subsequently be initialized by a call
        * to {@link java.lang.Throwable#initCause(java.lang.Throwable) Throwable.initCause(Throwable)}.
@@ -19,7 +19,7 @@ namespace CentreLocationOutils.exception.util
        * @param message The detail message. The detail message is saved for later retrieval by the
        *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
        */
-        public CLOCreateurException(String message) : base(message) { }
+        public CentreCreateurException(String message) : base(message) { }
     }
 }
 

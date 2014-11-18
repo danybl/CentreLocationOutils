@@ -111,7 +111,7 @@
     <Compile Include="exception\dto\MissingDTOException.cs" />
     <Compile Include="exception\service\MissingLoanException.cs" />
     <Compile Include="exception\service\ServiceException.cs" />
-    <Compile Include="exception\util\CLOCreateurException.cs" />
+    <Compile Include="exception\util\CentreCreateurException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="util\CentreCreateur.cs" />
