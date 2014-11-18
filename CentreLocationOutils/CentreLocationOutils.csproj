@@ -74,7 +74,28 @@
     <Compile Include="dto\LocationDTO.cs" />
     <Compile Include="dto\OutilDTO.cs" />
     <Compile Include="dto\ReservationDTO.cs" />
+    <Compile Include="exception\CentreLocationOutilsException.cs" />
+    <Compile Include="exception\db\ConnexionException.cs" />
+    <Compile Include="exception\dao\DAOException.cs" />
+    <Compile Include="exception\dto\DTOException.cs" />
+    <Compile Include="exception\dto\DuplicateDTOException.cs" />
+    <Compile Include="exception\service\ExistingLoanException.cs" />
+    <Compile Include="exception\service\ExistingReservationException.cs" />
+    <Compile Include="exception\facade\FacadeException.cs" />
+    <Compile Include="exception\dao\InvalidCriterionException.cs" />
+    <Compile Include="exception\service\InvalidDAOException.cs" />
     <Compile Include="exception\InvalidDTOClassException.cs" />
+    <Compile Include="exception\dto\InvalidDTOException.cs" />
+    <Compile Include="exception\dao\InvalidHibernateSessionException.cs" />
+    <Compile Include="exception\service\InvalidLoanLimitException.cs" />
+    <Compile Include="exception\dao\InvalidPrimaryKeyException.cs" />
+    <Compile Include="exception\dao\InvalidPrimaryKeyRequestException.cs" />
+    <Compile Include="exception\facade\InvalidServiceException.cs" />
+    <Compile Include="exception\dao\InvalidSortByPropertyException.cs" />
+    <Compile Include="exception\dto\MissingDTOException.cs" />
+    <Compile Include="exception\service\MissingLoanException.cs" />
+    <Compile Include="exception\service\ServiceException.cs" />
+    <Compile Include="exception\util\CLOCreateurException.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
