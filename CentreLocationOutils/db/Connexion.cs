@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.Odbc;
+using System.Data;
 using System.Data.Common;
 
 namespace CentreLocationOutils.db
 {
     public class Connexion
     {
-        private OdbcConnection connexion;
+        //private OracleConnection connection;
+
+        DbProviderFactory provider = DbProviderFactories.GetFactory("System.Data.OracleClient");
+        DbConnection connection;
 
     private static const String TYPE_SERVEUR_LOCAL = "local";
 
@@ -38,46 +41,65 @@ namespace CentreLocationOutils.db
     //private static const String SERVEUR_ACCESS_URL = "jdbc:postgresql:";
 
         public Connexion(String typeServeur,
-        string schema,
+        //string schema,
         string nomUtilisateur,
         string motPasse) {
         string urlBD = null;
 
         try {
-            DbConnectionStringBuilder csb = new DbConnectionStringBuilder();
+           // DbConnectionStringBuilder csb = new DbConnectionStringBuilder();
             if(typeServeur.Equals(Connexion.TYPE_SERVEUR_LOCAL)) {
-                csb.Add("Provider", Connexion.TYPE_SERVEUR_LOCAL);
-                csb.Add("Data Source", Connexion.SERVEUR_LOCAL_CLASS+schema);
-                //Class.forName(Connexion.SERVEUR_LOCAL_CLASS);
-                //urlBD = Connexion.SERVEUR_LOCAL_URL
-                  //  + schema;
+                connection= provider.CreateConnection();
+                connection.ConnectionString=@"Data Source=xe;User ID=" + nomUtilisateur + ";Password="+ motPasse+";Unicode=True";
+
             } 
-            //else if(typeServeur.Equals(Connexion.TYPE_SERVEUR_DISTANT)) {
-            //    Class.forName(Connexion.SERVEUR_DISTANT_CLASS);
-            //    urlBD = Connexion.SERVEUR_DISTANT_URL
-            //        + schema;
-            //} else if(typeServeur.equals(Connexion.TYPE_SERVEUR_POSTGRES)) {
-            //    Class.forName(Connexion.SERVEUR_POSTGRES_CLASS);
-            //    urlBD = Connexion.SERVEUR_POSTGRES_URL
-            //        + schema;
-            //} else if(typeServeur.equals(Connexion.TYPE_SERVEUR_ACCESS)) {
-            //    Class.forName(Connexion.SERVEUR_ACCESS_CLASS);
-            //    urlBD = Connexion.SERVEUR_ACCESS_URL
-            //        + schema;
-            //} else {
-            //    throw new IllegalArgumentException("Type de serveur "
-            //        + typeServeur
-            //        + "n'est pas valide.");
-            //}
-            setConnection(DriverManager.getConnection(urlBD,
-                nomUtilisateur,
-                motPasse));
+           // connection.
 
-            // Mettre en mode de commit manuel
-            getConnection().setAutoCommit(false);
-
-        }catch(OdbcException odbcException){
-            throw new ConnexionException;
+        }catch(DbException dbException){
+            throw new ConnectionException;
         }
+            
+     /**
+      * Getter de la variable d'instance <code>this.connection</code>.
+      *
+      * @return La variable d'instance <code>this.connection</code>
+      */
+        public DbConnection getConnection() {
+        return this.connection;
+    }
+    /**
+     * Setter de la variable d'instance <code>this.connection</code>.
+     *
+     * @param connection La valeur à utiliser pour la variable d'instance <code>this.connection</code>
+     */
+    private void setConnection(DbConnection connection) {
+        this.connection = connection;
+    }
+
+        
+    /**
+     * Effectue un commit sur la {@link java.sql.Connection} JDBC.
+     *
+     */
+        public void close() {
+       try{
+        rollback();
+        getConnection().Close();
+        Console.WriteLine("\nConnexion fermée"
+            + " "
+            + getConnection());
+       }catch(DbException dbException){
+           throw new ConnectionException
+       }
+    }
+
+    /**
+     * Effectue un rollback sur la {@link java.sql.Connection} JDBC.
+     *
+     */
+    public void rollback() {
+        getConnection().rollback();
+    }
+
     }
 }

@@ -75,7 +75,7 @@
     <Compile Include="dto\OutilDTO.cs" />
     <Compile Include="dto\ReservationDTO.cs" />
     <Compile Include="exception\CentreLocationOutilsException.cs" />
-    <Compile Include="exception\db\ConnexionException.cs" />
+    <Compile Include="exception\db\ConnectionException.cs" />
     <Compile Include="exception\dao\DAOException.cs" />
     <Compile Include="exception\dto\DTOException.cs" />
     <Compile Include="exception\dto\DuplicateDTOException.cs" />
