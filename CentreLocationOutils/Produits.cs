@@ -9,11 +9,10 @@ using System.Windows.Forms;
 
 namespace CentreLocationOutils
 {
-    public partial class connexion : Form
+    public partial class Produits : Form
     {
-        public connexion()
+        public Produits()
         {
-            // commenteaireas
             InitializeComponent();
         }
     }
