@@ -7,22 +7,26 @@ using CentreLocationOutils.exception;
 
 namespace CentreLocationOutils.dao.implementations
 {
-    public class DAO
+    public class DAO<T>
     {
-        private Type dtoClass;
+        private T dtoClass;
 
-        protected DAO(Type dtoClass) : base() {
+        protected DAO(T dtoClass)
+            : base()
+        {
         if(dtoClass == null) {
             throw new InvalidDTOClassException("La classe de DTO ne peut être null");
         }
         setDtoClass(dtoClass);
         }
 
-        protected Type getDtoClass() {
+        protected T getDtoClass()
+        {
         return this.dtoClass;
         }
 
-        private void setDtoClass(Type dtoClass) {
+        private void setDtoClass(T dtoClass)
+        {
         this.dtoClass = dtoClass;
         }
 

@@ -64,6 +64,7 @@
     <Compile Include="dao\interfaces\IOutilDAO.cs" />
     <Compile Include="dao\interfaces\IPaiementDAO.cs" />
     <Compile Include="dao\interfaces\IReservationDAO.cs" />
+    <Compile Include="db\Connexion.cs" />
     <Compile Include="dto\AdresseDTOcs.cs" />
     <Compile Include="dto\CategorieDTO.cs" />
     <Compile Include="dto\ClientDTO.cs" />

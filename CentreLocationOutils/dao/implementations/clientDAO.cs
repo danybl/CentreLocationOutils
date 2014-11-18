@@ -7,7 +7,7 @@ using CentreLocationOutils.dto;
 
 namespace CentreLocationOutils.dao.implementations
 {
-    public class ClientDAO : CentreLocationOutils.dao.interfaces.IClientDAO
+    public class ClientDAO : CentreLocationOutils.dao.implementations.DAO<dynamic>, CentreLocationOutils.dao.interfaces.IClientDAO
     {
 
         private static const String ADD_REQUEST = "INSERT INTO Client (idClient, nom, prenom, telephone, email, dateInscription) "
@@ -37,7 +37,7 @@ namespace CentreLocationOutils.dao.implementations
 
         private static const String CREATE_PRIMARY_KEY = "SELECT SEQ_ID_CLIENT.NEXTVAL from DUAL";
 
-        public ClientDAO(Type membreDTO) : base(membreDTO) { } 
+        public ClientDAO(ClientDTO clientDTO) : base(clientDTO) { } 
         
     }
 }
