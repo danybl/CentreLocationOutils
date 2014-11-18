@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CentreLocationOutils.dto;
+using CentreLocationOutils.db;
+using CentreLocationOutils.exception.dto;
+using CentreLocationOutils.exception;
 
 
 namespace CentreLocationOutils.dao.implementations
@@ -38,6 +41,21 @@ namespace CentreLocationOutils.dao.implementations
         private static const String CREATE_PRIMARY_KEY = "SELECT SEQ_ID_CLIENT.NEXTVAL from DUAL";
 
         public ClientDAO(ClientDTO clientDTO) : base(clientDTO) { } 
+
+        public void add(Connection connection,
+        DTO dto) {
+        if(connection == null) {
+           // throw new InvalidHibernateSessionException("La connexion ne peut être null");
+        }
+        if(dto == null) {
+            throw new InvalidDTOException("Le DTO ne peut être null");
+        }
+        if(!dto.getClass().equals(getDtoClass())) {
+            throw new InvalidDTOClassException("Le DTO doit être un "
+                + getDtoClass().getName());
+        }
+        MembreDTO membreDTO = (MembreDTO) dto;
+        try(
         
     }
 }
