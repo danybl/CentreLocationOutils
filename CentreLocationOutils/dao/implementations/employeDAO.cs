@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CentreLocationOutils.dao.interfaces;
 
 namespace CentreLocationOutils.dao.implementations
 {
-    class EmployeDAO
+    public class EmployeDAO :IEmployeDAO
     {
+
     }
 }
