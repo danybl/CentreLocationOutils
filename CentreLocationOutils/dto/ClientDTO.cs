@@ -16,5 +16,24 @@ namespace CentreLocationOutils.dto
         public string Telephone{get;set;}
         public string Email { get; set; }
         public DateTime DateInscription { get; set; }
+
+
+
+    //    public bool equals(Object obj) {
+    //    bool equals = this == obj;
+    //    if(!equals) {
+    //        equals = obj != null
+    //            && obj is ClientDTO;
+    //        if(equals) {
+    //            ClientDTO clientDTO = (ClientDTO) obj;
+    //            EqualsBuilder equalsBuilder = new EqualsBuilder();
+    //            equalsBuilder.appendSuper(base.equals(clientDTO));
+    //            equalsBuilder.append(IdClient,
+    //                clientDTO.IdClient);
+    //            equals = equalsBuilder.isEquals();
+    //        }
+    //    }
+    //    return equals;
+    //}
     }
 }

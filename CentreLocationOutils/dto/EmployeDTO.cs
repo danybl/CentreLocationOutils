@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CentreLocationOutils.dto;
 
-namespace CentreLocationOutils
+namespace CentreLocationOutils.dto
 {
-    public class ClientDTO
+    public class ClientDTO : DTO
     {
         public string IdEmploye{get;set;}
         public string Nom { get; set; }

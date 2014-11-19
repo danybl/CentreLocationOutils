@@ -48,22 +48,22 @@ namespace CentreLocationOutils.dao.implementations
         public ClientDAO(ClientDTO clientDTOClass) : base(clientDTOClass) { }
 
         public void add(Connection connection,
-        DTO dto)
+        ClientDTO clientDTO)
         {
             if (connection == null)
             {
                 // throw new InvalidHibernateSessionException("La connexion ne peut être null");
             }
-            if (dto == null)
+            if (clientDTO == null)
             {
                 throw new InvalidDTOException("Le DTO ne peut être null");
             }
-            if (!dto.GetType().Equals(getDtoClass()))
-            {
-                throw new InvalidDTOClassException("Le DTO doit être un "
-                    + getDtoClass().getName());
-            }
-            ClientDTO clientDTO = (ClientDTO) dto;
+            //if (!dto.GetType().Equals(getDtoClass()))
+            //{
+            //    throw new InvalidDTOClassException("Le DTO doit être un "
+            //        + getDtoClass().getName());
+            //}
+            //ClientDTO clientDTO = clientDTO;//(ClientDTO) dto;
             try
             {
                 DbCommand command = connection.getConnection().CreateCommand();
@@ -94,22 +94,22 @@ namespace CentreLocationOutils.dao.implementations
             {
                 throw new InvalidPrimaryKeyException("La clef primaire ne peut être null");
             }
-            string idMembre = primaryKey.ToString();
+            string idClient = primaryKey.ToString();
             ClientDTO clientDTO = null;
             try
             {
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = ClientDAO.READ_REQUEST;
-                command.Parameters.Add(new OracleParameter(":idClient", clientDTO.IdClient));
+                command.Parameters.Add(new OracleParameter(":idClient", idClient));
 
                     DbDataReader dataReader = command.ExecuteReader();
                     if (dataReader.NextResult())
                     {
                         clientDTO = new ClientDTO();
-                        clientDTO.idClient = dataReader.GetString(1);
+                        clientDTO.IdClient = dataReader.GetString(1);
                         clientDTO.Nom = dataReader.GetString(2);
-                        clientDTO.Prenom = dataReader.GetString(3);
+                        clientDTO.Prenom = dataReader.GetString(3); 
                         clientDTO.Telephone = dataReader.GetString(4);
                         clientDTO.Email = dataReader.GetString(5);
                         clientDTO.DateInscription = dataReader.GetDateTime(6);
@@ -124,33 +124,33 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         public void update(Connection connection,
-        DTO dto)
+        ClientDTO clientDTO)
         {
             if (connection == null)
             {
                 //throw new InvalidHibernateSessionException("La connexion ne peut être null");
             }
-            if (dto == null)
+            if (clientDTO == null)
             {
                 throw new InvalidDTOException("Le DTO ne peut être null");
             }
-            if (!dto.GetType().Equals(getDtoClass()))
-            {
-                throw new InvalidDTOClassException("Le DTO doit être un "
-                    + getDtoClass().getName());
-            }
-            ClientDTO clientDTO = (ClientDTO)dto;
+            //if (!dto.GetType().Equals(getDtoClass()))
+            //{
+            //    throw new InvalidDTOClassException("Le DTO doit être un "
+            //        + getDtoClass().getName());
+            //}
+            //ClientDTO clientDTO = (ClientDTO)dto;
             try
             {
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = ClientDAO.UPDATE_REQUEST;
                 command.Parameters.Add(new OracleParameter("idClient", clientDTO.IdClient));
-                command.Parameters.Add(new OracleParameter("nom", clientDTO.Nom));
-                command.Parameters.Add(new OracleParameter("nom", clientDTO.Prenom));
-                command.Parameters.Add(new OracleParameter("nom", clientDTO.Telephone));
-                command.Parameters.Add(new OracleParameter("nom", clientDTO.Email));
-                command.Parameters.Add(new OracleParameter("nom", clientDTO.DateInscription));
+                command.Parameters.Add(new OracleParameter(":nom", clientDTO.Nom));
+                command.Parameters.Add(new OracleParameter(":prenom", clientDTO.Prenom));
+                command.Parameters.Add(new OracleParameter(":telephone", clientDTO.Telephone));
+                command.Parameters.Add(new OracleParameter(":email", clientDTO.Email));
+                command.Parameters.Add(new OracleParameter(":dateInscription", clientDTO.DateInscription));
             }
             catch (DbException dbException)
             {
@@ -159,29 +159,29 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         public void delete(Connection connection,
-        DTO dto)
+        ClientDTO clientDTO)
         {
             if (connection == null)
             {
                 //throw new InvalidHibernateSessionException("La connexion ne peut être null");
             }
-            if (dto == null)
+            if (clientDTO == null)
             {
                 throw new InvalidDTOException("Le DTO ne peut être null");
             }
-            if (!dto.GetType().Equals(getDtoClass()))
-            {
-                throw new InvalidDTOClassException("Le DTO doit être un "
-                    + getDtoClass().getName());
-            }
-            ClientDTO clientDTO = (ClientDTO)dto;
+            //if (!dto.GetType().Equals(getDtoClass()))
+            //{
+            //    throw new InvalidDTOClassException("Le DTO doit être un "
+            //        + getDtoClass().getName());
+            //}
+           // ClientDTO clientDTO = (ClientDTO)dto;
 
             try
             {
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = ClientDAO.DELETE_REQUEST;
-                command.Parameters.Add(new OracleParameter("idClient", clientDTO.IdClient));
+                command.Parameters.Add(new OracleParameter(":idClient", clientDTO.IdClient));
 
             }
             catch (DbException dbException)
