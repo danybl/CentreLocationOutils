@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections.Generic;
-using CentreLocationOutils.exception;
+using CentreLocationOutils.exception.dto;
 
-namespace CentreLocationOutils.dao.implementations
+namespace CentreLocationOutils.dao.implementations 
 {
     public class DAO<T>
     {

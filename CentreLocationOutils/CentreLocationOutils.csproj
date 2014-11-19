@@ -54,7 +54,6 @@
     <Compile Include="accueil.Designer.cs">
       <DependentUpon>accueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="CentreLocationOutils.cs" />
     <Compile Include="connexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,12 +96,12 @@
     <Compile Include="exception\dao\DAOException.cs" />
     <Compile Include="exception\dto\DTOException.cs" />
     <Compile Include="exception\dto\DuplicateDTOException.cs" />
+    <Compile Include="exception\dto\InvalidDTOClassException.cs" />
     <Compile Include="exception\service\ExistingLoanException.cs" />
     <Compile Include="exception\service\ExistingReservationException.cs" />
     <Compile Include="exception\facade\FacadeException.cs" />
     <Compile Include="exception\dao\InvalidCriterionException.cs" />
     <Compile Include="exception\service\InvalidDAOException.cs" />
-    <Compile Include="exception\InvalidDTOClassException.cs" />
     <Compile Include="exception\dto\InvalidDTOException.cs" />
     <Compile Include="exception\dao\InvalidHibernateSessionException.cs" />
     <Compile Include="exception\service\InvalidLoanLimitException.cs" />

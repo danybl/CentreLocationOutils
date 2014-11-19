@@ -6,6 +6,7 @@ using CentreLocationOutils.dto;
 using CentreLocationOutils.db;
 using CentreLocationOutils.exception.dto;
 using CentreLocationOutils.exception;
+using CentreLocationOutils.dao.implementations;
 
 
 namespace CentreLocationOutils.dao.implementations
