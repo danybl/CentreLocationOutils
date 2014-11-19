@@ -7,7 +7,9 @@ using CentreLocationOutils.db;
 using CentreLocationOutils.exception.dto;
 using CentreLocationOutils.exception;
 using CentreLocationOutils.dao.implementations;
-
+using System.Data;
+using System.Data.Common;
+using System.Data.OracleClient;
 
 namespace CentreLocationOutils.dao.implementations
 {
@@ -15,25 +17,25 @@ namespace CentreLocationOutils.dao.implementations
     {
 
         private static const String ADD_REQUEST = "INSERT INTO Client (idClient, nom, prenom, telephone, email, dateInscription) "
-       + "VALUES (?,?,?,?,?,?)";
+       + "VALUES (:idClient, :nom, :prenom, :telephone, :email, :dateInscription)";
 
         private static const String READ_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
             + "FROM client "
-            + "WHERE idClient = ?";
+            + "WHERE idClient = :chosenIdClient";
 
         private static const String UPDATE_REQUEST = "UPDATE client "
-            + "SET nom = ?, prenom = ?, telephone = ?, email = ? "
-            + "WHERE idMembre = ?";
+            + "SET nom = :nom, prenom = :prenom, telephone = :telephone, email = :email "
+            + "WHERE idMembre = :idClient";
 
         private static const String DELETE_REQUEST = "DELETE FROM client "
-            + "WHERE idClient = ?";
+            + "WHERE idClient = :idClient";
 
         private static const String GET_ALL_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
             + "FROM client";
 
         private static const String FIND_BY_NOM = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
             + "FROM membre "
-            + "where nom like ?";
+            + "where nom like :nom";
 
         //private static const String FIND_BY_TEL = "SELECT idClient, nom, telephone, limitePret, nbpret"
         //    + " FROM membre"
@@ -51,12 +53,20 @@ namespace CentreLocationOutils.dao.implementations
         if(dto == null) {
             throw new InvalidDTOException("Le DTO ne peut être null");
         }
-        if(!dto.getClass().equals(getDtoClass())) {
-            throw new InvalidDTOClassException("Le DTO doit être un "
-                + getDtoClass().getName());
+        //if(!dto.getClass().equals(getDtoClass())) {
+        //    throw new InvalidDTOClassException("Le DTO doit être un "
+        //        + getDtoClass().getName());
+        //}
+        ClientDTO clientDTO = (ClientDTO) dto;
+        try{
+            DbCommand command= connection.getConnection().CreateCommand();
+            command.CommandType = CommandType.Text;
+            command.CommandText = ClientDAO.ADD_REQUEST;
+            command.Parameters.Add(new OracleParameter("idClient", clientDTO.IdClient));
+            command.Parameters.Add(new OracleParameter("nom", clientDTO.Nom));
+        }catch(){
+
         }
-        MembreDTO membreDTO = (MembreDTO) dto;
-        try(
         
     }
 }
