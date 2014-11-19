@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CentreLocationOutils
+namespace CentreLocationOutils.dto
 {
-    public class ClientDTO : CentreLocationOutils.dto.DTO
+    public class ClientDTO : DTO
     {
-        public string IdClient{get;set;}
+
+        public ClientDTO() : base() { }
+
+        public string IdClient {get;set;}
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string Telephone{get;set;}
