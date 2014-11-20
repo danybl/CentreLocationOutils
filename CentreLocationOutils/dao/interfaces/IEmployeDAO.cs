@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CentreLocationOutils.dao.interfaces
 {
-    public class IEmployeDAO
+    public interface IEmployeDAO
     {
 
     }

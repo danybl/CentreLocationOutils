@@ -6,7 +6,7 @@ using CentreLocationOutils.dto;
 
 namespace CentreLocationOutils.dto
 {
-    public class ClientDTO : DTO
+    public class EmployeDTO : DTO
     {
         public string IdEmploye{get;set;}
         public string Nom { get; set; }
