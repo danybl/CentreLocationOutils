@@ -23,11 +23,11 @@ namespace CentreLocationOutils.dao.implementations
 
         private static const string READ_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
             + "FROM client "
-            + "WHERE idClient = :chosenIdClient";
+            + "WHERE idClient = :idClient";
 
         private static const string UPDATE_REQUEST = "UPDATE client "
             + "SET nom = :nom, prenom = :prenom, telephone = :telephone, email = :email "
-            + "WHERE idMembre = :idClient";
+            + "WHERE idClient = :idClient";
 
         private static const string DELETE_REQUEST = "DELETE FROM client "
             + "WHERE idClient = :idClient";
@@ -36,7 +36,7 @@ namespace CentreLocationOutils.dao.implementations
             + "FROM client";
 
         private static const string FIND_BY_NOM = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
-            + "FROM membre "
+            + "FROM client "
             + "where nom like :nom";
 
         //private static const string FIND_BY_TEL = "SELECT idClient, nom, telephone, limitePret, nbpret"
@@ -223,6 +223,7 @@ namespace CentreLocationOutils.dao.implementations
                         clientDTO.Telephone = dataReader.GetString(4);
                         clientDTO.Email = dataReader.GetString(5);
                         clientDTO.DateInscription = dataReader.GetDateTime(6);
+                        clients.Add(clientDTO);
                     }
                         while(dataReader.NextResult());
                     }
@@ -233,12 +234,16 @@ namespace CentreLocationOutils.dao.implementations
         }
 
 
-        public List<ClientDTO> getAll(Connection connection, string nom,
+        public List<ClientDTO> findByNom(Connection connection, string nom,
         string sortByPropertyName)
         {
             if (connection == null)
             {
                 //throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (nom == null)
+            {
+                throw new InvalidCriterionException("Le nom ne peut être null");
             }
             if (sortByPropertyName == null)
             {
@@ -250,7 +255,7 @@ namespace CentreLocationOutils.dao.implementations
             {
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = ClientDAO.GET_ALL_REQUEST;
+                command.CommandText = ClientDAO.FIND_BY_NOM;
 
                 DbDataReader dataReader = command.ExecuteReader();
                 ClientDTO clientDTO = null;
@@ -266,6 +271,7 @@ namespace CentreLocationOutils.dao.implementations
                         clientDTO.Telephone = dataReader.GetString(4);
                         clientDTO.Email = dataReader.GetString(5);
                         clientDTO.DateInscription = dataReader.GetDateTime(6);
+                        clients.Add(clientDTO);
                     }
                     while (dataReader.NextResult());
                 }
@@ -276,12 +282,6 @@ namespace CentreLocationOutils.dao.implementations
             }
             return clients;
         }
-
-
-
-
-
-
 
     }
 }
