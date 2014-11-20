@@ -19,6 +19,6 @@ namespace CentreLocationOutils.exception.dao
        * @param message The detail message. The detail message is saved for later retrieval by the
        *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
        */
-        public InvalidHibernateSessionException(String message) : base(message) { }
+        public InvalidHibernateSessionException(string message) : base(message) { }
     }
 }

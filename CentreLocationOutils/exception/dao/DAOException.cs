@@ -20,7 +20,7 @@ namespace CentreLocationOutils.exception.dao
        * @param message The detail message. The detail message is saved for later retrieval by the
        *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
        */
-        public DAOException(String message) : base(message) { }
+        public DAOException(string message) : base(message) { }
 
 
         /**
@@ -41,7 +41,7 @@ namespace CentreLocationOutils.exception.dao
          * @param cause The cause (which is saved for later retrieval by the {@link java.lang.Throwable#getCause() Throwable.getCause()} method).
          *        A null value is permitted, and indicates that the cause is nonexistent or unknown
          */
-        public DAOException(String message,
+        public DAOException(string message,
             Exception cause) : base(message, cause.InnerException ) {}
     }
 }

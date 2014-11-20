@@ -19,6 +19,6 @@ namespace CentreLocationOutils.exception.db
     * @param message The detail message. The detail message is saved for later retrieval by the
     *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
     */
-        public ConnexionException(String message) : base(message) { }
+        public ConnexionException(string message) : base(message) { }
     }
 }

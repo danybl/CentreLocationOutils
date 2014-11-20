@@ -55,7 +55,7 @@ namespace CentreLocationOutils.dao.interfaces
      * @param sortByPropertyName The nom de la propriété à utiliser pour classer
      */
         List<dynamic> getAll(Connection connexion,
-        String sortByPropertyName);
+        string sortByPropertyName);
 
     }
 }

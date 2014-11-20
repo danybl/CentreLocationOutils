@@ -21,6 +21,6 @@ namespace CentreLocationOutils.exception.dto
      * @param message The detail message. The detail message is saved for later retrieval by the
      *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
      */
-        public DTOException(String message) : base(message) { }
+        public DTOException(string message) : base(message) { }
     }
 }

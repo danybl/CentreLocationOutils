@@ -27,7 +27,7 @@ namespace CentreLocationOutils.exception.dto
          *            retrieval by the {@link java.lang.Throwable#getMessage()
          *            Throwable.getMessage()} method
          */
-        public InvalidDTOClassException(String message) : base(message) { }
+        public InvalidDTOClassException(string message) : base(message) { }
 
     }
     

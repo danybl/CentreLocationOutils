@@ -19,6 +19,6 @@ namespace CentreLocationOutils.exception.service
        * @param message The detail message. The detail message is saved for later retrieval by the
        *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
        */
-        public InvalidDAOException(String message) : base(message) { }
+        public InvalidDAOException(string message) : base(message) { }
     }
 }

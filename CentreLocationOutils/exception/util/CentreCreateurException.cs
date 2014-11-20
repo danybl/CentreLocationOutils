@@ -19,7 +19,7 @@ namespace CentreLocationOutils.exception.util
        * @param message The detail message. The detail message is saved for later retrieval by the
        *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
        */
-        public CentreCreateurException(String message) : base(message) { }
+        public CentreCreateurException(string message) : base(message) { }
     }
 }
 

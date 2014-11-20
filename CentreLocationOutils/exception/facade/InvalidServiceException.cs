@@ -19,7 +19,7 @@ namespace CentreLocationOutils.exception.facade
        * @param message The detail message. The detail message is saved for later retrieval by the
        *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
        */
-        public InvalidServiceException(String message) : base(message) { }
+        public InvalidServiceException(string message) : base(message) { }
     }
 }
 

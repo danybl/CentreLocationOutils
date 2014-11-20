@@ -18,32 +18,32 @@ namespace CentreLocationOutils.dao.implementations
     public class ClientDAO : CentreLocationOutils.dao.implementations.DAO<dynamic>, CentreLocationOutils.dao.interfaces.IClientDAO
     {
 
-        private static const String ADD_REQUEST = "INSERT INTO Client (idClient, nom, prenom, telephone, email, dateInscription) "
+        private static const string ADD_REQUEST = "INSERT INTO Client (idClient, nom, prenom, telephone, email, dateInscription) "
        + "VALUES (:idClient, :nom, :prenom, :telephone, :email, :dateInscription)";
 
-        private static const String READ_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
+        private static const string READ_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
             + "FROM client "
             + "WHERE idClient = :chosenIdClient";
 
-        private static const String UPDATE_REQUEST = "UPDATE client "
+        private static const string UPDATE_REQUEST = "UPDATE client "
             + "SET nom = :nom, prenom = :prenom, telephone = :telephone, email = :email "
             + "WHERE idMembre = :idClient";
 
-        private static const String DELETE_REQUEST = "DELETE FROM client "
+        private static const string DELETE_REQUEST = "DELETE FROM client "
             + "WHERE idClient = :idClient";
 
-        private static const String GET_ALL_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
+        private static const string GET_ALL_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
             + "FROM client";
 
-        private static const String FIND_BY_NOM = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
+        private static const string FIND_BY_NOM = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
             + "FROM membre "
             + "where nom like :nom";
 
-        //private static const String FIND_BY_TEL = "SELECT idClient, nom, telephone, limitePret, nbpret"
+        //private static const string FIND_BY_TEL = "SELECT idClient, nom, telephone, limitePret, nbpret"
         //    + " FROM membre"
         //    + " where telephone = ?";
 
-        private static const String CREATE_PRIMARY_KEY = "SELECT SEQ_ID_CLIENT.NEXTVAL from DUAL";
+        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_ID_CLIENT.NEXTVAL from DUAL";
 
         public ClientDAO(ClientDTO clientDTOClass) : base(clientDTOClass) { }
 
@@ -192,7 +192,7 @@ namespace CentreLocationOutils.dao.implementations
 
         
         public List<ClientDTO> getAll(Connection connection,
-        String sortByPropertyName)
+        string sortByPropertyName)
         {
             if (connection == null)
             {
@@ -233,7 +233,49 @@ namespace CentreLocationOutils.dao.implementations
         }
 
 
+        public List<ClientDTO> getAll(Connection connection, string nom,
+        string sortByPropertyName)
+        {
+            if (connection == null)
+            {
+                //throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (sortByPropertyName == null)
+            {
+                throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
+            }
+            List<ClientDTO> clients = new List<ClientDTO>();
 
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = ClientDAO.GET_ALL_REQUEST;
+
+                DbDataReader dataReader = command.ExecuteReader();
+                ClientDTO clientDTO = null;
+
+                if (dataReader.NextResult())
+                {
+                    clientDTO = new ClientDTO();
+                    do
+                    {
+                        clientDTO.IdClient = dataReader.GetString(1);
+                        clientDTO.Nom = dataReader.GetString(2);
+                        clientDTO.Prenom = dataReader.GetString(3);
+                        clientDTO.Telephone = dataReader.GetString(4);
+                        clientDTO.Email = dataReader.GetString(5);
+                        clientDTO.DateInscription = dataReader.GetDateTime(6);
+                    }
+                    while (dataReader.NextResult());
+                }
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+            return clients;
+        }
 
 
 
