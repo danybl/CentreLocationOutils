@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CentreLocationOutils.dto
 {
-    public class AdresseDTOcs
+    public class AdresseDTO : DTO
     {
         public string IdAdresse { get; set; }
         public string Numero { get; set; }
