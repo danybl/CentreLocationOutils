@@ -233,7 +233,7 @@ namespace CentreLocationOutils.dao.implementations
             return clients;
         }
 
-
+        /// <inheritdoc />
         public List<ClientDTO> findByNom(Connection connection, string nom,
         string sortByPropertyName)
         {
