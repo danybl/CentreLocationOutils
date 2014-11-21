@@ -4,32 +4,67 @@ using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 using CentreLocationOutils.exception.dto;
+using CentreLocationOutils.exception.dao;
+using CentreLocationOutils.db;
+using System.Data;
+using System.Data.Common;
+using System.Data.OracleClient;
 
 namespace CentreLocationOutils.dao.implementations 
 {
-    public class DAO<T>
+    public class DAO
     {
-        private T dtoClass;
+        private dynamic dtoClass;
 
-        protected DAO(T dtoClass)
+        protected DAO(dynamic dtoClass)
             : base()
         {
-        if(dtoClass == null) {
-            throw new InvalidDTOClassException("La classe de DTO ne peut être null");
-        }
-        setDtoClass(dtoClass);
+            if (dtoClass == null)
+            {
+                throw new InvalidDTOClassException("La classe de DTO ne peut être null");
+            }
+            setDtoClass(dtoClass);
         }
 
-        protected T getDtoClass()
+        protected dynamic getDtoClass()
         {
-        return this.dtoClass;
+            return this.dtoClass;
         }
 
-        private void setDtoClass(T dtoClass)
+        private void setDtoClass(dynamic dtoClass)
         {
-        this.dtoClass = dtoClass;
+            this.dtoClass = dtoClass;
         }
 
-        
+        protected static String getPrimaryKey(Connection connection,
+        String createPrimaryKeyRequest)
+        {
+            if (connection == null)
+            {
+                throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (createPrimaryKeyRequest == null)
+            {
+                throw new InvalidPrimaryKeyRequestException("La requête de création de clef primaire ne peut être null");
+            }
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = createPrimaryKeyRequest;
+                DbDataReader dataReader = command.ExecuteReader();
+
+                if (dataReader.NextResult())
+                {
+                    return dataReader.GetString(1);
+                }
+                throw new DAOException("Impossible de lire la séquence");
+
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+        }
     }
 }

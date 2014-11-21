@@ -15,7 +15,7 @@ using System.Runtime.Serialization;
 
 namespace CentreLocationOutils.dao.implementations
 {
-    public class ClientDAO : CentreLocationOutils.dao.implementations.DAO<dynamic>, CentreLocationOutils.dao.interfaces.IClientDAO
+    public class ClientDAO : CentreLocationOutils.dao.implementations.DAO, CentreLocationOutils.dao.interfaces.IClientDAO
     {
 
         private static const string ADD_REQUEST = "INSERT INTO Client (idClient, nom, prenom, telephone, email, dateInscription) "
@@ -45,8 +45,25 @@ namespace CentreLocationOutils.dao.implementations
 
         private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_ID_CLIENT.NEXTVAL from DUAL";
 
+        /// <summary>
+        /// Crée le DAO de la table Client <code>client</code>
+        /// </summary>
+        /// <param name="clientDTOClass">La classe de membre DTO à utiliser</param>
         public ClientDAO(ClientDTO clientDTOClass) : base(clientDTOClass) { }
 
+        /// <summary>
+        /// Crée une nouvelle clef primaire pour la table <code>membre</code>.
+        /// </summary>
+        /// <param name="connexion">La connexion à utiliser</param>
+        /// <returns>La nouvelle clef primaire</returns>
+
+        private static String getPrimaryKey(Connection connection)
+        {
+            return DAO.getPrimaryKey(connection,
+                ClientDAO.CREATE_PRIMARY_KEY);
+        }
+
+        /// <inheritdoc />
         public void add(Connection connection,
         ClientDTO clientDTO)
         {
@@ -83,6 +100,7 @@ namespace CentreLocationOutils.dao.implementations
             }
         }
 
+        /// <inheritdoc />
         public ClientDTO get(Connection connection,
         ISerializable primaryKey)
         {
@@ -103,18 +121,18 @@ namespace CentreLocationOutils.dao.implementations
                 command.CommandText = ClientDAO.READ_REQUEST;
                 command.Parameters.Add(new OracleParameter(":idClient", idClient));
 
-                    DbDataReader dataReader = command.ExecuteReader();
-                    if (dataReader.NextResult())
-                    {
-                        clientDTO = new ClientDTO();
-                        clientDTO.IdClient = dataReader.GetString(1);
-                        clientDTO.Nom = dataReader.GetString(2);
-                        clientDTO.Prenom = dataReader.GetString(3); 
-                        clientDTO.Telephone = dataReader.GetString(4);
-                        clientDTO.Email = dataReader.GetString(5);
-                        clientDTO.DateInscription = dataReader.GetDateTime(6);
+                DbDataReader dataReader = command.ExecuteReader();
+                if (dataReader.NextResult())
+                {
+                    clientDTO = new ClientDTO();
+                    clientDTO.IdClient = dataReader.GetString(1);
+                    clientDTO.Nom = dataReader.GetString(2);
+                    clientDTO.Prenom = dataReader.GetString(3);
+                    clientDTO.Telephone = dataReader.GetString(4);
+                    clientDTO.Email = dataReader.GetString(5);
+                    clientDTO.DateInscription = dataReader.GetDateTime(6);
 
-                    }
+                }
             }
             catch (DbException dbException)
             {
@@ -123,6 +141,7 @@ namespace CentreLocationOutils.dao.implementations
             return clientDTO;
         }
 
+        /// <inheritdoc />
         public void update(Connection connection,
         ClientDTO clientDTO)
         {
@@ -158,6 +177,7 @@ namespace CentreLocationOutils.dao.implementations
             }
         }
 
+        /// <inheritdoc />
         public void delete(Connection connection,
         ClientDTO clientDTO)
         {
@@ -174,7 +194,7 @@ namespace CentreLocationOutils.dao.implementations
             //    throw new InvalidDTOClassException("Le DTO doit être un "
             //        + getDtoClass().getName());
             //}
-           // ClientDTO clientDTO = (ClientDTO)dto;
+            // ClientDTO clientDTO = (ClientDTO)dto;
 
             try
             {
@@ -190,7 +210,7 @@ namespace CentreLocationOutils.dao.implementations
             }
         }
 
-        
+        /// <inheritdoc />
         public List<ClientDTO> getAll(Connection connection,
         string sortByPropertyName)
         {
@@ -211,12 +231,13 @@ namespace CentreLocationOutils.dao.implementations
                 command.CommandText = ClientDAO.GET_ALL_REQUEST;
 
                 DbDataReader dataReader = command.ExecuteReader();
-                ClientDTO clientDTO= null;
+                ClientDTO clientDTO = null;
 
                 if (dataReader.NextResult())
                 {
                     clientDTO = new ClientDTO();
-                    do{
+                    do
+                    {
                         clientDTO.IdClient = dataReader.GetString(1);
                         clientDTO.Nom = dataReader.GetString(2);
                         clientDTO.Prenom = dataReader.GetString(3);
@@ -225,11 +246,13 @@ namespace CentreLocationOutils.dao.implementations
                         clientDTO.DateInscription = dataReader.GetDateTime(6);
                         clients.Add(clientDTO);
                     }
-                        while(dataReader.NextResult());
-                    }
-                }catch(DbException dbException){
-                    throw new DAOException(dbException);
+                    while (dataReader.NextResult());
                 }
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
             return clients;
         }
 
