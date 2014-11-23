@@ -67,6 +67,7 @@ namespace CentreLocationOutils.dao.implementations
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = EmployeDAO.ADD_REQUEST;
+                command.Parameters.Add(new OracleParameter("idEmploye", employeDTO.IdEmploye));
                 command.Parameters.Add(new OracleParameter(":nom", employeDTO.Nom));
                 command.Parameters.Add(new OracleParameter(":prenom", employeDTO.Prenom));
                 command.Parameters.Add(new OracleParameter(":telephone", employeDTO.Telephone));
@@ -143,12 +144,12 @@ namespace CentreLocationOutils.dao.implementations
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = EmployeDAO.UPDATE_REQUEST;
-                command.Parameters.Add(new OracleParameter("idEmploye", employeDTO.IdEmploye));
                 command.Parameters.Add(new OracleParameter(":nom", employeDTO.Nom));
                 command.Parameters.Add(new OracleParameter(":prenom", employeDTO.Prenom));
                 command.Parameters.Add(new OracleParameter(":telephone", employeDTO.Telephone));
                 command.Parameters.Add(new OracleParameter(":email", employeDTO.Email));
                 command.Parameters.Add(new OracleParameter(":dateRecrutement", employeDTO.DateRecrutement));
+                command.Parameters.Add(new OracleParameter("idEmploye", employeDTO.IdEmploye));
             }
             catch (DbException dbException)
             {
