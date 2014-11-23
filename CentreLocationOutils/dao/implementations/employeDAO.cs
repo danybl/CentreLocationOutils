@@ -12,10 +12,11 @@ using CentreLocationOutils.dto;
 using System.Data.Common;
 using System.Data.OracleClient;
 using System.Runtime.Serialization;
+using CentreLocationOutils.dao.interfaces;
 
 namespace CentreLocationOutils.dao.implementations
 {
-    public class EmployeDAO :IEmployeDAO
+    public class EmployeDAO : DAO, IEmployeDAO
     {
         private static const string ADD_REQUEST = "INSERT INTO Employe (idEmploye, nom, prenom, telephone, email, dateRecrutement) "
       + "VALUES (:idEmploye, :nom, :prenom, :telephone, :email, :dateRecrutement)";
@@ -70,7 +71,7 @@ namespace CentreLocationOutils.dao.implementations
                 command.Parameters.Add(new OracleParameter(":prenom", employeDTO.Prenom));
                 command.Parameters.Add(new OracleParameter(":telephone", employeDTO.Telephone));
                 command.Parameters.Add(new OracleParameter(":email", employeDTO.Email));
-                command.Parameters.Add(new OracleParameter("idClient", employeDTO.IdEmploye));
+                command.Parameters.Add(new OracleParameter("idEmploye", employeDTO.IdEmploye));
 
                 command.ExecuteNonQuery();
             }
@@ -91,14 +92,14 @@ namespace CentreLocationOutils.dao.implementations
             {
                 throw new InvalidPrimaryKeyException("La clef primaire ne peut être null");
             }
-            string idClient = primaryKey.ToString();
+            string idEmploye = primaryKey.ToString();
             EmployeDTO employeDTO = null;
             try
             {
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = EmployeDAO.READ_REQUEST;
-                command.Parameters.Add(new OracleParameter(":idClient", idClient));
+                command.Parameters.Add(new OracleParameter(":idEmploye", idEmploye));
 
                     DbDataReader dataReader = command.ExecuteReader();
                     if (dataReader.NextResult())
@@ -142,12 +143,12 @@ namespace CentreLocationOutils.dao.implementations
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = EmployeDAO.UPDATE_REQUEST;
-                command.Parameters.Add(new OracleParameter("idClient", employeDTO.IdEmploye));
+                command.Parameters.Add(new OracleParameter("idEmploye", employeDTO.IdEmploye));
                 command.Parameters.Add(new OracleParameter(":nom", employeDTO.Nom));
                 command.Parameters.Add(new OracleParameter(":prenom", employeDTO.Prenom));
                 command.Parameters.Add(new OracleParameter(":telephone", employeDTO.Telephone));
                 command.Parameters.Add(new OracleParameter(":email", employeDTO.Email));
-                command.Parameters.Add(new OracleParameter(":dateInscription", employeDTO.DateRecrutement));
+                command.Parameters.Add(new OracleParameter(":dateRecrutement", employeDTO.DateRecrutement));
             }
             catch (DbException dbException)
             {
@@ -178,7 +179,7 @@ namespace CentreLocationOutils.dao.implementations
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = EmployeDAO.DELETE_REQUEST;
-                command.Parameters.Add(new OracleParameter(":idClient", employeDTO.IdEmploye));
+                command.Parameters.Add(new OracleParameter(":idEmploye", employeDTO.IdEmploye));
 
             }
             catch (DbException dbException)
@@ -199,7 +200,7 @@ namespace CentreLocationOutils.dao.implementations
             {
                 throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
             }
-            List<EmployeDTO> clients = new List<EmployeDTO>();
+            List<EmployeDTO> employes = new List<EmployeDTO>();
 
             try
             {
@@ -220,14 +221,14 @@ namespace CentreLocationOutils.dao.implementations
                         employeDTO.Telephone = dataReader.GetString(4);
                         employeDTO.Email = dataReader.GetString(5);
                         employeDTO.DateRecrutement = dataReader.GetDateTime(6);
-                        clients.Add(employeDTO);
+                        employes.Add(employeDTO);
                     }
                         while(dataReader.NextResult());
                     }
                 }catch(DbException dbException){
                     throw new DAOException(dbException);
                 }
-            return clients;
+            return employes;
         }
 
 
@@ -246,7 +247,7 @@ namespace CentreLocationOutils.dao.implementations
             {
                 throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
             }
-            List<EmployeDTO> clients = new List<EmployeDTO>();
+            List<EmployeDTO> employes = new List<EmployeDTO>();
 
             try
             {
@@ -268,7 +269,7 @@ namespace CentreLocationOutils.dao.implementations
                         employeDTO.Telephone = dataReader.GetString(4);
                         employeDTO.Email = dataReader.GetString(5);
                         employeDTO.DateRecrutement = dataReader.GetDateTime(6);
-                        clients.Add(employeDTO);
+                        employes.Add(employeDTO);
                     }
                     while (dataReader.NextResult());
                 }
@@ -277,7 +278,7 @@ namespace CentreLocationOutils.dao.implementations
             {
                 throw new DAOException(dbException);
             }
-            return clients;
+            return employes;
         }
 
     }
