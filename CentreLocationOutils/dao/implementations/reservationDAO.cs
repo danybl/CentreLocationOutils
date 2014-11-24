@@ -48,6 +48,7 @@ namespace CentreLocationOutils.dao.implementations
 
         public ReservationDAO(ReservationDTO reservationDTOClass) : base(reservationDTOClass) { }
 
+        /// <inheritdoc />
         public void add(Connection connection,
         ReservationDTO reservationDTO)
         {
@@ -85,6 +86,7 @@ namespace CentreLocationOutils.dao.implementations
             }
         }
 
+        /// <inheritdoc />
         public ReservationDTO get(Connection connection,
         ISerializable primaryKey)
         {
@@ -128,6 +130,7 @@ namespace CentreLocationOutils.dao.implementations
             return reservationDTO;
         }
 
+        /// <inheritdoc />
         public void update(Connection connection,
         ReservationDTO reservationDTO)
         {
@@ -162,6 +165,7 @@ namespace CentreLocationOutils.dao.implementations
             }
         }
 
+        /// <inheritdoc />
         public void delete(Connection connection,
         ReservationDTO reservationDTO)
         {
@@ -194,6 +198,7 @@ namespace CentreLocationOutils.dao.implementations
             }
         }
 
+        /// <inheritdoc />
         public List<ReservationDTO> getAll(Connection connection,
         string sortByPropertyName)
         {
@@ -243,6 +248,7 @@ namespace CentreLocationOutils.dao.implementations
             return reservations;
         }
 
+        /// <inheritdoc />
         public List<ReservationDTO> findByClient(Connection connection,
         String idClient,
         String sortByPropertyName)
@@ -294,6 +300,7 @@ namespace CentreLocationOutils.dao.implementations
             return reservations;
         }
 
+        /// <inheritdoc />
         public List<ReservationDTO> findByOutil(Connection connection,
         String idClient,
         String sortByPropertyName)

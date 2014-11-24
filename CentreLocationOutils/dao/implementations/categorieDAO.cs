@@ -43,6 +43,7 @@ namespace CentreLocationOutils.dao.implementations
 
         public CategorieDAO(CategorieDTO categorieDTOClass) : base(categorieDTOClass) { }
 
+        /// <inheritdoc />
         public void add(Connection connection,
         CategorieDTO categorieDTO)
         {
@@ -77,6 +78,7 @@ namespace CentreLocationOutils.dao.implementations
             }
         }
 
+        /// <inheritdoc />
         public CategorieDTO get(Connection connection,
         ISerializable primaryKey)
         {
@@ -114,6 +116,7 @@ namespace CentreLocationOutils.dao.implementations
             return categorieDTO;
         }
 
+        /// <inheritdoc />
         public void update(Connection connection,
         CategorieDTO categorieDTO)
         {
@@ -146,6 +149,7 @@ namespace CentreLocationOutils.dao.implementations
             }
         }
 
+        /// <inheritdoc />
         public void delete(Connection connection,
         CategorieDTO categorieDTO)
         {
@@ -178,7 +182,7 @@ namespace CentreLocationOutils.dao.implementations
             }
         }
 
-        
+        /// <inheritdoc />
         public List<CategorieDTO> getAll(Connection connection,
         string sortByPropertyName)
         {
@@ -218,7 +222,7 @@ namespace CentreLocationOutils.dao.implementations
             return categories;
         }
 
-
+        /// <inheritdoc />
         public List<CategorieDTO> findByNom(Connection connection, string nom,
         string sortByPropertyName)
         {

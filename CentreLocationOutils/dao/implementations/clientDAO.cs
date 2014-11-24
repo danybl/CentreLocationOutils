@@ -51,12 +51,7 @@ namespace CentreLocationOutils.dao.implementations
         /// <param name="clientDTOClass">La classe de membre DTO à utiliser</param>
         public ClientDAO(ClientDTO clientDTOClass) : base(clientDTOClass) { }
 
-        /// <summary>
-        /// Crée une nouvelle clef primaire pour la table <code>membre</code>.
-        /// </summary>
-        /// <param name="connexion">La connexion à utiliser</param>
-        /// <returns>La nouvelle clef primaire</returns>
-
+        /// <inheritdoc />
         private static String getPrimaryKey(Connection connection)
         {
             return DAO.getPrimaryKey(connection,

@@ -45,6 +45,7 @@ namespace CentreLocationOutils.dao.implementations
 
         public EmployeDAO(EmployeDTO employeDTOClass) : base(employeDTOClass) { }
 
+        /// <inheritdoc />
         public void add(Connection connection,
         EmployeDTO employeDTO)
         {
@@ -82,6 +83,7 @@ namespace CentreLocationOutils.dao.implementations
             }
         }
 
+        /// <inheritdoc />
         public EmployeDTO get(Connection connection,
         ISerializable primaryKey)
         {
@@ -122,6 +124,7 @@ namespace CentreLocationOutils.dao.implementations
             return employeDTO;
         }
 
+        /// <inheritdoc />
         public void update(Connection connection,
         EmployeDTO employeDTO)
         {
@@ -157,6 +160,7 @@ namespace CentreLocationOutils.dao.implementations
             }
         }
 
+        /// <inheritdoc />
         public void delete(Connection connection,
         EmployeDTO employeDTO)
         {
@@ -189,7 +193,7 @@ namespace CentreLocationOutils.dao.implementations
             }
         }
 
-        
+        /// <inheritdoc />
         public List<EmployeDTO> getAll(Connection connection,
         string sortByPropertyName)
         {
@@ -232,7 +236,7 @@ namespace CentreLocationOutils.dao.implementations
             return employes;
         }
 
-
+        /// <inheritdoc />
         public List<EmployeDTO> findByNom(Connection connection, string nom,
         string sortByPropertyName)
         {
