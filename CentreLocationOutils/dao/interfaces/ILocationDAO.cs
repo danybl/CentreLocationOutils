@@ -28,7 +28,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// <param name="sortByPropertyName">Le nom de la propriété à utiliser pour classer</param>
         /// <returns>La liste des location correspondantes</returns>
         public List<LocationDTO> findByOutil(Connection connection,
-        String idClient,
+        String idOutil,
         String sortByPropertyName);
     }
 }
