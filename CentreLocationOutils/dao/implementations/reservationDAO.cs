@@ -37,11 +37,11 @@ namespace CentreLocationOutils.dao.implementations
         private static const String GET_ALL_REQUEST = "SELECT idReservation, idMembre, idLivre, dateReservation "
             + "FROM reservation";
 
-        private static const String FIND_BY_MEMBRE_REQUEST = "SELECT idReservation, idMembre, idLivre, dateReservation "
+        private static const String FIND_BY_CLIENT_REQUEST = "SELECT idReservation, idMembre, idLivre, dateReservation "
             + "FROM reservation "
             + "WHERE idMembre = ?";
 
-        private static const String FIND_BY_LIVRE_REQUEST = "SELECT idReservation, idMembre, idLivre, dateReservation "
+        private static const String FIND_BY_OUTIL_REQUEST = "SELECT idReservation, idMembre, idLivre, dateReservation "
             + "FROM reservation "
             + "WHERE idLivre = ? "
             + "ORDER BY dateReservation ASC";
@@ -71,8 +71,8 @@ namespace CentreLocationOutils.dao.implementations
                 command.CommandType = CommandType.Text;
                 command.CommandText = ReservationDAO.ADD_REQUEST;
                 command.Parameters.Add(new OracleParameter(":idReservation", reservationDTO.IdReservation));
-                command.Parameters.Add(new OracleParameter(":idClient", reservationDTO.IdClient));
-                command.Parameters.Add(new OracleParameter(":idOutil", reservationDTO.IdOutil));
+                command.Parameters.Add(new OracleParameter(":idClient", reservationDTO.ClientDTO.IdClient));
+                command.Parameters.Add(new OracleParameter(":idOutil", reservationDTO.OutilDTO.IdOutil));
                 command.Parameters.Add(new OracleParameter(":dateReservation", reservationDTO.DateReservation));
                 command.Parameters.Add(new OracleParameter(":dateLimite", reservationDTO.DateLimite));
 
@@ -110,8 +110,12 @@ namespace CentreLocationOutils.dao.implementations
                 {
                     reservationDTO = new ReservationDTO();
                     reservationDTO.IdReservation = dataReader.GetString(1);
-                    reservationDTO.IdClient = dataReader.GetString(2);
-                    reservationDTO.IdOutil = dataReader.GetString(3);
+                    ClientDTO clientDTO = new ClientDTO();
+                    clientDTO.IdClient = dataReader.GetString(2);
+                    OutilDTO outilDTO = new OutilDTO();
+                    outilDTO.IdOutil = dataReader.GetString(3);
+                    reservationDTO.ClientDTO = clientDTO;
+                    reservationDTO.OutilDTO = outilDTO;
                     reservationDTO.DateReservation = dataReader.GetDateTime(4);
                     reservationDTO.DateLimite = dataReader.GetDateTime(5);
 
@@ -146,8 +150,8 @@ namespace CentreLocationOutils.dao.implementations
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = ReservationDAO.UPDATE_REQUEST;
-                command.Parameters.Add(new OracleParameter(":idClient", reservationDTO.IdClient));
-                command.Parameters.Add(new OracleParameter(":idOutil", reservationDTO.IdOutil));
+                command.Parameters.Add(new OracleParameter(":idClient", reservationDTO.ClientDTO.IdClient));
+                command.Parameters.Add(new OracleParameter(":idOutil", reservationDTO.OutilDTO.IdOutil));
                 command.Parameters.Add(new OracleParameter(":dateReservation", reservationDTO.DateReservation));
                 command.Parameters.Add(new OracleParameter(":dateLimite", reservationDTO.DateLimite));
                 command.Parameters.Add(new OracleParameter(":idReservation", reservationDTO.IdReservation));
@@ -218,14 +222,120 @@ namespace CentreLocationOutils.dao.implementations
                     do
                     {
                         reservationDTO.IdReservation = dataReader.GetString(1);
-                        reservationDTO.IdClient = dataReader.GetString(2);
-                        reservationDTO.IdOutil = dataReader.GetString(3);
+                        ClientDTO clientDTO = new ClientDTO();
+                        clientDTO.IdClient = dataReader.GetString(2);
+                        reservationDTO.ClientDTO = clientDTO;
+                        OutilDTO outilDTO = new OutilDTO();
+                        outilDTO.IdOutil = dataReader.GetString(3);
+                        reservationDTO.OutilDTO = outilDTO;
                         reservationDTO.DateReservation = dataReader.GetDateTime(4);
                         reservationDTO.DateLimite = dataReader.GetDateTime(5);
 
                         reservations.Add(reservationDTO);
                     }
                     while (dataReader.NextResult());
+                }
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+            return reservations;
+        }
+
+        public List<ReservationDTO> findByClient(Connection connection,
+        String idClient,
+        String sortByPropertyName)
+        {
+
+            if (connection == null)
+            {
+                throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (idClient == null)
+            {
+                throw new InvalidCriterionException("L'ID du client ne peut être null");
+            }
+            if (sortByPropertyName == null)
+            {
+                throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
+            }
+            List<ReservationDTO> reservations = new List<ReservationDTO>();
+
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = ReservationDAO.FIND_BY_CLIENT_REQUEST;
+
+                DbDataReader dataReader = command.ExecuteReader();
+                ReservationDTO reservationDTO = null;
+
+                if (dataReader.NextResult())
+                {
+
+                    do
+                    {
+                        reservationDTO = new ReservationDTO();
+                        reservationDTO.IdReservation = dataReader.GetString(1);
+                        ClientDTO clientDTO = new ClientDTO();
+                        clientDTO.IdClient = dataReader.GetString(2);
+                        OutilDTO outilDTO = new OutilDTO();
+                        outilDTO.IdOutil = dataReader.GetString(3);
+                        reservationDTO.ClientDTO = clientDTO;
+                        reservationDTO.OutilDTO = outilDTO;
+                    } while (dataReader.NextResult());
+                }
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+            return reservations;
+        }
+
+        public List<ReservationDTO> findByOutil(Connection connection,
+        String idClient,
+        String sortByPropertyName)
+        {
+
+            if (connection == null)
+            {
+                throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (idClient == null)
+            {
+                throw new InvalidCriterionException("L'ID du outil ne peut être null");
+            }
+            if (sortByPropertyName == null)
+            {
+                throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
+            }
+            List<ReservationDTO> reservations = new List<ReservationDTO>();
+
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = ReservationDAO.FIND_BY_OUTIL_REQUEST;
+
+                DbDataReader dataReader = command.ExecuteReader();
+                ReservationDTO reservationDTO = null;
+
+                if (dataReader.NextResult())
+                {
+
+                    do
+                    {
+                        reservationDTO = new ReservationDTO();
+                        reservationDTO.IdReservation = dataReader.GetString(1);
+                        ClientDTO clientDTO = new ClientDTO();
+                        clientDTO.IdClient = dataReader.GetString(2);
+                        OutilDTO outilDTO = new OutilDTO();
+                        outilDTO.IdOutil = dataReader.GetString(3);
+                        reservationDTO.ClientDTO = clientDTO;
+                        reservationDTO.OutilDTO = outilDTO;
+                    } while (dataReader.NextResult());
                 }
             }
             catch (DbException dbException)
