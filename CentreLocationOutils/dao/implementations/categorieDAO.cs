@@ -14,7 +14,7 @@ using System.Data.OracleClient;
 using System.Runtime.Serialization;
 using CentreLocationOutils.dao.interfaces;
 
-namespace CentreLocationCategories.dao.implementations
+namespace CentreLocationOutils.dao.implementations
 {
     public class CategorieDAO : DAO, ICategorieDAO
     {
