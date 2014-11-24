@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ConnexionControl">
+      <HintPath>lib\ConnexionControl.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
@@ -51,11 +54,11 @@
     <Compile Include="accueil.Designer.cs">
       <DependentUpon>accueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="connexion.cs">
+    <Compile Include="ConnexionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="connexion.Designer.cs">
-      <DependentUpon>connexion.cs</DependentUpon>
+    <Compile Include="ConnexionForm.Designer.cs">
+      <DependentUpon>ConnexionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Constants.cs" />
     <Compile Include="dao\implementations\AdresseDAO.cs" />
@@ -156,8 +159,8 @@
     <EmbeddedResource Include="accueil.resx">
       <DependentUpon>accueil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="connexion.resx">
-      <DependentUpon>connexion.cs</DependentUpon>
+    <EmbeddedResource Include="ConnexionForm.resx">
+      <DependentUpon>ConnexionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -181,9 +184,10 @@
   <ItemGroup>
     <Content Include="applicationContext.xml" />
     <Content Include="dto\EmployeDTO.hbm.xml" />
-    <Content Include="lib\ConnexionControl.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="lib\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

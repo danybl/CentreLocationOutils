@@ -37,7 +37,7 @@
             this.connexionControl1.labelUserName = "Username :";
             this.connexionControl1.Location = new System.Drawing.Point(37, 34);
             this.connexionControl1.Name = "connexionControl1";
-            this.connexionControl1.Size = new System.Drawing.Size(218, 197);
+            this.connexionControl1.Size = new System.Drawing.Size(218, 176);
             this.connexionControl1.TabIndex = 0;
             // 
             // ConnexionForm
