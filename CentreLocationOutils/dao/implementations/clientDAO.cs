@@ -43,7 +43,7 @@ namespace CentreLocationOutils.dao.implementations
         //    + " FROM membre"
         //    + " where telephone = ?";
 
-        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_ID_CLIENT.NEXTVAL from DUAL";
+        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_CLIENT_ID.NEXTVAL from DUAL";
 
         /// <summary>
         /// Crée le DAO de la table Client <code>client</code>

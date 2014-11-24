@@ -39,7 +39,7 @@ namespace CentreLocationOutils.dao.implementations
             + "FROM outil "
             + "where nom like :nom";
 
-        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_ID_OUTIL.NEXTVAL from DUAL";
+        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_OUTIL_ID.NEXTVAL from DUAL";
 
 
         public OutilDAO(OutilDTO outilDTOClass) : base(outilDTOClass) { }
@@ -67,7 +67,7 @@ namespace CentreLocationOutils.dao.implementations
                 command.CommandType = CommandType.Text;
                 command.CommandText = OutilDAO.ADD_REQUEST;
                 command.Parameters.Add(new OracleParameter(":idOutil", outilDTO.IdOutil));
-                command.Parameters.Add(new OracleParameter(":idCategorie", outilDTO.Nom));
+                command.Parameters.Add(new OracleParameter(":idCategorie", outilDTO.IdCategorie));
                 command.Parameters.Add(new OracleParameter(":nom", outilDTO.Nom));
                 command.Parameters.Add(new OracleParameter(":numSerie", outilDTO.NumSerie));
                 command.Parameters.Add(new OracleParameter(":dateAcquisition", outilDTO.DateAcquisition));
@@ -145,7 +145,7 @@ namespace CentreLocationOutils.dao.implementations
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = OutilDAO.UPDATE_REQUEST;
-                command.Parameters.Add(new OracleParameter(":idCategorie", outilDTO.Nom));
+                command.Parameters.Add(new OracleParameter(":idCategorie", outilDTO.IdCategorie));
                 command.Parameters.Add(new OracleParameter(":nom", outilDTO.Nom));
                 command.Parameters.Add(new OracleParameter(":numSerie", outilDTO.NumSerie));
                 command.Parameters.Add(new OracleParameter(":dateAcquisition", outilDTO.DateAcquisition));
@@ -219,7 +219,7 @@ namespace CentreLocationOutils.dao.implementations
                     outilDTO = new OutilDTO();
                     do{
                         command.Parameters.Add(new OracleParameter(":idOutil", outilDTO.IdOutil));
-                        command.Parameters.Add(new OracleParameter(":idCategorie", outilDTO.Nom));
+                        command.Parameters.Add(new OracleParameter(":idCategorie", outilDTO.IdCategorie));
                         command.Parameters.Add(new OracleParameter(":nom", outilDTO.Nom));
                         command.Parameters.Add(new OracleParameter(":numSerie", outilDTO.NumSerie));
                         command.Parameters.Add(new OracleParameter(":dateAcquisition", outilDTO.DateAcquisition));

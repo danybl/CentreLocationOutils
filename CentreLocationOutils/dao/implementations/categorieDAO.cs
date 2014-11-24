@@ -14,31 +14,255 @@ using System.Data.OracleClient;
 using System.Runtime.Serialization;
 using CentreLocationOutils.dao.interfaces;
 
-namespace CentreLocationOutils.dao.implementations
+namespace CentreLocationCategories.dao.implementations
 {
     public class CategorieDAO : DAO, ICategorieDAO
     {
-        private static const string ADD_REQUEST = "INSERT INTO outil (idCategorie, nom, description) "
-      + "VALUES (:idOutil, :idCategorie, :nom, :numSerie, :dateAqcuisition, :prixLocation, :description)";
+        private static const string ADD_REQUEST = "INSERT INTO categorie (idCategorie, nom, description) "
+      + "VALUES (:idCategorie, :idCategorie, :nom, :numSerie, :dateAqcuisition, :prixLocation, :description)";
 
-        private static const string READ_REQUEST = "SELECT idOutil, idCategorie ,nom, numSerie, dateAqcuisition, prixLocation, description "
-           + "FROM outil "
-           + "WHERE idOutil = :idOutil";
+        private static const string READ_REQUEST = "SELECT idCategorie, nom, description "
+           + "FROM categorie "
+           + "WHERE idCategorie = :idCategorie";
 
-        private static const string UPDATE_REQUEST = "UPDATE outil "
-            + "SET idCategorie = :idCategorie, nom = :nom, numSerie = :numSerie, dateAcquisition = :dateAcquisition, prixLocation = :prixLocation, description = :description "
-            + "WHERE idOutil = :idOutil";
+        private static const string UPDATE_REQUEST = "UPDATE categorie "
+            + "SET idCategorie = :idCategorie, nom = :nom, description = :description "
+            + "WHERE idCategorie = :idCategorie";
 
-        private static const string DELETE_REQUEST = "DELETE FROM outil "
-            + "WHERE idOutil = :idOutil";
+        private static const string DELETE_REQUEST = "DELETE FROM categorie "
+            + "WHERE idCategorie = :idCategorie";
 
-        private static const string GET_ALL_REQUEST = "SELECT idOutil, idCategorie ,nom, numSerie, dateAqcuisition, prixLocation, description "
-            + "FROM outil";
+        private static const string GET_ALL_REQUEST = "SELECT idCategorie, nom, description "
+            + "FROM categorie";
 
-        private static const string FIND_BY_NOM = "SELECT idOutil, idCategorie ,nom, numSerie, dateAqcuisition, prixLocation, description "
-            + "FROM outil "
+        private static const string FIND_BY_NOM = "SELECT idCategorie, nom, description "
+            + "FROM categorie "
             + "where nom like :nom";
 
-        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_ID_OUTIL.NEXTVAL from DUAL";
+        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_CATEG_ID.NEXTVAL from DUAL";
+
+        public CategorieDAO(CategorieDTO categorieDTOClass) : base(categorieDTOClass) { }
+
+        public void add(Connection connection,
+        CategorieDTO categorieDTO)
+        {
+            if (connection == null)
+            {
+                // throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (categorieDTO == null)
+            {
+                throw new InvalidDTOException("Le DTO ne peut être null");
+            }
+            //if (!dto.GetType().Equals(getDtoClass()))
+            //{
+            //    throw new InvalidDTOClassException("Le DTO doit être un "
+            //        + getDtoClass().getName());
+            //}
+            //CategorieDTO categorieDTO = categorieDTO;//(CategorieDTO) dto;
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = CategorieDAO.ADD_REQUEST;
+                command.Parameters.Add(new OracleParameter(":idCategorie", categorieDTO.IdCategorie));
+                command.Parameters.Add(new OracleParameter(":nom", categorieDTO.Nom));
+                command.Parameters.Add(new OracleParameter(":description", categorieDTO.Description));
+
+                command.ExecuteNonQuery();
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+        }
+
+        public CategorieDTO get(Connection connection,
+        ISerializable primaryKey)
+        {
+            if (connection == null)
+            {
+                // throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (primaryKey == null)
+            {
+                throw new InvalidPrimaryKeyException("La clef primaire ne peut être null");
+            }
+            string idCategorie = primaryKey.ToString();
+            CategorieDTO categorieDTO = null;
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = CategorieDAO.READ_REQUEST;
+                command.Parameters.Add(new OracleParameter(":idCategorie", idCategorie));
+
+                    DbDataReader dataReader = command.ExecuteReader();
+                    if (dataReader.NextResult())
+                    {
+                        categorieDTO = new CategorieDTO();
+                        categorieDTO.IdCategorie = dataReader.GetString(1);
+                        categorieDTO.Nom = dataReader.GetString(2);
+                        categorieDTO.Description = dataReader.GetString(3);
+
+                    }
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+            return categorieDTO;
+        }
+
+        public void update(Connection connection,
+        CategorieDTO categorieDTO)
+        {
+            if (connection == null)
+            {
+                //throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (categorieDTO == null)
+            {
+                throw new InvalidDTOException("Le DTO ne peut être null");
+            }
+            //if (!dto.GetType().Equals(getDtoClass()))
+            //{
+            //    throw new InvalidDTOClassException("Le DTO doit être un "
+            //        + getDtoClass().getName());
+            //}
+            //CategorieDTO categorieDTO = (CategorieDTO)dto;
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = CategorieDAO.UPDATE_REQUEST;
+                command.Parameters.Add(new OracleParameter(":nom", categorieDTO.Nom));
+                command.Parameters.Add(new OracleParameter(":description", categorieDTO.Description));
+                command.Parameters.Add(new OracleParameter(":idCategorie", categorieDTO.IdCategorie));
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+        }
+
+        public void delete(Connection connection,
+        CategorieDTO categorieDTO)
+        {
+            if (connection == null)
+            {
+                //throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (categorieDTO == null)
+            {
+                throw new InvalidDTOException("Le DTO ne peut être null");
+            }
+            //if (!dto.GetType().Equals(getDtoClass()))
+            //{
+            //    throw new InvalidDTOClassException("Le DTO doit être un "
+            //        + getDtoClass().getName());
+            //}
+           // CategorieDTO categorieDTO = (CategorieDTO)dto;
+
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = CategorieDAO.DELETE_REQUEST;
+                command.Parameters.Add(new OracleParameter(":idCategorie", categorieDTO.IdCategorie));
+
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+        }
+
+        
+        public List<CategorieDTO> getAll(Connection connection,
+        string sortByPropertyName)
+        {
+            if (connection == null)
+            {
+                //throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (sortByPropertyName == null)
+            {
+                throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
+            }
+            List<CategorieDTO> categories = new List<CategorieDTO>();
+
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = CategorieDAO.GET_ALL_REQUEST;
+
+                DbDataReader dataReader = command.ExecuteReader();
+                CategorieDTO categorieDTO= null;
+
+                if (dataReader.NextResult())
+                {
+                    categorieDTO = new CategorieDTO();
+                    do{
+                        command.Parameters.Add(new OracleParameter(":idCategorie", categorieDTO.IdCategorie));
+                        command.Parameters.Add(new OracleParameter(":nom", categorieDTO.Nom));
+                        command.Parameters.Add(new OracleParameter(":description", categorieDTO.Description));
+                        categories.Add(categorieDTO);
+                    }
+                        while(dataReader.NextResult());
+                    }
+                }catch(DbException dbException){
+                    throw new DAOException(dbException);
+                }
+            return categories;
+        }
+
+
+        public List<CategorieDTO> findByNom(Connection connection, string nom,
+        string sortByPropertyName)
+        {
+            if (connection == null)
+            {
+                //throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (nom == null)
+            {
+                throw new InvalidCriterionException("Le nom ne peut être null");
+            }
+            if (sortByPropertyName == null)
+            {
+                throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
+            }
+            List<CategorieDTO> categories = new List<CategorieDTO>();
+
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = CategorieDAO.FIND_BY_NOM;
+
+                DbDataReader dataReader = command.ExecuteReader();
+                CategorieDTO categorieDTO = null;
+
+                if (dataReader.NextResult())
+                {
+                    categorieDTO = new CategorieDTO();
+                    do
+                    {
+                        categorieDTO.IdCategorie = dataReader.GetString(1);
+                        categorieDTO.Nom = dataReader.GetString(2);
+                        categorieDTO.Description = dataReader.GetString(3);
+                        categories.Add(categorieDTO);
+                    }
+                    while (dataReader.NextResult());
+                }
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+            return categories;
+        }
     }
 }

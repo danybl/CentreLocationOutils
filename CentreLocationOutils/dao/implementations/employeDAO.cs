@@ -39,7 +39,7 @@ namespace CentreLocationOutils.dao.implementations
             + "FROM employe "
             + "where nom like :nom";
 
-        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_ID_EMPLOYE.NEXTVAL from DUAL";
+        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_EMPLOYE_ID.NEXTVAL from DUAL";
 
 
 
