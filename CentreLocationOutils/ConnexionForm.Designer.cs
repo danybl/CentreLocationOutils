@@ -1,6 +1,6 @@
 ﻿namespace CentreLocationOutils
 {
-    partial class connexion
+    partial class ConnexionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,19 +35,19 @@
             // 
             this.connexionControl1.labelPassword = "Password :";
             this.connexionControl1.labelUserName = "Username :";
-            this.connexionControl1.Location = new System.Drawing.Point(-3, 12);
+            this.connexionControl1.Location = new System.Drawing.Point(37, 34);
             this.connexionControl1.Name = "connexionControl1";
-            this.connexionControl1.Size = new System.Drawing.Size(288, 190);
+            this.connexionControl1.Size = new System.Drawing.Size(218, 197);
             this.connexionControl1.TabIndex = 0;
             // 
-            // connexion
+            // ConnexionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 201);
+            this.ClientSize = new System.Drawing.Size(284, 222);
             this.Controls.Add(this.connexionControl1);
-            this.Name = "connexion";
-            this.Text = "connexion";
+            this.Name = "ConnexionForm";
+            this.Text = "ConnexionForm";
             this.ResumeLayout(false);
 
         }
@@ -55,6 +55,5 @@
         #endregion
 
         private ConnexionControl.ConnexionControl connexionControl1;
-
     }
 }
