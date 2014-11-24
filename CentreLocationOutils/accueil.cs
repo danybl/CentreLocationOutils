@@ -78,6 +78,18 @@ namespace CentreLocationOutils
         private DataGridViewTextBoxColumn columnVille;
         private DataGridViewTextBoxColumn columnProvince;
         private DataGridViewTextBoxColumn columnPays;
+        private SplitContainer splitContainer2;
+        private Button btnSupprimerOutil;
+        private Button btnModifierOutil;
+        private Button btnAjouterOutil;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn columIdOutil;
+        private DataGridViewTextBoxColumn columnCategorie;
+        private DataGridViewTextBoxColumn columnNom;
+        private DataGridViewTextBoxColumn columnNumSerie;
+        private DataGridViewTextBoxColumn columnDateAcquisition;
+        private DataGridViewTextBoxColumn columnPrixLocationParJour;
+        private DataGridViewTextBoxColumn columnDescription;
         private MenuStrip menuStrip1;
     
         public accueil()
@@ -155,6 +167,18 @@ namespace CentreLocationOutils
             this.columnVille = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnProvince = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPays = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.btnSupprimerOutil = new System.Windows.Forms.Button();
+            this.btnModifierOutil = new System.Windows.Forms.Button();
+            this.btnAjouterOutil = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.columIdOutil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnCategorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnNumSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDateAcquisition = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnPrixLocationParJour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tpCreerLocation.SuspendLayout();
             this.tpCreerReservation.SuspendLayout();
@@ -163,11 +187,17 @@ namespace CentreLocationOutils
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.tpGestionOutils.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStripContainer2.ContentPanel.SuspendLayout();
             this.toolStripContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDnbJours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -523,6 +553,7 @@ namespace CentreLocationOutils
             // 
             // tpGestionOutils
             // 
+            this.tpGestionOutils.Controls.Add(this.splitContainer2);
             this.tpGestionOutils.Location = new System.Drawing.Point(4, 22);
             this.tpGestionOutils.Name = "tpGestionOutils";
             this.tpGestionOutils.Size = new System.Drawing.Size(768, 406);
@@ -534,7 +565,7 @@ namespace CentreLocationOutils
             // 
             this.tpRechercher.Location = new System.Drawing.Point(4, 22);
             this.tpRechercher.Name = "tpRechercher";
-            this.tpRechercher.Size = new System.Drawing.Size(705, 353);
+            this.tpRechercher.Size = new System.Drawing.Size(768, 406);
             this.tpRechercher.TabIndex = 6;
             this.tpRechercher.Text = "Rechercher";
             this.tpRechercher.UseVisualStyleBackColor = true;
@@ -780,6 +811,105 @@ namespace CentreLocationOutils
             this.columnPays.HeaderText = "Pays";
             this.columnPays.Name = "columnPays";
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.btnSupprimerOutil);
+            this.splitContainer2.Panel1.Controls.Add(this.btnModifierOutil);
+            this.splitContainer2.Panel1.Controls.Add(this.btnAjouterOutil);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.dataGridView2);
+            this.splitContainer2.Size = new System.Drawing.Size(768, 406);
+            this.splitContainer2.SplitterDistance = 256;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // btnSupprimerOutil
+            // 
+            this.btnSupprimerOutil.Location = new System.Drawing.Point(91, 260);
+            this.btnSupprimerOutil.Name = "btnSupprimerOutil";
+            this.btnSupprimerOutil.Size = new System.Drawing.Size(75, 23);
+            this.btnSupprimerOutil.TabIndex = 5;
+            this.btnSupprimerOutil.Text = "Supprimer";
+            this.btnSupprimerOutil.UseVisualStyleBackColor = true;
+            // 
+            // btnModifierOutil
+            // 
+            this.btnModifierOutil.Location = new System.Drawing.Point(91, 191);
+            this.btnModifierOutil.Name = "btnModifierOutil";
+            this.btnModifierOutil.Size = new System.Drawing.Size(75, 23);
+            this.btnModifierOutil.TabIndex = 4;
+            this.btnModifierOutil.Text = "Modifier";
+            this.btnModifierOutil.UseVisualStyleBackColor = true;
+            // 
+            // btnAjouterOutil
+            // 
+            this.btnAjouterOutil.Location = new System.Drawing.Point(91, 123);
+            this.btnAjouterOutil.Name = "btnAjouterOutil";
+            this.btnAjouterOutil.Size = new System.Drawing.Size(75, 23);
+            this.btnAjouterOutil.TabIndex = 3;
+            this.btnAjouterOutil.Text = "Ajouter";
+            this.btnAjouterOutil.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columIdOutil,
+            this.columnCategorie,
+            this.columnNom,
+            this.columnNumSerie,
+            this.columnDateAcquisition,
+            this.columnPrixLocationParJour,
+            this.columnDescription});
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(502, 348);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // columIdOutil
+            // 
+            this.columIdOutil.HeaderText = "Id ";
+            this.columIdOutil.Name = "columIdOutil";
+            this.columIdOutil.ReadOnly = true;
+            // 
+            // columnCategorie
+            // 
+            this.columnCategorie.HeaderText = "Catégorie";
+            this.columnCategorie.Name = "columnCategorie";
+            // 
+            // columnNom
+            // 
+            this.columnNom.HeaderText = "Nom";
+            this.columnNom.Name = "columnNom";
+            // 
+            // columnNumSerie
+            // 
+            this.columnNumSerie.HeaderText = "Numéro Série";
+            this.columnNumSerie.Name = "columnNumSerie";
+            // 
+            // columnDateAcquisition
+            // 
+            this.columnDateAcquisition.HeaderText = "Date Acquisition";
+            this.columnDateAcquisition.Name = "columnDateAcquisition";
+            this.columnDateAcquisition.ReadOnly = true;
+            // 
+            // columnPrixLocationParJour
+            // 
+            this.columnPrixLocationParJour.HeaderText = "Prix location /jour";
+            this.columnPrixLocationParJour.Name = "columnPrixLocationParJour";
+            // 
+            // columnDescription
+            // 
+            this.columnDescription.HeaderText = "Description";
+            this.columnDescription.Name = "columnDescription";
+            // 
             // accueil
             // 
             this.ClientSize = new System.Drawing.Size(776, 428);
@@ -797,6 +927,7 @@ namespace CentreLocationOutils
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.tpGestionOutils.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStripContainer2.ContentPanel.ResumeLayout(false);
@@ -804,6 +935,11 @@ namespace CentreLocationOutils
             this.toolStripContainer2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDnbJours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
