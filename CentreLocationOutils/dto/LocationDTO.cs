@@ -8,9 +8,9 @@ namespace CentreLocationOutils.dto
     public class LocationDTO
     {
         public string IdLocation { get; set; }
-        public string IdClient { get; set; }
-        public string IdEmploye { get; set; }
-        public string IdOutils { get; set; }
+        public ClientDTO ClientDTO { get; set; }
+        public EmployeDTO EmployeDTO { get; set; }
+        public OutilDTO OutilDTO { get; set; }
         public string Depot { get; set; }
         public DateTime DateLocation { get; set; }
         public DateTime DateLimite { get; set; }

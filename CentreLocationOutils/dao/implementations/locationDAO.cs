@@ -15,58 +15,46 @@ using System.Runtime.Serialization;
 
 namespace CentreLocationOutils.dao.implementations
 {
-    public class LocationDAO : CentreLocationOutils.dao.implementations.DAO, CentreLocationOutils.dao.interfaces.ILocationDAO
+    public class LocationDAO : DAO, CentreLocationOutils.dao.interfaces.ILocationDAO
     {
-        #region THE QUERIES
+         private static const String CREATE_PRIMARY_KEY = "SELECT SEQ_ID_LOCATION.NEXTVAL "
+        + "FROM DUAL";
 
-        private static const string ADD_REQUEST = "INSERT INTO location (idlocation, idclient, idemploye, idoutil, depot, datelocation, datelimite, dateretour) "
-                                                + "VALUES (:idlocation, :idclient, :idemploye, :idoutil, :depot, :datelocation, :datelimite, :dateretour)";
+         private static const String ADD_REQUEST = "INSERT INTO location (idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour) "
+            + "VALUES (:idLocation, :idClient, :idEmploye, :idOutil, :dateLocation, :dateLimite, :dateRetour";
 
-        private static const string READ_REQUEST = "SELECT idlocation, idclient, idemploye, idoutil, depot, datelocation, datelimite, dateretour "
-                                                 + "FROM location "
-                                                 + "WHERE idlocation = :idlocation";
+         private static const String READ_REQUEST = "SELECT idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour "
+            + "FROM location "
+            + "WHERE idLocation = :idLocation";
 
-        private static const string UPDATE_REQUEST = "UPDATE location "
-                                                   + "SET idclient = :idclient, idemploye = :idemploye, idoutil = :idoutil, depot = :depot, datelocation = :datelocation, datelimite = :datelimite, dateretour = :dateretour "
-                                                   + "WHERE idlocation = :idlocation";
+        private static const String UPDATE_REQUEST = "UPDATE location "
+            + "SET dateLimite = :dateLimite, dateRetour = :dateRetour "
+            + "WHERE idLocation = :idLocation";
 
-        private static const string DELETE_REQUEST = "DELETE FROM location "
-                                                   + "WHERE idlocation = :idlocation";
+        private static const String DELETE_REQUEST = "DELETE FROM location "
+            + "WHERE idLocation = :idLocation";
 
-        private static const string GET_ALL_REQUEST = "SELECT idlocation, idclient, idemploye, idoutil, depot, datelocation, datelimite, dateretour "
-                                                    + "FROM location";
+        private static const String GET_ALL_REQUEST = "SELECT idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour "
+            + "FROM location";
 
+        private static const String FIND_BY_CLIENT_REQUEST = "SELECT idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour "
+            + "FROM location "
+            + "WHERE idClient = :idClient";
 
-        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_ID_LOCATION.NEXTVAL from DUAL";
+        private static const String FIND_BY_OUTIL_REQUEST = "SELECT idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour "
+            + "FROM location "
+            + "WHERE idOutil = ? "
+            + "ORDER BY dateLocation ASC";
 
-        #endregion
-
-        /// <summary>
-        /// Crée le DAO de la table Location <code>location</code>
-        /// </summary>
-        /// <param name="locationDTOClass">La classe de membre DTO à utiliser</param>
         public LocationDAO(LocationDTO locationDTOClass) : base(locationDTOClass) { }
 
-        /// <summary>
-        /// Crée une nouvelle clef primaire pour la table <code>location</code>.
-        /// </summary>
-        /// <param name="connexion">La connexion à utiliser</param>
-        /// <returns>La nouvelle clef primaire</returns>
-
-        private static String getPrimaryKey(Connection connection)
-        {
-            return DAO.getPrimaryKey(connection,
-                LocationDAO.CREATE_PRIMARY_KEY);
-        }
-
-        #region CRUD
         /// <inheritdoc />
         public void add(Connection connection,
         LocationDTO locationDTO)
         {
             if (connection == null)
             {
-                throw new InvalidHibernateSessionException("La connexion ne peut être null");
+                // throw new InvalidHibernateSessionException("La connexion ne peut être null");
             }
             if (locationDTO == null)
             {
@@ -77,20 +65,20 @@ namespace CentreLocationOutils.dao.implementations
             //    throw new InvalidDTOClassException("Le DTO doit être un "
             //        + getDtoClass().getName());
             //}
-            //LocationDTO locationDTO = (LocationDTO)dto;
+            //EmployeDTO employeDTO = employeDTO;//(EmployeDTO) dto;
             try
             {
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = LocationDAO.ADD_REQUEST;
-                command.Parameters.Add(new OracleParameter(":idlocation", locationDTO.IdLocation));
-                command.Parameters.Add(new OracleParameter(":idclient", locationDTO.IdClient));
-                command.Parameters.Add(new OracleParameter(":idemploye", locationDTO.IdEmploye));
-                command.Parameters.Add(new OracleParameter(":idoutil", locationDTO.IdOutils));
-                command.Parameters.Add(new OracleParameter("depot", locationDTO.Depot));
-                command.Parameters.Add(new OracleParameter("datelocation", locationDTO.DateLocation));
-                command.Parameters.Add(new OracleParameter("datelimite", locationDTO.DateLimite));
-                command.Parameters.Add(new OracleParameter("dateretour", locationDTO.DateRetour));
+                command.Parameters.Add(new OracleParameter(":idLocation", locationDTO.IdLocation));
+                command.Parameters.Add(new OracleParameter(":idClient", locationDTO.ClientDTO.IdClient));
+                command.Parameters.Add(new OracleParameter(":idEmploye", locationDTO.EmployeDTO.IdEmploye));
+                command.Parameters.Add(new OracleParameter(":idOutil", locationDTO.OutilDTO.IdOutil));
+                command.Parameters.Add(new OracleParameter(":dateLocation", locationDTO.DateLocation));
+                command.Parameters.Add(new OracleParameter(":dateLimite", locationDTO.DateLimite));
+                command.Parameters.Add(new OracleParameter(":dateRetour", locationDTO.DateRetour));
+
 
                 command.ExecuteNonQuery();
             }
@@ -106,7 +94,7 @@ namespace CentreLocationOutils.dao.implementations
         {
             if (connection == null)
             {
-                throw new InvalidHibernateSessionException("La connexion ne peut être null");
+                // throw new InvalidHibernateSessionException("La connexion ne peut être null");
             }
             if (primaryKey == null)
             {
@@ -119,20 +107,24 @@ namespace CentreLocationOutils.dao.implementations
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = LocationDAO.READ_REQUEST;
-                command.Parameters.Add(new OracleParameter(":idlocation", idLocation));
+                command.Parameters.Add(new OracleParameter(":idLocation", idLocation));
 
                 DbDataReader dataReader = command.ExecuteReader();
                 if (dataReader.NextResult())
                 {
                     locationDTO = new LocationDTO();
                     locationDTO.IdLocation = dataReader.GetString(1);
-                    locationDTO.IdClient = dataReader.GetString(2);
-                    locationDTO.IdEmploye = dataReader.GetString(3);
-                    locationDTO.IdOutils = dataReader.GetString(4);
-                    locationDTO.Depot = dataReader.GetString(5);
-                    locationDTO.DateLocation = dataReader.GetDateTime(6);
-                    locationDTO.DateLimite = dataReader.GetDateTime(7);
-                    locationDTO.DateRetour = dataReader.GetDateTime(8);
+                    ClientDTO clientDTO = new ClientDTO();
+                    clientDTO.IdClient = dataReader.GetString(2);
+                    EmployeDTO employeDTO = new EmployeDTO();
+                    employeDTO.IdEmploye = dataReader.GetString(3);
+                    OutilDTO outilDTO = new OutilDTO();
+                    outilDTO.IdOutil = dataReader.GetString(4);
+                    locationDTO.ClientDTO = clientDTO;
+                    locationDTO.OutilDTO = outilDTO;
+                    locationDTO.DateLocation = dataReader.GetDateTime(5);
+                    locationDTO.DateLimite = dataReader.GetDateTime(6);
+                    locationDTO.DateRetour = dataReader.GetDateTime(7);
 
                 }
             }
@@ -145,11 +137,11 @@ namespace CentreLocationOutils.dao.implementations
 
         /// <inheritdoc />
         public void update(Connection connection,
-         LocationDTO locationDTO)
+        LocationDTO locationDTO)
         {
             if (connection == null)
             {
-                throw new InvalidHibernateSessionException("La connexion ne peut être null");
+                //throw new InvalidHibernateSessionException("La connexion ne peut être null");
             }
             if (locationDTO == null)
             {
@@ -160,20 +152,13 @@ namespace CentreLocationOutils.dao.implementations
             //    throw new InvalidDTOClassException("Le DTO doit être un "
             //        + getDtoClass().getName());
             //}
-            //LocationDTO locationDTO = (LocationDTO)dto;
+            //EmployeDTO employeDTO = (EmployeDTO)dto;
             try
             {
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = LocationDAO.UPDATE_REQUEST;
-                command.Parameters.Add(new OracleParameter(":idlocation", locationDTO.IdLocation));
-                command.Parameters.Add(new OracleParameter(":idclient", locationDTO.IdClient));
-                command.Parameters.Add(new OracleParameter(":idemploye", locationDTO.IdEmploye));
-                command.Parameters.Add(new OracleParameter(":idoutil", locationDTO.IdOutils));
-                command.Parameters.Add(new OracleParameter("depot", locationDTO.Depot));
-                command.Parameters.Add(new OracleParameter("datelocation", locationDTO.DateLocation));
-                command.Parameters.Add(new OracleParameter("datelimite", locationDTO.DateLimite));
-                command.Parameters.Add(new OracleParameter("dateretour", locationDTO.DateRetour));
+                command.Parameters.Add(new OracleParameter(":dateLimite", locationDTO.DateLimite));
+                command.Parameters.Add(new OracleParameter(":idLocation", locationDTO.IdLocation));
             }
             catch (DbException dbException)
             {
@@ -187,7 +172,7 @@ namespace CentreLocationOutils.dao.implementations
         {
             if (connection == null)
             {
-                throw new InvalidHibernateSessionException("La connexion ne peut être null");
+                //throw new InvalidHibernateSessionException("La connexion ne peut être null");
             }
             if (locationDTO == null)
             {
@@ -198,14 +183,14 @@ namespace CentreLocationOutils.dao.implementations
             //    throw new InvalidDTOClassException("Le DTO doit être un "
             //        + getDtoClass().getName());
             //}
-            // LocationDTO locationDTO = (LocationDTO)dto;
+            // EmployeDTO employeDTO = (EmployeDTO)dto;
 
             try
             {
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = LocationDAO.DELETE_REQUEST;
-                command.Parameters.Add(new OracleParameter(":idlocation", locationDTO.IdLocation));
+                command.Parameters.Add(new OracleParameter(":idLocation", locationDTO.IdLocation));
 
             }
             catch (DbException dbException)
@@ -213,7 +198,6 @@ namespace CentreLocationOutils.dao.implementations
                 throw new DAOException(dbException);
             }
         }
-        #endregion
 
         /// <inheritdoc />
         public List<LocationDTO> getAll(Connection connection,
@@ -221,13 +205,12 @@ namespace CentreLocationOutils.dao.implementations
         {
             if (connection == null)
             {
-                throw new InvalidHibernateSessionException("La connexion ne peut être null");
+                //throw new InvalidHibernateSessionException("La connexion ne peut être null");
             }
             if (sortByPropertyName == null)
             {
                 throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
             }
-
             List<LocationDTO> locations = new List<LocationDTO>();
 
             try
@@ -244,17 +227,136 @@ namespace CentreLocationOutils.dao.implementations
                     locationDTO = new LocationDTO();
                     do
                     {
-                        locationDTO.IdLocation= dataReader.GetString(1);
-                        locationDTO.IdClient = dataReader.GetString(2);
-                        locationDTO.IdEmploye = dataReader.GetString(3);
-                        locationDTO.IdOutils = dataReader.GetString(4);
-                        locationDTO.Depot = dataReader.GetString(5);
-                        locationDTO.DateLocation = dataReader.GetDateTime(6);
-                        locationDTO.DateLimite = dataReader.GetDateTime(7);
-                        locationDTO.DateRetour = dataReader.GetDateTime(8);
+                        locationDTO.IdLocation = dataReader.GetString(1);
+                        ClientDTO clientDTO = new ClientDTO();
+                        clientDTO.IdClient = dataReader.GetString(2);
+                        EmployeDTO employeDTO = new EmployeDTO();
+                        employeDTO.IdEmploye = dataReader.GetString(3);
+                        locationDTO.ClientDTO = clientDTO;
+                        OutilDTO outilDTO = new OutilDTO();
+                        outilDTO.IdOutil = dataReader.GetString(4);
+                        locationDTO.OutilDTO = outilDTO;
+                        locationDTO.DateLocation = dataReader.GetDateTime(5);
+                        locationDTO.DateLimite = dataReader.GetDateTime(6);
+                        locationDTO.DateRetour = dataReader.GetDateTime(7);
+
                         locations.Add(locationDTO);
                     }
                     while (dataReader.NextResult());
+                }
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+            return locations;
+        }
+
+        /// <inheritdoc />
+        public List<LocationDTO> findByClient(Connection connection,
+        String idClient,
+        String sortByPropertyName)
+        {
+
+            if (connection == null)
+            {
+                throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (idClient == null)
+            {
+                throw new InvalidCriterionException("L'ID du client ne peut être null");
+            }
+            if (sortByPropertyName == null)
+            {
+                throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
+            }
+            List<LocationDTO> locations = new List<LocationDTO>();
+
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = LocationDAO.FIND_BY_CLIENT_REQUEST;
+
+                DbDataReader dataReader = command.ExecuteReader();
+                LocationDTO locationDTO = null;
+
+                if (dataReader.NextResult())
+                {
+
+                    do
+                    {
+                        locationDTO.IdLocation = dataReader.GetString(1);
+                        ClientDTO clientDTO = new ClientDTO();
+                        clientDTO.IdClient = dataReader.GetString(2);
+                        EmployeDTO employeDTO = new EmployeDTO();
+                        employeDTO.IdEmploye = dataReader.GetString(3);
+                        locationDTO.ClientDTO = clientDTO;
+                        OutilDTO outilDTO = new OutilDTO();
+                        outilDTO.IdOutil = dataReader.GetString(4);
+                        locationDTO.OutilDTO = outilDTO;
+                        locationDTO.DateLocation = dataReader.GetDateTime(5);
+                        locationDTO.DateLimite = dataReader.GetDateTime(6);
+                        locationDTO.DateRetour = dataReader.GetDateTime(7);
+                        locations.Add(locationDTO);
+                    } while (dataReader.NextResult());
+                }
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+            return locations;
+        }
+
+        /// <inheritdoc />
+        public List<LocationDTO> findByOutil(Connection connection,
+        String idClient,
+        String sortByPropertyName)
+        {
+
+            if (connection == null)
+            {
+                throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (idClient == null)
+            {
+                throw new InvalidCriterionException("L'ID du outil ne peut être null");
+            }
+            if (sortByPropertyName == null)
+            {
+                throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
+            }
+            List<LocationDTO> locations = new List<LocationDTO>();
+
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = LocationDAO.FIND_BY_OUTIL_REQUEST;
+
+                DbDataReader dataReader = command.ExecuteReader();
+                LocationDTO locationDTO = null;
+
+                if (dataReader.NextResult())
+                {
+
+                    do
+                    {
+                        locationDTO.IdLocation = dataReader.GetString(1);
+                        ClientDTO clientDTO = new ClientDTO();
+                        clientDTO.IdClient = dataReader.GetString(2);
+                        EmployeDTO employeDTO = new EmployeDTO();
+                        employeDTO.IdEmploye = dataReader.GetString(3);
+                        locationDTO.ClientDTO = clientDTO;
+                        OutilDTO outilDTO = new OutilDTO();
+                        outilDTO.IdOutil = dataReader.GetString(4);
+                        locationDTO.OutilDTO = outilDTO;
+                        locationDTO.DateLocation = dataReader.GetDateTime(5);
+                        locationDTO.DateLimite = dataReader.GetDateTime(6);
+                        locationDTO.DateRetour = dataReader.GetDateTime(7);
+                        locations.Add(locationDTO);
+                    } while (dataReader.NextResult());
                 }
             }
             catch (DbException dbException)

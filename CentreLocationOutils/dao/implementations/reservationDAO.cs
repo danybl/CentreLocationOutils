@@ -26,26 +26,29 @@ namespace CentreLocationOutils.dao.implementations
             + "FROM reservation "
             + "WHERE idReservation = :idReservation";
 
-        //TODO vérifier si changement possible pour idClient
         private static const String UPDATE_REQUEST = "UPDATE reservation "
-            + "SET idClient = :idClient, idOutil = :idOutil, dateReservation = :dateReservation, dateLimite = :dateLimite  "
+            + "SET dateLimite = :dateLimite "
             + "WHERE idReservation = :idReservation";
 
         private static const String DELETE_REQUEST = "DELETE FROM reservation "
             + "WHERE idReservation = ?";
 
-        private static const String GET_ALL_REQUEST = "SELECT idReservation, idMembre, idLivre, dateReservation "
+        private static const String GET_ALL_REQUEST = "SELECT idReservation, idClient, idOutil, dateReservation "
             + "FROM reservation";
 
-        private static const String FIND_BY_CLIENT_REQUEST = "SELECT idReservation, idMembre, idLivre, dateReservation "
+        private static const String FIND_BY_CLIENT_REQUEST = "SELECT idReservation, idClient, idOutil, dateReservation "
             + "FROM reservation "
-            + "WHERE idMembre = ?";
+            + "WHERE idClient = :idClient";
 
-        private static const String FIND_BY_OUTIL_REQUEST = "SELECT idReservation, idMembre, idLivre, dateReservation "
+        private static const String FIND_BY_OUTIL_REQUEST = "SELECT idReservation, idClient, idOutil, dateReservation "
             + "FROM reservation "
-            + "WHERE idLivre = ? "
+            + "WHERE idOutil = :idOutil "
             + "ORDER BY dateReservation ASC";
 
+        /// <summary>
+        /// Crée le DAO de la table réservation
+        /// </summary>
+        /// <param name="reservationDTOClass">La classe de réservationDTO à utiliser</param>
         public ReservationDAO(ReservationDTO reservationDTOClass) : base(reservationDTOClass) { }
 
         /// <inheritdoc />
@@ -153,9 +156,6 @@ namespace CentreLocationOutils.dao.implementations
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = ReservationDAO.UPDATE_REQUEST;
-                command.Parameters.Add(new OracleParameter(":idClient", reservationDTO.ClientDTO.IdClient));
-                command.Parameters.Add(new OracleParameter(":idOutil", reservationDTO.OutilDTO.IdOutil));
-                command.Parameters.Add(new OracleParameter(":dateReservation", reservationDTO.DateReservation));
                 command.Parameters.Add(new OracleParameter(":dateLimite", reservationDTO.DateLimite));
                 command.Parameters.Add(new OracleParameter(":idReservation", reservationDTO.IdReservation));
             }
@@ -290,6 +290,7 @@ namespace CentreLocationOutils.dao.implementations
                         outilDTO.IdOutil = dataReader.GetString(3);
                         reservationDTO.ClientDTO = clientDTO;
                         reservationDTO.OutilDTO = outilDTO;
+                        reservations.Add(reservationDTO);
                     } while (dataReader.NextResult());
                 }
             }
@@ -342,6 +343,7 @@ namespace CentreLocationOutils.dao.implementations
                         outilDTO.IdOutil = dataReader.GetString(3);
                         reservationDTO.ClientDTO = clientDTO;
                         reservationDTO.OutilDTO = outilDTO;
+                        reservations.Add(reservationDTO);
                     } while (dataReader.NextResult());
                 }
             }
