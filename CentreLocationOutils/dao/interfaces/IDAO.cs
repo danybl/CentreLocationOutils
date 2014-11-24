@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using CentreLocationOutils.db;
 using CentreLocationOutils.dto;
-using CentreLocationOutils.db;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace CentreLocationOutils.dao.interfaces

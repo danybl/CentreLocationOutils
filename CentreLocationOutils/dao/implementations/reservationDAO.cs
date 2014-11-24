@@ -8,9 +8,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.OracleClient;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace CentreLocationOutils.dao.implementations
 {
