@@ -13,7 +13,7 @@ namespace CentreLocationOutils.dao.implementations
 {
     public class LocationDAO : DAO, CentreLocationOutils.dao.interfaces.ILocationDAO
     {
-         private static const String CREATE_PRIMARY_KEY = "SELECT SEQ_ID_LOCATION.NEXTVAL "
+         private static const String CREATE_PRIMARY_KEY = "SELECT SEQ_LOCATION_ID.NEXTVAL "
         + "FROM DUAL";
 
          private static const String ADD_REQUEST = "INSERT INTO location (idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour) "

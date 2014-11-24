@@ -8,7 +8,7 @@ using CentreLocationOutils.db;
 
 namespace CentreLocationOutils.dao.interfaces
 {
-    public class IFacturationDAO : IDAO
+    public interface IFacturationDAO : IDAO
     {
     }
 }

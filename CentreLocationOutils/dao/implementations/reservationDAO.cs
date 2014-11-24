@@ -14,7 +14,7 @@ namespace CentreLocationOutils.dao.implementations
 {
     public class ReservationDAO : DAO, IReservationDAO
     {
-        private static const String CREATE_PRIMARY_KEY = "SELECT SEQ_ID_RESERVATION.NEXTVAL "
+        private static const String CREATE_PRIMARY_KEY = "SELECT SEQ_RESERVATION_ID.NEXTVAL "
         + "FROM DUAL";
 
         private static const String ADD_REQUEST = "INSERT INTO reservation (idReservation, idClient, idOutil, dateReservation, dateLimite) "

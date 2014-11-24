@@ -5,10 +5,11 @@ using System.Text;
 
 namespace CentreLocationOutils.dto
 {
-    class FacturationDTO
+    public class FacturationDTO
     {
         public string IdFacturation { get; set; }
-        public string IdEmploye { get; set; }
+        public EmployeDTO EmployerDTO { get; set; }
+        public LocationDTO LocationDTO { get; set; }
         public string CoutTotal { get; set; }
     }
 }
