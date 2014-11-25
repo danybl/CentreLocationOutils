@@ -71,6 +71,7 @@
     <Compile Include="dao\implementations\OutilDAO.cs" />
     <Compile Include="dao\implementations\PaiementDAO.cs" />
     <Compile Include="dao\implementations\ReservationDAO.cs" />
+    <Compile Include="service\implementations\Service.cs" />
     <Compile Include="dao\interfaces\IAdresseDAO.cs" />
     <Compile Include="dao\interfaces\ICategorieDAO.cs" />
     <Compile Include="dao\interfaces\IClientDAO.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="dao\interfaces\IOutilDAO.cs" />
     <Compile Include="dao\interfaces\IPaiementDAO.cs" />
     <Compile Include="dao\interfaces\IReservationDAO.cs" />
+    <Compile Include="service\interfaces\IService.cs" />
     <Compile Include="db\Connection.cs" />
     <Compile Include="dto\AdresseDTO.cs" />
     <Compile Include="dto\CategorieDTO.cs" />
