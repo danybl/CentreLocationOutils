@@ -1,4 +1,5 @@
-﻿using CentreLocationOutils.db;
+﻿using CentreLocationOutils.dao.interfaces;
+using CentreLocationOutils.db;
 using CentreLocationOutils.dto;
 using CentreLocationOutils.exception.dao;
 using CentreLocationOutils.exception.dto;
@@ -11,27 +12,27 @@ using System.Runtime.Serialization;
 
 namespace CentreLocationOutils.dao.implementations
 {
-    public class ClientDAO : CentreLocationOutils.dao.implementations.DAO, CentreLocationOutils.dao.interfaces.IClientDAO
+    public class ClientDAO : DAO, IClientDAO
     {
 
-        private static const string ADD_REQUEST = "INSERT INTO Client (idClient, nom, prenom, telephone, email, dateInscription) "
-       + "VALUES (:idClient, :nom, :prenom, :telephone, :email, :dateInscription)";
+        private static const string ADD_REQUEST = "INSERT INTO Client (idClient, nom, prenom, telephone, email, dateInscription, nbLocations, limiteLocations) "
+       + "VALUES (:idClient, :nom, :prenom, :telephone, :email, :dateInscription, :nbLocations, :limiteLocations)";
 
-        private static const string READ_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
+        private static const string READ_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription, nbLocations, limiteLocations "
             + "FROM client "
             + "WHERE idClient = :idClient";
 
         private static const string UPDATE_REQUEST = "UPDATE client "
-            + "SET nom = :nom, prenom = :prenom, telephone = :telephone, email = :email "
+            + "SET nom = :nom, prenom = :prenom, telephone = :telephone, email = :email, nbLocations = :nbLocations, limiteLocations = :limiteLocations "
             + "WHERE idClient = :idClient";
 
         private static const string DELETE_REQUEST = "DELETE FROM client "
             + "WHERE idClient = :idClient";
 
-        private static const string GET_ALL_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
+        private static const string GET_ALL_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription, nbLocations, limiteLocations "
             + "FROM client";
 
-        private static const string FIND_BY_NOM = "SELECT idClient, nom, prenom, telephone, email, dateInscription "
+        private static const string FIND_BY_NOM = "SELECT idClient, nom, prenom, telephone, email, dateInscription, nbLocations, limiteLocations "
             + "FROM client "
             + "where nom like :nom";
 
@@ -82,7 +83,9 @@ namespace CentreLocationOutils.dao.implementations
                 command.Parameters.Add(new OracleParameter(":prenom", clientDTO.Prenom));
                 command.Parameters.Add(new OracleParameter(":telephone", clientDTO.Telephone));
                 command.Parameters.Add(new OracleParameter(":email", clientDTO.Email));
-                command.Parameters.Add(new OracleParameter("idClient", clientDTO.IdClient));
+                command.Parameters.Add(new OracleParameter("dateInscription", clientDTO.DateInscription));
+                command.Parameters.Add(new OracleParameter("nbLocations", clientDTO.NbLocations));
+                command.Parameters.Add(new OracleParameter("limiteLocations", clientDTO.LimiteLocations));
 
                 command.ExecuteNonQuery();
             }
@@ -123,6 +126,8 @@ namespace CentreLocationOutils.dao.implementations
                     clientDTO.Telephone = dataReader.GetString(4);
                     clientDTO.Email = dataReader.GetString(5);
                     clientDTO.DateInscription = dataReader.GetDateTime(6);
+                    clientDTO.NbLocations = dataReader.GetString(7);
+                    clientDTO.LimiteLocations = dataReader.GetString(8);
 
                 }
             }
@@ -161,6 +166,8 @@ namespace CentreLocationOutils.dao.implementations
                 command.Parameters.Add(new OracleParameter(":telephone", clientDTO.Telephone));
                 command.Parameters.Add(new OracleParameter(":email", clientDTO.Email));
                 command.Parameters.Add(new OracleParameter(":dateInscription", clientDTO.DateInscription));
+                command.Parameters.Add(new OracleParameter("nbLocations", clientDTO.NbLocations));
+                command.Parameters.Add(new OracleParameter("limiteLocations", clientDTO.LimiteLocations));
                 command.Parameters.Add(new OracleParameter("idClient", clientDTO.IdClient));
 
                 command.ExecuteNonQuery();
@@ -238,6 +245,8 @@ namespace CentreLocationOutils.dao.implementations
                         clientDTO.Telephone = dataReader.GetString(4);
                         clientDTO.Email = dataReader.GetString(5);
                         clientDTO.DateInscription = dataReader.GetDateTime(6);
+                        clientDTO.NbLocations = dataReader.GetString(7);
+                        clientDTO.LimiteLocations = dataReader.GetString(8);
                         clients.Add(clientDTO);
                     }
                     while (dataReader.NextResult());
@@ -288,6 +297,8 @@ namespace CentreLocationOutils.dao.implementations
                         clientDTO.Telephone = dataReader.GetString(4);
                         clientDTO.Email = dataReader.GetString(5);
                         clientDTO.DateInscription = dataReader.GetDateTime(6);
+                        clientDTO.NbLocations = dataReader.GetString(7);
+                        clientDTO.LimiteLocations = dataReader.GetString(8);
                         clients.Add(clientDTO);
                     }
                     while (dataReader.NextResult());

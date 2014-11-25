@@ -16,7 +16,8 @@ namespace CentreLocationOutils.dto
         public string Telephone{get;set;}
         public string Email { get; set; }
         public DateTime DateInscription { get; set; }
-
+        public string NbLocations { get; set; }
+        public string LimiteLocations { get; set; }
 
 
     //    public bool equals(Object obj) {
