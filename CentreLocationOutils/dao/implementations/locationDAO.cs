@@ -155,6 +155,8 @@ namespace CentreLocationOutils.dao.implementations
                 command.CommandType = CommandType.Text;
                 command.Parameters.Add(new OracleParameter(":dateLimite", locationDTO.DateLimite));
                 command.Parameters.Add(new OracleParameter(":idLocation", locationDTO.IdLocation));
+
+                command.ExecuteNonQuery();
             }
             catch (DbException dbException)
             {
@@ -188,6 +190,7 @@ namespace CentreLocationOutils.dao.implementations
                 command.CommandText = LocationDAO.DELETE_REQUEST;
                 command.Parameters.Add(new OracleParameter(":idLocation", locationDTO.IdLocation));
 
+                command.ExecuteNonQuery();
             }
             catch (DbException dbException)
             {

@@ -161,6 +161,8 @@ namespace CentreLocationOutils.dao.implementations
                 command.CommandText = ReservationDAO.UPDATE_REQUEST;
                 command.Parameters.Add(new OracleParameter(":dateLimite", reservationDTO.DateLimite));
                 command.Parameters.Add(new OracleParameter(":idReservation", reservationDTO.IdReservation));
+
+                command.ExecuteNonQuery();
             }
             catch (DbException dbException)
             {
@@ -193,7 +195,7 @@ namespace CentreLocationOutils.dao.implementations
                 command.CommandType = CommandType.Text;
                 command.CommandText = ReservationDAO.DELETE_REQUEST;
                 command.Parameters.Add(new OracleParameter(":idReservation", reservationDTO.IdReservation));
-
+                command.ExecuteNonQuery();
             }
             catch (DbException dbException)
             {

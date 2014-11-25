@@ -137,6 +137,8 @@ namespace CentreLocationOutils.dao.implementations
                 command.Parameters.Add(new OracleParameter(":nom", categorieDTO.Nom));
                 command.Parameters.Add(new OracleParameter(":description", categorieDTO.Description));
                 command.Parameters.Add(new OracleParameter(":idCategorie", categorieDTO.IdCategorie));
+
+                command.ExecuteNonQuery();
             }
             catch (DbException dbException)
             {
@@ -170,6 +172,7 @@ namespace CentreLocationOutils.dao.implementations
                 command.CommandText = CategorieDAO.DELETE_REQUEST;
                 command.Parameters.Add(new OracleParameter(":idCategorie", categorieDTO.IdCategorie));
 
+                command.ExecuteNonQuery();
             }
             catch (DbException dbException)
             {

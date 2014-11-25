@@ -148,6 +148,8 @@ namespace CentreLocationOutils.dao.implementations
                 command.Parameters.Add(new OracleParameter(":email", employeDTO.Email));
                 command.Parameters.Add(new OracleParameter(":dateRecrutement", employeDTO.DateRecrutement));
                 command.Parameters.Add(new OracleParameter("idEmploye", employeDTO.IdEmploye));
+
+                command.ExecuteNonQuery();
             }
             catch (DbException dbException)
             {
@@ -180,6 +182,8 @@ namespace CentreLocationOutils.dao.implementations
                 command.CommandType = CommandType.Text;
                 command.CommandText = EmployeDAO.DELETE_REQUEST;
                 command.Parameters.Add(new OracleParameter(":idEmploye", employeDTO.IdEmploye));
+
+                command.ExecuteNonQuery();
 
             }
             catch (DbException dbException)

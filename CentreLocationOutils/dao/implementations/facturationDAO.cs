@@ -150,6 +150,8 @@ namespace CentreLocationOutils.dao.implementations
                 command.Parameters.Add(new OracleParameter(":idEmploye", facturationDTO.IdFacturation));
                 command.Parameters.Add(new OracleParameter(":idLocation", facturationDTO.LocationDTO.IdLocation));
                 command.Parameters.Add(new OracleParameter(":coutTotal", facturationDTO.CoutTotal));
+
+                command.ExecuteNonQuery();
             }
             catch (DbException dbException)
             {
@@ -183,6 +185,7 @@ namespace CentreLocationOutils.dao.implementations
                 command.CommandText = FacturationDAO.DELETE_REQUEST;
                 command.Parameters.Add(new OracleParameter(":idFacturation", facturationDTO.IdFacturation));
 
+                command.ExecuteNonQuery();
             }
             catch (DbException dbException)
             {

@@ -147,6 +147,8 @@ namespace CentreLocationOutils.dao.implementations
                 command.Parameters.Add(new OracleParameter(":prixLocation", outilDTO.PrixLocation));
                 command.Parameters.Add(new OracleParameter(":description", outilDTO.Description));
                 command.Parameters.Add(new OracleParameter(":idOutil", outilDTO.IdOutil));
+
+                command.ExecuteNonQuery();
             }
             catch (DbException dbException)
             {
@@ -179,6 +181,7 @@ namespace CentreLocationOutils.dao.implementations
                 command.CommandText = OutilDAO.DELETE_REQUEST;
                 command.Parameters.Add(new OracleParameter(":idOutil", outilDTO.IdOutil));
 
+                command.ExecuteNonQuery();
             }
             catch (DbException dbException)
             {

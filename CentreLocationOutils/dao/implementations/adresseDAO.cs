@@ -135,13 +135,47 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         /// <inheritdoc />
-        public override void update(Connection connexion, DTO dto)
+        public override void update(Connection connection, AdresseDTO adresseDTO)
         {
-            throw new NotImplementedException();
+            if (connection == null)
+            {
+                //throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (adresseDTO == null)
+            {
+                throw new InvalidDTOException("Le DTO ne peut être null");
+            }
+            //if (!dto.GetType().Equals(getDtoClass()))
+            //{
+            //    throw new InvalidDTOClassException("Le DTO doit être un "
+            //        + getDtoClass().getName());
+            //}
+            //EmployeDTO employeDTO = (EmployeDTO)dto;
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = AdresseDAO.UPDATE_REQUEST;
+                command.Parameters.Add(new OracleParameter(":numero", adresseDTO.Numero));
+                command.Parameters.Add(new OracleParameter(":rue", adresseDTO.Rue));
+                command.Parameters.Add(new OracleParameter(":appartement", adresseDTO.Appartement));
+                command.Parameters.Add(new OracleParameter(":codePostal", adresseDTO.CodePostal));
+                command.Parameters.Add(new OracleParameter(":ville", adresseDTO.Ville));
+                command.Parameters.Add(new OracleParameter(":province", adresseDTO.Province));
+                command.Parameters.Add(new OracleParameter(":pays", adresseDTO.Pays));
+
+                command.Parameters.Add(new OracleParameter(":idAdresse", adresseDTO.IdAdresse));
+
+                command.ExecuteNonQuery();
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
         }
 
         /// <inheritdoc />
-        public void delete(Connection connexion, DTO dto)
+        public override void delete(Connection connexion, DTO dto)
         {
             throw new NotImplementedException();
         }

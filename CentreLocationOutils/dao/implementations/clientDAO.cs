@@ -162,6 +162,8 @@ namespace CentreLocationOutils.dao.implementations
                 command.Parameters.Add(new OracleParameter(":email", clientDTO.Email));
                 command.Parameters.Add(new OracleParameter(":dateInscription", clientDTO.DateInscription));
                 command.Parameters.Add(new OracleParameter("idClient", clientDTO.IdClient));
+
+                command.ExecuteNonQuery();
             }
             catch (DbException dbException)
             {
