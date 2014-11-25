@@ -103,7 +103,7 @@
     <Compile Include="exception\dao\InvalidCriterionException.cs" />
     <Compile Include="exception\service\InvalidDAOException.cs" />
     <Compile Include="exception\dto\InvalidDTOException.cs" />
-    <Compile Include="exception\dao\InvalidHibernateSessionException.cs" />
+    <Compile Include="exception\dao\InvalidConnectionException.cs" />
     <Compile Include="exception\service\InvalidLoanLimitException.cs" />
     <Compile Include="exception\dao\InvalidPrimaryKeyException.cs" />
     <Compile Include="exception\dao\InvalidPrimaryKeyRequestException.cs" />

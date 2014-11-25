@@ -50,7 +50,7 @@ namespace CentreLocationOutils.dao.implementations
         {
             if (connection == null)
             {
-                // throw new InvalidHibernateSessionException("La connexion ne peut être null");
+                throw new InvalidConnectionException("La connexion ne peut être null");
             }
             if (locationDTO == null)
             {
@@ -90,7 +90,7 @@ namespace CentreLocationOutils.dao.implementations
         {
             if (connection == null)
             {
-                // throw new InvalidHibernateSessionException("La connexion ne peut être null");
+                throw new InvalidConnectionException("La connexion ne peut être null");
             }
             if (primaryKey == null)
             {
@@ -259,7 +259,7 @@ namespace CentreLocationOutils.dao.implementations
 
             if (connection == null)
             {
-                throw new InvalidHibernateSessionException("La connexion ne peut être null");
+                throw new InvalidConnectionException("La connexion ne peut être null");
             }
             if (idClient == null)
             {
@@ -316,7 +316,7 @@ namespace CentreLocationOutils.dao.implementations
 
             if (connection == null)
             {
-                throw new InvalidHibernateSessionException("La connexion ne peut être null");
+                throw new InvalidConnectionException("La connexion ne peut être null");
             }
             if (idClient == null)
             {

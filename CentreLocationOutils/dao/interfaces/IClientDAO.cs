@@ -13,7 +13,7 @@ namespace CentreLocationOutils.dao.interfaces
 
      
      ///<summary>Trouve les clients à partir d'un nom. La liste est classée par ordre croissant sur <code>sortByPropertyName</code>. Si aucun client
-     ///n'est trouvé, une {@link List} vide est retournée.</summary>>
+     ///n'est trouvé, une liste vide est retournée.</summary>>
      /// <param name="connection">La connexion à utiliser</param>
      ///<param name="nom">Le nom à trouver</param>
      ///<param name="sortByPropertyName">The nom de la propriété à utiliser pour classer</param>
