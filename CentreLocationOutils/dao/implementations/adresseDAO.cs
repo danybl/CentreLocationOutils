@@ -175,9 +175,35 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         /// <inheritdoc />
-        public override void delete(Connection connexion, DTO dto)
+        public override void delete(Connection connection, AdresseDTO adresseDTO)
         {
-            throw new NotImplementedException();
+            if (connection == null)
+            {
+                //throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (adresseDTO == null)
+            {
+                throw new InvalidDTOException("Le DTO ne peut être null");
+            }
+            //if (!dto.GetType().Equals(getDtoClass()))
+            //{
+            //    throw new InvalidDTOClassException("Le DTO doit être un "
+            //        + getDtoClass().getName());
+            //}
+            // EmployeDTO employeDTO = (EmployeDTO)dto;
+
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = AdresseDAO.DELETE_REQUEST;
+                command.Parameters.Add(new OracleParameter(":idAdresse", adresseDTO.IdAdresse));
+                command.ExecuteNonQuery();
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
         }
 
         /// <inheritdoc />
