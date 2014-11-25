@@ -29,7 +29,7 @@ namespace CentreLocationOutils.dao.implementations
             + "WHERE idReservation = :idReservation";
 
         private static const String DELETE_REQUEST = "DELETE FROM reservation "
-            + "WHERE idReservation = ?";
+            + "WHERE idReservation = :idReservation";
 
         private static const String GET_ALL_REQUEST = "SELECT idReservation, idClient, idOutil, dateReservation "
             + "FROM reservation";
@@ -49,8 +49,13 @@ namespace CentreLocationOutils.dao.implementations
         /// <param name="reservationDTOClass">La classe de réservationDTO à utiliser</param>
         public ReservationDAO(ReservationDTO reservationDTOClass) : base(reservationDTOClass) { }
 
+        private static String getPrimaryKey(Connection connection) {
+        return DAO.getPrimaryKey(connection,
+            ReservationDAO.CREATE_PRIMARY_KEY);
+    }
+
         /// <inheritdoc />
-        public void add(Connection connection,
+        public override void add(Connection connection,
         ReservationDTO reservationDTO)
         {
             if (connection == null)
@@ -88,7 +93,7 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         /// <inheritdoc />
-        public ReservationDTO get(Connection connection,
+        public override ReservationDTO get(Connection connection,
         ISerializable primaryKey)
         {
             if (connection == null)
@@ -132,7 +137,7 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         /// <inheritdoc />
-        public void update(Connection connection,
+        public override void update(Connection connection,
         ReservationDTO reservationDTO)
         {
             if (connection == null)
@@ -164,7 +169,7 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         /// <inheritdoc />
-        public void delete(Connection connection,
+        public override void delete(Connection connection,
         ReservationDTO reservationDTO)
         {
             if (connection == null)
@@ -197,7 +202,7 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         /// <inheritdoc />
-        public List<ReservationDTO> getAll(Connection connection,
+        public override List<ReservationDTO> getAll(Connection connection,
         string sortByPropertyName)
         {
             if (connection == null)
@@ -247,7 +252,7 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         /// <inheritdoc />
-        public List<ReservationDTO> findByClient(Connection connection,
+        public override List<ReservationDTO> findByClient(Connection connection,
         String idClient,
         String sortByPropertyName)
         {

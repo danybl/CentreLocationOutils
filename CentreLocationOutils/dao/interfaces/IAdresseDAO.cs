@@ -7,7 +7,7 @@ using CentreLocationOutils.dto;
 
 namespace CentreLocationOutils.dao.interfaces
 {
-    public interface IAdresseDAO
+    public interface IAdresseDAO : IDAO
     {
     }
 }
