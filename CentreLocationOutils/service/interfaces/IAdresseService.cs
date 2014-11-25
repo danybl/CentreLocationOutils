@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CentreLocationOutils.dao.interfaces;
 
 namespace CentreLocationOutils.service.interfaces
 {
-    class IAdresseService
+    /// <summary>
+    /// 
+    /// </summary>
+    public interface IAdresseService : IService
     {
     }
 }
