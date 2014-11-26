@@ -48,28 +48,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="accueil.cs">
+    <Compile Include="forms\accueil.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="accueil.Designer.cs">
       <DependentUpon>accueil.cs</DependentUpon>
     </Compile>
-    <Compile Include="ajoutClientForm.cs">
+    <Compile Include="forms\ajoutClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ajoutClientForm.Designer.cs">
+    <Compile Include="forms\ajoutClientForm.Designer.cs">
       <DependentUpon>ajoutClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AjoutOutilForm.cs">
+    <Compile Include="forms\AjoutOutilForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AjoutOutilForm.Designer.cs">
+    <Compile Include="forms\AjoutOutilForm.Designer.cs">
       <DependentUpon>AjoutOutilForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ConnexionForm.cs">
+    <Compile Include="forms\ConnexionForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConnexionForm.Designer.cs">
+    <Compile Include="forms\ConnexionForm.Designer.cs">
       <DependentUpon>ConnexionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Constants.cs" />
@@ -85,28 +85,28 @@
     <Compile Include="dao\implementations\OutilDAO.cs" />
     <Compile Include="dao\implementations\ReservationDAO.cs" />
     <Compile Include="dto\Client_AdresseDTO.cs" />
-    <Compile Include="modifierClientForm.cs">
+    <Compile Include="forms\modifierClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modifierClientForm.Designer.cs">
+    <Compile Include="forms\modifierClientForm.Designer.cs">
       <DependentUpon>modifierClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifierOutilForm.cs">
+    <Compile Include="forms\ModifierOutilForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModifierOutilForm.Designer.cs">
+    <Compile Include="forms\ModifierOutilForm.Designer.cs">
       <DependentUpon>ModifierOutilForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="rechercherClientForm.cs">
+    <Compile Include="forms\rechercherClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rechercherClientForm.Designer.cs">
+    <Compile Include="forms\rechercherClientForm.Designer.cs">
       <DependentUpon>rechercherClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="rechercherOutilForm.cs">
+    <Compile Include="forms\rechercherOutilForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="rechercherOutilForm.Designer.cs">
+    <Compile Include="forms\rechercherOutilForm.Designer.cs">
       <DependentUpon>rechercherOutilForm.cs</DependentUpon>
     </Compile>
     <Compile Include="service\implementations\Service.cs" />
@@ -195,22 +195,22 @@
     <Compile Include="util\CentreCreateur.cs" />
     <Compile Include="util\CentreLocationOutilsCreateur.cs" />
     <Compile Include="util\FormatteurDate.cs" />
-    <EmbeddedResource Include="accueil.resx">
+    <EmbeddedResource Include="forms\accueil.resx">
       <DependentUpon>accueil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ajoutClientForm.resx">
+    <EmbeddedResource Include="forms\ajoutClientForm.resx">
       <DependentUpon>ajoutClientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AjoutOutilForm.resx">
+    <EmbeddedResource Include="forms\AjoutOutilForm.resx">
       <DependentUpon>AjoutOutilForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ConnexionForm.resx">
+    <EmbeddedResource Include="forms\ConnexionForm.resx">
       <DependentUpon>ConnexionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modifierClientForm.resx">
+    <EmbeddedResource Include="forms\modifierClientForm.resx">
       <DependentUpon>modifierClientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModifierOutilForm.resx">
+    <EmbeddedResource Include="forms\ModifierOutilForm.resx">
       <DependentUpon>ModifierOutilForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -222,10 +222,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="rechercherClientForm.resx">
+    <EmbeddedResource Include="forms\rechercherClientForm.resx">
       <DependentUpon>rechercherClientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rechercherOutilForm.resx">
+    <EmbeddedResource Include="forms\rechercherOutilForm.resx">
       <DependentUpon>rechercherOutilForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
