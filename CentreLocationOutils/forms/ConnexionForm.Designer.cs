@@ -47,7 +47,7 @@
             this.ClientSize = new System.Drawing.Size(284, 222);
             this.Controls.Add(this.connexionControl1);
             this.Name = "ConnexionForm";
-            this.Text = "ConnexionForm";
+            this.Text = "Connectez-vous!";
             this.ResumeLayout(false);
 
         }
