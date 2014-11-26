@@ -12,7 +12,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// </summary>
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="dto">Le DTO à ajouter</param>
-        void add(Connection connection,
+        public virtual void add(Connection connection,
             DTO dto);
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// <param name="connection">La connection ;a utiliser</param>
         /// <param name="primaryKey">La clé primaire du DTO à lire</param>
         /// <returns>Le DTO à retourner</returns>
-        DTO get(Connection connection,
+        public virtual DTO get(Connection connection,
             ISerializable primaryKey);
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace CentreLocationOutils.dao.interfaces
     /// </summary>
     /// <param name="connection">La connection à utiliser</param>
     /// <param name="dto">Le DTO à mettre à jour</param>
-    void update(Connection connection,
+    public virtual void update(Connection connection,
         DTO dto);
 
     /// <summary>
@@ -37,7 +37,7 @@ namespace CentreLocationOutils.dao.interfaces
     /// </summary>
     /// <param name="connection">La connection à utiliser</param>
     /// <param name="dto">Le DTO à supprimer</param>
-    void delete(Connection connection,
+    public virtual void delete(Connection connection,
         DTO dto);
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="sortByPropertyName">Le nom de la propriété à uriliser pour classer la liste</param>
         /// <returns>La liste de tous les DTOs</returns>
-        List<dynamic> getAll(Connection connection,
+       public virtual List<dynamic> getAll(Connection connection,
         string sortByPropertyName);
 
     }

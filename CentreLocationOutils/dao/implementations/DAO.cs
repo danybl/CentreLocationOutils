@@ -31,7 +31,7 @@ namespace CentreLocationOutils.dao.implementations
             this.dtoClass = dtoClass;
         }
 
-        protected static String getPrimaryKey(Connection connection,
+        protected static string getPrimaryKey(Connection connection,
         string createPrimaryKeyRequest)
         {
             if (connection == null)

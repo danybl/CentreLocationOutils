@@ -19,7 +19,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="employeDTO"></param>
-        public void add(Connection connection,
+        public virtual void add(Connection connection,
         EmployeDTO employeDTO);
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection"></param>
         /// <param name="primaryKey"></param>
         /// <returns></returns>
-        public EmployeDTO get(Connection connection,
+        public virtual EmployeDTO get(Connection connection,
         string primaryKey);
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="employeDTO"></param>
-        public void update(Connection connection,
+        public virtual void update(Connection connection,
         EmployeDTO employeDTO);
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="employeDTO"></param>
-        public void delete(Connection connection,
+        public virtual void delete(Connection connection,
         EmployeDTO employeDTO);
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        public List<EmployeDTO> getAll(Connection connection,
+        public virtual List<EmployeDTO> getAll(Connection connection,
         string sortByPropertyName);
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="nom"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        public List<EmployeDTO> findByNom(Connection connection, string nom,
+        public virtual List<EmployeDTO> findByNom(Connection connection, string nom,
         string sortByPropertyName);
     }
 }

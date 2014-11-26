@@ -50,9 +50,9 @@ namespace CentreLocationOutils.service.implementations
     }
 
     public override EmployeDTO getEmploye(Connection connection,
-        String idEmploye)  {
+        string idEmploye)  {
         try {
-            return (EmployeDTO) getEmployeDAO().get(connection,
+            return getEmployeDAO().get(connection,
                 idEmploye);
         } catch(DAOException daoException) {
             throw new ServiceException(daoException.Message);
@@ -80,7 +80,7 @@ namespace CentreLocationOutils.service.implementations
     }
 
     public List<EmployeDTO> getAllEmployes(Connection connection,
-        String sortByPropertyName) {
+        string sortByPropertyName) {
         try {
             return (List<EmployeDTO>) getEmployeDAO().getAll(connection,
                 sortByPropertyName);
