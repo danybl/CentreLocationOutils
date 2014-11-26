@@ -85,7 +85,7 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         /// <inheritdoc />
-        public ClientDTO get(Connection connection,
+        public Client_AdresseDTO get(Connection connection,
         ISerializable primaryKey)
         {
             if (connection == null)
@@ -97,7 +97,7 @@ namespace CentreLocationOutils.dao.implementations
                 throw new InvalidPrimaryKeyException("La clef primaire ne peut être null");
             }
             string idClient = primaryKey.ToString();
-            ClientDTO clientDTO = null;
+            Client_AdresseDTO client_AdresseDTO = null;
             try
             {
                 DbCommand command = connection.getConnection().CreateCommand();
@@ -108,15 +108,9 @@ namespace CentreLocationOutils.dao.implementations
                 DbDataReader dataReader = command.ExecuteReader();
                 if (dataReader.NextResult())
                 {
-                    clientDTO = new ClientDTO();
-                    clientDTO.IdClient = dataReader.GetString(1);
-                    clientDTO.Nom = dataReader.GetString(2);
-                    clientDTO.Prenom = dataReader.GetString(3);
-                    clientDTO.Telephone = dataReader.GetString(4);
-                    clientDTO.Email = dataReader.GetString(5);
-                    clientDTO.DateInscription = dataReader.GetDateTime(6);
-                    clientDTO.NbLocations = dataReader.GetString(7);
-                    clientDTO.LimiteLocations = dataReader.GetString(8);
+                    client_AdresseDTO = new Client_AdresseDTO();
+                    client_AdresseDTO.IdClient = dataReader.GetString(1);
+                    client_AdresseDTO.IdAdresse = dataReader.GetString(2);
 
                 }
             }
@@ -124,58 +118,58 @@ namespace CentreLocationOutils.dao.implementations
             {
                 throw new DAOException(dbException);
             }
-            return clientDTO;
+            return client_AdresseDTO;
         }
 
         /// <inheritdoc />
-        public void update(Connection connection,
-        ClientDTO clientDTO)
-        {
-            if (connection == null)
-            {
-                throw new InvalidConnectionException("La connexion ne peut être null");
-            }
-            if (clientDTO == null)
-            {
-                throw new InvalidDTOException("Le DTO ne peut être null");
-            }
-            //if (!dto.GetType().Equals(getDtoClass()))
-            //{
-            //    throw new InvalidDTOClassException("Le DTO doit être un "
-            //        + getDtoClass().getName());
-            //}
-            //ClientDTO clientDTO = (ClientDTO)dto;
-            try
-            {
-                DbCommand command = connection.getConnection().CreateCommand();
-                command.CommandType = CommandType.Text;
-                command.CommandText = ClientDAO.UPDATE_REQUEST;
-                command.Parameters.Add(new OracleParameter(":nom", clientDTO.Nom));
-                command.Parameters.Add(new OracleParameter(":prenom", clientDTO.Prenom));
-                command.Parameters.Add(new OracleParameter(":telephone", clientDTO.Telephone));
-                command.Parameters.Add(new OracleParameter(":email", clientDTO.Email));
-                command.Parameters.Add(new OracleParameter(":dateInscription", clientDTO.DateInscription));
-                command.Parameters.Add(new OracleParameter("nbLocations", clientDTO.NbLocations));
-                command.Parameters.Add(new OracleParameter("limiteLocations", clientDTO.LimiteLocations));
-                command.Parameters.Add(new OracleParameter("idClient", clientDTO.IdClient));
+        //public void update(Connection connection,
+        //ClientDTO clientDTO)
+        //{
+        //    if (connection == null)
+        //    {
+        //        throw new InvalidConnectionException("La connexion ne peut être null");
+        //    }
+        //    if (clientDTO == null)
+        //    {
+        //        throw new InvalidDTOException("Le DTO ne peut être null");
+        //    }
+        //    //if (!dto.GetType().Equals(getDtoClass()))
+        //    //{
+        //    //    throw new InvalidDTOClassException("Le DTO doit être un "
+        //    //        + getDtoClass().getName());
+        //    //}
+        //    //ClientDTO clientDTO = (ClientDTO)dto;
+        //    try
+        //    {
+        //        DbCommand command = connection.getConnection().CreateCommand();
+        //        command.CommandType = CommandType.Text;
+        //        command.CommandText = Client_AdresseDAO.UPDATE_REQUEST;
+        //        command.Parameters.Add(new OracleParameter(":nom", clientDTO.Nom));
+        //        command.Parameters.Add(new OracleParameter(":prenom", clientDTO.Prenom));
+        //        command.Parameters.Add(new OracleParameter(":telephone", clientDTO.Telephone));
+        //        command.Parameters.Add(new OracleParameter(":email", clientDTO.Email));
+        //        command.Parameters.Add(new OracleParameter(":dateInscription", clientDTO.DateInscription));
+        //        command.Parameters.Add(new OracleParameter("nbLocations", clientDTO.NbLocations));
+        //        command.Parameters.Add(new OracleParameter("limiteLocations", clientDTO.LimiteLocations));
+        //        command.Parameters.Add(new OracleParameter("idClient", clientDTO.IdClient));
 
-                command.ExecuteNonQuery();
-            }
-            catch (DbException dbException)
-            {
-                throw new DAOException(dbException);
-            }
-        }
+        //        command.ExecuteNonQuery();
+        //    }
+        //    catch (DbException dbException)
+        //    {
+        //        throw new DAOException(dbException);
+        //    }
+        //}
 
         /// <inheritdoc />
         public void delete(Connection connection,
-        ClientDTO clientDTO)
+        Client_AdresseDTO client_AdresseDTO)
         {
             if (connection == null)
             {
                 throw new InvalidConnectionException("La connexion ne peut être null");
             }
-            if (clientDTO == null)
+            if (client_AdresseDTO == null)
             {
                 throw new InvalidDTOException("Le DTO ne peut être null");
             }
@@ -190,8 +184,8 @@ namespace CentreLocationOutils.dao.implementations
             {
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = ClientDAO.DELETE_REQUEST;
-                command.Parameters.Add(new OracleParameter(":idClient", clientDTO.IdClient));
+                command.CommandText = Client_AdresseDAO.DELETE_REQUEST;
+                command.Parameters.Add(new OracleParameter(":idClient", client_AdresseDTO.IdClient));
 
             }
             catch (DbException dbException)
@@ -201,7 +195,7 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         /// <inheritdoc />
-        public List<ClientDTO> getAll(Connection connection,
+        public List<Client_AdresseDTO> getAll(Connection connection,
         string sortByPropertyName)
         {
             if (connection == null)
@@ -212,31 +206,26 @@ namespace CentreLocationOutils.dao.implementations
             {
                 throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
             }
-            List<ClientDTO> clients = new List<ClientDTO>();
+            List<Client_AdresseDTO> client_Adresses = new List<Client_AdresseDTO>();
 
             try
             {
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = ClientDAO.GET_ALL_REQUEST;
+                command.CommandText = Client_AdresseDAO.GET_ALL_REQUEST;
 
                 DbDataReader dataReader = command.ExecuteReader();
-                ClientDTO clientDTO = null;
+                Client_AdresseDTO client_AdresseDTO = null;
 
                 if (dataReader.NextResult())
                 {
-                    clientDTO = new ClientDTO();
+                    client_AdresseDTO = new Client_AdresseDTO();
                     do
                     {
-                        clientDTO.IdClient = dataReader.GetString(1);
-                        clientDTO.Nom = dataReader.GetString(2);
-                        clientDTO.Prenom = dataReader.GetString(3);
-                        clientDTO.Telephone = dataReader.GetString(4);
-                        clientDTO.Email = dataReader.GetString(5);
-                        clientDTO.DateInscription = dataReader.GetDateTime(6);
-                        clientDTO.NbLocations = dataReader.GetString(7);
-                        clientDTO.LimiteLocations = dataReader.GetString(8);
-                        clients.Add(clientDTO);
+                        client_AdresseDTO.IdClient = dataReader.GetString(1);
+                        client_AdresseDTO.IdAdresse = dataReader.GetString(2);
+
+                        client_Adresses.Add(client_AdresseDTO);
                     }
                     while (dataReader.NextResult());
                 }
@@ -245,60 +234,60 @@ namespace CentreLocationOutils.dao.implementations
             {
                 throw new DAOException(dbException);
             }
-            return clients;
+            return client_Adresses;
         }
 
-        /// <inheritdoc />
-        public List<ClientDTO> findByNom(Connection connection, string nom,
-        string sortByPropertyName)
-        {
-            if (connection == null)
-            {
-                throw new InvalidConnectionException("La connexion ne peut être null");
-            }
-            if (nom == null)
-            {
-                throw new InvalidCriterionException("Le nom ne peut être null");
-            }
-            if (sortByPropertyName == null)
-            {
-                throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
-            }
-            List<ClientDTO> clients = new List<ClientDTO>();
+        ///// <inheritdoc />
+        //public List<ClientDTO> findByNom(Connection connection, string nom,
+        //string sortByPropertyName)
+        //{
+        //    if (connection == null)
+        //    {
+        //        throw new InvalidConnectionException("La connexion ne peut être null");
+        //    }
+        //    if (nom == null)
+        //    {
+        //        throw new InvalidCriterionException("Le nom ne peut être null");
+        //    }
+        //    if (sortByPropertyName == null)
+        //    {
+        //        throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
+        //    }
+        //    List<ClientDTO> clients = new List<ClientDTO>();
 
-            try
-            {
-                DbCommand command = connection.getConnection().CreateCommand();
-                command.CommandType = CommandType.Text;
-                command.CommandText = ClientDAO.FIND_BY_NOM;
+        //    try
+        //    {
+        //        DbCommand command = connection.getConnection().CreateCommand();
+        //        command.CommandType = CommandType.Text;
+        //        command.CommandText = ClientDAO.FIND_BY_NOM;
 
-                DbDataReader dataReader = command.ExecuteReader();
-                ClientDTO clientDTO = null;
+        //        DbDataReader dataReader = command.ExecuteReader();
+        //        ClientDTO clientDTO = null;
 
-                if (dataReader.NextResult())
-                {
-                    clientDTO = new ClientDTO();
-                    do
-                    {
-                        clientDTO.IdClient = dataReader.GetString(1);
-                        clientDTO.Nom = dataReader.GetString(2);
-                        clientDTO.Prenom = dataReader.GetString(3);
-                        clientDTO.Telephone = dataReader.GetString(4);
-                        clientDTO.Email = dataReader.GetString(5);
-                        clientDTO.DateInscription = dataReader.GetDateTime(6);
-                        clientDTO.NbLocations = dataReader.GetString(7);
-                        clientDTO.LimiteLocations = dataReader.GetString(8);
-                        clients.Add(clientDTO);
-                    }
-                    while (dataReader.NextResult());
-                }
-            }
-            catch (DbException dbException)
-            {
-                throw new DAOException(dbException);
-            }
-            return clients;
-        }
+        //        if (dataReader.NextResult())
+        //        {
+        //            clientDTO = new ClientDTO();
+        //            do
+        //            {
+        //                clientDTO.IdClient = dataReader.GetString(1);
+        //                clientDTO.Nom = dataReader.GetString(2);
+        //                clientDTO.Prenom = dataReader.GetString(3);
+        //                clientDTO.Telephone = dataReader.GetString(4);
+        //                clientDTO.Email = dataReader.GetString(5);
+        //                clientDTO.DateInscription = dataReader.GetDateTime(6);
+        //                clientDTO.NbLocations = dataReader.GetString(7);
+        //                clientDTO.LimiteLocations = dataReader.GetString(8);
+        //                clients.Add(clientDTO);
+        //            }
+        //            while (dataReader.NextResult());
+        //        }
+        //    }
+        //    catch (DbException dbException)
+        //    {
+        //        throw new DAOException(dbException);
+        //    }
+        //    return clients;
+        //}
 
     }
 }
