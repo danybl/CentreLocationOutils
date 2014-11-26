@@ -929,6 +929,7 @@ namespace CentreLocationOutils
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "accueil";
+            this.Text = "Accueil";
             this.tabControl1.ResumeLayout(false);
             this.tpCreerLocation.ResumeLayout(false);
             this.tpCreerLocation.PerformLayout();
