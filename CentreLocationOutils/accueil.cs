@@ -22,7 +22,6 @@ namespace CentreLocationOutils
         private ToolStripMenuItem paramètresToolStripMenuItem;
         private ToolStripMenuItem àProposDeNousToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem2;
-        private TabPage tpRechercher;
         private TabPage tpCreerReservation;
         private TabPage tpGestionOutils;
         private ToolStripContainer toolStripContainer2;
@@ -66,6 +65,12 @@ namespace CentreLocationOutils
         private Button btnModifierClient;
         private Button btnAjouterClient;
         private DataGridView dataGridView1;
+        private SplitContainer splitContainer2;
+        private Button btnSupprimerOutil;
+        private Button btnModifierOutil;
+        private Button btnAjouterOutil;
+        private DataGridView dataGridView2;
+        private Button btnRechercherClient;
         private DataGridViewTextBoxColumn columnIdClient;
         private DataGridViewTextBoxColumn columnNomClient;
         private DataGridViewTextBoxColumn columnPrenomClient;
@@ -78,11 +83,7 @@ namespace CentreLocationOutils
         private DataGridViewTextBoxColumn columnVille;
         private DataGridViewTextBoxColumn columnProvince;
         private DataGridViewTextBoxColumn columnPays;
-        private SplitContainer splitContainer2;
-        private Button btnSupprimerOutil;
-        private Button btnModifierOutil;
-        private Button btnAjouterOutil;
-        private DataGridView dataGridView2;
+        private Button btnRechercherOutil3;
         private DataGridViewTextBoxColumn columIdOutil;
         private DataGridViewTextBoxColumn columnCategorie;
         private DataGridViewTextBoxColumn columnNom;
@@ -142,6 +143,23 @@ namespace CentreLocationOutils
             this.btnModifierClient = new System.Windows.Forms.Button();
             this.btnAjouterClient = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tpGestionOutils = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.btnSupprimerOutil = new System.Windows.Forms.Button();
+            this.btnModifierOutil = new System.Windows.Forms.Button();
+            this.btnAjouterOutil = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.accueilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.connexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deconnexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.àProposDeNousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.columnIdClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnNomClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPrenomClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -154,12 +172,6 @@ namespace CentreLocationOutils
             this.columnVille = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnProvince = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPays = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tpGestionOutils = new System.Windows.Forms.TabPage();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.btnSupprimerOutil = new System.Windows.Forms.Button();
-            this.btnModifierOutil = new System.Windows.Forms.Button();
-            this.btnAjouterOutil = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.columIdOutil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnCategorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -167,18 +179,8 @@ namespace CentreLocationOutils
             this.columnDateAcquisition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPrixLocationParJour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tpRechercher = new System.Windows.Forms.TabPage();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.accueilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.connexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deconnexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.àProposDeNousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
+            this.btnRechercherClient = new System.Windows.Forms.Button();
+            this.btnRechercherOutil3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpCreerLocation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDnbJours)).BeginInit();
@@ -206,7 +208,6 @@ namespace CentreLocationOutils
             this.tabControl1.Controls.Add(this.tpCreerReservation);
             this.tabControl1.Controls.Add(this.tpInfoClient);
             this.tabControl1.Controls.Add(this.tpGestionOutils);
-            this.tabControl1.Controls.Add(this.tpRechercher);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -584,6 +585,7 @@ namespace CentreLocationOutils
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnRechercherClient);
             this.splitContainer1.Panel1.Controls.Add(this.btnSupprimerClient);
             this.splitContainer1.Panel1.Controls.Add(this.btnModifierClient);
             this.splitContainer1.Panel1.Controls.Add(this.btnAjouterClient);
@@ -597,7 +599,7 @@ namespace CentreLocationOutils
             // 
             // btnSupprimerClient
             // 
-            this.btnSupprimerClient.Location = new System.Drawing.Point(82, 232);
+            this.btnSupprimerClient.Location = new System.Drawing.Point(88, 195);
             this.btnSupprimerClient.Name = "btnSupprimerClient";
             this.btnSupprimerClient.Size = new System.Drawing.Size(75, 23);
             this.btnSupprimerClient.TabIndex = 2;
@@ -606,7 +608,7 @@ namespace CentreLocationOutils
             // 
             // btnModifierClient
             // 
-            this.btnModifierClient.Location = new System.Drawing.Point(82, 163);
+            this.btnModifierClient.Location = new System.Drawing.Point(88, 126);
             this.btnModifierClient.Name = "btnModifierClient";
             this.btnModifierClient.Size = new System.Drawing.Size(75, 23);
             this.btnModifierClient.TabIndex = 1;
@@ -615,7 +617,7 @@ namespace CentreLocationOutils
             // 
             // btnAjouterClient
             // 
-            this.btnAjouterClient.Location = new System.Drawing.Point(82, 95);
+            this.btnAjouterClient.Location = new System.Drawing.Point(88, 58);
             this.btnAjouterClient.Name = "btnAjouterClient";
             this.btnAjouterClient.Size = new System.Drawing.Size(75, 23);
             this.btnAjouterClient.TabIndex = 0;
@@ -643,67 +645,6 @@ namespace CentreLocationOutils
             this.dataGridView1.Size = new System.Drawing.Size(499, 345);
             this.dataGridView1.TabIndex = 0;
             // 
-            // columnIdClient
-            // 
-            this.columnIdClient.HeaderText = "Id";
-            this.columnIdClient.Name = "columnIdClient";
-            this.columnIdClient.ReadOnly = true;
-            // 
-            // columnNomClient
-            // 
-            this.columnNomClient.HeaderText = "Nom";
-            this.columnNomClient.Name = "columnNomClient";
-            // 
-            // columnPrenomClient
-            // 
-            this.columnPrenomClient.HeaderText = "Prénom";
-            this.columnPrenomClient.Name = "columnPrenomClient";
-            // 
-            // columnTelephoneClient
-            // 
-            this.columnTelephoneClient.HeaderText = "Téléphone";
-            this.columnTelephoneClient.Name = "columnTelephoneClient";
-            // 
-            // columnEmail
-            // 
-            this.columnEmail.HeaderText = "Email";
-            this.columnEmail.Name = "columnEmail";
-            // 
-            // columnNumero
-            // 
-            this.columnNumero.HeaderText = "Numero";
-            this.columnNumero.Name = "columnNumero";
-            // 
-            // columnRue
-            // 
-            this.columnRue.HeaderText = "Rue";
-            this.columnRue.Name = "columnRue";
-            // 
-            // columnAppartement
-            // 
-            this.columnAppartement.HeaderText = "Appartement";
-            this.columnAppartement.Name = "columnAppartement";
-            // 
-            // columnCodePostal
-            // 
-            this.columnCodePostal.HeaderText = "Code Postal";
-            this.columnCodePostal.Name = "columnCodePostal";
-            // 
-            // columnVille
-            // 
-            this.columnVille.HeaderText = "Ville";
-            this.columnVille.Name = "columnVille";
-            // 
-            // columnProvince
-            // 
-            this.columnProvince.HeaderText = "Province";
-            this.columnProvince.Name = "columnProvince";
-            // 
-            // columnPays
-            // 
-            this.columnPays.HeaderText = "Pays";
-            this.columnPays.Name = "columnPays";
-            // 
             // tpGestionOutils
             // 
             this.tpGestionOutils.Controls.Add(this.splitContainer2);
@@ -722,6 +663,7 @@ namespace CentreLocationOutils
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.btnRechercherOutil3);
             this.splitContainer2.Panel1.Controls.Add(this.btnSupprimerOutil);
             this.splitContainer2.Panel1.Controls.Add(this.btnModifierOutil);
             this.splitContainer2.Panel1.Controls.Add(this.btnAjouterOutil);
@@ -735,7 +677,7 @@ namespace CentreLocationOutils
             // 
             // btnSupprimerOutil
             // 
-            this.btnSupprimerOutil.Location = new System.Drawing.Point(91, 260);
+            this.btnSupprimerOutil.Location = new System.Drawing.Point(86, 183);
             this.btnSupprimerOutil.Name = "btnSupprimerOutil";
             this.btnSupprimerOutil.Size = new System.Drawing.Size(75, 23);
             this.btnSupprimerOutil.TabIndex = 5;
@@ -744,7 +686,7 @@ namespace CentreLocationOutils
             // 
             // btnModifierOutil
             // 
-            this.btnModifierOutil.Location = new System.Drawing.Point(91, 191);
+            this.btnModifierOutil.Location = new System.Drawing.Point(86, 114);
             this.btnModifierOutil.Name = "btnModifierOutil";
             this.btnModifierOutil.Size = new System.Drawing.Size(75, 23);
             this.btnModifierOutil.TabIndex = 4;
@@ -753,7 +695,7 @@ namespace CentreLocationOutils
             // 
             // btnAjouterOutil
             // 
-            this.btnAjouterOutil.Location = new System.Drawing.Point(91, 123);
+            this.btnAjouterOutil.Location = new System.Drawing.Point(86, 46);
             this.btnAjouterOutil.Name = "btnAjouterOutil";
             this.btnAjouterOutil.Size = new System.Drawing.Size(75, 23);
             this.btnAjouterOutil.TabIndex = 3;
@@ -775,52 +717,6 @@ namespace CentreLocationOutils
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(502, 348);
             this.dataGridView2.TabIndex = 0;
-            // 
-            // columIdOutil
-            // 
-            this.columIdOutil.HeaderText = "Id ";
-            this.columIdOutil.Name = "columIdOutil";
-            this.columIdOutil.ReadOnly = true;
-            // 
-            // columnCategorie
-            // 
-            this.columnCategorie.HeaderText = "Catégorie";
-            this.columnCategorie.Name = "columnCategorie";
-            // 
-            // columnNom
-            // 
-            this.columnNom.HeaderText = "Nom";
-            this.columnNom.Name = "columnNom";
-            // 
-            // columnNumSerie
-            // 
-            this.columnNumSerie.HeaderText = "Numéro Série";
-            this.columnNumSerie.Name = "columnNumSerie";
-            // 
-            // columnDateAcquisition
-            // 
-            this.columnDateAcquisition.HeaderText = "Date Acquisition";
-            this.columnDateAcquisition.Name = "columnDateAcquisition";
-            this.columnDateAcquisition.ReadOnly = true;
-            // 
-            // columnPrixLocationParJour
-            // 
-            this.columnPrixLocationParJour.HeaderText = "Prix location /jour";
-            this.columnPrixLocationParJour.Name = "columnPrixLocationParJour";
-            // 
-            // columnDescription
-            // 
-            this.columnDescription.HeaderText = "Description";
-            this.columnDescription.Name = "columnDescription";
-            // 
-            // tpRechercher
-            // 
-            this.tpRechercher.Location = new System.Drawing.Point(4, 22);
-            this.tpRechercher.Name = "tpRechercher";
-            this.tpRechercher.Size = new System.Drawing.Size(768, 406);
-            this.tpRechercher.TabIndex = 6;
-            this.tpRechercher.Text = "Rechercher";
-            this.tpRechercher.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -909,6 +805,122 @@ namespace CentreLocationOutils
             this.toolStripContainer2.Size = new System.Drawing.Size(776, 398);
             this.toolStripContainer2.TabIndex = 2;
             this.toolStripContainer2.Text = "toolStripContainer2";
+            // 
+            // columnIdClient
+            // 
+            this.columnIdClient.HeaderText = "";
+            this.columnIdClient.Name = "columnIdClient";
+            this.columnIdClient.ReadOnly = true;
+            // 
+            // columnNomClient
+            // 
+            this.columnNomClient.HeaderText = "";
+            this.columnNomClient.Name = "columnNomClient";
+            // 
+            // columnPrenomClient
+            // 
+            this.columnPrenomClient.HeaderText = "";
+            this.columnPrenomClient.Name = "columnPrenomClient";
+            // 
+            // columnTelephoneClient
+            // 
+            this.columnTelephoneClient.HeaderText = "";
+            this.columnTelephoneClient.Name = "columnTelephoneClient";
+            // 
+            // columnEmail
+            // 
+            this.columnEmail.HeaderText = "";
+            this.columnEmail.Name = "columnEmail";
+            // 
+            // columnNumero
+            // 
+            this.columnNumero.HeaderText = "";
+            this.columnNumero.Name = "columnNumero";
+            // 
+            // columnRue
+            // 
+            this.columnRue.HeaderText = "";
+            this.columnRue.Name = "columnRue";
+            // 
+            // columnAppartement
+            // 
+            this.columnAppartement.HeaderText = "";
+            this.columnAppartement.Name = "columnAppartement";
+            // 
+            // columnCodePostal
+            // 
+            this.columnCodePostal.HeaderText = "";
+            this.columnCodePostal.Name = "columnCodePostal";
+            // 
+            // columnVille
+            // 
+            this.columnVille.HeaderText = "";
+            this.columnVille.Name = "columnVille";
+            // 
+            // columnProvince
+            // 
+            this.columnProvince.HeaderText = "";
+            this.columnProvince.Name = "columnProvince";
+            // 
+            // columnPays
+            // 
+            this.columnPays.HeaderText = "";
+            this.columnPays.Name = "columnPays";
+            // 
+            // columIdOutil
+            // 
+            this.columIdOutil.HeaderText = "";
+            this.columIdOutil.Name = "columIdOutil";
+            this.columIdOutil.ReadOnly = true;
+            // 
+            // columnCategorie
+            // 
+            this.columnCategorie.HeaderText = "";
+            this.columnCategorie.Name = "columnCategorie";
+            // 
+            // columnNom
+            // 
+            this.columnNom.HeaderText = "";
+            this.columnNom.Name = "columnNom";
+            // 
+            // columnNumSerie
+            // 
+            this.columnNumSerie.HeaderText = "";
+            this.columnNumSerie.Name = "columnNumSerie";
+            // 
+            // columnDateAcquisition
+            // 
+            this.columnDateAcquisition.HeaderText = "";
+            this.columnDateAcquisition.Name = "columnDateAcquisition";
+            this.columnDateAcquisition.ReadOnly = true;
+            // 
+            // columnPrixLocationParJour
+            // 
+            this.columnPrixLocationParJour.HeaderText = "";
+            this.columnPrixLocationParJour.Name = "columnPrixLocationParJour";
+            // 
+            // columnDescription
+            // 
+            this.columnDescription.HeaderText = "";
+            this.columnDescription.Name = "columnDescription";
+            // 
+            // btnRechercherClient
+            // 
+            this.btnRechercherClient.Location = new System.Drawing.Point(88, 252);
+            this.btnRechercherClient.Name = "btnRechercherClient";
+            this.btnRechercherClient.Size = new System.Drawing.Size(75, 23);
+            this.btnRechercherClient.TabIndex = 3;
+            this.btnRechercherClient.Text = "Rechercher";
+            this.btnRechercherClient.UseVisualStyleBackColor = true;
+            // 
+            // btnRechercherOutil3
+            // 
+            this.btnRechercherOutil3.Location = new System.Drawing.Point(86, 241);
+            this.btnRechercherOutil3.Name = "btnRechercherOutil3";
+            this.btnRechercherOutil3.Size = new System.Drawing.Size(75, 23);
+            this.btnRechercherOutil3.TabIndex = 6;
+            this.btnRechercherOutil3.Text = "Rechercher";
+            this.btnRechercherOutil3.UseVisualStyleBackColor = true;
             // 
             // accueil
             // 
