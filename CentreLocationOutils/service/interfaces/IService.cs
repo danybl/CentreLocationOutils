@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CentreLocationOutils.dao.interfaces
+namespace CentreLocationOutils.service.interfaces
 {
     /// <summary>
     /// Interface de base pour les services.
@@ -11,6 +11,6 @@ namespace CentreLocationOutils.dao.interfaces
     /// </summary>
     public interface IService
     {
-        // Nothing to add so far.
+        public IService() : base() { }
     }
 }
