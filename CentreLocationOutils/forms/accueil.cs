@@ -19,9 +19,9 @@ namespace CentreLocationOutils
         private ToolStripMenuItem quitterToolStripMenuItem;
         private ToolStripMenuItem optionsToolStripMenuItem;
         private ToolStripMenuItem aideToolStripMenuItem;
-        private ToolStripMenuItem paramètresToolStripMenuItem;
-        private ToolStripMenuItem àProposDeNousToolStripMenuItem;
-        private ToolStripMenuItem toolStripMenuItem2;
+        private ToolStripMenuItem parametresToolStripMenuItem;
+        private ToolStripMenuItem aProposToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem;
         private TabPage tpCreerReservation;
         private TabPage tpGestionOutils;
         private ToolStripContainer toolStripContainer2;
@@ -139,27 +139,11 @@ namespace CentreLocationOutils
             this.label1 = new System.Windows.Forms.Label();
             this.tpInfoClient = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnRechercherClient = new System.Windows.Forms.Button();
             this.btnSupprimerClient = new System.Windows.Forms.Button();
             this.btnModifierClient = new System.Windows.Forms.Button();
             this.btnAjouterClient = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tpGestionOutils = new System.Windows.Forms.TabPage();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.btnSupprimerOutil = new System.Windows.Forms.Button();
-            this.btnModifierOutil = new System.Windows.Forms.Button();
-            this.btnAjouterOutil = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.accueilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.connexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deconnexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.àProposDeNousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.columnIdClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnNomClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPrenomClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -172,6 +156,13 @@ namespace CentreLocationOutils
             this.columnVille = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnProvince = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPays = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tpGestionOutils = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.btnRechercherOutil3 = new System.Windows.Forms.Button();
+            this.btnSupprimerOutil = new System.Windows.Forms.Button();
+            this.btnModifierOutil = new System.Windows.Forms.Button();
+            this.btnAjouterOutil = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.columIdOutil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnCategorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -179,8 +170,17 @@ namespace CentreLocationOutils
             this.columnDateAcquisition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPrixLocationParJour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnRechercherClient = new System.Windows.Forms.Button();
-            this.btnRechercherOutil3 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.accueilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.connexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deconnexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.parametresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.tabControl1.SuspendLayout();
             this.tpCreerLocation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDnbJours)).BeginInit();
@@ -597,6 +597,15 @@ namespace CentreLocationOutils
             this.splitContainer1.SplitterDistance = 253;
             this.splitContainer1.TabIndex = 0;
             // 
+            // btnRechercherClient
+            // 
+            this.btnRechercherClient.Location = new System.Drawing.Point(88, 252);
+            this.btnRechercherClient.Name = "btnRechercherClient";
+            this.btnRechercherClient.Size = new System.Drawing.Size(75, 23);
+            this.btnRechercherClient.TabIndex = 3;
+            this.btnRechercherClient.Text = "Rechercher";
+            this.btnRechercherClient.UseVisualStyleBackColor = true;
+            // 
             // btnSupprimerClient
             // 
             this.btnSupprimerClient.Location = new System.Drawing.Point(88, 195);
@@ -644,167 +653,6 @@ namespace CentreLocationOutils
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(499, 345);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // tpGestionOutils
-            // 
-            this.tpGestionOutils.Controls.Add(this.splitContainer2);
-            this.tpGestionOutils.Location = new System.Drawing.Point(4, 22);
-            this.tpGestionOutils.Name = "tpGestionOutils";
-            this.tpGestionOutils.Size = new System.Drawing.Size(768, 406);
-            this.tpGestionOutils.TabIndex = 8;
-            this.tpGestionOutils.Text = "Gestion Outils";
-            this.tpGestionOutils.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.btnRechercherOutil3);
-            this.splitContainer2.Panel1.Controls.Add(this.btnSupprimerOutil);
-            this.splitContainer2.Panel1.Controls.Add(this.btnModifierOutil);
-            this.splitContainer2.Panel1.Controls.Add(this.btnAjouterOutil);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.dataGridView2);
-            this.splitContainer2.Size = new System.Drawing.Size(768, 406);
-            this.splitContainer2.SplitterDistance = 256;
-            this.splitContainer2.TabIndex = 0;
-            // 
-            // btnSupprimerOutil
-            // 
-            this.btnSupprimerOutil.Location = new System.Drawing.Point(86, 183);
-            this.btnSupprimerOutil.Name = "btnSupprimerOutil";
-            this.btnSupprimerOutil.Size = new System.Drawing.Size(75, 23);
-            this.btnSupprimerOutil.TabIndex = 5;
-            this.btnSupprimerOutil.Text = "Supprimer";
-            this.btnSupprimerOutil.UseVisualStyleBackColor = true;
-            // 
-            // btnModifierOutil
-            // 
-            this.btnModifierOutil.Location = new System.Drawing.Point(86, 114);
-            this.btnModifierOutil.Name = "btnModifierOutil";
-            this.btnModifierOutil.Size = new System.Drawing.Size(75, 23);
-            this.btnModifierOutil.TabIndex = 4;
-            this.btnModifierOutil.Text = "Modifier";
-            this.btnModifierOutil.UseVisualStyleBackColor = true;
-            // 
-            // btnAjouterOutil
-            // 
-            this.btnAjouterOutil.Location = new System.Drawing.Point(86, 46);
-            this.btnAjouterOutil.Name = "btnAjouterOutil";
-            this.btnAjouterOutil.Size = new System.Drawing.Size(75, 23);
-            this.btnAjouterOutil.TabIndex = 3;
-            this.btnAjouterOutil.Text = "Ajouter";
-            this.btnAjouterOutil.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columIdOutil,
-            this.columnCategorie,
-            this.columnNom,
-            this.columnNumSerie,
-            this.columnDateAcquisition,
-            this.columnPrixLocationParJour,
-            this.columnDescription});
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(502, 348);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.accueilToolStripMenuItem,
-            this.optionsToolStripMenuItem,
-            this.aideToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(776, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // accueilToolStripMenuItem
-            // 
-            this.accueilToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.connexionToolStripMenuItem,
-            this.deconnexionToolStripMenuItem,
-            this.quitterToolStripMenuItem});
-            this.accueilToolStripMenuItem.Name = "accueilToolStripMenuItem";
-            this.accueilToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.accueilToolStripMenuItem.Text = "Accueil";
-            // 
-            // connexionToolStripMenuItem
-            // 
-            this.connexionToolStripMenuItem.Name = "connexionToolStripMenuItem";
-            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.connexionToolStripMenuItem.Text = "Connexion";
-            // 
-            // deconnexionToolStripMenuItem
-            // 
-            this.deconnexionToolStripMenuItem.Name = "deconnexionToolStripMenuItem";
-            this.deconnexionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.deconnexionToolStripMenuItem.Text = "Deconnexion";
-            // 
-            // quitterToolStripMenuItem
-            // 
-            this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.quitterToolStripMenuItem.Text = "Quitter";
-            // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.paramètresToolStripMenuItem});
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.optionsToolStripMenuItem.Text = "Options";
-            // 
-            // paramètresToolStripMenuItem
-            // 
-            this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
-            this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.paramètresToolStripMenuItem.Text = "Paramètres";
-            // 
-            // aideToolStripMenuItem
-            // 
-            this.aideToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.àProposDeNousToolStripMenuItem,
-            this.toolStripMenuItem2});
-            this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.aideToolStripMenuItem.Text = "Aide";
-            // 
-            // àProposDeNousToolStripMenuItem
-            // 
-            this.àProposDeNousToolStripMenuItem.Name = "àProposDeNousToolStripMenuItem";
-            this.àProposDeNousToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.àProposDeNousToolStripMenuItem.Text = "À propos de nous";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(167, 22);
-            this.toolStripMenuItem2.Text = "?";
-            // 
-            // toolStripContainer2
-            // 
-            // 
-            // toolStripContainer2.ContentPanel
-            // 
-            this.toolStripContainer2.ContentPanel.Controls.Add(this.tabControl1);
-            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(776, 373);
-            this.toolStripContainer2.Location = new System.Drawing.Point(0, 27);
-            this.toolStripContainer2.Name = "toolStripContainer2";
-            this.toolStripContainer2.Size = new System.Drawing.Size(776, 398);
-            this.toolStripContainer2.TabIndex = 2;
-            this.toolStripContainer2.Text = "toolStripContainer2";
             // 
             // columnIdClient
             // 
@@ -867,6 +715,88 @@ namespace CentreLocationOutils
             this.columnPays.HeaderText = "";
             this.columnPays.Name = "columnPays";
             // 
+            // tpGestionOutils
+            // 
+            this.tpGestionOutils.Controls.Add(this.splitContainer2);
+            this.tpGestionOutils.Location = new System.Drawing.Point(4, 22);
+            this.tpGestionOutils.Name = "tpGestionOutils";
+            this.tpGestionOutils.Size = new System.Drawing.Size(768, 406);
+            this.tpGestionOutils.TabIndex = 8;
+            this.tpGestionOutils.Text = "Gestion Outils";
+            this.tpGestionOutils.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.btnRechercherOutil3);
+            this.splitContainer2.Panel1.Controls.Add(this.btnSupprimerOutil);
+            this.splitContainer2.Panel1.Controls.Add(this.btnModifierOutil);
+            this.splitContainer2.Panel1.Controls.Add(this.btnAjouterOutil);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.dataGridView2);
+            this.splitContainer2.Size = new System.Drawing.Size(768, 406);
+            this.splitContainer2.SplitterDistance = 256;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // btnRechercherOutil3
+            // 
+            this.btnRechercherOutil3.Location = new System.Drawing.Point(86, 241);
+            this.btnRechercherOutil3.Name = "btnRechercherOutil3";
+            this.btnRechercherOutil3.Size = new System.Drawing.Size(75, 23);
+            this.btnRechercherOutil3.TabIndex = 6;
+            this.btnRechercherOutil3.Text = "Rechercher";
+            this.btnRechercherOutil3.UseVisualStyleBackColor = true;
+            // 
+            // btnSupprimerOutil
+            // 
+            this.btnSupprimerOutil.Location = new System.Drawing.Point(86, 183);
+            this.btnSupprimerOutil.Name = "btnSupprimerOutil";
+            this.btnSupprimerOutil.Size = new System.Drawing.Size(75, 23);
+            this.btnSupprimerOutil.TabIndex = 5;
+            this.btnSupprimerOutil.Text = "Supprimer";
+            this.btnSupprimerOutil.UseVisualStyleBackColor = true;
+            // 
+            // btnModifierOutil
+            // 
+            this.btnModifierOutil.Location = new System.Drawing.Point(86, 114);
+            this.btnModifierOutil.Name = "btnModifierOutil";
+            this.btnModifierOutil.Size = new System.Drawing.Size(75, 23);
+            this.btnModifierOutil.TabIndex = 4;
+            this.btnModifierOutil.Text = "Modifier";
+            this.btnModifierOutil.UseVisualStyleBackColor = true;
+            // 
+            // btnAjouterOutil
+            // 
+            this.btnAjouterOutil.Location = new System.Drawing.Point(86, 46);
+            this.btnAjouterOutil.Name = "btnAjouterOutil";
+            this.btnAjouterOutil.Size = new System.Drawing.Size(75, 23);
+            this.btnAjouterOutil.TabIndex = 3;
+            this.btnAjouterOutil.Text = "Ajouter";
+            this.btnAjouterOutil.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columIdOutil,
+            this.columnCategorie,
+            this.columnNom,
+            this.columnNumSerie,
+            this.columnDateAcquisition,
+            this.columnPrixLocationParJour,
+            this.columnDescription});
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(502, 348);
+            this.dataGridView2.TabIndex = 0;
+            // 
             // columIdOutil
             // 
             this.columIdOutil.HeaderText = "";
@@ -904,23 +834,93 @@ namespace CentreLocationOutils
             this.columnDescription.HeaderText = "";
             this.columnDescription.Name = "columnDescription";
             // 
-            // btnRechercherClient
+            // menuStrip1
             // 
-            this.btnRechercherClient.Location = new System.Drawing.Point(88, 252);
-            this.btnRechercherClient.Name = "btnRechercherClient";
-            this.btnRechercherClient.Size = new System.Drawing.Size(75, 23);
-            this.btnRechercherClient.TabIndex = 3;
-            this.btnRechercherClient.Text = "Rechercher";
-            this.btnRechercherClient.UseVisualStyleBackColor = true;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.accueilToolStripMenuItem,
+            this.optionsToolStripMenuItem,
+            this.aideToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(776, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnRechercherOutil3
+            // accueilToolStripMenuItem
             // 
-            this.btnRechercherOutil3.Location = new System.Drawing.Point(86, 241);
-            this.btnRechercherOutil3.Name = "btnRechercherOutil3";
-            this.btnRechercherOutil3.Size = new System.Drawing.Size(75, 23);
-            this.btnRechercherOutil3.TabIndex = 6;
-            this.btnRechercherOutil3.Text = "Rechercher";
-            this.btnRechercherOutil3.UseVisualStyleBackColor = true;
+            this.accueilToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.connexionToolStripMenuItem,
+            this.deconnexionToolStripMenuItem,
+            this.quitterToolStripMenuItem});
+            this.accueilToolStripMenuItem.Name = "accueilToolStripMenuItem";
+            this.accueilToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.accueilToolStripMenuItem.Text = "Accueil";
+            // 
+            // connexionToolStripMenuItem
+            // 
+            this.connexionToolStripMenuItem.Name = "connexionToolStripMenuItem";
+            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.connexionToolStripMenuItem.Text = "Connexion";
+            // 
+            // deconnexionToolStripMenuItem
+            // 
+            this.deconnexionToolStripMenuItem.Name = "deconnexionToolStripMenuItem";
+            this.deconnexionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.deconnexionToolStripMenuItem.Text = "Deconnexion";
+            // 
+            // quitterToolStripMenuItem
+            // 
+            this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.quitterToolStripMenuItem.Text = "Quitter";
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.parametresToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.optionsToolStripMenuItem.Text = "Options";
+            // 
+            // parametresToolStripMenuItem
+            // 
+            this.parametresToolStripMenuItem.Name = "parametresToolStripMenuItem";
+            this.parametresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.parametresToolStripMenuItem.Text = "Paramètres";
+            // 
+            // aideToolStripMenuItem
+            // 
+            this.aideToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aProposToolStripMenuItem,
+            this.toolStripMenuItem});
+            this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.aideToolStripMenuItem.Text = "Aide";
+            // 
+            // aProposToolStripMenuItem
+            // 
+            this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.aProposToolStripMenuItem.Text = "À propos de nous";
+            // 
+            // toolStripMenuItem
+            // 
+            this.toolStripMenuItem.Name = "toolStripMenuItem";
+            this.toolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.toolStripMenuItem.Text = "?";
+            // 
+            // toolStripContainer2
+            // 
+            // 
+            // toolStripContainer2.ContentPanel
+            // 
+            this.toolStripContainer2.ContentPanel.Controls.Add(this.tabControl1);
+            this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(776, 373);
+            this.toolStripContainer2.Location = new System.Drawing.Point(0, 27);
+            this.toolStripContainer2.Name = "toolStripContainer2";
+            this.toolStripContainer2.Size = new System.Drawing.Size(776, 398);
+            this.toolStripContainer2.TabIndex = 2;
+            this.toolStripContainer2.Text = "toolStripContainer2";
             // 
             // accueil
             // 
