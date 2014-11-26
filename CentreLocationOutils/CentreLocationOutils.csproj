@@ -64,12 +64,15 @@
     <Compile Include="dao\implementations\AdresseDAO.cs" />
     <Compile Include="dao\implementations\CategorieDAO.cs" />
     <Compile Include="dao\implementations\ClientDAO.cs" />
+    <Compile Include="dao\implementations\Client_AdresseDAO.cs" />
     <Compile Include="dao\implementations\DAO.cs" />
     <Compile Include="dao\implementations\EmployeDAO.cs" />
+    <Compile Include="dao\implementations\Employe_AdresseDAO.cs" />
     <Compile Include="dao\implementations\FacturationDAO.cs" />
     <Compile Include="dao\implementations\LocationDAO.cs" />
     <Compile Include="dao\implementations\OutilDAO.cs" />
     <Compile Include="dao\implementations\ReservationDAO.cs" />
+    <Compile Include="dto\Client_AdresseDTO.cs" />
     <Compile Include="service\implementations\Service.cs" />
     <Compile Include="dao\interfaces\IAdresseDAO.cs" />
     <Compile Include="dao\interfaces\ICategorieDAO.cs" />
