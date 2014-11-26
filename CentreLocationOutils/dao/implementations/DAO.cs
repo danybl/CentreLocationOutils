@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Collections.Generic;
-using CentreLocationOutils.exception.dto;
+﻿using CentreLocationOutils.db;
 using CentreLocationOutils.exception.dao;
-using CentreLocationOutils.db;
+using CentreLocationOutils.exception.dto;
+using System;
 using System.Data;
 using System.Data.Common;
-using System.Data.OracleClient;
 
 namespace CentreLocationOutils.dao.implementations 
 {
@@ -37,7 +32,7 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         protected static String getPrimaryKey(Connection connection,
-        String createPrimaryKeyRequest)
+        string createPrimaryKeyRequest)
         {
             if (connection == null)
             {

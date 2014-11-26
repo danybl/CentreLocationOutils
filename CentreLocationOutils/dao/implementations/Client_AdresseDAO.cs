@@ -1,14 +1,11 @@
-﻿using CentreLocationOutils.dao.interfaces;
-using CentreLocationOutils.db;
+﻿using CentreLocationOutils.db;
 using CentreLocationOutils.dto;
 using CentreLocationOutils.exception.dao;
 using CentreLocationOutils.exception.dto;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.OracleClient;
-using System.Runtime.Serialization;
 
 namespace CentreLocationOutils.dao.implementations
 {
@@ -86,7 +83,7 @@ namespace CentreLocationOutils.dao.implementations
 
         /// <inheritdoc />
         public Client_AdresseDTO get(Connection connection,
-        ISerializable primaryKey)
+        string primaryKey)
         {
             if (connection == null)
             {

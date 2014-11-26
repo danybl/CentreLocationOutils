@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.OracleClient;
-using System.Runtime.Serialization;
 
 namespace CentreLocationOutils.dao.implementations
 {
@@ -78,7 +77,7 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         public OutilDTO get(Connection connection,
-        ISerializable primaryKey)
+        string primaryKey)
         {
             if (connection == null)
             {
