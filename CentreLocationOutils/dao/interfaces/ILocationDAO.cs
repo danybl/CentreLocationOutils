@@ -30,5 +30,34 @@ namespace CentreLocationOutils.dao.interfaces
         public List<LocationDTO> findByOutil(Connection connection,
         String idOutil,
         String sortByPropertyName);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="locationDTO"></param>
+        void add(Connection connection, LocationDTO locationDTO);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="idLocation"></param>
+        /// <returns></returns>
+        LocationDTO get(Connection connection, string idLocation);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="locationDTO"></param>
+        void update(Connection connection, LocationDTO locationDTO);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="locationDTO"></param>
+        void delete(Connection connection, LocationDTO locationDTO);
     }
 }
