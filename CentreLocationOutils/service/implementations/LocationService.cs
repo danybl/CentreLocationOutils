@@ -185,18 +185,18 @@ namespace CentreLocationOutils.service.implementations
             }
         }
 
-        ///// <inheritdoc />
-        //public override List<LocationDTO> getall(Connection connection, String sortByPropertyName)
-        //{
-        //    try
-        //    {
-        //        return (List<LocationDTO>) getLocationDAO().getAll(connection, sortByPropertyName);
-        //    }
-        //    catch (DAOException daoException)
-        //    {
-        //        throw new ServiceException("Il y a eu un erreur : " + daoException);
-        //    }
-        //}
+        /// <inheritdoc />
+        public override List<LocationDTO> getall(Connection connection, String sortByPropertyName)
+        {
+            try
+            {
+                return (List<LocationDTO>)getLocationDAO().getAll(connection, sortByPropertyName);
+            }
+            catch (DAOException daoException)
+            {
+                throw new ServiceException("Il y a eu un erreur : " + daoException);
+            }
+        }
 
         #endregion
     }
