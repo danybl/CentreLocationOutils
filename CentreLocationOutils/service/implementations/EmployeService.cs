@@ -6,6 +6,7 @@ using CentreLocationOutils.service.interfaces;
 using CentreLocationOutils.dao.interfaces;
 using CentreLocationOutils.exception.dao;
 using CentreLocationOutils.exception.service;
+using CentreLocationOutils.exception.dto;
 using CentreLocationOutils.dto;
 using CentreLocationOutils.db;
 using CentreLocationOutils.dao.implementations;
@@ -39,7 +40,7 @@ namespace CentreLocationOutils.service.implementations
         {
             this.employeDAO = employeDAO;
         }
-
+        /// <inheritdoc />
         public override void addEmploye(Connection connection,
         EmployeDTO employeDTO) {
         try {
@@ -50,6 +51,7 @@ namespace CentreLocationOutils.service.implementations
         }
     }
 
+        /// <inheritdoc />
     public override EmployeDTO getEmploye(Connection connection,
         string idEmploye)  {
         try {
@@ -60,7 +62,8 @@ namespace CentreLocationOutils.service.implementations
         }
     }
 
-    public override override void updateEmploye(Connection connection,
+    /// <inheritdoc />
+    public override void updateEmploye(Connection connection,
         EmployeDTO employeDTO) {
         try {
             getEmployeDAO().update(connection,
@@ -70,6 +73,7 @@ namespace CentreLocationOutils.service.implementations
         }
     }
 
+    /// <inheritdoc />
     public override void deleteEmploye(Connection connection,
         EmployeDTO employeDTO) {
         try {
@@ -80,6 +84,7 @@ namespace CentreLocationOutils.service.implementations
         }
     }
 
+    /// <inheritdoc />
     public override List<EmployeDTO> getAllEmployes(Connection connection,
         string sortByPropertyName) {
         try {
@@ -90,8 +95,17 @@ namespace CentreLocationOutils.service.implementations
         }
     }
 
+    /// <inheritdoc />
     public override void inscrireEmploye(Connection connection, EmployeDTO employeDTO)
     {
+        if (connection == null)
+        {
+            throw new InvalidConnectionException("La connection ne peut être null");
+        }
+        if (employeDTO == null)
+        {
+            throw new InvalidDTOException("L'employé ne peut être null");
+        }
         try
         {
             addEmploye(connection, employeDTO);
@@ -103,8 +117,17 @@ namespace CentreLocationOutils.service.implementations
         }
     }
 
+    /// <inheritdoc />
     public override void desinscrireEmployer(Connection connection, EmployeDTO employeDTO)
     {
+        if (connection == null)
+        {
+            throw new InvalidConnectionException("La connection ne peut être null");
+        }
+        if (employeDTO == null)
+        {
+            throw new InvalidDTOException("L'employé ne peut être null");
+        }
         try
         {
             deleteEmploye(connection, employeDTO);
@@ -115,9 +138,20 @@ namespace CentreLocationOutils.service.implementations
         }
     }
 
+    /// <inheritdoc />
         public override void findByNom(Connection connection, EmployeDTO employeDTO){
+            if (connection == null)
+            {
+                throw new InvalidConnectionException("La connection ne peut être null");
+            }
+            if (employeDTO == null)
+            {
+                throw new InvalidDTOException("L'employé ne peut être null");
+            }
             try{
-                getEmployeDAO().findByNom(connection, employeDTO.Nom, EmployeDAO.);
+                getEmployeDAO().findByNom(connection, employeDTO.Nom, EmployeDTO.NOM_COLUMN_NAME);
+            }catch(DAOException daoException){
+                throw new ServiceException("", daoException);
             }
         }
 
