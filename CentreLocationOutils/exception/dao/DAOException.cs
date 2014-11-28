@@ -41,7 +41,8 @@ namespace CentreLocationOutils.exception.dao
          *        A null value is permitted, and indicates that the cause is nonexistent or unknown
          */
         public DAOException(string message,
-            Exception cause) : base(message, cause.InnerException ) {}
+            Exception cause) : base(message, cause) {}
+
     }
 }
 

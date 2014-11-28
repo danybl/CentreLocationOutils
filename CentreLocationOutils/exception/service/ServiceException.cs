@@ -20,5 +20,7 @@ namespace CentreLocationOutils.exception.service
        *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
        */
         public ServiceException(string message) : base(message) { }
+
+        public ServiceException(string message, Exception cause) : base(message, cause) { }
     }
 }

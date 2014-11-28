@@ -7,6 +7,9 @@ namespace CentreLocationOutils.dto
 {
     public class FacturationDTO
     {
+
+        public static const string ID_FACTURATION_COLUMN_NAME = "idFacturation";
+
         public string IdFacturation { get; set; }
         public EmployeDTO EmployerDTO { get; set; }
         public LocationDTO LocationDTO { get; set; }

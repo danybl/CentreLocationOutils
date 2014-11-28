@@ -8,6 +8,7 @@ using CentreLocationOutils.exception.dao;
 using CentreLocationOutils.exception.service;
 using CentreLocationOutils.dto;
 using CentreLocationOutils.db;
+using CentreLocationOutils.dao.implementations;
 
 namespace CentreLocationOutils.service.implementations
 {
@@ -59,7 +60,7 @@ namespace CentreLocationOutils.service.implementations
         }
     }
 
-    public override void updateEmploye(Connection connection,
+    public override override void updateEmploye(Connection connection,
         EmployeDTO employeDTO) {
         try {
             getEmployeDAO().update(connection,
@@ -69,7 +70,7 @@ namespace CentreLocationOutils.service.implementations
         }
     }
 
-    public void deleteEmploye(Connection connection,
+    public override void deleteEmploye(Connection connection,
         EmployeDTO employeDTO) {
         try {
             getEmployeDAO().delete(connection,
@@ -79,7 +80,7 @@ namespace CentreLocationOutils.service.implementations
         }
     }
 
-    public List<EmployeDTO> getAllEmployes(Connection connection,
+    public override List<EmployeDTO> getAllEmployes(Connection connection,
         string sortByPropertyName) {
         try {
             return (List<EmployeDTO>) getEmployeDAO().getAll(connection,
@@ -89,6 +90,36 @@ namespace CentreLocationOutils.service.implementations
         }
     }
 
+    public override void inscrireEmploye(Connection connection, EmployeDTO employeDTO)
+    {
+        try
+        {
+            addEmploye(connection, employeDTO);
+        }
+        catch (DAOException daoException)
+        {
+            //TODO verify upon testing
+            throw new ServiceException(daoException.Message, daoException);
+        }
+    }
+
+    public override void desinscrireEmployer(Connection connection, EmployeDTO employeDTO)
+    {
+        try
+        {
+            deleteEmploye(connection, employeDTO);
+        }
+        catch (DAOException daoException)
+        {
+            throw new ServiceException("", daoException);
+        }
+    }
+
+        public override void findByNom(Connection connection, EmployeDTO employeDTO){
+            try{
+                getEmployeDAO().findByNom(connection, employeDTO.Nom, EmployeDAO.);
+            }
+        }
 
     }
 }
