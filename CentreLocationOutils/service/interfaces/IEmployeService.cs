@@ -10,7 +10,7 @@ using CentreLocationOutils.dto;
 namespace CentreLocationOutils.service.interfaces
 {
     /// <summary>
-    /// 
+    /// L'interface pour EmployeService
     /// </summary>
     public interface IEmployeService : IService
     {
