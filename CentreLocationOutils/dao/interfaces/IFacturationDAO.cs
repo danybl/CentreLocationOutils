@@ -49,5 +49,25 @@ namespace CentreLocationOutils.dao.interfaces
         /// <returns>La liste de tous les DTOs</returns>
         public virtual List<FacturationDTO> getAll(Connection connection,
          string sortByPropertyName);
+
+        /// <summary>
+        /// Trouve les prêts à partir d'un client. La liste est classée par ordre croissant sur <code>sortByPropertyName</code>. 
+        /// Si aucun prêt n'est trouvé, une {@link List} vide est retournée.
+        /// </summary>
+        /// <param name="connection">La connection à utiliser</param>
+        /// <param name="sortByPropertyName">Le nom de la propriété à uriliser pour classer la liste</param>
+        /// <returns>La liste des factures correspondants ; une liste vide sinon</returns>
+        public virtual List<FacturationDTO> findByClient(Connection connection, string idClient, string sortByPropertyName);
+
+        /// <summary>
+        /// Trouve les prêts à partir d'un employe. La liste est classée par ordre croissant sur <code>sortByPropertyName</code>. 
+        /// Si aucun prêt n'est trouvé, une {@link List} vide est retournée.
+        /// </summary>
+        /// <param name="connection">La connection à utiliser</param>
+        /// <param name="idEmploye">L'ID du employe à trouver</param>
+        /// <param name="sortByPropertyName">Le nom de la propriété à uriliser pour classer la liste</param>
+        /// <returns>La liste des factures correspondants ; une liste vide sinon</returns>
+        public virtual List<FacturationDTO> findByEmploye(Connection connection, string idEmploye, string sortByPropertyName);
+
     }
 }

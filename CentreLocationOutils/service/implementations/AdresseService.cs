@@ -15,7 +15,7 @@ namespace CentreLocationOutils.service.implementations
     /// <summary>
     /// Service de la table <code>adresse</code>.
     /// </summary>
-    class AdresseService : Service, IAdresseService
+    public class AdresseService : Service, IAdresseService
     {
         private IAdresseDAO adresseDAO;
 
