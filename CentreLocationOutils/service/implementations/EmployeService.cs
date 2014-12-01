@@ -111,15 +111,8 @@ namespace CentreLocationOutils.service.implementations
             {
                 throw new InvalidDTOException("L'employé ne peut être null");
             }
-            try
-            {
                 addEmploye(connection, employeDTO);
-            }
-            catch (DAOException daoException)
-            {
-                //TODO verify upon testing
-                throw new ServiceException(daoException.Message, daoException);
-            }
+
         }
 
         /// <inheritdoc />
@@ -133,14 +126,8 @@ namespace CentreLocationOutils.service.implementations
             {
                 throw new InvalidDTOException("L'employé ne peut être null");
             }
-            try
-            {
-                deleteEmploye(connection, employeDTO);
-            }
-            catch (DAOException daoException)
-            {
-                throw new ServiceException("", daoException);
-            }
+
+            deleteEmploye(connection, employeDTO);
         }
 
         /// <inheritdoc />

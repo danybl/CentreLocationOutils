@@ -68,20 +68,20 @@ namespace CentreLocationOutils.service.implementations
             }
             catch (DAOException daoException)
             {
-                throw new ServiceException("Il y a eu un erreur : " + daoException);
+                throw new ServiceException("Il y a eu un erreur : ", daoException);
             }
         }
 
         /// <inheritdoc />
-        public override LocationDTO get(Connection connection, String idLocation)
+        public override LocationDTO get(Connection connection, string idLocation)
         {
             try
             {
-                return (LocationDTO) getLocationDAO().get(connection, idLocation);
+                return getLocationDAO().get(connection, idLocation);
             }
             catch (DAOException daoException)
             {
-                throw new ServiceException("Il y a eu un erreur : " + daoException);
+                throw new ServiceException("Il y a eu un erreur : ", daoException);
             }
         }
 
@@ -94,7 +94,7 @@ namespace CentreLocationOutils.service.implementations
             }
             catch (DAOException daoException)
             {
-                throw new ServiceException("Il y a eu un erreur : " + daoException);
+                throw new ServiceException("Il y a eu un erreur : ", daoException);
             }
         }
 
@@ -107,23 +107,26 @@ namespace CentreLocationOutils.service.implementations
             }
             catch (DAOException daoException)
             {
-                throw new ServiceException("Il y a eu un erreur : " + daoException);
+                throw new ServiceException("Il y a eu un erreur : ", daoException);
             }
         }
 
         /// <inheritdoc />
-        public override List<LocationDTO> getall(Connection connection, String sortByPropertyName)
+        public override List<LocationDTO> getAllLocations(Connection connection, string sortByPropertyName)
         {
             try
             {
-                return (List<LocationDTO>)getLocationDAO().getAll(connection, sortByPropertyName);
+                return getLocationDAO().getAll(connection, sortByPropertyName);
             }
             catch (DAOException daoException)
             {
-                throw new ServiceException("Il y a eu un erreur : " + daoException);
+                throw new ServiceException("Il y a eu un erreur : ", daoException);
             }
         }
 
         #endregion
+        
+
+
     }
 }

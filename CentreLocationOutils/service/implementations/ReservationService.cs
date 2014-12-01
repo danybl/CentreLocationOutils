@@ -6,14 +6,17 @@ using CentreLocationOutils.exception.dto;
 using CentreLocationOutils.exception.service;
 using CentreLocationOutils.service.interfaces;
 using System.Collections.Generic;
+using CentreLocationOutils.dao.interfaces;
 
 namespace CentreLocationOutils.service.implementations
 {
     public class ReservationService : Service, IReservationService
     {
         private IReservationDAO reservationDAO;
+        private ILocationDAO locationDAO;
+        private IOutilDAO outilDAO;
 
-        public ReservationService(IReservationDAO reservationDAO)
+        public ReservationService(IReservationDAO reservationDAO, ILocationDAO locationDAO)
             : base()
         {
             if (reservationDAO == null)
@@ -38,6 +41,25 @@ namespace CentreLocationOutils.service.implementations
         {
             this.reservationDAO = reservationDAO;
         }
+
+        private ILocationDAO getLocationDAO()
+        {
+            return this.locationDAO;
+        }
+        private void setLocationDAO(ILocationDAO locationDAO)
+        {
+            this.locationDAO = locationDAO;
+        }
+        private IOutilDAO getOutilDAO()
+        {
+            return this.outilDAO;
+        }
+        private void setOutilDAO(IOutilDAO outilDAO)
+        {
+            this.outilDAO = outilDAO;
+        }
+
+
         /// <inheritdoc />
         public override void addReservation(Connection connection,
         ReservationDTO reservationDTO)
@@ -111,19 +133,47 @@ namespace CentreLocationOutils.service.implementations
             {
                 throw new InvalidDTOException("La réservation ne peut être null");
             }
+            List<ReservationDTO> reservations = getAllReservation(connection, ReservationDTO.ID_RESERVATION_COLUMN_NAME);
+            foreach (ReservationDTO uneReservationDTO in reservations)
+            {
+                if (reservationDTO.OutilDTO.Equals(uneReservationDTO.OutilDTO))
+                {
+                    throw new ExistingLoanException("L'outil " + uneReservationDTO.OutilDTO.Nom
+                    + " (ID d'outil : "
+                    + uneReservationDTO.OutilDTO.IdOutil
+                    + ") est déjà réservé pour  "
+                    + uneReservationDTO.ClientDTO.Nom
+                    + ", "
+                    + uneReservationDTO.ClientDTO.Prenom
+                    + "(ID de client "
+                    + uneReservationDTO.ClientDTO.IdClient
+                    + ")");
+                }
+            }
+            reservationDTO.DateReservation = (System.DateTime.Now);
+            addReservation(connection, reservationDTO);
+
+        }
+
+        public void utiliserReservation(Connection connection, ReservationDTO reservationDTO)
+        {
+            if (connection == null)
+            {
+                throw new InvalidConnectionException("La connection ne peut être null");
+            }
+            if (reservationDTO == null)
+            {
+                throw new InvalidDTOException("La réservation ne peut être null");
+            }
             try
             {
-                addReservation(connection, reservationDTO);
-            }
-            catch (DAOException daoException)
-            {
-                //TODO verify upon testing
-                throw new ServiceException(daoException.Message, daoException);
+                List<ReservationDTO> reservations = getOutilDAO(). 
+
             }
         }
 
         /// <inheritdoc />
-        public override void terminerReservation(Connection connection, ReservationDTO reservationDTO)
+        public override void annulerReservation(Connection connection, ReservationDTO reservationDTO)
         {
             if (connection == null)
             {
