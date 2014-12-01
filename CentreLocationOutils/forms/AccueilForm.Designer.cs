@@ -216,6 +216,7 @@
             // 
             // tpCreerLocation
             // 
+            this.tpCreerLocation.BackColor = System.Drawing.Color.Silver;
             this.tpCreerLocation.Controls.Add(this.lblNbJours);
             this.tpCreerLocation.Controls.Add(this.numUDnbJours);
             this.tpCreerLocation.Controls.Add(this.btnAnnulerLocation);
@@ -243,7 +244,6 @@
             this.tpCreerLocation.Size = new System.Drawing.Size(754, 358);
             this.tpCreerLocation.TabIndex = 1;
             this.tpCreerLocation.Text = "Créer Location";
-            this.tpCreerLocation.UseVisualStyleBackColor = true;
             // 
             // lblNbJours
             // 
@@ -291,12 +291,13 @@
             // 
             // btnRechercherOutil
             // 
+            this.btnRechercherOutil.BackColor = System.Drawing.Color.Transparent;
             this.btnRechercherOutil.Location = new System.Drawing.Point(479, 95);
             this.btnRechercherOutil.Name = "btnRechercherOutil";
             this.btnRechercherOutil.Size = new System.Drawing.Size(75, 23);
             this.btnRechercherOutil.TabIndex = 16;
             this.btnRechercherOutil.Text = "Rechercher";
-            this.btnRechercherOutil.UseVisualStyleBackColor = true;
+            this.btnRechercherOutil.UseVisualStyleBackColor = false;
             // 
             // textBox8
             // 
@@ -435,6 +436,7 @@
             // 
             // tpCreerReservation
             // 
+            this.tpCreerReservation.BackColor = System.Drawing.Color.Silver;
             this.tpCreerReservation.Controls.Add(this.btnAnnulerReservation);
             this.tpCreerReservation.Controls.Add(this.btnSaveReservation);
             this.tpCreerReservation.Controls.Add(this.btnRechercherOutil2);
@@ -450,10 +452,9 @@
             this.tpCreerReservation.Controls.Add(this.label1);
             this.tpCreerReservation.Location = new System.Drawing.Point(4, 22);
             this.tpCreerReservation.Name = "tpCreerReservation";
-            this.tpCreerReservation.Size = new System.Drawing.Size(754, 333);
+            this.tpCreerReservation.Size = new System.Drawing.Size(754, 358);
             this.tpCreerReservation.TabIndex = 7;
             this.tpCreerReservation.Text = "Créer Réservation";
-            this.tpCreerReservation.UseVisualStyleBackColor = true;
             // 
             // btnAnnulerReservation
             // 
@@ -572,7 +573,7 @@
             this.tpInfoClient.Location = new System.Drawing.Point(4, 22);
             this.tpInfoClient.Name = "tpInfoClient";
             this.tpInfoClient.Padding = new System.Windows.Forms.Padding(3);
-            this.tpInfoClient.Size = new System.Drawing.Size(754, 333);
+            this.tpInfoClient.Size = new System.Drawing.Size(754, 358);
             this.tpInfoClient.TabIndex = 2;
             this.tpInfoClient.Text = "Info Client";
             this.tpInfoClient.UseVisualStyleBackColor = true;
@@ -585,6 +586,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.DimGray;
             this.splitContainer1.Panel1.Controls.Add(this.btnRechercherClient);
             this.splitContainer1.Panel1.Controls.Add(this.btnSupprimerClient);
             this.splitContainer1.Panel1.Controls.Add(this.btnModifierClient);
@@ -593,7 +595,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(748, 327);
+            this.splitContainer1.Size = new System.Drawing.Size(748, 352);
             this.splitContainer1.SplitterDistance = 248;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -635,6 +637,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnIdClient,
@@ -720,7 +723,7 @@
             this.tpGestionOutils.Controls.Add(this.splitContainer2);
             this.tpGestionOutils.Location = new System.Drawing.Point(4, 22);
             this.tpGestionOutils.Name = "tpGestionOutils";
-            this.tpGestionOutils.Size = new System.Drawing.Size(754, 333);
+            this.tpGestionOutils.Size = new System.Drawing.Size(754, 358);
             this.tpGestionOutils.TabIndex = 8;
             this.tpGestionOutils.Text = "Gestion Outils";
             this.tpGestionOutils.UseVisualStyleBackColor = true;
@@ -733,6 +736,7 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.BackColor = System.Drawing.Color.DimGray;
             this.splitContainer2.Panel1.Controls.Add(this.btnRechercherOutil3);
             this.splitContainer2.Panel1.Controls.Add(this.btnSupprimerOutil);
             this.splitContainer2.Panel1.Controls.Add(this.btnModifierOutil);
@@ -741,7 +745,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dataGridView2);
-            this.splitContainer2.Size = new System.Drawing.Size(754, 333);
+            this.splitContainer2.Size = new System.Drawing.Size(754, 358);
             this.splitContainer2.SplitterDistance = 251;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -783,6 +787,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columIdOutil,

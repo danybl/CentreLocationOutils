@@ -48,7 +48,7 @@
             // 
             // btnModifierOutilAnnuler
             // 
-            this.btnModifierOutilAnnuler.Location = new System.Drawing.Point(161, 330);
+            this.btnModifierOutilAnnuler.Location = new System.Drawing.Point(153, 312);
             this.btnModifierOutilAnnuler.Name = "btnModifierOutilAnnuler";
             this.btnModifierOutilAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btnModifierOutilAnnuler.TabIndex = 65;
@@ -57,7 +57,7 @@
             // 
             // btnModifierOutilOk
             // 
-            this.btnModifierOutilOk.Location = new System.Drawing.Point(46, 330);
+            this.btnModifierOutilOk.Location = new System.Drawing.Point(38, 312);
             this.btnModifierOutilOk.Name = "btnModifierOutilOk";
             this.btnModifierOutilOk.Size = new System.Drawing.Size(75, 23);
             this.btnModifierOutilOk.TabIndex = 64;
@@ -66,49 +66,49 @@
             // 
             // txtModifierOutilNbLocations
             // 
-            this.txtModifierOutilNbLocations.Location = new System.Drawing.Point(146, 276);
+            this.txtModifierOutilNbLocations.Location = new System.Drawing.Point(143, 273);
             this.txtModifierOutilNbLocations.Name = "txtModifierOutilNbLocations";
             this.txtModifierOutilNbLocations.Size = new System.Drawing.Size(105, 20);
             this.txtModifierOutilNbLocations.TabIndex = 63;
             // 
             // txtModifierOutilDateInscription
             // 
-            this.txtModifierOutilDateInscription.Location = new System.Drawing.Point(146, 238);
+            this.txtModifierOutilDateInscription.Location = new System.Drawing.Point(143, 235);
             this.txtModifierOutilDateInscription.Name = "txtModifierOutilDateInscription";
             this.txtModifierOutilDateInscription.Size = new System.Drawing.Size(105, 20);
             this.txtModifierOutilDateInscription.TabIndex = 62;
             // 
             // txtModifierOutilEmail
             // 
-            this.txtModifierOutilEmail.Location = new System.Drawing.Point(146, 198);
+            this.txtModifierOutilEmail.Location = new System.Drawing.Point(143, 195);
             this.txtModifierOutilEmail.Name = "txtModifierOutilEmail";
             this.txtModifierOutilEmail.Size = new System.Drawing.Size(105, 20);
             this.txtModifierOutilEmail.TabIndex = 61;
             // 
             // txtModifierOutilTelephone
             // 
-            this.txtModifierOutilTelephone.Location = new System.Drawing.Point(146, 160);
+            this.txtModifierOutilTelephone.Location = new System.Drawing.Point(143, 157);
             this.txtModifierOutilTelephone.Name = "txtModifierOutilTelephone";
             this.txtModifierOutilTelephone.Size = new System.Drawing.Size(105, 20);
             this.txtModifierOutilTelephone.TabIndex = 60;
             // 
             // txtModifierOutilPrenom
             // 
-            this.txtModifierOutilPrenom.Location = new System.Drawing.Point(146, 123);
+            this.txtModifierOutilPrenom.Location = new System.Drawing.Point(143, 120);
             this.txtModifierOutilPrenom.Name = "txtModifierOutilPrenom";
             this.txtModifierOutilPrenom.Size = new System.Drawing.Size(105, 20);
             this.txtModifierOutilPrenom.TabIndex = 59;
             // 
             // txtModifierOutilNom
             // 
-            this.txtModifierOutilNom.Location = new System.Drawing.Point(146, 83);
+            this.txtModifierOutilNom.Location = new System.Drawing.Point(143, 80);
             this.txtModifierOutilNom.Name = "txtModifierOutilNom";
             this.txtModifierOutilNom.Size = new System.Drawing.Size(105, 20);
             this.txtModifierOutilNom.TabIndex = 58;
             // 
             // txtModifierOutilIdOutil
             // 
-            this.txtModifierOutilIdOutil.Location = new System.Drawing.Point(146, 45);
+            this.txtModifierOutilIdOutil.Location = new System.Drawing.Point(143, 42);
             this.txtModifierOutilIdOutil.Name = "txtModifierOutilIdOutil";
             this.txtModifierOutilIdOutil.ReadOnly = true;
             this.txtModifierOutilIdOutil.Size = new System.Drawing.Size(105, 20);
@@ -117,7 +117,7 @@
             // lblModifierOutilDescription
             // 
             this.lblModifierOutilDescription.AutoSize = true;
-            this.lblModifierOutilDescription.Location = new System.Drawing.Point(23, 279);
+            this.lblModifierOutilDescription.Location = new System.Drawing.Point(20, 276);
             this.lblModifierOutilDescription.Name = "lblModifierOutilDescription";
             this.lblModifierOutilDescription.Size = new System.Drawing.Size(60, 13);
             this.lblModifierOutilDescription.TabIndex = 56;
@@ -126,7 +126,7 @@
             // lblModifierOutilPrixLocation
             // 
             this.lblModifierOutilPrixLocation.AutoSize = true;
-            this.lblModifierOutilPrixLocation.Location = new System.Drawing.Point(23, 241);
+            this.lblModifierOutilPrixLocation.Location = new System.Drawing.Point(20, 238);
             this.lblModifierOutilPrixLocation.Name = "lblModifierOutilPrixLocation";
             this.lblModifierOutilPrixLocation.Size = new System.Drawing.Size(79, 13);
             this.lblModifierOutilPrixLocation.TabIndex = 55;
@@ -135,7 +135,7 @@
             // lblModifierOutilDateAcquisition
             // 
             this.lblModifierOutilDateAcquisition.AutoSize = true;
-            this.lblModifierOutilDateAcquisition.Location = new System.Drawing.Point(23, 201);
+            this.lblModifierOutilDateAcquisition.Location = new System.Drawing.Point(20, 198);
             this.lblModifierOutilDateAcquisition.Name = "lblModifierOutilDateAcquisition";
             this.lblModifierOutilDateAcquisition.Size = new System.Drawing.Size(91, 13);
             this.lblModifierOutilDateAcquisition.TabIndex = 54;
@@ -144,7 +144,7 @@
             // lblModifierOutilPrenom
             // 
             this.lblModifierOutilPrenom.AutoSize = true;
-            this.lblModifierOutilPrenom.Location = new System.Drawing.Point(23, 163);
+            this.lblModifierOutilPrenom.Location = new System.Drawing.Point(20, 160);
             this.lblModifierOutilPrenom.Name = "lblModifierOutilPrenom";
             this.lblModifierOutilPrenom.Size = new System.Drawing.Size(84, 13);
             this.lblModifierOutilPrenom.TabIndex = 53;
@@ -153,7 +153,7 @@
             // lblModifierOutilNom
             // 
             this.lblModifierOutilNom.AutoSize = true;
-            this.lblModifierOutilNom.Location = new System.Drawing.Point(23, 126);
+            this.lblModifierOutilNom.Location = new System.Drawing.Point(20, 123);
             this.lblModifierOutilNom.Name = "lblModifierOutilNom";
             this.lblModifierOutilNom.Size = new System.Drawing.Size(29, 13);
             this.lblModifierOutilNom.TabIndex = 52;
@@ -162,7 +162,7 @@
             // lblModifierOutilIdCategorie
             // 
             this.lblModifierOutilIdCategorie.AutoSize = true;
-            this.lblModifierOutilIdCategorie.Location = new System.Drawing.Point(23, 86);
+            this.lblModifierOutilIdCategorie.Location = new System.Drawing.Point(20, 83);
             this.lblModifierOutilIdCategorie.Name = "lblModifierOutilIdCategorie";
             this.lblModifierOutilIdCategorie.Size = new System.Drawing.Size(78, 13);
             this.lblModifierOutilIdCategorie.TabIndex = 51;
@@ -171,7 +171,7 @@
             // lblModifierOutilIdOutil
             // 
             this.lblModifierOutilIdOutil.AutoSize = true;
-            this.lblModifierOutilIdOutil.Location = new System.Drawing.Point(23, 48);
+            this.lblModifierOutilIdOutil.Location = new System.Drawing.Point(20, 45);
             this.lblModifierOutilIdOutil.Name = "lblModifierOutilIdOutil";
             this.lblModifierOutilIdOutil.Size = new System.Drawing.Size(38, 13);
             this.lblModifierOutilIdOutil.TabIndex = 50;
@@ -181,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 381);
+            this.ClientSize = new System.Drawing.Size(270, 346);
             this.Controls.Add(this.btnModifierOutilAnnuler);
             this.Controls.Add(this.btnModifierOutilOk);
             this.Controls.Add(this.txtModifierOutilNbLocations);

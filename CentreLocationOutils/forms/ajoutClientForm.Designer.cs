@@ -51,7 +51,7 @@
             // lblAjoutClientId
             // 
             this.lblAjoutClientId.AutoSize = true;
-            this.lblAjoutClientId.Location = new System.Drawing.Point(40, 34);
+            this.lblAjoutClientId.Location = new System.Drawing.Point(15, 36);
             this.lblAjoutClientId.Name = "lblAjoutClientId";
             this.lblAjoutClientId.Size = new System.Drawing.Size(16, 13);
             this.lblAjoutClientId.TabIndex = 0;
@@ -60,7 +60,7 @@
             // lblAjoutClientNom
             // 
             this.lblAjoutClientNom.AutoSize = true;
-            this.lblAjoutClientNom.Location = new System.Drawing.Point(40, 72);
+            this.lblAjoutClientNom.Location = new System.Drawing.Point(15, 74);
             this.lblAjoutClientNom.Name = "lblAjoutClientNom";
             this.lblAjoutClientNom.Size = new System.Drawing.Size(29, 13);
             this.lblAjoutClientNom.TabIndex = 2;
@@ -69,7 +69,7 @@
             // lblAjoutClientPrenom
             // 
             this.lblAjoutClientPrenom.AutoSize = true;
-            this.lblAjoutClientPrenom.Location = new System.Drawing.Point(40, 112);
+            this.lblAjoutClientPrenom.Location = new System.Drawing.Point(15, 114);
             this.lblAjoutClientPrenom.Name = "lblAjoutClientPrenom";
             this.lblAjoutClientPrenom.Size = new System.Drawing.Size(43, 13);
             this.lblAjoutClientPrenom.TabIndex = 3;
@@ -78,7 +78,7 @@
             // lblAjoutClientTelephone
             // 
             this.lblAjoutClientTelephone.AutoSize = true;
-            this.lblAjoutClientTelephone.Location = new System.Drawing.Point(40, 149);
+            this.lblAjoutClientTelephone.Location = new System.Drawing.Point(15, 151);
             this.lblAjoutClientTelephone.Name = "lblAjoutClientTelephone";
             this.lblAjoutClientTelephone.Size = new System.Drawing.Size(58, 13);
             this.lblAjoutClientTelephone.TabIndex = 4;
@@ -87,7 +87,7 @@
             // lblAjoutClientEmail
             // 
             this.lblAjoutClientEmail.AutoSize = true;
-            this.lblAjoutClientEmail.Location = new System.Drawing.Point(40, 187);
+            this.lblAjoutClientEmail.Location = new System.Drawing.Point(15, 189);
             this.lblAjoutClientEmail.Name = "lblAjoutClientEmail";
             this.lblAjoutClientEmail.Size = new System.Drawing.Size(32, 13);
             this.lblAjoutClientEmail.TabIndex = 5;
@@ -96,7 +96,7 @@
             // lblAjoutClientDateInscription
             // 
             this.lblAjoutClientDateInscription.AutoSize = true;
-            this.lblAjoutClientDateInscription.Location = new System.Drawing.Point(40, 227);
+            this.lblAjoutClientDateInscription.Location = new System.Drawing.Point(15, 229);
             this.lblAjoutClientDateInscription.Name = "lblAjoutClientDateInscription";
             this.lblAjoutClientDateInscription.Size = new System.Drawing.Size(80, 13);
             this.lblAjoutClientDateInscription.TabIndex = 6;
@@ -105,7 +105,7 @@
             // lblAjoutClientNbLocations
             // 
             this.lblAjoutClientNbLocations.AutoSize = true;
-            this.lblAjoutClientNbLocations.Location = new System.Drawing.Point(40, 265);
+            this.lblAjoutClientNbLocations.Location = new System.Drawing.Point(15, 267);
             this.lblAjoutClientNbLocations.Name = "lblAjoutClientNbLocations";
             this.lblAjoutClientNbLocations.Size = new System.Drawing.Size(104, 13);
             this.lblAjoutClientNbLocations.TabIndex = 7;
@@ -114,7 +114,7 @@
             // lblAjoutClientLimiteLocations
             // 
             this.lblAjoutClientLimiteLocations.AutoSize = true;
-            this.lblAjoutClientLimiteLocations.Location = new System.Drawing.Point(40, 301);
+            this.lblAjoutClientLimiteLocations.Location = new System.Drawing.Point(15, 303);
             this.lblAjoutClientLimiteLocations.Name = "lblAjoutClientLimiteLocations";
             this.lblAjoutClientLimiteLocations.Size = new System.Drawing.Size(94, 13);
             this.lblAjoutClientLimiteLocations.TabIndex = 8;
@@ -122,7 +122,7 @@
             // 
             // txtAjoutClientId
             // 
-            this.txtAjoutClientId.Location = new System.Drawing.Point(163, 31);
+            this.txtAjoutClientId.Location = new System.Drawing.Point(138, 33);
             this.txtAjoutClientId.Name = "txtAjoutClientId";
             this.txtAjoutClientId.ReadOnly = true;
             this.txtAjoutClientId.Size = new System.Drawing.Size(105, 20);
@@ -130,35 +130,35 @@
             // 
             // txtAjoutClientNom
             // 
-            this.txtAjoutClientNom.Location = new System.Drawing.Point(163, 69);
+            this.txtAjoutClientNom.Location = new System.Drawing.Point(138, 71);
             this.txtAjoutClientNom.Name = "txtAjoutClientNom";
             this.txtAjoutClientNom.Size = new System.Drawing.Size(105, 20);
             this.txtAjoutClientNom.TabIndex = 10;
             // 
             // txtAjoutClientPrenom
             // 
-            this.txtAjoutClientPrenom.Location = new System.Drawing.Point(163, 109);
+            this.txtAjoutClientPrenom.Location = new System.Drawing.Point(138, 111);
             this.txtAjoutClientPrenom.Name = "txtAjoutClientPrenom";
             this.txtAjoutClientPrenom.Size = new System.Drawing.Size(105, 20);
             this.txtAjoutClientPrenom.TabIndex = 11;
             // 
             // txtAjoutClientTelephone
             // 
-            this.txtAjoutClientTelephone.Location = new System.Drawing.Point(163, 146);
+            this.txtAjoutClientTelephone.Location = new System.Drawing.Point(138, 148);
             this.txtAjoutClientTelephone.Name = "txtAjoutClientTelephone";
             this.txtAjoutClientTelephone.Size = new System.Drawing.Size(105, 20);
             this.txtAjoutClientTelephone.TabIndex = 12;
             // 
             // txtAjoutClientEmail
             // 
-            this.txtAjoutClientEmail.Location = new System.Drawing.Point(163, 184);
+            this.txtAjoutClientEmail.Location = new System.Drawing.Point(138, 186);
             this.txtAjoutClientEmail.Name = "txtAjoutClientEmail";
             this.txtAjoutClientEmail.Size = new System.Drawing.Size(105, 20);
             this.txtAjoutClientEmail.TabIndex = 13;
             // 
             // txtAjoutClientDateInscription
             // 
-            this.txtAjoutClientDateInscription.Location = new System.Drawing.Point(163, 224);
+            this.txtAjoutClientDateInscription.Location = new System.Drawing.Point(138, 226);
             this.txtAjoutClientDateInscription.Name = "txtAjoutClientDateInscription";
             this.txtAjoutClientDateInscription.ReadOnly = true;
             this.txtAjoutClientDateInscription.Size = new System.Drawing.Size(105, 20);
@@ -166,21 +166,21 @@
             // 
             // txtAjoutClientNbLocations
             // 
-            this.txtAjoutClientNbLocations.Location = new System.Drawing.Point(163, 262);
+            this.txtAjoutClientNbLocations.Location = new System.Drawing.Point(138, 264);
             this.txtAjoutClientNbLocations.Name = "txtAjoutClientNbLocations";
             this.txtAjoutClientNbLocations.Size = new System.Drawing.Size(105, 20);
             this.txtAjoutClientNbLocations.TabIndex = 15;
             // 
             // txtAjoutClientLimiteLocations
             // 
-            this.txtAjoutClientLimiteLocations.Location = new System.Drawing.Point(163, 298);
+            this.txtAjoutClientLimiteLocations.Location = new System.Drawing.Point(138, 300);
             this.txtAjoutClientLimiteLocations.Name = "txtAjoutClientLimiteLocations";
             this.txtAjoutClientLimiteLocations.Size = new System.Drawing.Size(105, 20);
             this.txtAjoutClientLimiteLocations.TabIndex = 16;
             // 
             // btnAjouterClientOk
             // 
-            this.btnAjouterClientOk.Location = new System.Drawing.Point(59, 367);
+            this.btnAjouterClientOk.Location = new System.Drawing.Point(34, 350);
             this.btnAjouterClientOk.Name = "btnAjouterClientOk";
             this.btnAjouterClientOk.Size = new System.Drawing.Size(75, 23);
             this.btnAjouterClientOk.TabIndex = 17;
@@ -189,7 +189,7 @@
             // 
             // btnAjouterClientAnnuler
             // 
-            this.btnAjouterClientAnnuler.Location = new System.Drawing.Point(174, 367);
+            this.btnAjouterClientAnnuler.Location = new System.Drawing.Point(149, 350);
             this.btnAjouterClientAnnuler.Name = "btnAjouterClientAnnuler";
             this.btnAjouterClientAnnuler.Size = new System.Drawing.Size(75, 23);
             this.btnAjouterClientAnnuler.TabIndex = 18;
@@ -200,7 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 435);
+            this.ClientSize = new System.Drawing.Size(264, 385);
             this.Controls.Add(this.btnAjouterClientAnnuler);
             this.Controls.Add(this.btnAjouterClientOk);
             this.Controls.Add(this.txtAjoutClientLimiteLocations);

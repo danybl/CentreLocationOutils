@@ -33,6 +33,7 @@
             // 
             // connexionControl1
             // 
+            this.connexionControl1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.connexionControl1.labelPassword = "Password :";
             this.connexionControl1.labelUserName = "Username :";
             this.connexionControl1.Location = new System.Drawing.Point(37, 34);
@@ -44,6 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(284, 222);
             this.Controls.Add(this.connexionControl1);
             this.Name = "ConnexionForm";
