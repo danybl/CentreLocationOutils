@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using CentreLocationOutils.service.interfaces;
-using CentreLocationOutils.dao.interfaces;
-using CentreLocationOutils.exception.dao;
-using CentreLocationOutils.exception.service;
-using CentreLocationOutils.exception.dto;
-using CentreLocationOutils.dto;
+﻿using CentreLocationOutils.dao.interfaces;
 using CentreLocationOutils.db;
-using CentreLocationOutils.dao.implementations;
+using CentreLocationOutils.dto;
+using CentreLocationOutils.exception.dao;
+using CentreLocationOutils.exception.dto;
+using CentreLocationOutils.exception.service;
+using CentreLocationOutils.service.interfaces;
+using System.Collections.Generic;
 
 namespace CentreLocationOutils.service.implementations
 {
@@ -57,7 +53,7 @@ namespace CentreLocationOutils.service.implementations
             }
         }
 
-        
+
 
         /// <inheritdoc />
         public override void updateEmploye(Connection connection,
@@ -127,7 +123,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override void desinscrireEmployer(Connection connection, EmployeDTO employeDTO)
+        public override void desinscrireEmploye(Connection connection, EmployeDTO employeDTO)
         {
             if (connection == null)
             {
@@ -160,7 +156,7 @@ namespace CentreLocationOutils.service.implementations
             }
             try
             {
-               return getEmployeDAO().findByNom(connection, employeDTO.Nom, EmployeDTO.NOM_COLUMN_NAME);
+                return getEmployeDAO().findByNom(connection, employeDTO.Nom, EmployeDTO.NOM_COLUMN_NAME);
             }
             catch (DAOException daoException)
             {
