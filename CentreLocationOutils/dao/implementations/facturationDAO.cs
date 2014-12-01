@@ -15,7 +15,7 @@ namespace CentreLocationOutils.dao.implementations
     {
 
         private static const string ADD_REQUEST = "INSERT INTO Facturation (idFacturation, idEmploye, idLocation, coutTotal) "
-       + "VALUES (:idFacturation, :idEmploye, :idLocation, :coutTotal)";
+            + "VALUES (:idFacturation, :idEmploye, :idLocation, :coutTotal)";
 
         private static const string READ_REQUEST = "SELECT idFacturation, idEmploye, idLocation, coutTotal "
             + "FROM facturation "
@@ -32,6 +32,10 @@ namespace CentreLocationOutils.dao.implementations
             + "FROM facturation";
 
         private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_FACTURATION_ID.NEXTVAL from DUAL";
+
+        private static const string FIND_BY_EMPLOYE = "SELECT idFacturation, idEmploye, idLocation, coutTotal "
+            + "FROM facturation "
+            + "WHERE idEmploye = :idEmploye";
 
         /// <summary>
         /// Crée le DAO de la table Facturation <code>facturation</code>
@@ -242,8 +246,57 @@ namespace CentreLocationOutils.dao.implementations
             return facturation;
         }
 
+        /// <inheritdoc />
+        public List<FacturationDTO> findByEmploye(Connection connection, string idEmploye, string sortByPropertyName)
+        {
+            if (connection == null)
+            {
+                //throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (idEmploye == null)
+            {
+                throw new InvalidCriterionException("L'ID Employe ne peut être null");
+            }
+            if (sortByPropertyName == null)
+            {
+                throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
+            }
+            List<FacturationDTO> facturation = new List<FacturationDTO>();
 
-        //TODO findByXXX
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = FacturationDAO.FIND_BY_EMPLOYE;
 
+                DbDataReader dataReader = command.ExecuteReader();
+                FacturationDTO facturationDTO = null;
+
+                if (dataReader.NextResult())
+                {
+                    facturationDTO = new FacturationDTO();
+                    do
+                    {
+                        facturationDTO = new FacturationDTO();
+                        facturationDTO.IdFacturation = dataReader.GetString(1);
+                        EmployeDTO employeDTO = new EmployeDTO();
+                        employeDTO.IdEmploye = dataReader.GetString(2);
+                        LocationDTO locationDTO = new LocationDTO();
+                        locationDTO.IdLocation = dataReader.GetString(3);
+                        facturationDTO.EmployerDTO = employeDTO;
+                        facturationDTO.LocationDTO = locationDTO;
+                        facturationDTO.CoutTotal = dataReader.GetString(4);
+
+                        facturation.Add(facturationDTO);
+                    }
+                    while (dataReader.NextResult());
+                }
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+            return facturation;
+        }
     }
 }
