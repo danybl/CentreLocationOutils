@@ -37,6 +37,11 @@ namespace CentreLocationOutils.dao.implementations
             + "FROM facturation "
             + "WHERE idEmploye = :idEmploye";
 
+        private static const string FIND_BY_CLIENT = "SELECT facturation.idFacturation, facturation.idEmploye, facturation.idLocation, facturation.coutTotal "
+            + "FROM facturation "
+            + "INNER JOIN location"
+            + "WHERE location.idClient = :idClient";
+
         /// <summary>
         /// Crée le DAO de la table Facturation <code>facturation</code>
         /// </summary>
@@ -268,6 +273,59 @@ namespace CentreLocationOutils.dao.implementations
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
                 command.CommandText = FacturationDAO.FIND_BY_EMPLOYE;
+
+                DbDataReader dataReader = command.ExecuteReader();
+                FacturationDTO facturationDTO = null;
+
+                if (dataReader.NextResult())
+                {
+                    facturationDTO = new FacturationDTO();
+                    do
+                    {
+                        facturationDTO = new FacturationDTO();
+                        facturationDTO.IdFacturation = dataReader.GetString(1);
+                        EmployeDTO employeDTO = new EmployeDTO();
+                        employeDTO.IdEmploye = dataReader.GetString(2);
+                        LocationDTO locationDTO = new LocationDTO();
+                        locationDTO.IdLocation = dataReader.GetString(3);
+                        facturationDTO.EmployerDTO = employeDTO;
+                        facturationDTO.LocationDTO = locationDTO;
+                        facturationDTO.CoutTotal = dataReader.GetString(4);
+
+                        facturation.Add(facturationDTO);
+                    }
+                    while (dataReader.NextResult());
+                }
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+            return facturation;
+        }
+
+        /// <inheritdoc />
+        public List<FacturationDTO> findByClient(Connection connection, string idClient, string sortByPropertyName)
+        {
+            if (connection == null)
+            {
+                //throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (idClient == null)
+            {
+                throw new InvalidCriterionException("L'ID Client ne peut être null");
+            }
+            if (sortByPropertyName == null)
+            {
+                throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
+            }
+            List<FacturationDTO> facturation = new List<FacturationDTO>();
+
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = FacturationDAO.FIND_BY_CLIENT;
 
                 DbDataReader dataReader = command.ExecuteReader();
                 FacturationDTO facturationDTO = null;
