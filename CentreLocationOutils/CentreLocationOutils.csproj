@@ -163,7 +163,6 @@
     <Compile Include="facade\implementations\PaiementFacade.cs" />
     <Compile Include="facade\implementations\ReservationFacade.cs" />
     <Compile Include="facade\interfaces\IAdresseFacade.cs" />
-    <Compile Include="facade\interfaces\ICategorieFacade.cs" />
     <Compile Include="facade\interfaces\IClientFacade.cs" />
     <Compile Include="facade\interfaces\IEmployeFacade.cs" />
     <Compile Include="facade\interfaces\IFacade.cs" />

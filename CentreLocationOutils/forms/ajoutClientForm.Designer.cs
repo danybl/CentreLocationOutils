@@ -200,6 +200,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(264, 385);
             this.Controls.Add(this.btnAjouterClientAnnuler);
             this.Controls.Add(this.btnAjouterClientOk);
