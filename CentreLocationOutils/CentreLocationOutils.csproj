@@ -240,7 +240,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="applicationContext.xml" />
-    <Content Include="dto\EmployeDTO.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="lib\" />
