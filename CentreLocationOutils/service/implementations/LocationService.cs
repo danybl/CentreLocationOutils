@@ -252,6 +252,29 @@ namespace CentreLocationOutils.service.implementations
             updateLocation(connection, locationDTO);
         }
 
+        /// <inheritdoc />
+        public override List<LocationDTO> findByClient(Connection connection, LocationDTO locationDTO)
+        {
+            if (connection == null)
+            {
+                throw new InvalidConnectionException("La connection ne peut être null");
+            }
+            if (locationDTO == null)
+            {
+                throw new InvalidDTOException("La réservation ne peut être null");
+            }
+            try
+            {
+                return getLocationDAO().findByClient(connection, locationDTO.ClientDTO.IdClient, LocationDTO.ID_CLIENT_COLUMN_NAME);
+            }
+            catch (DAOException daoException)
+            {
+                throw new ServiceException("", daoException);
+            }
+        }
+
+
+
         //TODO findByDatePret() et findByDateRetour()
     }
 }
