@@ -15,7 +15,7 @@ namespace CentreLocationOutils.service.implementations
     /// <summary>
     /// Service de la table <code>location</code>.
     /// </summary>
-    class LocationService : Service, ILocationService
+    public class LocationService : Service, ILocationService
     {
         private ILocationDAO locationDAO;
        
@@ -24,8 +24,7 @@ namespace CentreLocationOutils.service.implementations
         /// Crée le service de la table <code>location</code>.
         /// </summary>
         /// <param name="locationDAO">Le DAO de la table <code>location</code></param>
-        public LocationService(ILocationDAO locationDAO, IClientDAO clientDAO, 
-            IEmployeDAO employeDAO, OutilDAO outilDAO) : base()
+        public LocationService(ILocationDAO locationDAO) : base()
         {
             if (locationDAO == null)
             {

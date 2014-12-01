@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace CentreLocationOutils.service.implementations
 {
-    public class EmployeService : IService, IEmployeService
+    public class EmployeService : Service, IEmployeService
     {
         private IEmployeDAO employeDAO;
 

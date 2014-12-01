@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace CentreLocationOutils.service.implementations
 {
-    public class ReservationService : IService, IReservationService
+    public class ReservationService : Service, IReservationService
     {
         private IReservationDAO reservationDAO;
 

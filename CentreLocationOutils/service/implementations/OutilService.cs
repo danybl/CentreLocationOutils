@@ -1,19 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using CentreLocationOutils.service.interfaces;
-using CentreLocationOutils.dao.implementations;
-using CentreLocationOutils.dao.interfaces;
-using CentreLocationOutils.exception.dao;
+﻿using CentreLocationOutils.dao.interfaces;
 using CentreLocationOutils.db;
 using CentreLocationOutils.dto;
-using CentreLocationOutils.exception.service;
+using CentreLocationOutils.exception.dao;
 using CentreLocationOutils.exception.dto;
+using CentreLocationOutils.exception.service;
+using CentreLocationOutils.service.interfaces;
+using System.Collections.Generic;
 
 namespace CentreLocationOutils.service.implementations
 {
-    public class OutilService : IService, IOutilService
+    public class OutilService : Service, IOutilService
     {
         private IOutilDAO outilDAO;
 
