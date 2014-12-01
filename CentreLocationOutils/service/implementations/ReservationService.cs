@@ -101,7 +101,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override void inscrireReservation(Connection connection, ReservationDTO reservationDTO)
+        public override void placerReservation(Connection connection, ReservationDTO reservationDTO)
         {
             if (connection == null)
             {
@@ -123,7 +123,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override void desinscrireReservation(Connection connection, ReservationDTO reservationDTO)
+        public override void terminerReservation(Connection connection, ReservationDTO reservationDTO)
         {
             if (connection == null)
             {
