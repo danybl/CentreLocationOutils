@@ -135,7 +135,7 @@
             this.aideToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(762, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(763, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -211,7 +211,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(762, 359);
+            this.tabControl1.Size = new System.Drawing.Size(762, 384);
             this.tabControl1.TabIndex = 3;
             // 
             // tpCreerLocation
@@ -240,7 +240,7 @@
             this.tpCreerLocation.Location = new System.Drawing.Point(4, 22);
             this.tpCreerLocation.Name = "tpCreerLocation";
             this.tpCreerLocation.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCreerLocation.Size = new System.Drawing.Size(754, 333);
+            this.tpCreerLocation.Size = new System.Drawing.Size(754, 358);
             this.tpCreerLocation.TabIndex = 1;
             this.tpCreerLocation.Text = "Créer Location";
             this.tpCreerLocation.UseVisualStyleBackColor = true;
@@ -838,11 +838,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 385);
+            this.ClientSize = new System.Drawing.Size(763, 410);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "AccueilForm";
-            this.Text = "AccueilForm";
+            this.Text = "Accueil";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
