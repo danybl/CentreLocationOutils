@@ -12,8 +12,6 @@ namespace CentreLocationOutils.dto
 
         public static const string ID_CATEGORIE_COLUMN_NAME = "idCategorie";
 
-        public static const string ID_CATEGORIE_COLUMN_NAME = "idCategorie";
-
         public static const string NOM_COLUMN_NAME = "nom";
 
         public static const string DATEACQUISITION_COLUMN_NAME = "dateAcquisition";

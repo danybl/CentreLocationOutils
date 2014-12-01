@@ -6,7 +6,6 @@ using CentreLocationOutils.exception.dto;
 using CentreLocationOutils.exception.service;
 using CentreLocationOutils.service.interfaces;
 using System.Collections.Generic;
-using CentreLocationOutils.dao.interfaces;
 
 namespace CentreLocationOutils.service.implementations
 {
@@ -14,7 +13,7 @@ namespace CentreLocationOutils.service.implementations
     {
         private IReservationDAO reservationDAO;
         private ILocationDAO locationDAO;
-        private IOutilDAO outilDAO;
+        // private IOutilDAO outilDAO;
 
         public ReservationService(IReservationDAO reservationDAO, ILocationDAO locationDAO)
             : base()
@@ -50,14 +49,14 @@ namespace CentreLocationOutils.service.implementations
         {
             this.locationDAO = locationDAO;
         }
-        private IOutilDAO getOutilDAO()
-        {
-            return this.outilDAO;
-        }
-        private void setOutilDAO(IOutilDAO outilDAO)
-        {
-            this.outilDAO = outilDAO;
-        }
+        //private IOutilDAO getOutilDAO()
+        //{
+        //    return this.outilDAO;
+        //}
+        //private void setOutilDAO(IOutilDAO outilDAO)
+        //{
+        //    this.outilDAO = outilDAO;
+        //}
 
 
         /// <inheritdoc />
@@ -167,8 +166,70 @@ namespace CentreLocationOutils.service.implementations
             }
             try
             {
-                List<ReservationDTO> reservations = getOutilDAO(). 
+                List<ReservationDTO> reservations = getReservationDAO().findByOutil(connection, reservationDTO.OutilDTO.IdOutil, ReservationDTO.ID_OUTIL_COLUMN_NAME);
+                if (reservations.Count > 0)
+                {
+                    ReservationDTO uneReservationDTO = reservations[0];
+                    if (!reservationDTO.ClientDTO.equals(uneReservationDTO.ClientDTO))
+                    {
+                        throw new ExistingReservationException("L'outil "
+                            + uneReservationDTO.OutilDTO.Nom
+                            + " (ID d'outil : "
+                            + uneReservationDTO.OutilDTO.IdOutil
+                            + ") est réservé pour "
+                            + uneReservationDTO.ClientDTO.Nom
+                            + ", "
+                            + uneReservationDTO.ClientDTO.Prenom
+                            + "(ID de client : "
+                            + uneReservationDTO.ClientDTO.IdClient
+                            + ")"
+                            );
+                    }
+                }
+                List<LocationDTO> locations = getLocationDAO().findByOutil(connection, reservationDTO.OutilDTO.IdOutil, LocationDTO.ID_OUTIL_COLUMN_NAME);
+                foreach (LocationDTO uneLocationDTO in locations)
+                {
+                    if (uneLocationDTO.DateRetour == null)
+                    {
+                        throw new ExistingLoanException("Le livre "
+                            + uneLocationDTO.OutilDTO.Nom
+                            + "(ID d'outil : "
+                            + uneLocationDTO.OutilDTO.IdOutil
+                            + ") est présentement prêté à "
+                            + uneLocationDTO.ClientDTO.Nom
+                            + ", "
+                            + uneLocationDTO.ClientDTO.Prenom
+                            + "(ID de client : "
+                            + uneLocationDTO.ClientDTO.IdClient
+                            + ")");
+                    }
+                }
 
+                if (reservationDTO.ClientDTO.NbLocations.Equals(reservationDTO.ClientDTO.LimiteLocations))
+                {
+                    throw new InvalidLoanLimitException("Le client "
+                    + reservationDTO.ClientDTO.Nom
+                    + ", "
+                    + reservationDTO.ClientDTO.Prenom
+                    + " (ID de client : "
+                    + reservationDTO.ClientDTO.IdClient
+                    + ") a atteint sa limite de locations ("
+                    + reservationDTO.ClientDTO.LimiteLocations
+                    + " location(s) maximum)");
+                }
+
+                LocationDTO locationDTO = new LocationDTO();
+                locationDTO.ClientDTO = reservationDTO.ClientDTO;
+                locationDTO.ClientDTO.NbLocations = (int.Parse(locationDTO.ClientDTO.NbLocations + 1)).ToString();
+                locationDTO.OutilDTO = reservationDTO.OutilDTO;
+                locationDTO.DateLocation = System.DateTime.Today;
+                // locationDTO.DateRetour = new System.DateTime();
+                getLocationDAO().add(connection, locationDTO);
+                annulerReservation(connection, reservationDTO);
+            }
+            catch (DAOException daoException)
+            {
+                throw new ServiceException("", daoException);
             }
         }
 

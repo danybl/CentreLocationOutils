@@ -1,14 +1,11 @@
-﻿using CentreLocationOutils.dao.implementations;
-using CentreLocationOutils.dao.interfaces;
+﻿using CentreLocationOutils.dao.interfaces;
 using CentreLocationOutils.db;
 using CentreLocationOutils.dto;
 using CentreLocationOutils.exception.dao;
+using CentreLocationOutils.exception.dto;
 using CentreLocationOutils.exception.service;
 using CentreLocationOutils.service.interfaces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace CentreLocationOutils.service.implementations
 {
@@ -125,8 +122,18 @@ namespace CentreLocationOutils.service.implementations
         }
 
         #endregion
-        
 
+        public void commencerPret(Connection connection, LocationDTO locationDTO)
+        {
+            if (connection == null)
+            {
+                throw new InvalidConnectionException("La connection ne peut être null");
+            }
+            if (locationDTO == null)
+            {
+                throw new InvalidDTOException("La réservation ne peut être null");
+            }
+        }
 
     }
 }
