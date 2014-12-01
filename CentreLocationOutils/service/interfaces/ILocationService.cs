@@ -27,7 +27,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="locationDTO">La location à ajouter</param>
-        void get(Connection connection, String idLocation);
+        void get(Connection connection, string idLocation);
 
         /// <summary>
         /// Met à jour une location dans la base de données.
@@ -49,6 +49,6 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="sortByPropertyName">La liste est classée par ordre croissant sur <code>sortByPropertyName</code>.</param>
         /// <returns>Si aucune location n'est trouvée, une {@link List} vide est retournée.</returns>
-        List<LocationDTO> getall(Connection connection, String sortByPropertyName);
+        List<LocationDTO> getall(Connection connection, string sortByPropertyName);
     }
 }

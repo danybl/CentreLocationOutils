@@ -34,6 +34,10 @@ namespace CentreLocationOutils.dao.implementations
         private static const String GET_ALL_REQUEST = "SELECT idAdresse, numero, rue, appartement, codePostal, ville, province, pays "
             + "FROM adresse";
 
+        private static const String FINF_BY_VILLE = "SELECT idAdresse, numero, rue, appartement, codePostal, ville, province, pays "
+            + "FROM adresse "
+            + "WHERE ville = :ville";
+
         /// <summary>
         /// Crée le DAO de la table adresse
         /// </summary>
@@ -218,7 +222,7 @@ namespace CentreLocationOutils.dao.implementations
             {
                 DbCommand command = connection.getConnection().CreateCommand();
                 command.CommandType = CommandType.Text;
-                command.CommandText = AdresseDAO.GET_ALL_REQUEST;
+                command.CommandText = AdresseDAO.FINF_BY_VILLE;
 
                 DbDataReader dataReader = command.ExecuteReader();
                 AdresseDTO adresseDTO= null;
@@ -249,6 +253,59 @@ namespace CentreLocationOutils.dao.implementations
             }
             return adresses;
         }
-        
+
+        /// <inheritdoc />
+        public List<AdresseDTO> findByVille(Connection connection, string ville, string sortByPropertyName)
+        {
+            if (connection == null)
+            {
+                //throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if (ville == null)
+            {
+                throw new InvalidCriterionException("La ville ne peut être null");
+            }
+            if (sortByPropertyName == null)
+            {
+                throw new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null");
+            }
+
+            List<AdresseDTO> adresses = new List<AdresseDTO>();
+
+            try
+            {
+                DbCommand command = connection.getConnection().CreateCommand();
+                command.CommandType = CommandType.Text;
+                command.CommandText = AdresseDAO.GET_ALL_REQUEST;
+
+                DbDataReader dataReader = command.ExecuteReader();
+                AdresseDTO adresseDTO = null;
+
+                if (dataReader.NextResult())
+                {
+                    adresseDTO = new AdresseDTO();
+                    do
+                    {
+                        adresseDTO = new AdresseDTO();
+                        adresseDTO.IdAdresse = dataReader.GetString(1);
+                        adresseDTO.Numero = dataReader.GetString(2);
+                        adresseDTO.Rue = dataReader.GetString(3);
+                        adresseDTO.Appartement = dataReader.GetString(4);
+                        adresseDTO.CodePostal = dataReader.GetString(5);
+                        adresseDTO.Ville = dataReader.GetString(6);
+                        adresseDTO.Province = dataReader.GetString(7);
+                        adresseDTO.Pays = dataReader.GetString(8);
+
+                        adresses.Add(adresseDTO);
+                    }
+                    while (dataReader.NextResult());
+                }
+            }
+            catch (DbException dbException)
+            {
+                throw new DAOException(dbException);
+            }
+            return adresses;
+        }
     }
 }

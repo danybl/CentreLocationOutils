@@ -49,5 +49,14 @@ namespace CentreLocationOutils.dao.interfaces
         public virtual List<AdresseDTO> getAll(Connection connection,
          string sortByPropertyName);
 
+        /// <summary>
+        /// Trouve les adresses à partir d'une ville. La liste est classée par ordre croissant sur <code>sortByPropertyName</code>.
+        /// Si aucune adresse * n'est trouvé, une {@link List} vide est retournée.
+        /// </summary>
+        /// <param name="connection">La connection à utiliser</param>
+        /// <param name="ville">La ville à trouver</param>
+        /// <param name="sortByPropertyName">Le nom de la propriété à uriliser pour classer la liste</param>
+        /// <returns>La liste de tous les DTOs</returns>
+        List<AdresseDTO> findByVille(Connection connection, string ville, string sortByPropertyName);
     }
 }
