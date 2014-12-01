@@ -7,6 +7,7 @@ namespace CentreLocationOutils.exception.facade
 {
     public class FacadeException : Exception
     {
+
         /**
       * Constructs a new exception with null as its detail message. The cause is not initialized, and may subsequently be initialized by a call
       * to {@link java.lang.Throwable#initCause(java.lang.Throwable) Throwable.initCause(Throwable)}.
@@ -20,5 +21,7 @@ namespace CentreLocationOutils.exception.facade
        *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
        */
         public FacadeException(string message) : base(message) { }
+
+        public FacadeException(string message, Exception serviceException) : base(message, serviceException) {}
     }
 }

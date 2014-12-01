@@ -14,38 +14,7 @@ namespace CentreLocationOutils.service.interfaces
     /// </summary>
     public interface IReservationService : IService
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="connection"></param>
-        /// <param name="reservationDTO"></param>
-        public virtual void add(Connection connection,
-        ReservationDTO reservationDTO);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="connection"></param>
-        /// <param name="primaryKey"></param>
-        /// <returns></returns>
-        public virtual ReservationDTO get(Connection connection,
-        string primaryKey);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="connection"></param>
-        /// <param name="reservationDTO"></param>
-        public virtual void update(Connection connection,
-        ReservationDTO reservationDTO);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="connection"></param>
-        /// <param name="reservationDTO"></param>
-        public virtual void delete(Connection connection,
-        ReservationDTO reservationDTO);
+        
 
         /// <summary>
         /// 
@@ -65,5 +34,14 @@ namespace CentreLocationOutils.service.interfaces
         /// <returns></returns>
         public virtual List<ReservationDTO> findByClient(Connection connection, ClientDTO clientDTO,
         string sortByPropertyName);
+
+        public virtual void placerReservation(Connection connection,
+        ReservationDTO reservationDTO);
+
+        public virtual void utiliserReservation(Connection connection,
+        ReservationDTO reservationDTO);
+
+        public virtual void annulerReservation(Connection connection,
+        ReservationDTO reservationDTO);
     }
 }

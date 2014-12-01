@@ -275,6 +275,6 @@ namespace CentreLocationOutils.service.implementations
 
 
 
-        //TODO findByDatePret() et findByDateRetour()
+        //TODO findByDatePret() et findByDateRetour(), findByOutil();
     }
 }
