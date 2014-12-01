@@ -129,6 +129,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accueilToolStripMenuItem,
             this.optionsToolStripMenuItem,
@@ -152,19 +153,19 @@
             // connexionToolStripMenuItem
             // 
             this.connexionToolStripMenuItem.Name = "connexionToolStripMenuItem";
-            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.connexionToolStripMenuItem.Text = "Connexion";
             // 
             // deconnexionToolStripMenuItem
             // 
             this.deconnexionToolStripMenuItem.Name = "deconnexionToolStripMenuItem";
-            this.deconnexionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.deconnexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.deconnexionToolStripMenuItem.Text = "Deconnexion";
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             // 
             // optionsToolStripMenuItem
@@ -178,7 +179,7 @@
             // parametresToolStripMenuItem
             // 
             this.parametresToolStripMenuItem.Name = "parametresToolStripMenuItem";
-            this.parametresToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.parametresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.parametresToolStripMenuItem.Text = "Paramètres";
             // 
             // aideToolStripMenuItem
@@ -208,7 +209,7 @@
             this.tabControl1.Controls.Add(this.tpCreerReservation);
             this.tabControl1.Controls.Add(this.tpInfoClient);
             this.tabControl1.Controls.Add(this.tpGestionOutils);
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Location = new System.Drawing.Point(1, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(762, 384);
