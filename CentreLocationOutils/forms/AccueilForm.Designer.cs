@@ -153,19 +153,19 @@
             // connexionToolStripMenuItem
             // 
             this.connexionToolStripMenuItem.Name = "connexionToolStripMenuItem";
-            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.connexionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.connexionToolStripMenuItem.Text = "Connexion";
             // 
             // deconnexionToolStripMenuItem
             // 
             this.deconnexionToolStripMenuItem.Name = "deconnexionToolStripMenuItem";
-            this.deconnexionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deconnexionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.deconnexionToolStripMenuItem.Text = "Deconnexion";
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.quitterToolStripMenuItem.Text = "Quitter";
             // 
             // optionsToolStripMenuItem
@@ -179,7 +179,7 @@
             // parametresToolStripMenuItem
             // 
             this.parametresToolStripMenuItem.Name = "parametresToolStripMenuItem";
-            this.parametresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.parametresToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.parametresToolStripMenuItem.Text = "Paramètres";
             // 
             // aideToolStripMenuItem
@@ -602,7 +602,7 @@
             // 
             // btnRechercherClient
             // 
-            this.btnRechercherClient.Location = new System.Drawing.Point(88, 252);
+            this.btnRechercherClient.Location = new System.Drawing.Point(83, 252);
             this.btnRechercherClient.Name = "btnRechercherClient";
             this.btnRechercherClient.Size = new System.Drawing.Size(75, 28);
             this.btnRechercherClient.TabIndex = 3;
@@ -611,7 +611,7 @@
             // 
             // btnSupprimerClient
             // 
-            this.btnSupprimerClient.Location = new System.Drawing.Point(88, 195);
+            this.btnSupprimerClient.Location = new System.Drawing.Point(83, 195);
             this.btnSupprimerClient.Name = "btnSupprimerClient";
             this.btnSupprimerClient.Size = new System.Drawing.Size(75, 28);
             this.btnSupprimerClient.TabIndex = 2;
@@ -620,7 +620,7 @@
             // 
             // btnModifierClient
             // 
-            this.btnModifierClient.Location = new System.Drawing.Point(88, 126);
+            this.btnModifierClient.Location = new System.Drawing.Point(83, 126);
             this.btnModifierClient.Name = "btnModifierClient";
             this.btnModifierClient.Size = new System.Drawing.Size(75, 28);
             this.btnModifierClient.TabIndex = 1;
@@ -629,7 +629,7 @@
             // 
             // btnAjouterClient
             // 
-            this.btnAjouterClient.Location = new System.Drawing.Point(88, 58);
+            this.btnAjouterClient.Location = new System.Drawing.Point(83, 58);
             this.btnAjouterClient.Name = "btnAjouterClient";
             this.btnAjouterClient.Size = new System.Drawing.Size(75, 28);
             this.btnAjouterClient.TabIndex = 0;
@@ -752,7 +752,7 @@
             // 
             // btnRechercherOutil3
             // 
-            this.btnRechercherOutil3.Location = new System.Drawing.Point(86, 241);
+            this.btnRechercherOutil3.Location = new System.Drawing.Point(87, 255);
             this.btnRechercherOutil3.Name = "btnRechercherOutil3";
             this.btnRechercherOutil3.Size = new System.Drawing.Size(75, 28);
             this.btnRechercherOutil3.TabIndex = 6;
@@ -761,7 +761,7 @@
             // 
             // btnSupprimerOutil
             // 
-            this.btnSupprimerOutil.Location = new System.Drawing.Point(86, 183);
+            this.btnSupprimerOutil.Location = new System.Drawing.Point(87, 197);
             this.btnSupprimerOutil.Name = "btnSupprimerOutil";
             this.btnSupprimerOutil.Size = new System.Drawing.Size(75, 28);
             this.btnSupprimerOutil.TabIndex = 5;
@@ -770,7 +770,7 @@
             // 
             // btnModifierOutil
             // 
-            this.btnModifierOutil.Location = new System.Drawing.Point(86, 114);
+            this.btnModifierOutil.Location = new System.Drawing.Point(87, 128);
             this.btnModifierOutil.Name = "btnModifierOutil";
             this.btnModifierOutil.Size = new System.Drawing.Size(75, 28);
             this.btnModifierOutil.TabIndex = 4;
@@ -779,7 +779,7 @@
             // 
             // btnAjouterOutil
             // 
-            this.btnAjouterOutil.Location = new System.Drawing.Point(86, 46);
+            this.btnAjouterOutil.Location = new System.Drawing.Point(87, 60);
             this.btnAjouterOutil.Name = "btnAjouterOutil";
             this.btnAjouterOutil.Size = new System.Drawing.Size(75, 28);
             this.btnAjouterOutil.TabIndex = 3;

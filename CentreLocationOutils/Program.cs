@@ -15,7 +15,7 @@ namespace CentreLocationOutils
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new accueil());
+            Application.Run(new splashScreen());
         }
     }
 }
