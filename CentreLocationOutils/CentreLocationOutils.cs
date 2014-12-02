@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CentreLocationOutils.util;
 
 namespace CentreLocationOutils
 {
-    class CentreLocationOutils
+    public class CentreLocationOutils
     {
+        private CentreLocationOutilsCreateur centreLocationOutilsCreateur;
     }
 }

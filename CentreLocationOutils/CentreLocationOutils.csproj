@@ -198,7 +198,6 @@
     <Compile Include="splashScreen.Designer.cs">
       <DependentUpon>splashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="util\CentreCreateur.cs" />
     <Compile Include="util\CentreLocationOutilsCreateur.cs" />
     <Compile Include="util\FormatteurDate.cs" />
     <EmbeddedResource Include="forms\AccueilForm.resx">

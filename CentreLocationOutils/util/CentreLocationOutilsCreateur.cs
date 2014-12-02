@@ -7,5 +7,10 @@ namespace CentreLocationOutils.util
 {
     public class CentreLocationOutilsCreateur
     {
+        //TODO transaction
+        //TODO debut transaction
+        //TODO fin transaction
+        //TODO commit
+        //TODO rollback
     }
 }
