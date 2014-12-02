@@ -49,6 +49,11 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="sortByPropertyName">La liste est classée par ordre croissant sur <code>sortByPropertyName</code>.</param>
         /// <returns>Si aucune location n'est trouvée, une {@link List} vide est retournée.</returns>
-        List<LocationDTO> getall(Connection connection, string sortByPropertyName);
+        List<LocationDTO> getAllLocations(Connection connection, string sortByPropertyName);
+
+        public virtual void commencerLocation(Connection connection, LocationDTO locationDTO);
+        public virtual void renouvelerLocation(Connection connection, LocationDTO locationDTO);
+        public virtual void terminerLocation(Connection connection, LocationDTO locationDTO);
+        public virtual List<LocationDTO> findByClient(Connection connection, LocationDTO locationDTO);
     }
 }

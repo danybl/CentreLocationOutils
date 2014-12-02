@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using CentreLocationOutils.db;
+using CentreLocationOutils.dto;
+using CentreLocationOutils.exception.facade;
+using CentreLocationOutils.exception.service;
 using CentreLocationOutils.facade.interfaces;
 using CentreLocationOutils.service.interfaces;
-using CentreLocationOutils.exception.facade;
-using CentreLocationOutils.db;
-using CentreLocationOutils.dto;
-using CentreLocationOutils.service.implementations;
-using CentreLocationOutils.exception.service;
 
 namespace CentreLocationOutils.facade.implementations
 {
@@ -35,7 +30,7 @@ namespace CentreLocationOutils.facade.implementations
            this.reservationService = reservationService;
        }
 
-       public void placerReservation(Connection connection, ReservationDTO reservationDTO)
+       public override void placerReservation(Connection connection, ReservationDTO reservationDTO)
        {
            try
            {
@@ -47,7 +42,7 @@ namespace CentreLocationOutils.facade.implementations
            }
        }
 
-       public void utiliserReservation(Connection connection, ReservationDTO reservationDTO)
+       public override void utiliserReservation(Connection connection, ReservationDTO reservationDTO)
        {
            try
            {
@@ -59,7 +54,7 @@ namespace CentreLocationOutils.facade.implementations
            }
        }
 
-       public void annulerReservation(Connection connection, ReservationDTO reservationDTO)
+       public override void annulerReservation(Connection connection, ReservationDTO reservationDTO)
        {
            try
            {
