@@ -65,5 +65,19 @@ namespace CentreLocationOutils.service.interfaces
         /// <returns></returns>
         public virtual List<EmployeDTO> findByNom(Connection connection, string nom,
         string sortByPropertyName);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="employeDTO"></param>
+        public virtual void inscrireEmploye(Connection connection, EmployeDTO employeDTO);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="connection"></param>
+        /// <param name="employeDTO"></param>
+        public virtual void desinscrireEmploye(Connection connection, EmployeDTO employeDTO);
     }
 }
