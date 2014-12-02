@@ -10,7 +10,7 @@ using System.Text;
 
 namespace CentreLocationOutils.service.implementations
 {
-    public class ClientService : CentreLocationOutils.dao.implementations.Service, CentreLocationOutils.service.interfaces.IClientService
+    public class ClientService : CentreLocationOutils.service.interfaces.IClientService
     {
         private IClientDAO clientDAO;
         private IReservationDAO reservationDAO;
@@ -57,7 +57,7 @@ namespace CentreLocationOutils.service.implementations
         }
         }
         
-        /*public ClientDTO get(Connection connection,String idClient){
+        public ClientDTO get(Connection connection,String idClient){
         try {
             return (ClientDTO)getClientDAO().get(connection,idClient); 
         }
@@ -65,7 +65,7 @@ namespace CentreLocationOutils.service.implementations
         {
             throw new ServiceException(daoException.ToString());
         }
-        } */
+        } 
 
         public void update(Connection connection,
         ClientDTO clientDTO)
@@ -92,7 +92,7 @@ namespace CentreLocationOutils.service.implementations
                 throw new ServiceException(daoException.ToString());
             }
         }
-      /*  public List<ClientDTO> getAll(Connection connection,String sortByPropertyName)
+      public List<ClientDTO> getAll(Connection connection,String sortByPropertyName)
         {
             try
             {
@@ -102,7 +102,7 @@ namespace CentreLocationOutils.service.implementations
             {
                 throw new ServiceException(daoException.ToString());
             }
-        } */
+        } 
 
         public List<ClientDTO> findByNom(Connection connection,String nom,String sortByPropertyName){
          try {
