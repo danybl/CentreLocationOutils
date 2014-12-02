@@ -47,7 +47,6 @@
             this.btnRechercherOutil = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -108,6 +107,7 @@
             this.columnDateAcquisition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnPrixLocationParJour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtPicker = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tpCreerLocation.SuspendLayout();
@@ -218,6 +218,7 @@
             // tpCreerLocation
             // 
             this.tpCreerLocation.BackColor = System.Drawing.Color.Silver;
+            this.tpCreerLocation.Controls.Add(this.dtPicker);
             this.tpCreerLocation.Controls.Add(this.lblNbJours);
             this.tpCreerLocation.Controls.Add(this.numUDnbJours);
             this.tpCreerLocation.Controls.Add(this.btnAnnulerLocation);
@@ -225,7 +226,6 @@
             this.tpCreerLocation.Controls.Add(this.btnRechercherOutil);
             this.tpCreerLocation.Controls.Add(this.textBox8);
             this.tpCreerLocation.Controls.Add(this.textBox7);
-            this.tpCreerLocation.Controls.Add(this.textBox6);
             this.tpCreerLocation.Controls.Add(this.textBox5);
             this.tpCreerLocation.Controls.Add(this.textBox4);
             this.tpCreerLocation.Controls.Add(this.textBox3);
@@ -249,7 +249,7 @@
             // lblNbJours
             // 
             this.lblNbJours.AutoSize = true;
-            this.lblNbJours.Location = new System.Drawing.Point(476, 192);
+            this.lblNbJours.Location = new System.Drawing.Point(485, 192);
             this.lblNbJours.Name = "lblNbJours";
             this.lblNbJours.Size = new System.Drawing.Size(84, 13);
             this.lblNbJours.TabIndex = 20;
@@ -257,7 +257,7 @@
             // 
             // numUDnbJours
             // 
-            this.numUDnbJours.Location = new System.Drawing.Point(566, 189);
+            this.numUDnbJours.Location = new System.Drawing.Point(575, 189);
             this.numUDnbJours.Minimum = new decimal(new int[] {
             1,
             0,
@@ -287,7 +287,7 @@
             this.btnSaveLocation.Name = "btnSaveLocation";
             this.btnSaveLocation.Size = new System.Drawing.Size(87, 23);
             this.btnSaveLocation.TabIndex = 17;
-            this.btnSaveLocation.Text = "Save";
+            this.btnSaveLocation.Text = "Enregistrer";
             this.btnSaveLocation.UseVisualStyleBackColor = true;
             // 
             // btnRechercherOutil
@@ -305,7 +305,7 @@
             this.textBox8.Location = new System.Drawing.Point(360, 278);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
+            this.textBox8.Size = new System.Drawing.Size(119, 20);
             this.textBox8.TabIndex = 15;
             // 
             // textBox7
@@ -313,16 +313,8 @@
             this.textBox7.Location = new System.Drawing.Point(360, 233);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
+            this.textBox7.Size = new System.Drawing.Size(119, 20);
             this.textBox7.TabIndex = 14;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(360, 189);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 13;
             // 
             // textBox5
             // 
@@ -472,7 +464,7 @@
             this.btnSaveReservation.Name = "btnSaveReservation";
             this.btnSaveReservation.Size = new System.Drawing.Size(75, 23);
             this.btnSaveReservation.TabIndex = 11;
-            this.btnSaveReservation.Text = "Save";
+            this.btnSaveReservation.Text = "Enregistrer";
             this.btnSaveReservation.UseVisualStyleBackColor = true;
             // 
             // btnRechercherOutil2
@@ -840,6 +832,13 @@
             this.columnDescription.HeaderText = "";
             this.columnDescription.Name = "columnDescription";
             // 
+            // dtPicker
+            // 
+            this.dtPicker.Location = new System.Drawing.Point(360, 189);
+            this.dtPicker.Name = "dtPicker";
+            this.dtPicker.Size = new System.Drawing.Size(119, 20);
+            this.dtPicker.TabIndex = 21;
+            // 
             // AccueilForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -895,7 +894,6 @@
         private System.Windows.Forms.Button btnRechercherOutil;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
@@ -956,5 +954,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDateAcquisition;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPrixLocationParJour;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDescription;
+        private System.Windows.Forms.DateTimePicker dtPicker;
     }
 }
