@@ -9,5 +9,7 @@ namespace CentreLocationOutils
     public class CentreLocationOutils
     {
         private CentreLocationOutilsCreateur centreLocationOutilsCreateur;
+
+
     }
 }
