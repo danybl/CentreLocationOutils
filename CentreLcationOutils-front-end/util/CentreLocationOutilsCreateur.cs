@@ -15,6 +15,7 @@ using CentreLocationOutils.exception.facade;
 using CentreLocationOutils.service.interfaces;
 using CentreLocationOutils.service.implementations;
 using CentreLocationOutils.facade.implementations;
+using System.Data.OracleClient;
 
 namespace CentreLcationOutils_front_end.util
 {
@@ -28,6 +29,8 @@ namespace CentreLcationOutils_front_end.util
         public IOutilFacade OutilFacade { get; private set; }
         public IAdresseFacade AdresseFacade { get; private set; }
         public IFacturationFacade FacturationFacade { get; private set; }
+
+       // public Db
 
         public CentreLocationOutilsCreateur()
         {
@@ -71,12 +74,11 @@ namespace CentreLcationOutils_front_end.util
             }
         }
 
-        public void commit()
+        public void beginTransaction()
         {
-            try
-            {
-                Con
-            }
+            Connection.getConnection().BeginTransaction();
         }
+
     }
 }
+
