@@ -60,5 +60,11 @@ namespace CentreLocationOutils.service.interfaces
         /// <returns>Si aucune adresse n'est trouvée, une {@link List} vide est retournée.</returns>
         public override List<AdresseDTO> findByVille(Connection connection, string ville, string sortByPropertyName);
 
+        /// <summary>
+        /// Change l'adresse d'un client déjà existant dans le système.
+        /// </summary>
+        /// <param name="connection">La connection à utiliser</param>
+        /// <param name="adresseDTO">L'adresse à changer</param>
+        void changerAdresse(Connection connection, AdresseDTO adresseDTO);
     }
 }

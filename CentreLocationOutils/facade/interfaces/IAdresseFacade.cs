@@ -7,5 +7,6 @@ namespace CentreLocationOutils.facade.interfaces
 {
     public class IAdresseFacade
     {
+        public virtual void changerLocation(Connection connection, AdresseDTO adresseDTO);
     }
 }
