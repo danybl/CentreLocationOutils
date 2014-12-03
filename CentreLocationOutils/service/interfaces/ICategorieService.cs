@@ -69,5 +69,6 @@ namespace CentreLocationOutils.service.interfaces
         List<CategorieDTO> findByNom(Connection connection,
         String nom,
         String sortByPropertyName);
+
     }
 }

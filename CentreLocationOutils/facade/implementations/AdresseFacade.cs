@@ -24,32 +24,16 @@ namespace CentreLocationOutils.facade.implementations
             setAdresseService(adresseService);
         }
 
-        //Getters and Setters
-        /**
-         * Getter de la variable d'instance <code>this.adresseService</code>.
-         *
-         * @return La variable d'instance <code>this.adresseService</code>
-         */
         private IAdresseService getAdresseService()
         {
             return this.adresseService;
         }
 
-        /**
-         * Setter de la variable d'instance <code>this.adresseService</code>.
-         *
-         * @param adresseService La valeur à utiliser pour la variable d'instance <code>this.adresseService</code>
-         */
         private void setAdresseService(IAdresseService adresseService)
         {
             this.adresseService = adresseService;
         }
-        /**
-         *Change l'adresse d'un client déjà existant
-         *
-         * @param connection. La connection à utiliser.
-         * @param adresseDTO. L'adresse à changer.
-         */
+
         public override void changerAdresse(Connection connection, AdresseDTO adresseDTO)
         {
             try
