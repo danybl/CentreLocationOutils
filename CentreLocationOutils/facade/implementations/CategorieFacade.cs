@@ -3,6 +3,7 @@ using CentreLocationOutils.dto;
 using CentreLocationOutils.exception.facade;
 using CentreLocationOutils.exception.service;
 using CentreLocationOutils.service.interfaces;
+using CentreLocationOutils.facade.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
