@@ -35,7 +35,8 @@ namespace CentreLocationOutils.dao.implementations
 
         private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_CATEG_ID.NEXTVAL from DUAL";
 
-        public CategorieDAO(CategorieDTO categorieDTOClass) : base(categorieDTOClass) { }
+        //public CategorieDAO(CategorieDTO categorieDTOClass) : base(categorieDTOClass) { }
+        public CategorieDAO() : base() { }
 
         /// <inheritdoc />
         public void add(Connection connection,

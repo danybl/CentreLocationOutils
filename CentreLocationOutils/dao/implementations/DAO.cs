@@ -11,15 +11,17 @@ namespace CentreLocationOutils.dao.implementations
     {
         private dynamic dtoClass;
 
-        protected DAO(dynamic dtoClass)
-            : base()
-        {
-            if (dtoClass == null)
-            {
-                throw new InvalidDTOClassException("La classe de DTO ne peut être null");
-            }
-            setDtoClass(dtoClass);
-        }
+        //protected DAO(dynamic dtoClass)
+        //    : base()
+        //{
+        //    if (dtoClass == null)
+        //    {
+        //        throw new InvalidDTOClassException("La classe de DTO ne peut être null");
+        //    }
+        //    setDtoClass(dtoClass);
+        //}
+
+        protected DAO() :base() { }
 
         protected dynamic getDtoClass()
         {

@@ -36,7 +36,9 @@ namespace CentreLocationOutils.dao.implementations
         private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_OUTIL_ID.NEXTVAL from DUAL";
 
 
-        public OutilDAO(OutilDTO outilDTOClass) : base(outilDTOClass) { }
+        //public OutilDAO(OutilDTO outilDTOClass) : base(outilDTOClass) { }
+
+        public OutilDAO() : base() { }
 
         public void add(Connection connection,
         OutilDTO outilDTO)

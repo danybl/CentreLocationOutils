@@ -45,7 +45,9 @@ namespace CentreLocationOutils.dao.implementations
         /// Crée le DAO de la table Client <code>client</code>
         /// </summary>
         /// <param name="clientDTOClass">La classe de membre DTO à utiliser</param>
-        public ClientDAO(ClientDTO clientDTOClass) : base(clientDTOClass) { }
+        //public ClientDAO(ClientDTO clientDTOClass) : base(clientDTOClass) { }
+
+        public ClientDAO() : base() { }
 
         /// <inheritdoc />
         private static String getPrimaryKey(Connection connection)

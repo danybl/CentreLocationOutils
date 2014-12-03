@@ -37,7 +37,9 @@ namespace CentreLocationOutils.dao.implementations
 
 
 
-        public EmployeDAO(EmployeDTO employeDTOClass) : base(employeDTOClass) { }
+        //public EmployeDAO(EmployeDTO employeDTOClass) : base(employeDTOClass) { }
+
+        public EmployeDAO() : base() { }
 
         /// <inheritdoc />
         public void add(Connection connection,

@@ -20,6 +20,8 @@ namespace CentreLocationOutils.exception.util
        *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
        */
         public CentreCreateurException(string message) : base(message) { }
+
+        public CentreCreateurException(string message, Exception cause) : base(message, cause) { }
     }
 }
 

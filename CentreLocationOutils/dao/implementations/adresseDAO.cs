@@ -42,7 +42,8 @@ namespace CentreLocationOutils.dao.implementations
         /// Crée le DAO de la table adresse
         /// </summary>
         /// <param name="reservationDTOClass">La classe de réservationDTO à utiliser</param>
-        public AdresseDAO(AdresseDTO adresseDTOClass) : base(adresseDTOClass) { }
+        //public AdresseDAO(AdresseDTO adresseDTOClass) : base(adresseDTOClass) { }
+        public AdresseDAO() : base() { }
 
         /// <inheritdoc />
         private static String getPrimaryKey(Connection connection)

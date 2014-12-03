@@ -41,7 +41,9 @@ namespace CentreLocationOutils.dao.implementations
             + "WHERE idOutil = ? "
             + "ORDER BY dateLocation ASC";
 
-        public LocationDAO(LocationDTO locationDTOClass) : base(locationDTOClass) { }
+        //public LocationDAO(LocationDTO locationDTOClass) : base(locationDTOClass) { }
+        public LocationDAO() : base() { }
+
 
         /// <inheritdoc />
         public void add(Connection connection,

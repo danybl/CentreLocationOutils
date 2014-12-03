@@ -7,6 +7,9 @@ using CentreLocationOutils.facade.interfaces;
 using CentreLocationOutils.dao.interfaces;
 using CentreLocationOutils.dao.implementations;
 using CentreLocationOutils.dto;
+using CentreLocationOutils.exception.db;
+using CentreLocationOutils.exception.dao;
+using CentreLocationOutils.exception.util;
 
 namespace CentreLcationOutils_front_end.util
 {
@@ -25,7 +28,11 @@ namespace CentreLcationOutils_front_end.util
         {
             try
             {
-               // IClientDAO clientDAO = new ClientDAO();
+                IClientDAO clientDAO = new ClientDAO();
+            }
+            catch (ConnectionException connectionException)
+            {
+                throw new CentreCreateurException("", connectionException);
             }
         }
     }

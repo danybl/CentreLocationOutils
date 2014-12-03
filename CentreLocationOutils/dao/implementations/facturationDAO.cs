@@ -46,7 +46,9 @@ namespace CentreLocationOutils.dao.implementations
         /// Crée le DAO de la table Facturation <code>facturation</code>
         /// </summary>
         /// <param name="facturationDTOClass">La classe de facturation DTO à utiliser</param>
-        public FacturationDAO(FacturationDTO facturationDTOClass) : base(facturationDTOClass) { }
+        //public FacturationDAO(FacturationDTO facturationDTOClass) : base(facturationDTOClass) { }
+
+        public FacturationDAO() : base() { }
 
         /// <inheritdoc />
         private static String getPrimaryKey(Connection connection)

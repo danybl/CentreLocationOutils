@@ -46,7 +46,9 @@ namespace CentreLocationOutils.dao.implementations
         /// Crée le DAO de la table réservation
         /// </summary>
         /// <param name="reservationDTOClass">La classe de réservationDTO à utiliser</param>
-        public ReservationDAO(ReservationDTO reservationDTOClass) : base(reservationDTOClass) { }
+        //public ReservationDAO(ReservationDTO reservationDTOClass) : base(reservationDTOClass) { }
+
+        public ReservationDAO() : base() { }
 
         private static String getPrimaryKey(Connection connection) {
         return DAO.getPrimaryKey(connection,
