@@ -1,4 +1,7 @@
-﻿using CentreLocationOutils.exception.facade;
+﻿using CentreLocationOutils.db;
+using CentreLocationOutils.dto;
+using CentreLocationOutils.exception.facade;
+using CentreLocationOutils.exception.service;
 using CentreLocationOutils.facade.interfaces;
 using System;
 using System.Collections.Generic;
@@ -44,5 +47,16 @@ namespace CentreLocationOutils.facade.implementations
         }
 
         #endregion
+
+        public List<FacturationDTO> findByClient(Connection connection, string idClient, string sortByPropertyName) {
+            try
+            {
+               return getFacturationFacade().findByClient(connection, idClient, sortByPropertyName);
+            }
+            catch (ServiceException serviceExcpetion)
+            {
+                throw new FacadeException("", serviceExcpetion);
+            }
+        }
     }
 }
