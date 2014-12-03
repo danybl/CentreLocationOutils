@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CentreLocationOutils.facade.interfaces
 {
-    public class IClientFacade
+    public interface IClientFacade : IFacade
     {
     }
 }

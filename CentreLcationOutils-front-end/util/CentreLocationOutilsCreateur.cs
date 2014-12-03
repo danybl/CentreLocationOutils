@@ -29,6 +29,14 @@ namespace CentreLcationOutils_front_end.util
             try
             {
                 IClientDAO clientDAO = new ClientDAO();
+                IEmployeDAO employeDAO = new EmployeDAO();
+                IReservationDAO reservationDAO = new ReservationDAO();
+                ILocationDAO locationDAO = new LocationDAO();
+                IOutilDAO outilDAO = new OutilDAO();
+                IAdresseDAO adresseDAO = new AdresseDAO();
+                IFacturationDAO facturationDAO= new FacturationDAO();
+
+                ClientFacade = new IClientFacade()
             }
             catch (ConnectionException connectionException)
             {
