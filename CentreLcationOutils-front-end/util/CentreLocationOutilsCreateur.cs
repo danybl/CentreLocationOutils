@@ -12,10 +12,12 @@ using CentreLocationOutils.exception.dao;
 using CentreLocationOutils.exception.util;
 using CentreLocationOutils.exception.service;
 using CentreLocationOutils.exception.facade;
+using CentreLocationOutils.exception;
 using CentreLocationOutils.service.interfaces;
 using CentreLocationOutils.service.implementations;
 using CentreLocationOutils.facade.implementations;
 using System.Data.OracleClient;
+using System.Data.Common;
 
 namespace CentreLcationOutils_front_end.util
 {
@@ -30,7 +32,7 @@ namespace CentreLcationOutils_front_end.util
         public IAdresseFacade AdresseFacade { get; private set; }
         public IFacturationFacade FacturationFacade { get; private set; }
 
-       // public Db
+        public DbTransaction Transaction;
 
         public CentreLocationOutilsCreateur()
         {
@@ -76,7 +78,52 @@ namespace CentreLcationOutils_front_end.util
 
         public void beginTransaction()
         {
-            Connection.getConnection().BeginTransaction();
+            try
+            {
+                Transaction = Connection.getConnection().BeginTransaction();
+            }
+            catch (DbException dbException)
+            {
+                throw new CentreCreateurException("", dbException);
+            }
+        }
+
+        public void commit()
+        {
+            try
+            {
+                Transaction.Commit();
+                close();
+            }
+            catch (DbException dbException)
+            {
+                throw new CentreCreateurException("", dbException);
+            }
+        }
+
+        public void rollback()
+        {
+            try
+            {
+                Transaction.Rollback();
+                close();
+            }
+            catch (DbException dbException)
+            {
+                throw new CentreCreateurException("", dbException);
+            }
+        }
+
+        public void close()
+        {
+            try
+            {
+                Transaction.Dispose();
+            }
+            catch (DbException dbException)
+            {
+                throw new CentreCreateurException("", dbException);
+            }
         }
 
     }
