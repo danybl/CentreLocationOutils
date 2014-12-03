@@ -67,7 +67,6 @@ namespace CentreLocationOutils.facade.implementations
             }
         }
 
-
         public List<LocationDTO> findByClient(Connection connection, LocationDTO locationDTO)
         {
             try

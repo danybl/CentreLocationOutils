@@ -11,7 +11,7 @@ using System.Text;
 
 namespace CentreLocationOutils.facade.implementations
 {
-    public class CategorieFacade
+    public class CategorieFacade : ICategorieFacade
     {
         private ICategorieService categorieService;
         public CategorieFacade(ICategorieService categorieService)
@@ -24,25 +24,29 @@ namespace CentreLocationOutils.facade.implementations
             setCategorieService(categorieService);
         }
 
-        //Getters and Setters
-        /**
-         * Getter de la variable d'instance <code>this.categorieService</code>.
-         *
-         * @return La variable d'instance <code>this.categorieService</code>
-         */
         private ICategorieService getCategorieService()
         {
             return this.categorieService;
         }
 
-        /**
-         * Setter de la variable d'instance <code>this.categorieService</code>.
-         *
-         * @param categorieService La valeur à utiliser pour la variable d'instance <code>this.categorieService</code>
-         */
         private void setCategorieService(ICategorieService categorieService)
         {
             this.categorieService = categorieService;
+        }
+
+
+        public List<CategorieDTO> findByNom(Connection connection,
+        String nom,
+        String sortByPropertyName)
+        {
+            try
+            {
+                return getCategorieService().findByNom(connection, nom, sortByPropertyName);
+            }
+            catch (ServiceException serviceException)
+            {
+                throw new FacadeException("", serviceException);
+            }
         }
     }
 }
