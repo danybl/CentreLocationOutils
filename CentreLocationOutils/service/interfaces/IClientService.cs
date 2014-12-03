@@ -12,23 +12,52 @@ namespace CentreLocationOutils.service.interfaces
     /// <summary>
     /// 
     /// </summary>
-    public interface IClientService : CentreLocationOutils.dao.interfaces.IService
+    public interface IClientService : IService
     {
-        void add(Connection connection, ClientDTO clientDTO) {
-        throw new ServiceException;
-        }
-        ClientDTO get(Connection connection, String idClient){
-        throw new ServiceException;
-        }
-        void update(Connection connection, ClientDTO clientDTO){
-        throw new ServiceException;
-        }
-        void delete(Connection connection, ClientDTO clientDTO){
-        throw new ServiceException;
-        }
-        List<ClientDTO> findByNom(Connection connection,String nom,String SortByPropertyName)
-        {
-        throw new ServiceException;
-        }
+        /**
+        * Ajoute une nouveau client.
+        *
+        * @param connection La connection à utiliser
+        * @param clientDTO Le client à ajouter
+        */
+        void add(Connection connection, ClientDTO clientDTO);
+        /**
+        * Lit une client.
+        *
+        * @param connection La connection à utiliser
+        * @param clientDTO La client à lire
+        */
+        ClientDTO get(Connection connection, String idClient);
+        /**
+        * Met à jour un client.
+        *
+        * @param connection La connection à utiliser
+        * @param clientDTO Le client à mettre à jour
+        */
+        void update(Connection connection, ClientDTO clientDTO);
+        /**
+        * Efface une client.
+        *
+        * @param connection La connection à utiliser
+        * @param clientDTO La client à effacer
+        */
+        void delete(Connection connection, ClientDTO clientDTO);
+        /**
+        * Trouve tous les clients. La liste est classée par ordre croissant sur <code>sortByPropertyName</code>. Si aucun
+        * client n'est trouvé, une {@link List} vide est retournée.
+        *
+        * @param connection La connection à utiliser
+        * @param clientDTO Le client à lire
+        */
+        List<CategorieDTO> getAll(Connection connection,
+        String sortByPropertyName);
+        /*Trouve un client à partir d'un nom
+        *
+        *@param connection La connection à utiliser
+        *@param nom Le nom à trouver
+        *@param sortByPropertyName Le nom de la propriété à utiliser pour classer
+        */
+        List<ClientDTO> findByNom(Connection connection, String nom, String SortByPropertyName);
     }
 }
+
