@@ -37,12 +37,16 @@ namespace CentreLcationOutils_front_end.util
         //public ADODB._Connection testConnection;
         //public ADO
 
-        public CentreLocationOutilsCreateur()
+        public CentreLocationOutilsCreateur(string typeServeur,
+            //string schema,
+        string nomUtilisateur,
+        string motPasse)
         {
             try
             {
                 //testConnection = new ADODB.Connection();
                 //testConnection.
+                Connection = new Connection(typeServeur, nomUtilisateur, motPasse);
 
                 IClientDAO clientDAO = new ClientDAO();
                 IEmployeDAO employeDAO = new EmployeDAO();
