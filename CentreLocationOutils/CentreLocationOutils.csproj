@@ -126,12 +126,6 @@
     <Compile Include="forms\RechercherOutilForm.Designer.cs">
       <DependentUpon>RechercherOutilForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="optimizedForms\accueil.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="optimizedForms\accueil.Designer.cs">
-      <DependentUpon>accueil.cs</DependentUpon>
-    </Compile>
     <Compile Include="service\implementations\Service.cs" />
     <Compile Include="dao\interfaces\IAdresseDAO.cs" />
     <Compile Include="dao\interfaces\ICategorieDAO.cs" />
