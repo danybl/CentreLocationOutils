@@ -64,30 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="facade\interfaces\ICategorieFacade.cs" />
-    <Compile Include="forms\AccueilForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\AccueilForm.Designer.cs">
-      <DependentUpon>AccueilForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\AjoutClientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\AjoutClientForm.Designer.cs">
-      <DependentUpon>AjoutClientForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\AjoutOutilForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\AjoutOutilForm.Designer.cs">
-      <DependentUpon>AjoutOutilForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\ConnexionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\ConnexionForm.Designer.cs">
-      <DependentUpon>ConnexionForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Constants.cs" />
     <Compile Include="dao\implementations\AdresseDAO.cs" />
     <Compile Include="dao\implementations\CategorieDAO.cs" />
@@ -101,30 +77,6 @@
     <Compile Include="dao\implementations\OutilDAO.cs" />
     <Compile Include="dao\implementations\ReservationDAO.cs" />
     <Compile Include="dto\Client_AdresseDTO.cs" />
-    <Compile Include="forms\ModifierClientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\ModifierClientForm.Designer.cs">
-      <DependentUpon>ModifierClientForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\ModifierOutilForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\ModifierOutilForm.Designer.cs">
-      <DependentUpon>ModifierOutilForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\RechercherClientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\RechercherClientForm.Designer.cs">
-      <DependentUpon>RechercherClientForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\RechercherOutilForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\RechercherOutilForm.Designer.cs">
-      <DependentUpon>RechercherOutilForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="service\implementations\Service.cs" />
     <Compile Include="dao\interfaces\IAdresseDAO.cs" />
     <Compile Include="dao\interfaces\ICategorieDAO.cs" />
@@ -214,24 +166,6 @@
       <DependentUpon>splashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="util\FormatteurDate.cs" />
-    <EmbeddedResource Include="forms\AccueilForm.resx">
-      <DependentUpon>AccueilForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\AjoutClientForm.resx">
-      <DependentUpon>AjoutClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\AjoutOutilForm.resx">
-      <DependentUpon>AjoutOutilForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\ConnexionForm.resx">
-      <DependentUpon>ConnexionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\ModifierClientForm.resx">
-      <DependentUpon>ModifierClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\ModifierOutilForm.resx">
-      <DependentUpon>ModifierOutilForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -241,12 +175,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="forms\RechercherClientForm.resx">
-      <DependentUpon>RechercherClientForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\RechercherOutilForm.resx">
-      <DependentUpon>RechercherOutilForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="splashScreen.resx">
       <DependentUpon>splashScreen.cs</DependentUpon>
     </EmbeddedResource>
