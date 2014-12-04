@@ -18,12 +18,13 @@ using CentreLocationOutils.service.implementations;
 using CentreLocationOutils.facade.implementations;
 using System.Data.OracleClient;
 using System.Data.Common;
+//using ADODB;
 
 namespace CentreLcationOutils_front_end.util
 {
     public class CentreLocationOutilsCreateur
     {
-        public Connection Connection { get; private set; }
+        public Connection Connection{ private get; private set; }
         public IClientFacade ClientFacade { get; private set; }
         public IEmployeFacade EmployeFacade { get; private set; }
         public IReservationFacade ReservationFacade { get; private set; }
@@ -33,11 +34,16 @@ namespace CentreLcationOutils_front_end.util
         public IFacturationFacade FacturationFacade { get; private set; }
 
         public DbTransaction Transaction;
+        //public ADODB._Connection testConnection;
+        //public ADO
 
         public CentreLocationOutilsCreateur()
         {
             try
             {
+                //testConnection = new ADODB.Connection();
+                //testConnection.
+
                 IClientDAO clientDAO = new ClientDAO();
                 IEmployeDAO employeDAO = new EmployeDAO();
                 IReservationDAO reservationDAO = new ReservationDAO();
@@ -88,7 +94,7 @@ namespace CentreLcationOutils_front_end.util
             }
         }
 
-        public void commit()
+        public void commitTransaction()
         {
             try
             {
@@ -101,7 +107,7 @@ namespace CentreLcationOutils_front_end.util
             }
         }
 
-        public void rollback()
+        public void rollbackTransaction()
         {
             try
             {

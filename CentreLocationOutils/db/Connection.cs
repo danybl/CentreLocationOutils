@@ -56,7 +56,7 @@ namespace CentreLocationOutils.db
                 if (typeServeur.Equals(Connection.TYPE_SERVEUR_LOCAL))
                 {
                     connection = provider.CreateConnection();
-                    connection.ConnectionString = @"Data Source=xe;User ID=" + nomUtilisateur + ";Password=" + motPasse + ";Unicode=True";
+                    connection.ConnectionString = @"Data Source=xe;User ID=" + nomUtilisateur + ";Password=" + motPasse + ";Unicode=True; Min Pool Size=10; Connection Lifetime=120;Connection Timeout=60;Incr Pool Size=5;Decr Pool Size=2";
                 }
 
             }
