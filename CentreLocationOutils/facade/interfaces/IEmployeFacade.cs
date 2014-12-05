@@ -17,13 +17,13 @@ namespace CentreLocationOutils.facade.interfaces
         /// </summary>
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="employeDTO">L'employe à inscrire</param>
-        public override void inscrireEmploye(Connection connection, EmployeDTO employeDTO);
+        public virtual void inscrireEmploye(Connection connection, EmployeDTO employeDTO);
 
         /// <summary>
         /// Desinscrire un employe
         /// </summary>
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="employeDTO">L'employe à desinscrire</param>
-        public override void desinscrireEmploye(Connection connection, EmployeDTO employeDTO);
+        public virtual void desinscrireEmploye(Connection connection, EmployeDTO employeDTO);
     }
 }
