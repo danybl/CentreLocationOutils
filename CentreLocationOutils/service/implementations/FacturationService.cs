@@ -111,7 +111,7 @@ namespace CentreLocationOutils.service.implementations
         {
             try
             {
-                return (List<FacturationDTO>)getFacturationDAO().getAll(connection, sortByPropertyName);
+                return getFacturationDAO().getAll(connection, sortByPropertyName);
             }
             catch (DAOException daoException)
             {
@@ -125,7 +125,7 @@ namespace CentreLocationOutils.service.implementations
         {
             try
             {
-                return (List<FacturationDTO>)getFacturationDAO().findByClient(connection, idClient, sortByPropertyName);
+                return getFacturationDAO().findByClient(connection, idClient, sortByPropertyName);
             }
             catch (DAOException daoException)
             {
@@ -138,7 +138,7 @@ namespace CentreLocationOutils.service.implementations
         {
             try
             {
-                return (List<FacturationDTO>)getFacturationDAO().findByEmploye(connection, idEmploye, sortByPropertyName);
+                return getFacturationDAO().findByEmploye(connection, idEmploye, sortByPropertyName);
             }
             catch (DAOException daoException)
             {
