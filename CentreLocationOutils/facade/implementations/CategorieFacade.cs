@@ -29,13 +29,13 @@ namespace CentreLocationOutils.facade.implementations
             return this.categorieService;
         }
 
-        private void setCategorieService(ICategorieService categorieService)
+        private override void setCategorieService(ICategorieService categorieService)
         {
             this.categorieService = categorieService;
         }
 
 
-        public List<CategorieDTO> findByNom(Connection connection,
+        public override List<CategorieDTO> findByNom(Connection connection,
         String nom,
         String sortByPropertyName)
         {

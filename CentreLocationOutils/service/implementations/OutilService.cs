@@ -133,7 +133,7 @@ namespace CentreLocationOutils.service.implementations
                 throw new ServiceException("", daoException);
             }
         }
-        public void vendreOutil(Connection connection, OutilDTO outilDTO)
+        public override void vendreOutil(Connection connection, OutilDTO outilDTO)
         {
             if (connection == null)
             {
@@ -153,7 +153,7 @@ namespace CentreLocationOutils.service.implementations
             }
         }
 
-        public List<OutilDTO> findByNom(Connection connection, OutilDTO outilDTO)
+        public override List<OutilDTO> findByNom(Connection connection, OutilDTO outilDTO)
         {
             if (connection == null)
             {

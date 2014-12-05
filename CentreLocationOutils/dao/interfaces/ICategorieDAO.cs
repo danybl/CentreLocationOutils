@@ -13,7 +13,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// </summary>
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="dto">Le DTO à ajouter</param>
-        public virtual void add(Connection connection,
+        public void add(Connection connection,
             CategorieDTO categorieDTO);
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// <param name="connection">La connection ;a utiliser</param>
         /// <param name="primaryKey">La clé primaire du DTO à lire</param>
         /// <returns>Le DTO à retourner</returns>
-        public virtual CategorieDTO get(Connection connection,
+        public CategorieDTO get(Connection connection,
             string primaryKey);
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// </summary>
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="dto">Le DTO à mettre à jour</param>
-        public virtual void update(Connection connection,
+        public void update(Connection connection,
             CategorieDTO categorieDTO);
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// </summary>
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="dto">Le DTO à supprimer</param>
-        public virtual void delete(Connection connection,
+        public void delete(Connection connection,
             CategorieDTO categorieDTO);
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="sortByPropertyName">Le nom de la propriété à uriliser pour classer la liste</param>
         /// <returns>La liste de tous les DTOs</returns>
-        public virtual List<CategorieDTO> getAll(Connection connection,
+        public List<CategorieDTO> getAll(Connection connection,
          string sortByPropertyName);
 
 
@@ -59,7 +59,7 @@ namespace CentreLocationOutils.dao.interfaces
         ///<param name="sortByPropertyName">The nom de la propriété à utiliser pour classer</param>
         /// <returns> La liste des catégories correspondants à une liste vide sinon</returns>
 
-        List<CategorieDTO> findByNom(Connection connection,
+        public List<CategorieDTO> findByNom(Connection connection,
             String nom,
             String sortByPropertyName);
     }

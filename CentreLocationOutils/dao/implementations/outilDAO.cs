@@ -190,7 +190,7 @@ namespace CentreLocationOutils.dao.implementations
             }
         }
 
-        
+
         public List<OutilDTO> getAll(Connection connection,
         string sortByPropertyName)
         {

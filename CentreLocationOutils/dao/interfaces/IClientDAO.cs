@@ -59,7 +59,7 @@ namespace CentreLocationOutils.dao.interfaces
         ///<param name="sortByPropertyName">The nom de la propriété à utiliser pour classer</param>
         /// <returns> La liste des clients correspondants à une liste vide sinon</returns>
 
-        List<ClientDTO> findByNom(Connection connection,
+        public virtual List<ClientDTO> findByNom(Connection connection,
             String nom,
             String sortByPropertyName);
 

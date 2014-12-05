@@ -59,7 +59,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// <param name="idClient">L'ID du client à trouver</param>
         /// <param name="sortByPropertyName">Le nom de la propriété à utiliser pour classer</param>
         /// <returns>La liste des location correspondantes</returns>
-        public List<ReservationDTO> findByClient(Connection connection,
+        public virtual List<ReservationDTO> findByClient(Connection connection,
         String idClient,
         String sortByPropertyName);
 
@@ -71,7 +71,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// <param name="idOutil">L'ID de l'outil à trouver</param>
         /// <param name="sortByPropertyName">Le nom de la propriété à utiliser pour classer</param>
         /// <returns>La liste des location correspondantes</returns>
-        public List<ReservationDTO> findByOutil(Connection connection,
+        public virtual List<ReservationDTO> findByOutil(Connection connection,
         String idClient,
         String sortByPropertyName);
     }

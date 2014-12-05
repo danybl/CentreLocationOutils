@@ -39,13 +39,13 @@ namespace CentreLocationOutils.facade.implementations
       *
       * @param clientService La valeur à utiliser pour la variable d'instance <code>this.clientService</code>
       */
-     private void setClientService(IClientService clientService)
+     private override void setClientService(IClientService clientService)
      {
          this.clientService = clientService;
      }
 
 
-     public List<ClientDTO> findByNom(Connection connection, String nom, String SortByPropertyName)
+     public override List<ClientDTO> findByNom(Connection connection, String nom, String SortByPropertyName)
      {
          try
          {

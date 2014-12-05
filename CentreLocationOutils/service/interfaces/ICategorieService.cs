@@ -20,7 +20,7 @@ namespace CentreLocationOutils.service.interfaces
         * @param connection La connection à utiliser
         * @param categorieDTO La catégorie à ajouter
         */
-        void add(Connection connection,
+        public virtual void add(Connection connection,
         CategorieDTO categorieDTO) ;
 
         /**
@@ -29,7 +29,7 @@ namespace CentreLocationOutils.service.interfaces
         * @param connection La connection à utiliser
         * @param categorieDTO La catégorie à lire
         */
-        CategorieDTO get(Connection connection,
+        public virtual CategorieDTO get(Connection connection,
         String idCategorie);
 
         /**
@@ -38,7 +38,7 @@ namespace CentreLocationOutils.service.interfaces
         * @param connection La connection à utiliser
         * @param categorieDTO La catégorie à mettre à jour
         */
-        void update(Connection connection,
+        public virtual void update(Connection connection,
         CategorieDTO categorieDTO);
 
         /**
@@ -47,7 +47,7 @@ namespace CentreLocationOutils.service.interfaces
         * @param connection La connection à utiliser
         * @param categorieDTO La catégorie à effacer
         */
-        void delete(Connection connection,
+        public virtual void delete(Connection connection,
         CategorieDTO categorieDTO);
 
         /**
@@ -57,7 +57,7 @@ namespace CentreLocationOutils.service.interfaces
         * @param connection La connection à utiliser
         * @param categorieDTO La catégorie à lire
         */
-        List<CategorieDTO> getAll(Connection connection,
+        public virtual List<CategorieDTO> getAll(Connection connection,
         String sortByPropertyName);
 
         /*Trouve une catégorie à partir d'un nom
@@ -66,7 +66,7 @@ namespace CentreLocationOutils.service.interfaces
          *@param nom Le nom à trouver
          *@param sortByPropertyName Le nom de la propriété à utiliser pour classer
          */
-        List<CategorieDTO> findByNom(Connection connection,
+        public virtual List<CategorieDTO> findByNom(Connection connection,
         String nom,
         String sortByPropertyName);
 

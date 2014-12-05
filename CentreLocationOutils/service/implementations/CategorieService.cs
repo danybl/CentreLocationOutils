@@ -39,7 +39,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         //Ajout d'une catégorie
-        public void add(Connection connection, CategorieDTO categorieDTO) {
+        public override void add(Connection connection, CategorieDTO categorieDTO) {
             try {
                 getCategorieDAO().add(connection,
                     categorieDTO);
@@ -50,7 +50,7 @@ namespace CentreLocationOutils.service.implementations
             }
         }
         //Lecture des catégories
-        public CategorieDTO get(Connection connection, String idCategorie) {
+        public override CategorieDTO get(Connection connection, String idCategorie) {
             try {
                 return (CategorieDTO) getCategorieDAO().get(connection,
                     idCategorie);
@@ -60,7 +60,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         //Mise à jour d'une catégorie
-        public void update(Connection connection,
+        public override void update(Connection connection,
         CategorieDTO categorieDTO) 
          {
             try {
@@ -73,7 +73,7 @@ namespace CentreLocationOutils.service.implementations
             }
         }
         //Suppression d'une catégorie
-        public void delete(Connection connection,
+        public override void delete(Connection connection,
         CategorieDTO categorieDTO){
             try {
                 getCategorieDAO().delete(connection,
@@ -85,7 +85,7 @@ namespace CentreLocationOutils.service.implementations
             }
         }
         //Lecture de toutes les catégories
-        public List<CategorieDTO> getAll(Connection connection,
+        public override List<CategorieDTO> getAll(Connection connection,
         String sortByPropertyName){
             try {
                 return (List<CategorieDTO>)getCategorieDAO().getAll(connection,
@@ -97,7 +97,7 @@ namespace CentreLocationOutils.service.implementations
             }
         }
         //Trouver une catégorie par son nom
-        public List<CategorieDTO> findByNom(Connection connection,
+        public override List<CategorieDTO> findByNom(Connection connection,
         String nom,
         String sortByPropertyName){
         try {

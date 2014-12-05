@@ -128,7 +128,6 @@
     <Compile Include="facade\implementations\FacturationFacade.cs" />
     <Compile Include="facade\implementations\LocationFacade.cs" />
     <Compile Include="facade\implementations\OutilFacade.cs" />
-    <Compile Include="facade\implementations\PaiementFacade.cs" />
     <Compile Include="facade\implementations\ReservationFacade.cs" />
     <Compile Include="facade\interfaces\IAdresseFacade.cs" />
     <Compile Include="facade\interfaces\IClientFacade.cs" />
@@ -137,7 +136,6 @@
     <Compile Include="facade\interfaces\IFacturationFacade.cs" />
     <Compile Include="facade\interfaces\ILocationFacade.cs" />
     <Compile Include="facade\interfaces\IOutilFacade.cs" />
-    <Compile Include="facade\interfaces\IPaiementFacade.cs" />
     <Compile Include="facade\interfaces\IReservationFacade.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -148,7 +146,6 @@
     <Compile Include="service\implementations\FacturationService.cs" />
     <Compile Include="service\implementations\LocationService.cs" />
     <Compile Include="service\implementations\OutilService.cs" />
-    <Compile Include="service\implementations\PaiementService.cs" />
     <Compile Include="service\implementations\ReservationService.cs" />
     <Compile Include="service\interfaces\IAdresseService.cs" />
     <Compile Include="service\interfaces\ICategorieService.cs" />
@@ -157,7 +154,6 @@
     <Compile Include="service\interfaces\IFacturationService.cs" />
     <Compile Include="service\interfaces\ILocationService.cs" />
     <Compile Include="service\interfaces\IOutilService.cs" />
-    <Compile Include="service\interfaces\IPaiementService.cs" />
     <Compile Include="service\interfaces\IReservationService.cs" />
     <Compile Include="util\FormatteurDate.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

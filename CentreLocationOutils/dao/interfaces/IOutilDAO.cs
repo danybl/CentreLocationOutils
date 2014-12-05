@@ -58,7 +58,7 @@ namespace CentreLocationOutils.dao.interfaces
         ///<param name="sortByPropertyName">The nom de la propriété à utiliser pour classer</param>
         /// <returns> La liste des outils correspondants à une liste vide sinon</returns>
 
-        List<OutilDTO> findByNom(Connection connection,
+        public virtual List<OutilDTO> findByNom(Connection connection,
             String nom,
             String sortByPropertyName);
     }
