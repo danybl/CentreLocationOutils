@@ -61,5 +61,9 @@ namespace CentreLocationOutils.service.interfaces
         /// <returns></returns>
         public virtual List<OutilDTO> findByNom(Connection connection, string nom,
         string sortByPropertyName);
+
+        void acquerirOutil(Connection connection, OutilDTO outilDTO);
+
+        void vendreOutil(Connection connection, OutilDTO outilDTO);
     }
 }
