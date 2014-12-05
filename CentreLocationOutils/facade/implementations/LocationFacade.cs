@@ -11,6 +11,9 @@ namespace CentreLocationOutils.facade.implementations
     public class LocationFacade : ILocationFacade
     {
         private ILocationService locationService;
+
+        private IEmployeService employeService;
+
         public LocationFacade(ILocationService locationService)
             : base()
         {
@@ -29,8 +32,6 @@ namespace CentreLocationOutils.facade.implementations
         {
             this.locationService = locationService;
         }
-
-
 
         public override void commencerLocation(Connection connection, LocationDTO locationDTO)
         {

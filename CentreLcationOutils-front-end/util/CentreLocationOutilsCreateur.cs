@@ -24,7 +24,7 @@ namespace CentreLcationOutils_front_end.util
 {
     public class CentreLocationOutilsCreateur
     {
-        public Connection Connection{ private get; private set; }
+        public Connection Connection{ get; private set; }
         public IClientFacade ClientFacade { get; private set; }
         public IEmployeFacade EmployeFacade { get; private set; }
         public IReservationFacade ReservationFacade { get; private set; }

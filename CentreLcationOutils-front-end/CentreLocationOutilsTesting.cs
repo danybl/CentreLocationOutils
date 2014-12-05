@@ -134,20 +134,40 @@ namespace CentreLcationOutils_front_end
                 employeDTO.Prenom = readString(splitter);
                 employeDTO.Telephone = readString(splitter);
                 employeDTO.Email = readString(splitter);
+                employeDTO.DateRecrutement = readDate(splitter);
                 employeDTO.Poste = readString(splitter);
-                //employeDTO.DateRecrutement = 
+                gestionCentreOutils.EmployeFacade.inscrireEmploye(gestionCentreOutils.Connection, employeDTO);
             }
         }
 
         public string readString(List<string> splitter)
         {
-            string param = ""; 
+            string lecture = ""; 
             if (splitter.Count > 0)
             {
-                param = splitter.First<string>().ToLower();
+                lecture = splitter.First<string>().ToLower();
                 splitter.RemoveAt(0);
+                return lecture;
             }
-            return param;
+            throw new CentreLocationOutilsException("autre paramètre attendu");
+        }
+
+        public DateTime readDate(List<string> splitter)
+        {
+            DateTime lecture;
+            if (splitter.Count > 0)
+            {
+                try
+                {
+                    lecture = DateTime.Parse(splitter.First<string>().ToLower());
+                }
+                catch (FormatException formatException)
+                {
+                    throw new CentreLocationOutilsException("Date en format AAAA-MM-JJ attendue "+ formatException);
+                }
+                return lecture;
+            }
+            throw new CentreLocationOutilsException("autre paramètre attendu");
         }
     } 
 }

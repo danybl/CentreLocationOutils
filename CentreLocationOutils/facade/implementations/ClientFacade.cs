@@ -15,6 +15,8 @@ namespace CentreLocationOutils.facade.implementations
     {
     private IClientService clientService;
 
+    private IEmployeService employeService;
+
      public ClientFacade(IClientService clientService) : base() {
             if (clientService == null)
             {
@@ -39,11 +41,10 @@ namespace CentreLocationOutils.facade.implementations
       *
       * @param clientService La valeur à utiliser pour la variable d'instance <code>this.clientService</code>
       */
-     private override void setClientService(IClientService clientService)
+     private void setClientService(IClientService clientService)
      {
          this.clientService = clientService;
      }
-
 
      public override List<ClientDTO> findByNom(Connection connection, String nom, String SortByPropertyName)
      {
