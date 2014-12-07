@@ -25,5 +25,7 @@ namespace CentreLocationOutils.facade.interfaces
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="employeDTO">L'employe à desinscrire</param>
         public virtual void desinscrireEmploye(Connection connection, EmployeDTO employeDTO);
+
+        EmployeDTO getEmploye(Connection connection, string idEmploye);
     }
 }
