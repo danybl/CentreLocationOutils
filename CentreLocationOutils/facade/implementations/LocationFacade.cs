@@ -79,7 +79,7 @@ namespace CentreLocationOutils.facade.implementations
                 throw new FacadeException("", serviceException);
             }
         }
-     public   List<LocationDTO> findByOUtil(Connection connection, LocationDTO locationDTO)
+     public List<LocationDTO> findByOutil(Connection connection, LocationDTO locationDTO)
         {
             try
             {

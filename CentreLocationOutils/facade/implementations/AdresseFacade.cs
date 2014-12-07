@@ -46,5 +46,10 @@ namespace CentreLocationOutils.facade.implementations
             }
         }
 
+
+        public void changerLocation(Connection connection, AdresseDTO adresseDTO)
+        {
+            //TODO changer location
+        }
     }
 }

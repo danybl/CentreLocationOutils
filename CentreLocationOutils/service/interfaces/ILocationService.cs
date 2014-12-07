@@ -20,28 +20,28 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="locationDTO">La location à ajouter</param>
-        void add(Connection connection, LocationDTO locationDTO);
+        void addLocation(Connection connection, LocationDTO locationDTO);
 
         /// <summary>
         /// Lit une location à partir de la base de données.
         /// </summary>
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="locationDTO">La location à ajouter</param>
-        void get(Connection connection, string idLocation);
+        void getLocation(Connection connection, string idLocation);
 
         /// <summary>
         /// Met à jour une location dans la base de données.
         /// </summary>
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="locationDTO">La location à ajouter</param>
-        void update(Connection connection, LocationDTO locationDTO);
+        void updateLocation(Connection connection, LocationDTO locationDTO);
 
         /// <summary>
         /// Supprime une location de la base de données.
         /// </summary>
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="locationDTO">La location à ajouter</param>
-        void delete(Connection connection, LocationDTO locationDTO);
+        void deleteLocation(Connection connection, LocationDTO locationDTO);
 
         /// <summary>
         /// Trouve tous les locations de la base de données. 

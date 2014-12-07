@@ -13,6 +13,6 @@ namespace CentreLocationOutils.facade.interfaces
 
         List<ClientDTO> findByNom(Connection connection, String nom, String SortByPropertyName);
 
-        List<ClientDTO> isncrire(Connection connection, ClientDTO clientDTO);
+        List<ClientDTO> inscrire(Connection connection, ClientDTO clientDTO);
     }
 }

@@ -25,27 +25,18 @@ namespace CentreLocationOutils.facade.implementations
         }
 
         //Getters and Setters
-        /**
-         * Getter de la variable d'instance <code>this.outilService</code>.
-         *
-         * @return La variable d'instance <code>this.outilService</code>
-         */
+
         private IOutilService getOutilService()
         {
             return this.outilService;
         }
 
-        /**
-         * Setter de la variable d'instance <code>this.outilService</code>.
-         *
-         * @param outilService La valeur à utiliser pour la variable d'instance <code>this.outilService</code>
-         */
         private void setOutilService(IOutilService outilService)
         {
             this.outilService = outilService;
         }
 
-        public   OutilDTO getOutil(Connection connection, string idOutil)
+        public OutilDTO getOutil(Connection connection, string idOutil)
         {
             try
             {
@@ -57,7 +48,7 @@ namespace CentreLocationOutils.facade.implementations
             }
         }
 
-        public   void acquerirOutil(Connection connection, OutilDTO outilDTO)
+        public void acquerirOutil(Connection connection, OutilDTO outilDTO)
         {
             if (connection == null)
             {
@@ -77,7 +68,7 @@ namespace CentreLocationOutils.facade.implementations
             }
         }
 
-        public   void vendreOutil(Connection connection, OutilDTO outilDTO)
+        public void vendreOutil(Connection connection, OutilDTO outilDTO)
         {
             if (connection == null)
             {
