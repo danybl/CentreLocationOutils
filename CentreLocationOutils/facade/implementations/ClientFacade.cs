@@ -36,7 +36,7 @@ namespace CentreLocationOutils.facade.implementations
             this.clientService = clientService;
         }
 
-        public override ClientDTO getEmploye(Connection connection, string idClient)
+        public override ClientDTO getClient(Connection connection, string idClient)
         {
             try
             {
@@ -54,6 +54,18 @@ namespace CentreLocationOutils.facade.implementations
             try
             {
                 return getClientService().findByNom(connection, nom, SortByPropertyName);
+            }
+            catch (ServiceException serviceException)
+            {
+                throw new FacadeException("", serviceException);
+            }
+        }
+
+        public List<ClientDTO> inscrire(Connection connection, ClientDTO clientDTO)
+        {
+            try
+            {
+                return getClientService().inscrire(connection, clientDTO);
             }
             catch (ServiceException serviceException)
             {

@@ -58,6 +58,13 @@ namespace CentreLocationOutils.service.interfaces
         *@param sortByPropertyName Le nom de la propriété à utiliser pour classer
         */
         public virtual List<ClientDTO> findByNom(Connection connection, String nom, String SortByPropertyName);
+
+        /*Inscrit un client
+        *
+        *@param connection La connection à utiliser
+        *@param clientDTO Le client à isncrire
+        */
+        List<ClientDTO> inscrire(Connection connection, ClientDTO clientDTO);
     }
 }
 
