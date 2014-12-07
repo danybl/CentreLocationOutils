@@ -52,7 +52,7 @@ namespace CentreLocationOutils.service.implementations
 
         #region CRUD
             /// <inheritdoc />
-            public override void add(Connection connection, FacturationDTO facturationDTO)
+            public   void add(Connection connection, FacturationDTO facturationDTO)
                 {
                     try
                     {
@@ -65,7 +65,7 @@ namespace CentreLocationOutils.service.implementations
                 }
 
             /// <inheritdoc />
-            public override FacturationDTO get(Connection connection, string idFacturation)
+            public   FacturationDTO get(Connection connection, string idFacturation)
                 {
                     try
                     {
@@ -78,7 +78,7 @@ namespace CentreLocationOutils.service.implementations
                 }
 
             /// <inheritdoc />
-            public override void update(Connection connection, FacturationDTO facturationDTO)
+            public   void update(Connection connection, FacturationDTO facturationDTO)
             {
                 try
                 {
@@ -91,7 +91,7 @@ namespace CentreLocationOutils.service.implementations
             }
 
             /// <inheritdoc />
-            public override void delete(Connection connection, FacturationDTO facturationDTO)
+            public   void delete(Connection connection, FacturationDTO facturationDTO)
             {
                 try
                 {
@@ -107,7 +107,7 @@ namespace CentreLocationOutils.service.implementations
 
         #region AUTRES
         /// <inheritdoc />
-        public override List<FacturationDTO> getall(Connection connection, string sortByPropertyName)
+        public   List<FacturationDTO> getall(Connection connection, string sortByPropertyName)
         {
             try
             {
@@ -121,7 +121,7 @@ namespace CentreLocationOutils.service.implementations
 
 
         /// <inheritdoc />
-        public override List<FacturationDTO> findByClient(Connection connection, string idClient, string sortByPropertyName)
+        public   List<FacturationDTO> findByClient(Connection connection, string idClient, string sortByPropertyName)
         {
             try
             {
@@ -134,7 +134,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override List<FacturationDTO> findByEmploye(Connection connection, string idEmploye, string sortByPropertyName)
+        public   List<FacturationDTO> findByEmploye(Connection connection, string idEmploye, string sortByPropertyName)
         {
             try
             {

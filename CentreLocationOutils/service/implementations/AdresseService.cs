@@ -57,7 +57,7 @@ namespace CentreLocationOutils.service.implementations
 
         #region CRUD
             /// <inheritdoc />
-            public override void add(Connection connection, AdresseDTO adresseDTO)
+            public   void add(Connection connection, AdresseDTO adresseDTO)
             {
                 try
                 {
@@ -70,7 +70,7 @@ namespace CentreLocationOutils.service.implementations
             }
 
             /// <inheritdoc />
-            public override AdresseDTO get(Connection connection, string idAdresse)
+            public   AdresseDTO get(Connection connection, string idAdresse)
             {
                 try
                 {
@@ -83,7 +83,7 @@ namespace CentreLocationOutils.service.implementations
             }
 
             /// <inheritdoc />
-            public override void update(Connection connection, AdresseDTO adresseDTO)
+            public   void update(Connection connection, AdresseDTO adresseDTO)
             {
                 try
                 {
@@ -96,7 +96,7 @@ namespace CentreLocationOutils.service.implementations
             }
 
             /// <inheritdoc />
-            public override void delete(Connection connection, AdresseDTO adresseDTO)
+            public   void delete(Connection connection, AdresseDTO adresseDTO)
             {
                 try
                 {
@@ -109,7 +109,7 @@ namespace CentreLocationOutils.service.implementations
             }
 
             /// <inheritdoc />
-            public override List<AdresseDTO> getall(Connection connection, string sortByPropertyName)
+            public   List<AdresseDTO> getall(Connection connection, string sortByPropertyName)
             {
                 try
                 {
@@ -122,7 +122,7 @@ namespace CentreLocationOutils.service.implementations
             }
 
             /// <inheritdoc />
-            public override List<AdresseDTO> findByVille(Connection connection,string ville, string sortByPropertyName)
+            public   List<AdresseDTO> findByVille(Connection connection,string ville, string sortByPropertyName)
             {
                 try
                 {

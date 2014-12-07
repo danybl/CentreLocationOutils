@@ -33,7 +33,7 @@ namespace CentreLocationOutils.facade.implementations
             this.locationService = locationService;
         }
 
-        public override void commencerLocation(Connection connection, LocationDTO locationDTO)
+        public   void commencerLocation(Connection connection, LocationDTO locationDTO)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace CentreLocationOutils.facade.implementations
             }
         }
 
-        public override void renouvelerLocation(Connection connection, LocationDTO locationDTO)
+        public   void renouvelerLocation(Connection connection, LocationDTO locationDTO)
         {
             try
             {
@@ -56,7 +56,7 @@ namespace CentreLocationOutils.facade.implementations
                 throw new FacadeException("", serviceException);
             }
         }
-        public override void terminerLocation(Connection connection, LocationDTO locationDTO)
+        public   void terminerLocation(Connection connection, LocationDTO locationDTO)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace CentreLocationOutils.facade.implementations
             }
         }
 
-        public override List<LocationDTO> findByClient(Connection connection, LocationDTO locationDTO)
+        public   List<LocationDTO> findByClient(Connection connection, LocationDTO locationDTO)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace CentreLocationOutils.facade.implementations
                 throw new FacadeException("", serviceException);
             }
         }
-     public override List<LocationDTO> findByOUtil(Connection connection, LocationDTO locationDTO)
+     public   List<LocationDTO> findByOUtil(Connection connection, LocationDTO locationDTO)
         {
             try
             {

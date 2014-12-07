@@ -39,7 +39,7 @@ namespace CentreLocationOutils.service.implementations
             this.employeDAO = employeDAO;
         }
         /// <inheritdoc />
-        public override void addEmploye(Connection connection,
+        public   void addEmploye(Connection connection,
         EmployeDTO employeDTO)
         {
             try
@@ -56,7 +56,7 @@ namespace CentreLocationOutils.service.implementations
 
 
         /// <inheritdoc />
-        public override void updateEmploye(Connection connection,
+        public   void updateEmploye(Connection connection,
             EmployeDTO employeDTO)
         {
             try
@@ -71,7 +71,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override void deleteEmploye(Connection connection,
+        public   void deleteEmploye(Connection connection,
             EmployeDTO employeDTO)
         {
             try
@@ -86,7 +86,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override List<EmployeDTO> getAllEmployes(Connection connection,
+        public   List<EmployeDTO> getAllEmployes(Connection connection,
             string sortByPropertyName)
         {
             try
@@ -101,7 +101,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override void inscrireEmploye(Connection connection, EmployeDTO employeDTO)
+        public   void inscrireEmploye(Connection connection, EmployeDTO employeDTO)
         {
             if (connection == null)
             {
@@ -116,7 +116,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override void desinscrireEmploye(Connection connection, EmployeDTO employeDTO)
+        public   void desinscrireEmploye(Connection connection, EmployeDTO employeDTO)
         {
             if (connection == null)
             {
@@ -131,7 +131,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override List<EmployeDTO> findByNom(Connection connection, EmployeDTO employeDTO)
+        public   List<EmployeDTO> findByNom(Connection connection, EmployeDTO employeDTO)
         {
             if (connection == null)
             {

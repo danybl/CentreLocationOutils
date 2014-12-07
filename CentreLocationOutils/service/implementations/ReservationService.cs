@@ -60,7 +60,7 @@ namespace CentreLocationOutils.service.implementations
 
 
         /// <inheritdoc />
-        public override void addReservation(Connection connection,
+        public   void addReservation(Connection connection,
         ReservationDTO reservationDTO)
         {
             try
@@ -77,7 +77,7 @@ namespace CentreLocationOutils.service.implementations
 
 
         /// <inheritdoc />
-        public override void updateReservation(Connection connection,
+        public   void updateReservation(Connection connection,
             ReservationDTO reservationDTO)
         {
             try
@@ -92,7 +92,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override void deleteReservation(Connection connection,
+        public   void deleteReservation(Connection connection,
             ReservationDTO reservationDTO)
         {
             try
@@ -107,7 +107,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override List<ReservationDTO> getAllReservation(Connection connection,
+        public   List<ReservationDTO> getAllReservation(Connection connection,
             string sortByPropertyName)
         {
             try
@@ -122,7 +122,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override void placerReservation(Connection connection, ReservationDTO reservationDTO)
+        public   void placerReservation(Connection connection, ReservationDTO reservationDTO)
         {
             if (connection == null)
             {
@@ -234,7 +234,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override void annulerReservation(Connection connection, ReservationDTO reservationDTO)
+        public   void annulerReservation(Connection connection, ReservationDTO reservationDTO)
         {
             if (connection == null)
             {
@@ -255,7 +255,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override List<ReservationDTO> findByClient(Connection connection, ReservationDTO reservationDTO)
+        public   List<ReservationDTO> findByClient(Connection connection, ReservationDTO reservationDTO)
         {
             if (connection == null)
             {

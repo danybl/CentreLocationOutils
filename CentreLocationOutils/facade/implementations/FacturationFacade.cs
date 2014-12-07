@@ -48,7 +48,7 @@ namespace CentreLocationOutils.facade.implementations
 
         #endregion
 
-        public override List<FacturationDTO> findByClient(Connection connection, string idClient, string sortByPropertyName) {
+        public   List<FacturationDTO> findByClient(Connection connection, string idClient, string sortByPropertyName) {
             try
             {
                return getFacturationFacade().findByClient(connection, idClient, sortByPropertyName);
@@ -59,7 +59,7 @@ namespace CentreLocationOutils.facade.implementations
             }
         }
 
-        public override List<FacturationDTO> findByEmploye(Connection connection, string idEmploye, string sortByPropertyName)
+        public   List<FacturationDTO> findByEmploye(Connection connection, string idEmploye, string sortByPropertyName)
         {
             try {
                 return getFacturationFacade().findByEmploye(connection, idEmploye, sortByPropertyName);

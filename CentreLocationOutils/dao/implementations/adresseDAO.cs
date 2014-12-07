@@ -53,7 +53,7 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         /// <inheritdoc />
-        public override void add(Connection connection, AdresseDTO adresseDTO)
+        public void add(Connection connection, AdresseDTO adresseDTO)
         {
             if (connection == null)
             {
@@ -93,7 +93,7 @@ namespace CentreLocationOutils.dao.implementations
 
 
         /// <inheritdoc />
-        public override AdresseDTO get(Connection connection, string primaryKey)
+        public AdresseDTO get(Connection connection, string primaryKey)
         {
             if (connection == null)
             {
@@ -135,7 +135,7 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         /// <inheritdoc />
-        public override void update(Connection connection, AdresseDTO adresseDTO)
+        public   void update(Connection connection, AdresseDTO adresseDTO)
         {
             if (connection == null)
             {
@@ -175,7 +175,7 @@ namespace CentreLocationOutils.dao.implementations
         }
 
         /// <inheritdoc />
-        public override void delete(Connection connection, AdresseDTO adresseDTO)
+        public   void delete(Connection connection, AdresseDTO adresseDTO)
         {
             if (connection == null)
             {

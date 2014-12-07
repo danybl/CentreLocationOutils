@@ -30,7 +30,7 @@ namespace CentreLocationOutils.facade.implementations
            this.reservationService = reservationService;
        }
 
-       public override void placerReservation(Connection connection, ReservationDTO reservationDTO)
+       public   void placerReservation(Connection connection, ReservationDTO reservationDTO)
        {
            try
            {
@@ -42,7 +42,7 @@ namespace CentreLocationOutils.facade.implementations
            }
        }
 
-       public override void utiliserReservation(Connection connection, ReservationDTO reservationDTO)
+       public   void utiliserReservation(Connection connection, ReservationDTO reservationDTO)
        {
            try
            {
@@ -54,7 +54,7 @@ namespace CentreLocationOutils.facade.implementations
            }
        }
 
-       public override void annulerReservation(Connection connection, ReservationDTO reservationDTO)
+       public   void annulerReservation(Connection connection, ReservationDTO reservationDTO)
        {
            try
            {

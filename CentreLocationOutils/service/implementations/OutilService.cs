@@ -41,7 +41,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override void addOutil(Connection connection,
+        public   void addOutil(Connection connection,
         OutilDTO outilDTO)
         {
             try
@@ -55,7 +55,7 @@ namespace CentreLocationOutils.service.implementations
             }
         }
         /// <inheritdoc />
-        public override OutilDTO getOutil(Connection connection,
+        public   OutilDTO getOutil(Connection connection,
             string idOutil)
         {
             try
@@ -70,7 +70,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override void updateOutil(Connection connection,
+        public   void updateOutil(Connection connection,
             OutilDTO outilDTO)
         {
             try
@@ -85,7 +85,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override void deleteOutil(Connection connection,
+        public   void deleteOutil(Connection connection,
             OutilDTO outilDTO)
         {
             try
@@ -100,7 +100,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public override List<OutilDTO> getAllOutils(Connection connection,
+        public   List<OutilDTO> getAllOutils(Connection connection,
             string sortByPropertyName)
         {
             try
@@ -114,7 +114,7 @@ namespace CentreLocationOutils.service.implementations
             }
         }
 
-        public override void acquerirOutil(Connection connection, OutilDTO outilDTO)
+        public   void acquerirOutil(Connection connection, OutilDTO outilDTO)
         {
             if (connection == null)
             {
@@ -133,7 +133,7 @@ namespace CentreLocationOutils.service.implementations
                 throw new ServiceException("", daoException);
             }
         }
-        public override void vendreOutil(Connection connection, OutilDTO outilDTO)
+        public   void vendreOutil(Connection connection, OutilDTO outilDTO)
         {
             if (connection == null)
             {
@@ -153,7 +153,7 @@ namespace CentreLocationOutils.service.implementations
             }
         }
 
-        public override List<OutilDTO> findByNom(Connection connection, OutilDTO outilDTO)
+        public   List<OutilDTO> findByNom(Connection connection, OutilDTO outilDTO)
         {
             if (connection == null)
             {

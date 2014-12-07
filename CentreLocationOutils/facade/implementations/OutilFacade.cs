@@ -45,7 +45,7 @@ namespace CentreLocationOutils.facade.implementations
             this.outilService = outilService;
         }
 
-        public override OutilDTO getOutil(Connection connection, string idOutil)
+        public   OutilDTO getOutil(Connection connection, string idOutil)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace CentreLocationOutils.facade.implementations
             }
         }
 
-        public override void acquerirOutil(Connection connection, OutilDTO outilDTO)
+        public   void acquerirOutil(Connection connection, OutilDTO outilDTO)
         {
             if (connection == null)
             {
@@ -77,7 +77,7 @@ namespace CentreLocationOutils.facade.implementations
             }
         }
 
-        public override void vendreOutil(Connection connection, OutilDTO outilDTO)
+        public   void vendreOutil(Connection connection, OutilDTO outilDTO)
         {
             if (connection == null)
             {

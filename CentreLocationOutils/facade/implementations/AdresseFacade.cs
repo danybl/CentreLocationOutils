@@ -34,7 +34,7 @@ namespace CentreLocationOutils.facade.implementations
             this.adresseService = adresseService;
         }
 
-        public override void changerAdresse(Connection connection, AdresseDTO adresseDTO)
+        public   void changerAdresse(Connection connection, AdresseDTO adresseDTO)
         {
             try
             {

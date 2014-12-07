@@ -61,7 +61,7 @@ namespace CentreLocationOutils.facade.implementations
         }
 
         /// <inheritdoc />
-        public override void inscrireEmploye(Connection connection, EmployeDTO employeDTO)
+        public   void inscrireEmploye(Connection connection, EmployeDTO employeDTO)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace CentreLocationOutils.facade.implementations
         }
 
         /// <inheritdoc />
-        public override void desinscrireEmploye(Connection connection, EmployeDTO employeDTO)
+        public   void desinscrireEmploye(Connection connection, EmployeDTO employeDTO)
         {
             try
             {

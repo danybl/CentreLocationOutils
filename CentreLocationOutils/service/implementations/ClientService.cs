@@ -51,7 +51,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         //Lecture des clients
-        public override ClientDTO get(Connection connection,String idClient){
+        public   ClientDTO get(Connection connection,String idClient){
         try {
             return (ClientDTO)getClientDAO().get(connection,idClient); 
         }
@@ -62,7 +62,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         //Mise à jour d'un client
-        public override void update(Connection connection,
+        public   void update(Connection connection,
         ClientDTO clientDTO)
         {
             try
@@ -76,7 +76,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         //Suppression d'un client
-        public override void delete(Connection connection,
+        public   void delete(Connection connection,
         ClientDTO clientDTO)
         {
             try
@@ -90,7 +90,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
       //Lecture de toutes les clients
-        public override List<ClientDTO> getAll(Connection connection, String sortByPropertyName)
+        public   List<ClientDTO> getAll(Connection connection, String sortByPropertyName)
         {
             try
             {
@@ -103,7 +103,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         //Trouver un client par son nom
-        public override List<ClientDTO> findByNom(Connection connection, String nom, String sortByPropertyName)
+        public   List<ClientDTO> findByNom(Connection connection, String nom, String sortByPropertyName)
         {
          try {
          return getClientDAO().findByNom(connection,

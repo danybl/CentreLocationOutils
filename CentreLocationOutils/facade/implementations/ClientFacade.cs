@@ -36,7 +36,7 @@ namespace CentreLocationOutils.facade.implementations
             this.clientService = clientService;
         }
 
-        public override ClientDTO getClient(Connection connection, string idClient)
+        public   ClientDTO getClient(Connection connection, string idClient)
         {
             try
             {
