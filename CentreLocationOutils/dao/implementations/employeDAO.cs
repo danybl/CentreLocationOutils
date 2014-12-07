@@ -12,28 +12,28 @@ namespace CentreLocationOutils.dao.implementations
 {
     public class EmployeDAO : DAO, IEmployeDAO
     {
-        private static const string ADD_REQUEST = "INSERT INTO Employe (idEmploye, nom, prenom, telephone, email, dateRecrutement) "
+        private static   string ADD_REQUEST = "INSERT INTO Employe (idEmploye, nom, prenom, telephone, email, dateRecrutement) "
       + "VALUES (:idEmploye, :nom, :prenom, :telephone, :email, :dateRecrutement)";
 
-        private static const string READ_REQUEST = "SELECT idEmploye, nom, prenom, telephone, email, dateRecrutement "
+        private static   string READ_REQUEST = "SELECT idEmploye, nom, prenom, telephone, email, dateRecrutement "
            + "FROM employe "
            + "WHERE idEmploye = :idEmploye";
 
-        private static const string UPDATE_REQUEST = "UPDATE employe "
+        private static   string UPDATE_REQUEST = "UPDATE employe "
             + "SET nom = :nom, prenom = :prenom, telephone = :telephone, email = :email "
             + "WHERE idEmploye = :idEmploye";
 
-        private static const string DELETE_REQUEST = "DELETE FROM employe "
+        private static   string DELETE_REQUEST = "DELETE FROM employe "
             + "WHERE idEmploye = :idEmploye";
 
-        private static const string GET_ALL_REQUEST = "SELECT idEmploye, nom, prenom, telephone, email, dateRecrutement "
+        private static   string GET_ALL_REQUEST = "SELECT idEmploye, nom, prenom, telephone, email, dateRecrutement "
             + "FROM employe";
 
-        private static const string FIND_BY_NOM = "SELECT idEmploye, nom, prenom, telephone, email, dateRecrutement "
+        private static   string FIND_BY_NOM = "SELECT idEmploye, nom, prenom, telephone, email, dateRecrutement "
             + "FROM employe "
             + "where nom like :nom";
 
-        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_EMPLOYE_ID.NEXTVAL from DUAL";
+        private static   string CREATE_PRIMARY_KEY = "SELECT SEQ_EMPLOYE_ID.NEXTVAL from DUAL";
 
 
 

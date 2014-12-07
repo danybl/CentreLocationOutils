@@ -14,27 +14,27 @@ namespace CentreLocationOutils.dao.implementations
     public class AdresseDAO : DAO, IAdresseDAO
     {
 
-        private static const String CREATE_PRIMARY_KEY = "SELECT SEQ_ADRESSE_ID.NEXTVAL "
+        private static string CREATE_PRIMARY_KEY = "SELECT SEQ_ADRESSE_ID.NEXTVAL "
         + "FROM DUAL";
 
-        private static const String ADD_REQUEST = "INSERT INTO adresse (idAdresse, numero, rue, appartement, codePostal, ville, province, pays) "
+        private static string ADD_REQUEST = "INSERT INTO adresse (idAdresse, numero, rue, appartement, codePostal, ville, province, pays) "
             + "VALUES (:idAdresse, :numero, :rue, :appartement, :codePostal, :ville, :province, :pays";
 
-        private static const String READ_REQUEST = "SELECT idAdresse, numero, rue, appartement, codePostal, ville, province, pays "
+        private static string READ_REQUEST = "SELECT idAdresse, numero, rue, appartement, codePostal, ville, province, pays "
             + "FROM adresse "
             + "WHERE idAdresse = :idAdresse";
 
-        private static const String UPDATE_REQUEST = "UPDATE adresse "
+        private static string UPDATE_REQUEST = "UPDATE adresse "
             + "SET numero = :numero, rue = :rue, appartement = :appartement, codePostal = :codePostal, ville = :ville, province = :province, pays = :pays "
             + "WHERE idAdresse = :idAdresse";
 
-        private static const String DELETE_REQUEST = "DELETE FROM adresse "
+        private static string DELETE_REQUEST = "DELETE FROM adresse "
             + "WHERE idAdresse = :idAdresse";
 
-        private static const String GET_ALL_REQUEST = "SELECT idAdresse, numero, rue, appartement, codePostal, ville, province, pays "
+        private static string GET_ALL_REQUEST = "SELECT idAdresse, numero, rue, appartement, codePostal, ville, province, pays "
             + "FROM adresse";
 
-        private static const String FINF_BY_VILLE = "SELECT idAdresse, numero, rue, appartement, codePostal, ville, province, pays "
+        private static string FINF_BY_VILLE = "SELECT idAdresse, numero, rue, appartement, codePostal, ville, province, pays "
             + "FROM adresse "
             + "WHERE ville = :ville";
 
@@ -46,7 +46,7 @@ namespace CentreLocationOutils.dao.implementations
         public AdresseDAO() : base() { }
 
         /// <inheritdoc />
-        private static String getPrimaryKey(Connection connection)
+        private static string getPrimaryKey(Connection connection)
         {
             return DAO.getPrimaryKey(connection,
                 AdresseDAO.CREATE_PRIMARY_KEY);

@@ -22,16 +22,15 @@ namespace CentreLcationOutils_front_end
         public CentreLocationOutilsTesting()
             : base()
         {
-           // startReading();
+           startReading();
 
         }
 
-        static void main()
+        private void startReading()
         {
-            CentreLocationOutilsTesting centre = new CentreLocationOutilsTesting();
             StringReader streamReader = (StringReader)Console.In;
             gestionCentreOutils = new CentreLocationOutilsCreateur("local", "location", "tiger");
-            centre.traiterTransaction(streamReader);
+            traiterTransaction(streamReader);
 
         }
 

@@ -12,28 +12,28 @@ namespace CentreLocationOutils.dao.implementations
 {
     public class OutilDAO : DAO, IOutilDAO
     {
-        private static const string ADD_REQUEST = "INSERT INTO outil (idOutil, idCategorie ,nom, numSerie, dateAqcuisition, prixLocation, description) "
+        private static   string ADD_REQUEST = "INSERT INTO outil (idOutil, idCategorie ,nom, numSerie, dateAqcuisition, prixLocation, description) "
       + "VALUES (:idOutil, :idCategorie, :nom, :numSerie, :dateAqcuisition, :prixLocation, :description)";
 
-        private static const string READ_REQUEST = "SELECT idOutil, idCategorie ,nom, numSerie, dateAqcuisition, prixLocation, description "
+        private static   string READ_REQUEST = "SELECT idOutil, idCategorie ,nom, numSerie, dateAqcuisition, prixLocation, description "
            + "FROM outil "
            + "WHERE idOutil = :idOutil";
 
-        private static const string UPDATE_REQUEST = "UPDATE outil "
+        private static   string UPDATE_REQUEST = "UPDATE outil "
             + "SET idCategorie = :idCategorie, nom = :nom, numSerie = :numSerie, dateAcquisition = :dateAcquisition, prixLocation = :prixLocation, description = :description "
             + "WHERE idOutil = :idOutil";
 
-        private static const string DELETE_REQUEST = "DELETE FROM outil "
+        private static   string DELETE_REQUEST = "DELETE FROM outil "
             + "WHERE idOutil = :idOutil";
 
-        private static const string GET_ALL_REQUEST = "SELECT idOutil, idCategorie ,nom, numSerie, dateAqcuisition, prixLocation, description "
+        private static   string GET_ALL_REQUEST = "SELECT idOutil, idCategorie ,nom, numSerie, dateAqcuisition, prixLocation, description "
             + "FROM outil";
 
-        private static const string FIND_BY_NOM = "SELECT idOutil, idCategorie ,nom, numSerie, dateAqcuisition, prixLocation, description "
+        private static   string FIND_BY_NOM = "SELECT idOutil, idCategorie ,nom, numSerie, dateAqcuisition, prixLocation, description "
             + "FROM outil "
             + "where nom like :nom";
 
-        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_OUTIL_ID.NEXTVAL from DUAL";
+        private static   string CREATE_PRIMARY_KEY = "SELECT SEQ_OUTIL_ID.NEXTVAL from DUAL";
 
 
         //public OutilDAO(OutilDTO outilDTOClass) : base(outilDTOClass) { }

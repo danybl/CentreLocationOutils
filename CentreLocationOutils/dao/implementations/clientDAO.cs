@@ -14,32 +14,32 @@ namespace CentreLocationOutils.dao.implementations
     public class ClientDAO : DAO, IClientDAO
     {
 
-        private static const string ADD_REQUEST = "INSERT INTO Client (idClient, nom, prenom, telephone, email, dateInscription, nbLocations, limiteLocations) "
+        private static   string ADD_REQUEST = "INSERT INTO Client (idClient, nom, prenom, telephone, email, dateInscription, nbLocations, limiteLocations) "
        + "VALUES (:idClient, :nom, :prenom, :telephone, :email, :dateInscription, :nbLocations, :limiteLocations)";
 
-        private static const string READ_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription, nbLocations, limiteLocations "
+        private static   string READ_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription, nbLocations, limiteLocations "
             + "FROM client "
             + "WHERE idClient = :idClient";
 
-        private static const string UPDATE_REQUEST = "UPDATE client "
+        private static   string UPDATE_REQUEST = "UPDATE client "
             + "SET nom = :nom, prenom = :prenom, telephone = :telephone, email = :email, nbLocations = :nbLocations, limiteLocations = :limiteLocations "
             + "WHERE idClient = :idClient";
 
-        private static const string DELETE_REQUEST = "DELETE FROM client "
+        private static   string DELETE_REQUEST = "DELETE FROM client "
             + "WHERE idClient = :idClient";
 
-        private static const string GET_ALL_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription, nbLocations, limiteLocations "
+        private static   string GET_ALL_REQUEST = "SELECT idClient, nom, prenom, telephone, email, dateInscription, nbLocations, limiteLocations "
             + "FROM client";
 
-        private static const string FIND_BY_NOM = "SELECT idClient, nom, prenom, telephone, email, dateInscription, nbLocations, limiteLocations "
+        private static   string FIND_BY_NOM = "SELECT idClient, nom, prenom, telephone, email, dateInscription, nbLocations, limiteLocations "
             + "FROM client "
             + "where nom like :nom";
 
-        //private static const string FIND_BY_TEL = "SELECT idClient, nom, telephone, limitePret, nbpret"
+        //private static   string FIND_BY_TEL = "SELECT idClient, nom, telephone, limitePret, nbpret"
         //    + " FROM membre"
         //    + " where telephone = ?";
 
-        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_CLIENT_ID.NEXTVAL from DUAL";
+        private static   string CREATE_PRIMARY_KEY = "SELECT SEQ_CLIENT_ID.NEXTVAL from DUAL";
 
         /// <summary>
         /// Crée le DAO de la table Client <code>client</code>

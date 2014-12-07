@@ -14,30 +14,30 @@ namespace CentreLocationOutils.dao.implementations
     public class FacturationDAO : DAO, IFacturationDAO
     {
 
-        private static const string ADD_REQUEST = "INSERT INTO Facturation (idFacturation, idEmploye, idLocation, coutTotal) "
+        private static   string ADD_REQUEST = "INSERT INTO Facturation (idFacturation, idEmploye, idLocation, coutTotal) "
             + "VALUES (:idFacturation, :idEmploye, :idLocation, :coutTotal)";
 
-        private static const string READ_REQUEST = "SELECT idFacturation, idEmploye, idLocation, coutTotal "
+        private static   string READ_REQUEST = "SELECT idFacturation, idEmploye, idLocation, coutTotal "
             + "FROM facturation "
             + "WHERE idFacturation = :idFacturation";
 
-        private static const string UPDATE_REQUEST = "UPDATE facturation "
+        private static   string UPDATE_REQUEST = "UPDATE facturation "
             + "SET idemploye = :idEmploye, idLocation = :idLocation, couttotal = :coutTotal "
             + "WHERE idFacturation = :idFacturation";
 
-        private static const string DELETE_REQUEST = "DELETE FROM facturation "
+        private static   string DELETE_REQUEST = "DELETE FROM facturation "
             + "WHERE idFacturation = :idFacturation";
 
-        private static const string GET_ALL_REQUEST = "SELECT idFacturation, idEmploye, idLocation, coutTotal "
+        private static   string GET_ALL_REQUEST = "SELECT idFacturation, idEmploye, idLocation, coutTotal "
             + "FROM facturation";
 
-        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_FACTURATION_ID.NEXTVAL from DUAL";
+        private static   string CREATE_PRIMARY_KEY = "SELECT SEQ_FACTURATION_ID.NEXTVAL from DUAL";
 
-        private static const string FIND_BY_EMPLOYE = "SELECT idFacturation, idEmploye, idLocation, coutTotal "
+        private static   string FIND_BY_EMPLOYE = "SELECT idFacturation, idEmploye, idLocation, coutTotal "
             + "FROM facturation "
             + "WHERE idEmploye = :idEmploye";
 
-        private static const string FIND_BY_CLIENT = "SELECT facturation.idFacturation, facturation.idEmploye, facturation.idLocation, facturation.coutTotal "
+        private static   string FIND_BY_CLIENT = "SELECT facturation.idFacturation, facturation.idEmploye, facturation.idLocation, facturation.coutTotal "
             + "FROM facturation "
             + "INNER JOIN location"
             + "WHERE location.idClient = :idClient";

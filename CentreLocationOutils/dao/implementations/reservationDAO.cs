@@ -13,31 +13,31 @@ namespace CentreLocationOutils.dao.implementations
 {
     public class ReservationDAO : DAO, IReservationDAO
     {
-        private static const String CREATE_PRIMARY_KEY = "SELECT SEQ_RESERVATION_ID.NEXTVAL "
+        private static   String CREATE_PRIMARY_KEY = "SELECT SEQ_RESERVATION_ID.NEXTVAL "
         + "FROM DUAL";
 
-        private static const String ADD_REQUEST = "INSERT INTO reservation (idReservation, idClient, idOutil, dateReservation, dateLimite) "
+        private static   String ADD_REQUEST = "INSERT INTO reservation (idReservation, idClient, idOutil, dateReservation, dateLimite) "
             + "VALUES (:idReservation, :idClient, :idOutil, :dateReservation, :dateLimite";
 
-        private static const String READ_REQUEST = "SELECT idReservation, idClient, idOutil, dateReservation, dateLimite "
+        private static   String READ_REQUEST = "SELECT idReservation, idClient, idOutil, dateReservation, dateLimite "
             + "FROM reservation "
             + "WHERE idReservation = :idReservation";
 
-        private static const String UPDATE_REQUEST = "UPDATE reservation "
+        private static   String UPDATE_REQUEST = "UPDATE reservation "
             + "SET dateLimite = :dateLimite "
             + "WHERE idReservation = :idReservation";
 
-        private static const String DELETE_REQUEST = "DELETE FROM reservation "
+        private static   String DELETE_REQUEST = "DELETE FROM reservation "
             + "WHERE idReservation = :idReservation";
 
-        private static const String GET_ALL_REQUEST = "SELECT idReservation, idClient, idOutil, dateReservation "
+        private static   String GET_ALL_REQUEST = "SELECT idReservation, idClient, idOutil, dateReservation "
             + "FROM reservation";
 
-        private static const String FIND_BY_CLIENT_REQUEST = "SELECT idReservation, idClient, idOutil, dateReservation "
+        private static   String FIND_BY_CLIENT_REQUEST = "SELECT idReservation, idClient, idOutil, dateReservation "
             + "FROM reservation "
             + "WHERE idClient = :idClient";
 
-        private static const String FIND_BY_OUTIL_REQUEST = "SELECT idReservation, idClient, idOutil, dateReservation "
+        private static   String FIND_BY_OUTIL_REQUEST = "SELECT idReservation, idClient, idOutil, dateReservation "
             + "FROM reservation "
             + "WHERE idOutil = :idOutil "
             + "ORDER BY dateReservation ASC";

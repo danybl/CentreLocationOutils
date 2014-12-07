@@ -7,11 +7,11 @@ namespace CentreLocationOutils.dto
 {
     public class ClientDTO : DTO
     {
-        public static const string ID_CLIENT_COLUMN_NAME = "idClient";
+        public static   string ID_CLIENT_COLUMN_NAME = "idClient";
 
-        public static const string NOM_COLUMN_NAME = "nom";
+        public static   string NOM_COLUMN_NAME = "nom";
 
-        public static const string DATE_INSCRIPTION_COLUMN_NAME = "dateInscription";
+        public static   string DATE_INSCRIPTION_COLUMN_NAME = "dateInscription";
 
         public ClientDTO() : base() { }
 

@@ -11,28 +11,28 @@ namespace CentreLocationOutils.dao.implementations
 {
     public class Client_AdresseDAO : DAO
     {
-        private static const string ADD_REQUEST = "INSERT INTO Client (idClient, idAdresse) "
+        private static   string ADD_REQUEST = "INSERT INTO Client (idClient, idAdresse) "
        + "VALUES (:idClient, :idAdresse)";
 
-        private static const string READ_REQUEST = "SELECT idClient, idAdresse "
+        private static   string READ_REQUEST = "SELECT idClient, idAdresse "
             + "FROM client "
             + "WHERE idClient = :idClient";
 
-        //private static const string UPDATE_REQUEST = "UPDATE client "
+        //private static   string UPDATE_REQUEST = "UPDATE client "
         //    + "SET nom = :nom, prenom = :prenom, telephone = :telephone, email = :email, nbLocations = :nbLocations, limiteLocations = :limiteLocations "
         //    + "WHERE idClient = :idClient";
 
-        private static const string DELETE_REQUEST = "DELETE FROM client "
+        private static   string DELETE_REQUEST = "DELETE FROM client "
             + "WHERE idClient = :idClient";
 
-        private static const string GET_ALL_REQUEST = "SELECT idClient, idAdresse "
+        private static   string GET_ALL_REQUEST = "SELECT idClient, idAdresse "
             + "FROM client";
 
-        //private static const string FIND_BY_TEL = "SELECT idClient, nom, telephone, limitePret, nbpret"
+        //private static   string FIND_BY_TEL = "SELECT idClient, nom, telephone, limitePret, nbpret"
         //    + " FROM membre"
         //    + " where telephone = ?";
 
-        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_CLIENT_ID.NEXTVAL from DUAL";
+        private static   string CREATE_PRIMARY_KEY = "SELECT SEQ_CLIENT_ID.NEXTVAL from DUAL";
 
         /// <summary>
         /// Crée le DAO de la table Client <code>client</code>

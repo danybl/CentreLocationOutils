@@ -11,31 +11,31 @@ namespace CentreLocationOutils.db
         DbProviderFactory provider = DbProviderFactories.GetFactory("System.Data.OracleClient");
         DbConnection connection;
 
-        private static const string TYPE_SERVEUR_LOCAL = "local";
+        private static   string TYPE_SERVEUR_LOCAL = "local";
 
-        //private static const string TYPE_SERVEUR_DISTANT = "distant";
+        //private static   string TYPE_SERVEUR_DISTANT = "distant";
 
-        //private static const string TYPE_SERVEUR_POSTGRES = "postgres";
+        //private static   string TYPE_SERVEUR_POSTGRES = "postgres";
 
-        //private static const string TYPE_SERVEUR_ACCESS = "access";
+        //private static   string TYPE_SERVEUR_ACCESS = "access";
 
-        //private static const string SERVEUR_DISTANT_CLASS = "com.mysql.jdbc.Driver";
+        //private static   string SERVEUR_DISTANT_CLASS = "com.mysql.jdbc.Driver";
 
-        private static const string SERVEUR_LOCAL_CLASS = "oracle.jdbc.driver.OracleDriver";
+        private static   string SERVEUR_LOCAL_CLASS = "oracle.jdbc.driver.OracleDriver";
 
-        //private static const string SERVEUR_POSTGRES_CLASS = "org.postgresql.Driver";
+        //private static   string SERVEUR_POSTGRES_CLASS = "org.postgresql.Driver";
 
-        //private static const string SERVEUR_ACCESS_CLASS = "org.postgresql.Driver";
+        //private static   string SERVEUR_ACCESS_CLASS = "org.postgresql.Driver";
 
-        //private static const string SERVEUR_DISTANT_URL = "jdbc:mysql://localhost:3306/";
+        //private static   string SERVEUR_DISTANT_URL = "jdbc:mysql://localhost:3306/";
 
-        private static const string SERVEUR_LOCAL_URL = "jdbc:oracle:thin:@localhost:1521:";
+        private static   string SERVEUR_LOCAL_URL = "jdbc:oracle:thin:@localhost:1521:";
 
         //	private static final string SERVEUR_DISTANT_URL = "jdbc:oracle:thin:@collegeahunstic.info:1521:";
 
-        //private static const string SERVEUR_POSTGRES_URL = "jdbc:postgresql:";
+        //private static   string SERVEUR_POSTGRES_URL = "jdbc:postgresql:";
 
-        //private static const string SERVEUR_ACCESS_URL = "jdbc:postgresql:";
+        //private static   string SERVEUR_ACCESS_URL = "jdbc:postgresql:";
 
         /// <summary>
         /// 

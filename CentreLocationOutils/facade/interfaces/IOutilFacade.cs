@@ -3,7 +3,7 @@ using CentreLocationOutils.dto;
 
 namespace CentreLocationOutils.facade.interfaces
 {
-    public class IOutilFacade : IFacade
+    public interface IOutilFacade : IFacade
     {
         public virtual OutilDTO getOutil(Connection connection, string idOutil);
         public virtual void acquerirOutil(Connection connection, OutilDTO outilDTO);

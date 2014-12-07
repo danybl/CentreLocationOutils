@@ -12,31 +12,31 @@ namespace CentreLocationOutils.dao.implementations
 {
     public class LocationDAO : DAO, CentreLocationOutils.dao.interfaces.ILocationDAO
     {
-         private static const String CREATE_PRIMARY_KEY = "SELECT SEQ_LOCATION_ID.NEXTVAL "
+         private static   String CREATE_PRIMARY_KEY = "SELECT SEQ_LOCATION_ID.NEXTVAL "
         + "FROM DUAL";
 
-         private static const String ADD_REQUEST = "INSERT INTO location (idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour) "
+         private static   String ADD_REQUEST = "INSERT INTO location (idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour) "
             + "VALUES (:idLocation, :idClient, :idEmploye, :idOutil, :dateLocation, :dateLimite, :dateRetour";
 
-         private static const String READ_REQUEST = "SELECT idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour "
+         private static   String READ_REQUEST = "SELECT idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour "
             + "FROM location "
             + "WHERE idLocation = :idLocation";
 
-        private static const String UPDATE_REQUEST = "UPDATE location "
+        private static   String UPDATE_REQUEST = "UPDATE location "
             + "SET dateLimite = :dateLimite, dateRetour = :dateRetour "
             + "WHERE idLocation = :idLocation";
 
-        private static const String DELETE_REQUEST = "DELETE FROM location "
+        private static   String DELETE_REQUEST = "DELETE FROM location "
             + "WHERE idLocation = :idLocation";
 
-        private static const String GET_ALL_REQUEST = "SELECT idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour "
+        private static   String GET_ALL_REQUEST = "SELECT idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour "
             + "FROM location";
 
-        private static const String FIND_BY_CLIENT_REQUEST = "SELECT idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour "
+        private static   String FIND_BY_CLIENT_REQUEST = "SELECT idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour "
             + "FROM location "
             + "WHERE idClient = :idClient";
 
-        private static const String FIND_BY_OUTIL_REQUEST = "SELECT idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour "
+        private static   String FIND_BY_OUTIL_REQUEST = "SELECT idLocation, idClient, idEmploye, idOutil, dateLocation, dateLimite, dateRetour "
             + "FROM location "
             + "WHERE idOutil = ? "
             + "ORDER BY dateLocation ASC";

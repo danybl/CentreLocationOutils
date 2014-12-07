@@ -12,28 +12,28 @@ namespace CentreLocationOutils.dao.implementations
 {
     public class CategorieDAO : DAO, ICategorieDAO
     {
-        private static const string ADD_REQUEST = "INSERT INTO categorie (idCategorie, nom, description) "
+        private static string ADD_REQUEST = "INSERT INTO categorie (idCategorie, nom, description) "
       + "VALUES (:idCategorie, :idCategorie, :nom, :numSerie, :dateAqcuisition, :prixLocation, :description)";
 
-        private static const string READ_REQUEST = "SELECT idCategorie, nom, description "
+        private static string READ_REQUEST = "SELECT idCategorie, nom, description "
            + "FROM categorie "
            + "WHERE idCategorie = :idCategorie";
 
-        private static const string UPDATE_REQUEST = "UPDATE categorie "
+        private static string UPDATE_REQUEST = "UPDATE categorie "
             + "SET idCategorie = :idCategorie, nom = :nom, description = :description "
             + "WHERE idCategorie = :idCategorie";
 
-        private static const string DELETE_REQUEST = "DELETE FROM categorie "
+        private static string DELETE_REQUEST = "DELETE FROM categorie "
             + "WHERE idCategorie = :idCategorie";
 
-        private static const string GET_ALL_REQUEST = "SELECT idCategorie, nom, description "
+        private static string GET_ALL_REQUEST = "SELECT idCategorie, nom, description "
             + "FROM categorie";
 
-        private static const string FIND_BY_NOM = "SELECT idCategorie, nom, description "
+        private static string FIND_BY_NOM = "SELECT idCategorie, nom, description "
             + "FROM categorie "
             + "where nom like :nom";
 
-        private static const string CREATE_PRIMARY_KEY = "SELECT SEQ_CATEG_ID.NEXTVAL from DUAL";
+        private static string CREATE_PRIMARY_KEY = "SELECT SEQ_CATEG_ID.NEXTVAL from DUAL";
 
         //public CategorieDAO(CategorieDTO categorieDTOClass) : base(categorieDTOClass) { }
         public CategorieDAO() : base() { }
