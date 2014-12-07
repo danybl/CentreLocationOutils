@@ -79,5 +79,16 @@ namespace CentreLocationOutils.facade.implementations
                 throw new FacadeException("", serviceException);
             }
         }
+     public override List<LocationDTO> findByOUtil(Connection connection, LocationDTO locationDTO)
+        {
+            try
+            {
+                return getLocationService().findByClient(connection, locationDTO);
+            }
+            catch (ServiceException serviceException)
+            {
+                throw new FacadeException("", serviceException);
+            }
+        }
     }
 }

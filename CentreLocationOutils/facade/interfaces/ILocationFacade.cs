@@ -13,5 +13,6 @@ namespace CentreLocationOutils.facade.interfaces
         public virtual void renouvelerLocation(Connection connection, LocationDTO locationDTO);
         public virtual void terminerLocation(Connection connection, LocationDTO locationDTO);
         public virtual List<LocationDTO> findByClient(Connection connection, LocationDTO locationDTO);
+        public virtual List<LocationDTO> findByOutil(Connection connection, LocationDTO locationDTO);
     }
 }

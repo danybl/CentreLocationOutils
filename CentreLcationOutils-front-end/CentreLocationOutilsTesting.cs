@@ -16,6 +16,8 @@ namespace CentreLcationOutils_front_end
     public class CentreLocationOutilsTesting
     {
         private static CentreLocationOutilsCreateur gestionCentreOutils;
+        private static const double POURCENTAGE_DEPOT = 0.25;
+        private static const int NB_JOUR_LOCATION = 7; 
 
         public CentreLocationOutilsTesting()
             : base()
@@ -118,7 +120,7 @@ namespace CentreLcationOutils_front_end
             Console.WriteLine("Les transactions sont:");
             Console.WriteLine("  aide");
             Console.WriteLine("  exit");
-            Console.WriteLine("  louer <idOutil> <idMembre>");
+            Console.WriteLine("  louer <idOutil> <idMembre> <idEmployé>");
             Console.WriteLine("  renouveler <idLocation>");
             Console.WriteLine("  terminer <idLocation>");
             Console.WriteLine("  inscrire <nom> <prenom> <telephone> <email> <limiteLocation>");
@@ -136,11 +138,49 @@ namespace CentreLcationOutils_front_end
             ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.Connection, idClient);
             if (clientDTO == null)
             {
-                throw new MissingDTOException("Le client " + idClient + "n'existe pas");
+                throw new MissingDTOException("Le client " + idClient + " n'existe pas");
             }
 
             string idOutil = readString(splitter);
-            OutilDTO outilDTO = gestionCentreOutils.OutilFacade.
+            OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.Connection, idOutil);
+            if (outilDTO == null)
+            {
+                throw new MissingDTOException("L'outil " + idOutil + " n'existe pas");
+            }
+            string idEmploye = readDate(splitter);
+            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.Connection, idEmploye);
+            if (employeDTO == null)
+            {
+                throw new MissingDTOException("L'employé " + idEmploye + " n'existe pas");
+            }
+            LocationDTO locationDTO = new LocationDTO();
+            locationDTO.ClientDTO = clientDTO;
+            locationDTO.OutilDTO = outilDTO;
+            locationDTO.EmployeDTO = employeDTO;
+            locationDTO.Depot = (double.Parse(outilDTO.PrixLocation) * CentreLocationOutilsTesting.POURCENTAGE_DEPOT).ToString();
+            locationDTO.DateLocation = DateTime.Now.Ticks.ToString();
+            locationDTO.DateRetour = null;
+            locationDTO.DateLimite = (DateTime.Now.Ticks + CentreLocationOutilsTesting.NB_JOUR_LOCATION).ToString();
+            gestionCentreOutils.LocationFacade.commencerLocation(gestionCentreOutils.Connection, locationDTO);
+            gestionCentreOutils.commitTransaction();
+        }
+
+        private void terminerLocation(List<string> splitter)
+        {
+            gestionCentreOutils.beginTransaction();
+            OutilDTO outilDTO = new OutilDTO();
+            outilDTO.IdOutil = readString(splitter);
+            LocationDTO locationDTO = new LocationDTO();
+            locationDTO.OutilDTO = outilDTO;
+            List<LocationDTO> locations = gestionCentreOutils.LocationFacade.findByOutil(gestionCentreOutils.Connection, locationDTO);
+            if (locations.Count == 0)
+            {
+                throw new MissingDTOException();
+            }
+            locationDTO = locations[0];
+            gestionCentreOutils.LocationFacade.terminerLocation(gestionCentreOutils.Connection, locationDTO);
+            gestionCentreOutils.commitTransaction();
+            
         }
 
         private void engagerEmploye(List<string> splitter)
@@ -157,14 +197,14 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
 
         }
-        private void renvoyerEmploye(List<string> splitter)
+        private void supprimerEmploye(List<string> splitter)
         {
             gestionCentreOutils.beginTransaction();
             string idEmploye = readString(splitter);
             EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.Connection, idEmploye);
             if (employeDTO == null)
             {
-                throw new MissingDTOException("L'employé " + idEmploye + "n'existe pas");
+                throw new MissingDTOException("L'employé " + idEmploye + " n'existe pas");
             }
             gestionCentreOutils.EmployeFacade.desinscrireEmploye(gestionCentreOutils.Connection, employeDTO);
             gestionCentreOutils.commitTransaction();

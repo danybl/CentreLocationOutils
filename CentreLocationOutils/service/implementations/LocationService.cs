@@ -198,7 +198,7 @@ namespace CentreLocationOutils.service.implementations
             }
 
             locationDTO.ClientDTO.NbLocations = (int.Parse(locationDTO.ClientDTO.NbLocations + 1)).ToString();
-            locationDTO.DateLocation = System.DateTime.Today;
+            //locationDTO.DateLocation = System.DateTime.Today;
             // locationDTO.DateRetour = null;
             addLocation(connection, locationDTO);
         }
@@ -222,7 +222,7 @@ namespace CentreLocationOutils.service.implementations
                     + ") est retourné"
                     );
             }
-            locationDTO.DateLocation = (System.DateTime.Now);
+            //locationDTO.DateLocation = (System.DateTime.Now);
             //locationDTO.DateRetour = null
             updateLocation(connection, locationDTO);
         }
@@ -248,7 +248,7 @@ namespace CentreLocationOutils.service.implementations
             }
 
             locationDTO.ClientDTO.NbLocations = int.Parse(locationDTO.ClientDTO.NbLocations).ToString();
-            locationDTO.DateRetour = System.DateTime.Now;
+            //locationDTO.DateRetour = System.DateTime.Now;
             updateLocation(connection, locationDTO);
         }
 
@@ -261,7 +261,7 @@ namespace CentreLocationOutils.service.implementations
             }
             if (locationDTO == null)
             {
-                throw new InvalidDTOException("La réservation ne peut être null");
+                throw new InvalidDTOException("La lcoation ne peut être null");
             }
             try
             {
@@ -273,8 +273,27 @@ namespace CentreLocationOutils.service.implementations
             }
         }
 
+        public override List<LocationDTO> findByOutil(Connection connection, LocationDTO locationDTO)
+        {
+            if (connection == null)
+            {
+                throw new InvalidConnectionException("La connection ne peut être null");
+            }
+            if (locationDTO == null)
+            {
+                throw new InvalidDTOException("La lcoation ne peut être null");
+            }
+            try
+            {
+                return getLocationDAO().findByOutil(connection, locationDTO.OutilDTO.IdOutil, LocationDTO.ID_OUTIL_COLUMN_NAME);
+            }
+            catch (DAOException daoException)
+            {
+                throw new ServiceException("", daoException);
+            }
+        }
 
 
-        //TODO findByDatePret() et findByDateRetour(), findByOutil();
+        //TODO findByDatePret() et findByDateRetour();
     }
 }
