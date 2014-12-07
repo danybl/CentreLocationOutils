@@ -48,6 +48,18 @@ namespace CentreLocationOutils.facade.implementations
 
         #endregion
 
+        public EmployeDTO getEmploye(Connection connection, string idEmploye)
+        {
+            try
+            {
+                return getEmployeService().get(connection, idEmploye);
+            }
+            catch (ServiceException serviceException)
+            {
+                throw new FacadeException("", serviceException);
+            }
+        }
+
         /// <inheritdoc />
         public override void inscrireEmploye(Connection connection, EmployeDTO employeDTO)
         {
