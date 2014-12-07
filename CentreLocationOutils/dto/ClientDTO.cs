@@ -20,7 +20,7 @@ namespace CentreLocationOutils.dto
         public string Prenom { get; set; }
         public string Telephone { get; set; }
         public string Email { get; set; }
-        public DateTime DateInscription { get; set; }
+        public string DateInscription { get; set; }
         public string NbLocations { get; set; }
         public string LimiteLocations { get; set; }
 

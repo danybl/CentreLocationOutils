@@ -22,7 +22,7 @@ namespace CentreLocationOutils.dto
         public string IdReservation { get; set; }
         public ClientDTO ClientDTO { get; set; }
         public OutilDTO OutilDTO { get; set; }
-        public DateTime DateReservation { get; set; }
-        public DateTime DateLimite { get; set; }
+        public string DateReservation { get; set; }
+        public string DateLimite { get; set; }
     }
 }

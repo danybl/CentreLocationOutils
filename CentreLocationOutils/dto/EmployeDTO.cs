@@ -19,7 +19,7 @@ namespace CentreLocationOutils.dto
         public string Prenom { get; set; }
         public string Telephone{get;set;}
         public string Email { get; set; }
-        public DateTime DateRecrutement { get; set; }
+        public string DateRecrutement { get; set; }
         public string Poste { get; set; }
     }
 }
