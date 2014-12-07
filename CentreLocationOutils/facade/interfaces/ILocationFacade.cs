@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using CentreLocationOutils.db;
+﻿using CentreLocationOutils.db;
 using CentreLocationOutils.dto;
+using System.Collections.Generic;
 
 namespace CentreLocationOutils.facade.interfaces
 {
     public interface ILocationFacade : IFacade
     {
-        public virtual void commencerLocation(Connection connection, LocationDTO locationDTO);
-        public virtual void renouvelerLocation(Connection connection, LocationDTO locationDTO);
-        public virtual void terminerLocation(Connection connection, LocationDTO locationDTO);
-        public virtual List<LocationDTO> findByClient(Connection connection, LocationDTO locationDTO);
-        public virtual List<LocationDTO> findByOutil(Connection connection, LocationDTO locationDTO);
+        void commencerLocation(Connection connection, LocationDTO locationDTO);
+        void renouvelerLocation(Connection connection, LocationDTO locationDTO);
+        void terminerLocation(Connection connection, LocationDTO locationDTO);
+        List<LocationDTO> findByClient(Connection connection, LocationDTO locationDTO);
+        List<LocationDTO> findByOutil(Connection connection, LocationDTO locationDTO);
     }
 }

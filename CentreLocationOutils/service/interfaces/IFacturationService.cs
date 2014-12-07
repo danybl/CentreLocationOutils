@@ -42,7 +42,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="facturationDTO">La facturation à ajoute</param>
-        delete(Connection connection, FacturationDTO facturationDTO);
+        void delete(Connection connection, FacturationDTO facturationDTO);
 
         /// <summary>
         /// Trouve tous les factures de la base de données.

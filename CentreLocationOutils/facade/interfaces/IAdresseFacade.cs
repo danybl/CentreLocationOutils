@@ -9,6 +9,6 @@ namespace CentreLocationOutils.facade.interfaces
 {
     public interface IAdresseFacade : IFacade
     {
-        public virtual void changerLocation(Connection connection, AdresseDTO adresseDTO);
+        void changerLocation(Connection connection, AdresseDTO adresseDTO);
     }
 }

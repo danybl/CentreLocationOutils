@@ -9,10 +9,10 @@ namespace CentreLocationOutils.facade.interfaces
 {
     public interface IClientFacade : IFacade
     {
-        public virtual ClientDTO getClient(Connection connection, string idClient);
+        ClientDTO getClient(Connection connection, string idClient);
 
-        public virtual List<ClientDTO> findByNom(Connection connection, String nom, String SortByPropertyName);
+        List<ClientDTO> findByNom(Connection connection, String nom, String SortByPropertyName);
 
-        public virtual List<ClientDTO> isncrire(Connection connection, ClientDTO clientDTO);
+        List<ClientDTO> isncrire(Connection connection, ClientDTO clientDTO);
     }
 }
