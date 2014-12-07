@@ -14,7 +14,7 @@ namespace CentreLocationOutils.service.interfaces
     /// </summary>
     public interface IReservationService : IService
     {
-        
+
 
         /// <summary>
         /// 
@@ -22,7 +22,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        public virtual List<ReservationDTO> getAll(Connection connection,
+        List<ReservationDTO> getAll(Connection connection,
         string sortByPropertyName);
 
         /// <summary>
@@ -32,16 +32,16 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="nom"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        public virtual List<ReservationDTO> findByClient(Connection connection, ClientDTO clientDTO,
+        List<ReservationDTO> findByClient(Connection connection, ClientDTO clientDTO,
         string sortByPropertyName);
 
-        public virtual void placerReservation(Connection connection,
+        void placerReservation(Connection connection,
         ReservationDTO reservationDTO);
 
-        public virtual void utiliserReservation(Connection connection,
+        void utiliserReservation(Connection connection,
         ReservationDTO reservationDTO);
 
-        public virtual void annulerReservation(Connection connection,
+        void annulerReservation(Connection connection,
         ReservationDTO reservationDTO);
     }
 }

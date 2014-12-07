@@ -19,7 +19,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="employeDTO"></param>
-        public virtual void add(Connection connection,
+        void add(Connection connection,
         EmployeDTO employeDTO);
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection"></param>
         /// <param name="primaryKey"></param>
         /// <returns></returns>
-        public virtual EmployeDTO get(Connection connection,
+        EmployeDTO get(Connection connection,
         string primaryKey);
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="employeDTO"></param>
-        public virtual void update(Connection connection,
+        void update(Connection connection,
         EmployeDTO employeDTO);
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="employeDTO"></param>
-        public virtual void delete(Connection connection,
+        void delete(Connection connection,
         EmployeDTO employeDTO);
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        public virtual List<EmployeDTO> getAll(Connection connection,
+        List<EmployeDTO> getAll(Connection connection,
         string sortByPropertyName);
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="nom"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        public virtual List<EmployeDTO> findByNom(Connection connection, string nom,
+        List<EmployeDTO> findByNom(Connection connection, string nom,
         string sortByPropertyName);
 
         /// <summary>
@@ -71,13 +71,13 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="employeDTO"></param>
-        public virtual void inscrireEmploye(Connection connection, EmployeDTO employeDTO);
+        void inscrireEmploye(Connection connection, EmployeDTO employeDTO);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="employeDTO"></param>
-        public virtual void desinscrireEmploye(Connection connection, EmployeDTO employeDTO);
+        void desinscrireEmploye(Connection connection, EmployeDTO employeDTO);
     }
 }

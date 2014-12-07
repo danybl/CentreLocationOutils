@@ -20,28 +20,28 @@ namespace CentreLocationOutils.service.interfaces
         * @param connection La connection à utiliser
         * @param clientDTO Le client à ajouter
         */
-        public virtual void add(Connection connection, ClientDTO clientDTO);
+        void add(Connection connection, ClientDTO clientDTO);
         /**
         * Lit une client.
         *
         * @param connection La connection à utiliser
         * @param clientDTO La client à lire
         */
-        public virtual ClientDTO get(Connection connection, String idClient);
+        ClientDTO get(Connection connection, String idClient);
         /**
         * Met à jour un client.
         *
         * @param connection La connection à utiliser
         * @param clientDTO Le client à mettre à jour
         */
-        public virtual void update(Connection connection, ClientDTO clientDTO);
+        void update(Connection connection, ClientDTO clientDTO);
         /**
         * Efface une client.
         *
         * @param connection La connection à utiliser
         * @param clientDTO La client à effacer
         */
-        public virtual void delete(Connection connection, ClientDTO clientDTO);
+        void delete(Connection connection, ClientDTO clientDTO);
         /**
         * Trouve tous les clients. La liste est classée par ordre croissant sur <code>sortByPropertyName</code>. Si aucun
         * client n'est trouvé, une {@link List} vide est retournée.
@@ -49,7 +49,7 @@ namespace CentreLocationOutils.service.interfaces
         * @param connection La connection à utiliser
         * @param clientDTO Le client à lire
         */
-        public virtual List<CategorieDTO> getAll(Connection connection,
+        List<CategorieDTO> getAll(Connection connection,
         String sortByPropertyName);
         /*Trouve un client à partir d'un nom
         *
@@ -57,7 +57,7 @@ namespace CentreLocationOutils.service.interfaces
         *@param nom Le nom à trouver
         *@param sortByPropertyName Le nom de la propriété à utiliser pour classer
         */
-        public virtual List<ClientDTO> findByNom(Connection connection, String nom, String SortByPropertyName);
+        List<ClientDTO> findByNom(Connection connection, String nom, String SortByPropertyName);
 
         /*Inscrit un client
         *

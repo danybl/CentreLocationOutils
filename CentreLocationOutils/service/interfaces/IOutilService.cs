@@ -15,7 +15,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="outilDTO"></param>
-        public virtual void add(Connection connection,
+        void add(Connection connection,
         OutilDTO outilDTO);
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection"></param>
         /// <param name="primaryKey"></param>
         /// <returns></returns>
-        public virtual OutilDTO get(Connection connection,
+        OutilDTO get(Connection connection,
         string primaryKey);
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="outilDTO"></param>
-        public virtual void update(Connection connection,
+        void update(Connection connection,
         OutilDTO outilDTO);
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="outilDTO"></param>
-        public virtual void delete(Connection connection,
+        void delete(Connection connection,
         OutilDTO outilDTO);
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        public virtual List<OutilDTO> getAll(Connection connection,
+        List<OutilDTO> getAll(Connection connection,
         string sortByPropertyName);
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="nom"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        public virtual List<OutilDTO> findByNom(Connection connection, string nom,
+        List<OutilDTO> findByNom(Connection connection, string nom,
         string sortByPropertyName);
 
         void acquerirOutil(Connection connection, OutilDTO outilDTO);

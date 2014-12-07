@@ -19,28 +19,28 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="adresseDTO">L'ardesse à ajouter</param>
-        public virtual void add(Connection connection, AdresseDTO adresseDTO);
+        void add(Connection connection, AdresseDTO adresseDTO);
 
         /// <summary>
         /// Lit une adresse à partir de la base de données.
         /// </summary>
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="adresseDTO">L'ardesse à ajouter</param>
-        public virtual void get(Connection connection, string idAdresse);
+        void get(Connection connection, string idAdresse);
 
         /// <summary>
         /// Met à jour une adresse dans la base de données.
         /// </summary>
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="adresseDTO">L'ardesse à ajouter</param>
-        public virtual void update(Connection connection, AdresseDTO adresseDTO);
+        void update(Connection connection, AdresseDTO adresseDTO);
 
         /// <summary>
         /// Supprime une adresse de la base de données.
         /// </summary>
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="adresseDTO">L'ardesse à ajouter</param>
-        public virtual void delete(Connection connection, AdresseDTO adresseDTO);
+        void delete(Connection connection, AdresseDTO adresseDTO);
 
         /// <summary>
         /// Trouve tous les adresses de la base de données. 
@@ -48,7 +48,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection">La connexion à utiliser</param>
         /// <param name="sortByPropertyName">La liste est classée par ordre croissant sur <code>sortByPropertyName</code>.</param>
         /// <returns>Si aucune adresse n'est trouvée, une {@link List} vide est retournée.</returns>
-        public virtual List<AdresseDTO> getall(Connection connection, string sortByPropertyName);
+        List<AdresseDTO> getall(Connection connection, string sortByPropertyName);
 
         /// <summary>
         /// Trouve les adresses à partir d'une ville. La liste est classée par ordre croissant sur <code>sortByPropertyName</code>. 
@@ -58,13 +58,13 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="ville">La ville à trouver</param>
         /// <param name="sortByPropertyName">La liste est classée par ordre croissant sur <code>sortByPropertyName</code>.</param>
         /// <returns>Si aucune adresse n'est trouvée, une {@link List} vide est retournée.</returns>
-        public virtual  List<AdresseDTO> findByVille(Connection connection, string ville, string sortByPropertyName);
+        List<AdresseDTO> findByVille(Connection connection, string ville, string sortByPropertyName);
 
         /// <summary>
         /// Change l'adresse d'un client déjà existant dans le système.
         /// </summary>
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="adresseDTO">L'adresse à changer</param>
-        public virtual void changerAdresse(Connection connection, AdresseDTO adresseDTO);
+        void changerAdresse(Connection connection, AdresseDTO adresseDTO);
     }
 }
