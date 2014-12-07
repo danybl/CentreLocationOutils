@@ -9,12 +9,12 @@ using CentreLocationOutils.dto;
 using CentreLocationOutils.exception.dto;
 using CentreLocationOutils.exception.service;
 using CentreLocationOutils.exception.facade;
+using System.Data.OracleClient;
 
 namespace CentreLcationOutils_front_end
 {
     public class CentreLocationOutilsTesting
     {
-
         private static CentreLocationOutilsCreateur gestionCentreOutils;
 
         public CentreLocationOutilsTesting()
@@ -92,7 +92,18 @@ namespace CentreLcationOutils_front_end
             }
             catch (NullReferenceException nullRefException)
             {
-                throw new CentreLocationOutilsException(nullRefException.Message);
+                gestionCentreOutils.rollbackTransaction();
+                Console.WriteLine(nullRefException);
+                //throw new CentreLocationOutilsException(nullRefException.Message);
+            }
+             catch(InvalidDTOException invalidDTOException){
+                gestionCentreOutils.rollbackTransaction();
+                Console.WriteLine(invalidDTOException);
+            }
+            catch (FacadeException facadeException)
+            {
+                gestionCentreOutils.rollbackTransaction();
+                Console.WriteLine(facadeException);
             }
         }
 
@@ -132,8 +143,6 @@ namespace CentreLcationOutils_front_end
 
         private void engagerEmploye(List<string> splitter)
         {
-            try
-            {
                 gestionCentreOutils.beginTransaction();
                 EmployeDTO employeDTO = new EmployeDTO();
                 employeDTO.Nom = readString(splitter);
@@ -144,15 +153,7 @@ namespace CentreLcationOutils_front_end
                 employeDTO.Poste = readString(splitter);
                 gestionCentreOutils.EmployeFacade.inscrireEmploye(gestionCentreOutils.Connection, employeDTO);
                 gestionCentreOutils.commitTransaction();
-            }catch(InvalidDTOException invalidDTOException){
-                gestionCentreOutils.rollbackTransaction();
-                Console.WriteLine(invalidDTOException);
-            }
-            catch (FacadeException facadeException)
-            {
-                gestionCentreOutils.rollbackTransaction();
-                Console.WriteLine(facadeException);
-            }
+
         }
         private void renvoyerEmploye(List<string> splitter)
         {
@@ -168,6 +169,7 @@ namespace CentreLcationOutils_front_end
                 gestionCentreOutils.EmployeFacade.desinscrireEmploye(gestionCentreOutils.Connection, employeDTO);
                 gestionCentreOutils.commitTransaction();
             }
+
         }
 
         public string readString(List<string> splitter)
