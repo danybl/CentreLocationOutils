@@ -11,7 +11,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// </summary>
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="dto">Le DTO à ajouter</param>
-        public void add(Connection connection,
+        void add(Connection connection,
             AdresseDTO adresseDTO);
 
         /// <summary>
@@ -20,7 +20,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// <param name="connection">La connection ;a utiliser</param>
         /// <param name="primaryKey">La clé primaire du DTO à lire</param>
         /// <returns>Le DTO à retourner</returns>
-        public AdresseDTO get(Connection connection,
+        AdresseDTO get(Connection connection,
             string primaryKey);
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// </summary>
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="dto">Le DTO à mettre à jour</param>
-        public void update(Connection connection,
+        void update(Connection connection,
             AdresseDTO adresseDTO);
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// </summary>
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="dto">Le DTO à supprimer</param>
-        public void delete(Connection connection,
+        void delete(Connection connection,
             AdresseDTO adresseDTO);
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace CentreLocationOutils.dao.interfaces
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="sortByPropertyName">Le nom de la propriété à uriliser pour classer la liste</param>
         /// <returns>La liste de tous les DTOs</returns>
-        public List<AdresseDTO> getAll(Connection connection,
+        List<AdresseDTO> getAll(Connection connection,
          string sortByPropertyName);
 
         /// <summary>
@@ -57,6 +57,6 @@ namespace CentreLocationOutils.dao.interfaces
         /// <param name="ville">La ville à trouver</param>
         /// <param name="sortByPropertyName">Le nom de la propriété à uriliser pour classer la liste</param>
         /// <returns>La liste de tous les DTOs</returns>
-        public List<AdresseDTO> findByVille(Connection connection, string ville, string sortByPropertyName);
+        List<AdresseDTO> findByVille(Connection connection, string ville, string sortByPropertyName);
     }
 }

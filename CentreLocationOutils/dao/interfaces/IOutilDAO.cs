@@ -13,8 +13,8 @@ namespace CentreLocationOutils.dao.interfaces
         /// </summary>
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="dto">Le DTO à ajouter</param>
-        public virtual void add(Connection connection,
-            OutilDTO outilDTO);
+        void add(Connection connection,
+          OutilDTO outilDTO);
 
         /// <summary>
         /// Lit un DTO à partir de la base de données
@@ -22,24 +22,24 @@ namespace CentreLocationOutils.dao.interfaces
         /// <param name="connection">La connection ;a utiliser</param>
         /// <param name="primaryKey">La clé primaire du DTO à lire</param>
         /// <returns>Le DTO à retourner</returns>
-        public virtual OutilDTO get(Connection connection,
-            string primaryKey);
+        OutilDTO get(Connection connection,
+          string primaryKey);
 
         /// <summary>
         /// Met à jour un DTO dans la base de données
         /// </summary>
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="dto">Le DTO à mettre à jour</param>
-        public virtual void update(Connection connection,
-            OutilDTO outilDTO);
+        void update(Connection connection,
+          OutilDTO outilDTO);
 
         /// <summary>
         /// Supprime un DTO de  la base de données
         /// </summary>
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="dto">Le DTO à supprimer</param>
-        public virtual void delete(Connection connection,
-            OutilDTO outilDTO);
+        void delete(Connection connection,
+          OutilDTO outilDTO);
 
         /// <summary>
         /// Trouve tous les DTOs de la base de données. La liste est classée par ordre croissant sur <code>sortByPropertyName</code>. Si aucun
@@ -48,8 +48,8 @@ namespace CentreLocationOutils.dao.interfaces
         /// <param name="connection">La connection à utiliser</param>
         /// <param name="sortByPropertyName">Le nom de la propriété à uriliser pour classer la liste</param>
         /// <returns>La liste de tous les DTOs</returns>
-        public virtual List<OutilDTO> getAll(Connection connection,
-         string sortByPropertyName);
+        List<OutilDTO> getAll(Connection connection,
+        string sortByPropertyName);
 
         ///<summary>Trouve les outils à partir d'un nom. La liste est classée par ordre croissant sur <code>sortByPropertyName</code>. Si aucun outil
         ///n'est trouvé, une {@link List} vide est retournée.</summary>>
@@ -58,8 +58,8 @@ namespace CentreLocationOutils.dao.interfaces
         ///<param name="sortByPropertyName">The nom de la propriété à utiliser pour classer</param>
         /// <returns> La liste des outils correspondants à une liste vide sinon</returns>
 
-        public virtual List<OutilDTO> findByNom(Connection connection,
-            String nom,
-            String sortByPropertyName);
+        List<OutilDTO> findByNom(Connection connection,
+          String nom,
+          String sortByPropertyName);
     }
 }
