@@ -96,7 +96,8 @@ namespace CentreLcationOutils_front_end
                 Console.WriteLine(nullRefException);
                 //throw new CentreLocationOutilsException(nullRefException.Message);
             }
-             catch(InvalidDTOException invalidDTOException){
+            catch (InvalidDTOException invalidDTOException)
+            {
                 gestionCentreOutils.rollbackTransaction();
                 Console.WriteLine(invalidDTOException);
             }
@@ -127,54 +128,52 @@ namespace CentreLcationOutils_front_end
             Console.WriteLine("  annulerReservation <idReservation>");
         }
 
-        private void effectuerLocation(List<string> splitter){
-            try
+        private void effectuerLocation(List<string> splitter)
+        {
+            gestionCentreOutils.beginTransaction();
+
+            string idClient = readString(splitter);
+            ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.Connection, idClient);
+            if (clientDTO == null)
             {
-                gestionCentreOutils.beginTransaction();
-
-                string idMembre = readString(splitter);
-                //ClientDTO clientDTO = gestionCentreOutils.ClientFacade.
-
-                string idOutil = readString(splitter);
-                //OutilDTO outilDTO = gestionCentreOutils.OutilFacade.
-                
+                throw new MissingDTOException("Le client " + idClient + "n'existe pas");
             }
+
+            string idOutil = readString(splitter);
+            OutilDTO outilDTO = gestionCentreOutils.OutilFacade.
         }
 
         private void engagerEmploye(List<string> splitter)
         {
-                gestionCentreOutils.beginTransaction();
-                EmployeDTO employeDTO = new EmployeDTO();
-                employeDTO.Nom = readString(splitter);
-                employeDTO.Prenom = readString(splitter);
-                employeDTO.Telephone = readString(splitter);
-                employeDTO.Email = readString(splitter);
-                employeDTO.DateRecrutement = readDate(splitter);
-                employeDTO.Poste = readString(splitter);
-                gestionCentreOutils.EmployeFacade.inscrireEmploye(gestionCentreOutils.Connection, employeDTO);
-                gestionCentreOutils.commitTransaction();
+            gestionCentreOutils.beginTransaction();
+            EmployeDTO employeDTO = new EmployeDTO();
+            employeDTO.Nom = readString(splitter);
+            employeDTO.Prenom = readString(splitter);
+            employeDTO.Telephone = readString(splitter);
+            employeDTO.Email = readString(splitter);
+            employeDTO.DateRecrutement = readDate(splitter);
+            employeDTO.Poste = readString(splitter);
+            gestionCentreOutils.EmployeFacade.inscrireEmploye(gestionCentreOutils.Connection, employeDTO);
+            gestionCentreOutils.commitTransaction();
 
         }
         private void renvoyerEmploye(List<string> splitter)
         {
-            try
+            gestionCentreOutils.beginTransaction();
+            string idEmploye = readString(splitter);
+            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.Connection, idEmploye);
+            if (employeDTO == null)
             {
-                gestionCentreOutils.beginTransaction();
-                string idEmploye = readString(splitter);
-                EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.Connection, idEmploye);
-                if (employeDTO == null)
-                {
-                    throw new MissingDTOException("L'employé " + idEmploye + "n'existe pas");
-                }
-                gestionCentreOutils.EmployeFacade.desinscrireEmploye(gestionCentreOutils.Connection, employeDTO);
-                gestionCentreOutils.commitTransaction();
+                throw new MissingDTOException("L'employé " + idEmploye + "n'existe pas");
             }
+            gestionCentreOutils.EmployeFacade.desinscrireEmploye(gestionCentreOutils.Connection, employeDTO);
+            gestionCentreOutils.commitTransaction();
 
         }
 
         public string readString(List<string> splitter)
         {
-            string lecture = ""; 
+            string lecture = "";
             if (splitter.Count > 0)
             {
                 lecture = splitter.First<string>().ToLower();
@@ -195,11 +194,11 @@ namespace CentreLcationOutils_front_end
                 }
                 catch (FormatException formatException)
                 {
-                    throw new CentreLocationOutilsException("Date en format AAAA-MM-JJ attendue "+ formatException);
+                    throw new CentreLocationOutilsException("Date en format AAAA-MM-JJ attendue " + formatException);
                 }
                 return lecture;
             }
             throw new CentreLocationOutilsException("autre paramètre attendu");
         }
-    } 
+    }
 }

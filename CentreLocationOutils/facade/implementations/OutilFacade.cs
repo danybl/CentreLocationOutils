@@ -45,6 +45,18 @@ namespace CentreLocationOutils.facade.implementations
             this.outilService = outilService;
         }
 
+        public override OutilDTO getOutil(Connection connection, string idOutil)
+        {
+            try
+            {
+                return getOutilService().get(connection, idOutil);
+            }
+            catch (ServiceException serviceException)
+            {
+                throw new FacadeException("", serviceException);
+            }
+        }
+
         public override void acquerirOutil(Connection connection, OutilDTO outilDTO)
         {
             if (connection == null)
