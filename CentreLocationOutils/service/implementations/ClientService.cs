@@ -121,6 +121,7 @@ namespace CentreLocationOutils.service.implementations
         // Inscrire un client
         public void inscrireClient(Connection connection, ClientDTO clientDTO)
         {
+            ClientDTO unclientDTO = new ClientDTO();
             if (connection == null)
             {
                 throw new InvalidConnectionException("La connection ne peut être null");
@@ -129,9 +130,15 @@ namespace CentreLocationOutils.service.implementations
             {
                 throw new InvalidDTOException("Le client ne peut être null");
             }
+            try {
             addClient(connection, clientDTO);
-        }
+            }
+            catch (DAOException daoException)
+            {
+                throw new ServiceException("", daoException);
+            }
 
+    }
         //Desinscrire un client
          public void desinscrireClient(Connection connection, ClientDTO clientDTO)
          {
@@ -143,8 +150,14 @@ namespace CentreLocationOutils.service.implementations
             {
                 throw new InvalidDTOException("Le client ne peut être null");
             }
+            try {
             deleteClient(connection, clientDTO);
-        }
+            }
+            catch (DAOException daoException)
+            {
+                throw new ServiceException("", daoException);
+            }
 
     }
+}
 }
