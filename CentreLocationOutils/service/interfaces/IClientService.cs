@@ -20,28 +20,28 @@ namespace CentreLocationOutils.service.interfaces
         * @param connection La connection à utiliser
         * @param clientDTO Le client à ajouter
         */
-        void add(Connection connection, ClientDTO clientDTO);
+        void addClient(Connection connection, ClientDTO clientDTO);
         /**
         * Lit une client.
         *
         * @param connection La connection à utiliser
         * @param clientDTO La client à lire
         */
-        ClientDTO get(Connection connection, String idClient);
+        ClientDTO getClient(Connection connection, String idClient);
         /**
         * Met à jour un client.
         *
         * @param connection La connection à utiliser
         * @param clientDTO Le client à mettre à jour
         */
-        void update(Connection connection, ClientDTO clientDTO);
+        void updateClient(Connection connection, ClientDTO clientDTO);
         /**
         * Efface une client.
         *
         * @param connection La connection à utiliser
         * @param clientDTO La client à effacer
         */
-        void delete(Connection connection, ClientDTO clientDTO);
+        void deleteClient(Connection connection, ClientDTO clientDTO);
         /**
         * Trouve tous les clients. La liste est classée par ordre croissant sur <code>sortByPropertyName</code>. Si aucun
         * client n'est trouvé, une {@link List} vide est retournée.
@@ -49,7 +49,7 @@ namespace CentreLocationOutils.service.interfaces
         * @param connection La connection à utiliser
         * @param clientDTO Le client à lire
         */
-        List<ClientDTO> getAll(Connection connection,
+        List<ClientDTO> getAllClients(Connection connection,
         String sortByPropertyName);
         /*Trouve un client à partir d'un nom
         *
@@ -62,9 +62,15 @@ namespace CentreLocationOutils.service.interfaces
         /*Inscrit un client
         *
         *@param connection La connection à utiliser
-        *@param clientDTO Le client à isncrire
+        *@param clientDTO Le client à inscrire
         */
-        List<ClientDTO> inscrire(Connection connection, ClientDTO clientDTO);
+        List<ClientDTO> inscrireClient(Connection connection, ClientDTO clientDTO);
+        /*Desinscrit un client
+        *
+        *@param connection La connection à utiliser
+        *@param clientDTO Le client à desinscrire
+        */
+        List<ClientDTO> desinscrireClient(Connection connection, ClientDTO clientDTO);
     }
 }
 

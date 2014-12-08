@@ -2,6 +2,7 @@
 using CentreLocationOutils.db;
 using CentreLocationOutils.dto;
 using CentreLocationOutils.exception.dao;
+using CentreLocationOutils.exception.dto;
 using CentreLocationOutils.exception.service;
 using CentreLocationOutils.service.interfaces;
 using System;
@@ -33,7 +34,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         //Ajout d'un client
-        public void add(Connection connection,
+        public void addClient(Connection connection,
         ClientDTO clientDTO)
         {
         try {
@@ -46,9 +47,10 @@ namespace CentreLocationOutils.service.implementations
         }
 
         //Lecture des clients
-        public   ClientDTO get(Connection connection,String idClient){
+        public ClientDTO getClient(Connection connection, String primaryKey)
+        {
         try {
-            return (ClientDTO)getClientDAO().get(connection,idClient); 
+            return getClientDAO().get(connection,primaryKey); 
         }
         catch (DAOException daoException)
         {
@@ -57,7 +59,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         //Mise à jour d'un client
-        public   void update(Connection connection,
+        public void updateClient(Connection connection,
         ClientDTO clientDTO)
         {
             try
@@ -71,7 +73,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         //Suppression d'un client
-        public   void delete(Connection connection,
+        public void deleteClient(Connection connection,
         ClientDTO clientDTO)
         {
             try
@@ -85,11 +87,11 @@ namespace CentreLocationOutils.service.implementations
         }
 
       //Lecture de toutes les clients
-        public   List<ClientDTO> getAll(Connection connection, String sortByPropertyName)
+        public List<ClientDTO> getAllClients(Connection connection, String sortByPropertyName)
         {
             try
             {
-                return (List<ClientDTO>)getClientDAO().getAll(connection,sortByPropertyName); 
+                return getClientDAO().getAll(connection,sortByPropertyName); 
          }
             catch (DAOException daoException)
             {
@@ -98,24 +100,51 @@ namespace CentreLocationOutils.service.implementations
         }
 
         //Trouver un client par son nom
-        public   List<ClientDTO> findByNom(Connection connection, String nom, String sortByPropertyName)
+        public List<ClientDTO> findByNom(Connection connection, String nom, String sortByPropertyName)
         {
-         try {
+         if (connection == null)
+          {
+           throw new InvalidConnectionException("La connection ne peut être null");
+         }
+         try 
+         {
          return getClientDAO().findByNom(connection,
                 nom,
                 sortByPropertyName);
-        } 
+         } 
          catch (DAOException daoException)
-            {
-                throw new ServiceException(daoException.Message);
-            }
-            }
+         {
+           throw new ServiceException(daoException.Message);
+         }
+       }
 
-
-        public List<ClientDTO> inscrire(Connection connection, ClientDTO clientDTO)
+        // Inscrire un client
+        public void inscrireClient(Connection connection, ClientDTO clientDTO)
         {
-            //TODO inscrire
-            return null;
+            if (connection == null)
+            {
+                throw new InvalidConnectionException("La connection ne peut être null");
+            }
+            if (clientDTO == null)
+            {
+                throw new InvalidDTOException("Le client ne peut être null");
+            }
+            addClient(connection, clientDTO);
         }
+
+        //Desinscrire un client
+         public void desinscrireClient(Connection connection, ClientDTO clientDTO)
+         {
+            if (connection == null)
+            {
+                throw new InvalidConnectionException("La connection ne peut être null");
+            }
+            if (clientDTO == null)
+            {
+                throw new InvalidDTOException("Le client ne peut être null");
+            }
+            deleteClient(connection, clientDTO);
+        }
+
     }
 }
