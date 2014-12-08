@@ -115,6 +115,7 @@ namespace CentreLocationOutils.service.implementations
         public List<ClientDTO> inscrire(Connection connection, ClientDTO clientDTO)
         {
             //TODO inscrire
+            return null;
         }
     }
 }
