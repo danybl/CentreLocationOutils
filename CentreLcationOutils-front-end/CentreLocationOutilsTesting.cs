@@ -16,8 +16,8 @@ namespace CentreLcationOutils_front_end
     public class CentreLocationOutilsTesting
     {
         private static CentreLocationOutilsCreateur gestionCentreOutils;
-        private static const double POURCENTAGE_DEPOT = 0.25;
-        private static const int NB_JOUR_LOCATION = 7;
+        private static double POURCENTAGE_DEPOT = 0.25;
+        private static int NB_JOUR_LOCATION = 7;
 
         public CentreLocationOutilsTesting()
             : base()
