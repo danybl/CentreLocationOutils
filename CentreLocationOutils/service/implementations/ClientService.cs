@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace CentreLocationOutils.service.implementations
 {
-    public class ClientService : IClientService
+    public class ClientService : Service, IClientService
     {
         private IClientDAO clientDAO;
         

@@ -64,13 +64,13 @@ namespace CentreLocationOutils.service.interfaces
         *@param connection La connection à utiliser
         *@param clientDTO Le client à inscrire
         */
-        List<ClientDTO> inscrireClient(Connection connection, ClientDTO clientDTO);
+        void inscrireClient(Connection connection, ClientDTO clientDTO);
         /*Desinscrit un client
         *
         *@param connection La connection à utiliser
         *@param clientDTO Le client à desinscrire
         */
-        List<ClientDTO> desinscrireClient(Connection connection, ClientDTO clientDTO);
+        void desinscrireClient(Connection connection, ClientDTO clientDTO);
     }
 }
 

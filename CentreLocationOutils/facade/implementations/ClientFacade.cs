@@ -40,7 +40,7 @@ namespace CentreLocationOutils.facade.implementations
         {
             try
             {
-                return getClientService().get(connection, idClient);
+                return getClientService().getClient(connection, idClient);
             }
             catch (ServiceException serviceException)
             {
@@ -61,11 +61,11 @@ namespace CentreLocationOutils.facade.implementations
             }
         }
 
-        public List<ClientDTO> inscrire(Connection connection, ClientDTO clientDTO)
+        public void inscrire(Connection connection, ClientDTO clientDTO)
         {
             try
             {
-                return getClientService().inscrire(connection, clientDTO);
+                getClientService().inscrireClient(connection, clientDTO);
             }
             catch (ServiceException serviceException)
             {
