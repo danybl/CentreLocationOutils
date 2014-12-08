@@ -15,7 +15,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="outilDTO"></param>
-        void add(Connection connection,
+        void addOutil(Connection connection,
         OutilDTO outilDTO);
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection"></param>
         /// <param name="primaryKey"></param>
         /// <returns></returns>
-        OutilDTO get(Connection connection,
+        OutilDTO getOutil(Connection connection,
         string primaryKey);
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="outilDTO"></param>
-        void update(Connection connection,
+        void updateOutil(Connection connection,
         OutilDTO outilDTO);
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="outilDTO"></param>
-        void delete(Connection connection,
+        void deleteOutil(Connection connection,
         OutilDTO outilDTO);
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        List<OutilDTO> getAll(Connection connection,
+        List<OutilDTO> getAllOutils(Connection connection,
         string sortByPropertyName);
 
         /// <summary>
@@ -59,8 +59,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="nom"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        List<OutilDTO> findByNom(Connection connection, string nom,
-        string sortByPropertyName);
+        List<OutilDTO> findByNom(Connection connection, OutilDTO outil);
 
         void acquerirOutil(Connection connection, OutilDTO outilDTO);
 

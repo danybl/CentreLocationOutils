@@ -136,7 +136,7 @@ namespace CentreLocationOutils.service.implementations
 
         #endregion
 
-        public   void commencerLocation(Connection connection, LocationDTO locationDTO)
+        public void commencerLocation(Connection connection, LocationDTO locationDTO)
         {
             if (connection == null)
             {
@@ -203,7 +203,7 @@ namespace CentreLocationOutils.service.implementations
             addLocation(connection, locationDTO);
         }
 
-        public   void renouvelerLocation(Connection connection, LocationDTO locationDTO)
+        public void renouvelerLocation(Connection connection, LocationDTO locationDTO)
         {
             if (connection == null)
             {
@@ -227,7 +227,7 @@ namespace CentreLocationOutils.service.implementations
             updateLocation(connection, locationDTO);
         }
 
-        public   void terminerLocation(Connection connection, LocationDTO locationDTO)
+        public void terminerLocation(Connection connection, LocationDTO locationDTO)
         {
             if (connection == null)
             {
@@ -253,7 +253,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public   List<LocationDTO> findByClient(Connection connection, LocationDTO locationDTO)
+        public List<LocationDTO> findByClient(Connection connection, LocationDTO locationDTO)
         {
             if (connection == null)
             {
@@ -273,7 +273,7 @@ namespace CentreLocationOutils.service.implementations
             }
         }
 
-        public   List<LocationDTO> findByOutil(Connection connection, LocationDTO locationDTO)
+        public List<LocationDTO> findByOutil(Connection connection, LocationDTO locationDTO)
         {
             if (connection == null)
             {

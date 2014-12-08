@@ -19,7 +19,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="employeDTO"></param>
-        void add(Connection connection,
+        void addEmploye(Connection connection,
         EmployeDTO employeDTO);
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection"></param>
         /// <param name="primaryKey"></param>
         /// <returns></returns>
-        EmployeDTO get(Connection connection,
+        EmployeDTO getEmploye(Connection connection,
         string primaryKey);
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="employeDTO"></param>
-        void update(Connection connection,
+        void updateEmploye(Connection connection,
         EmployeDTO employeDTO);
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace CentreLocationOutils.service.interfaces
         /// </summary>
         /// <param name="connection"></param>
         /// <param name="employeDTO"></param>
-        void delete(Connection connection,
+        void deleteEmploye(Connection connection,
         EmployeDTO employeDTO);
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        List<EmployeDTO> getAll(Connection connection,
+        List<EmployeDTO> getAllEmployes(Connection connection,
         string sortByPropertyName);
 
         /// <summary>
@@ -63,8 +63,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="nom"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        List<EmployeDTO> findByNom(Connection connection, string nom,
-        string sortByPropertyName);
+        List<EmployeDTO> findByNom(Connection connection, EmployeDTO employeDTO);
 
         /// <summary>
         /// 

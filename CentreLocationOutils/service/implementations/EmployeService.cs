@@ -39,7 +39,7 @@ namespace CentreLocationOutils.service.implementations
             this.employeDAO = employeDAO;
         }
         /// <inheritdoc />
-        public   void addEmploye(Connection connection,
+        public void addEmploye(Connection connection,
         EmployeDTO employeDTO)
         {
             try
@@ -53,10 +53,23 @@ namespace CentreLocationOutils.service.implementations
             }
         }
 
+        public EmployeDTO getEmploye(Connection connection,
+        string primaryKey)
+        {
+            try
+            {
+                return getEmployeDAO().get(connection,
+                    primaryKey);
+            }
+            catch (DAOException daoException)
+            {
+                throw new ServiceException(daoException.Message);
+            }
+        }
 
 
         /// <inheritdoc />
-        public   void updateEmploye(Connection connection,
+        public void updateEmploye(Connection connection,
             EmployeDTO employeDTO)
         {
             try
@@ -71,7 +84,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public   void deleteEmploye(Connection connection,
+        public void deleteEmploye(Connection connection,
             EmployeDTO employeDTO)
         {
             try
@@ -86,7 +99,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public   List<EmployeDTO> getAllEmployes(Connection connection,
+        public List<EmployeDTO> getAllEmployes(Connection connection,
             string sortByPropertyName)
         {
             try
@@ -101,37 +114,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public   void inscrireEmploye(Connection connection, EmployeDTO employeDTO)
-        {
-            if (connection == null)
-            {
-                throw new InvalidConnectionException("La connection ne peut être null");
-            }
-            if (employeDTO == null)
-            {
-                throw new InvalidDTOException("L'employé ne peut être null");
-            }
-                addEmploye(connection, employeDTO);
-
-        }
-
-        /// <inheritdoc />
-        public   void desinscrireEmploye(Connection connection, EmployeDTO employeDTO)
-        {
-            if (connection == null)
-            {
-                throw new InvalidConnectionException("La connection ne peut être null");
-            }
-            if (employeDTO == null)
-            {
-                throw new InvalidDTOException("L'employé ne peut être null");
-            }
-
-            deleteEmploye(connection, employeDTO);
-        }
-
-        /// <inheritdoc />
-        public   List<EmployeDTO> findByNom(Connection connection, EmployeDTO employeDTO)
+        public List<EmployeDTO> findByNom(Connection connection, EmployeDTO employeDTO)
         {
             if (connection == null)
             {
@@ -150,6 +133,37 @@ namespace CentreLocationOutils.service.implementations
                 throw new ServiceException("", daoException);
             }
         }
+
+        /// <inheritdoc />
+        public void inscrireEmploye(Connection connection, EmployeDTO employeDTO)
+        {
+            if (connection == null)
+            {
+                throw new InvalidConnectionException("La connection ne peut être null");
+            }
+            if (employeDTO == null)
+            {
+                throw new InvalidDTOException("L'employé ne peut être null");
+            }
+                addEmploye(connection, employeDTO);
+
+        }
+
+        /// <inheritdoc />
+        public void desinscrireEmploye(Connection connection, EmployeDTO employeDTO)
+        {
+            if (connection == null)
+            {
+                throw new InvalidConnectionException("La connection ne peut être null");
+            }
+            if (employeDTO == null)
+            {
+                throw new InvalidDTOException("L'employé ne peut être null");
+            }
+
+            deleteEmploye(connection, employeDTO);
+        }
+
 
     }
 }

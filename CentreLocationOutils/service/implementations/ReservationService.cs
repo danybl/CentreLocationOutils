@@ -60,7 +60,7 @@ namespace CentreLocationOutils.service.implementations
 
 
         /// <inheritdoc />
-        public   void addReservation(Connection connection,
+        public void addReservation(Connection connection,
         ReservationDTO reservationDTO)
         {
             try
@@ -77,7 +77,7 @@ namespace CentreLocationOutils.service.implementations
 
 
         /// <inheritdoc />
-        public   void updateReservation(Connection connection,
+        public void updateReservation(Connection connection,
             ReservationDTO reservationDTO)
         {
             try
@@ -92,7 +92,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public   void deleteReservation(Connection connection,
+        public void deleteReservation(Connection connection,
             ReservationDTO reservationDTO)
         {
             try
@@ -107,7 +107,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public   List<ReservationDTO> getAllReservation(Connection connection,
+        public List<ReservationDTO> getAllReservations(Connection connection,
             string sortByPropertyName)
         {
             try
@@ -122,7 +122,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public   void placerReservation(Connection connection, ReservationDTO reservationDTO)
+        public void placerReservation(Connection connection, ReservationDTO reservationDTO)
         {
             if (connection == null)
             {
@@ -132,7 +132,7 @@ namespace CentreLocationOutils.service.implementations
             {
                 throw new InvalidDTOException("La réservation ne peut être null");
             }
-            List<ReservationDTO> reservations = getAllReservation(connection, ReservationDTO.ID_RESERVATION_COLUMN_NAME);
+            List<ReservationDTO> reservations = getAllReservations(connection, ReservationDTO.ID_RESERVATION_COLUMN_NAME);
             foreach (ReservationDTO uneReservationDTO in reservations)
             {
                 if (reservationDTO.OutilDTO.Equals(uneReservationDTO.OutilDTO))
@@ -149,7 +149,7 @@ namespace CentreLocationOutils.service.implementations
                     + ")");
                 }
             }
-            reservationDTO.DateReservation = (System.DateTime.Now);
+            //reservationDTO.DateReservation = (System.DateTime.Now);
             addReservation(connection, reservationDTO);
 
         }
@@ -222,7 +222,7 @@ namespace CentreLocationOutils.service.implementations
                 locationDTO.ClientDTO = reservationDTO.ClientDTO;
                 locationDTO.ClientDTO.NbLocations = (int.Parse(locationDTO.ClientDTO.NbLocations + 1)).ToString();
                 locationDTO.OutilDTO = reservationDTO.OutilDTO;
-                locationDTO.DateLocation = System.DateTime.Today;
+                locationDTO.DateLocation = System.DateTime.Now.Ticks.ToString();
                 // locationDTO.DateRetour = new System.DateTime();
                 getLocationDAO().add(connection, locationDTO);
                 annulerReservation(connection, reservationDTO);
@@ -234,7 +234,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public   void annulerReservation(Connection connection, ReservationDTO reservationDTO)
+        public void annulerReservation(Connection connection, ReservationDTO reservationDTO)
         {
             if (connection == null)
             {
@@ -255,7 +255,7 @@ namespace CentreLocationOutils.service.implementations
         }
 
         /// <inheritdoc />
-        public   List<ReservationDTO> findByClient(Connection connection, ReservationDTO reservationDTO)
+        public List<ReservationDTO> findByClient(Connection connection, ReservationDTO reservationDTO)
         {
             if (connection == null)
             {

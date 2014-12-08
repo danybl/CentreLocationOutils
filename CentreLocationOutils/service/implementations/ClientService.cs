@@ -110,5 +110,11 @@ namespace CentreLocationOutils.service.implementations
                 throw new ServiceException(daoException.Message);
             }
             }
+
+
+        public List<ClientDTO> inscrire(Connection connection, ClientDTO clientDTO)
+        {
+            //TODO inscrire
+        }
     }
 }

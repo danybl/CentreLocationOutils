@@ -40,7 +40,7 @@ namespace CentreLocationOutils.facade.implementations
         {
             try
             {
-                return getOutilService().get(connection, idOutil);
+                return getOutilService().getOutil(connection, idOutil);
             }
             catch (ServiceException serviceException)
             {
@@ -100,13 +100,14 @@ namespace CentreLocationOutils.facade.implementations
             }
             try
             {
-                return getOutilService().findByNom(connection, outilDTO.Nom, OutilDTO.NOM_COLUMN_NAME);
+                return getOutilService().findByNom(connection, outilDTO);
             }
             catch (ServiceException serviceException)
             {
                 throw new FacadeException("", serviceException);
             }
         }
+
     }
 }
 

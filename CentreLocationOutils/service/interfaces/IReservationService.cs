@@ -22,7 +22,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="connection"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        List<ReservationDTO> getAll(Connection connection,
+        List<ReservationDTO> getAllReservations(Connection connection,
         string sortByPropertyName);
 
         /// <summary>
@@ -32,8 +32,7 @@ namespace CentreLocationOutils.service.interfaces
         /// <param name="nom"></param>
         /// <param name="sortByPropertyName"></param>
         /// <returns></returns>
-        List<ReservationDTO> findByClient(Connection connection, ClientDTO clientDTO,
-        string sortByPropertyName);
+        List<ReservationDTO> findByClient(Connection connection, ReservationDTO reservationDTO);
 
         void placerReservation(Connection connection,
         ReservationDTO reservationDTO);
