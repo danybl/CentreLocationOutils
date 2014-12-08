@@ -137,7 +137,6 @@
     <Compile Include="facade\interfaces\ILocationFacade.cs" />
     <Compile Include="facade\interfaces\IOutilFacade.cs" />
     <Compile Include="facade\interfaces\IReservationFacade.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="service\implementations\AdresseService.cs" />
     <Compile Include="service\implementations\CategorieService.cs" />
