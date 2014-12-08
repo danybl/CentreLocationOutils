@@ -52,7 +52,7 @@ namespace CentreLocationOutils.facade.implementations
         {
             try
             {
-                return getEmployeService().get(connection, idEmploye);
+                return getEmployeService().getEmploye(connection, idEmploye);
             }
             catch (ServiceException serviceException)
             {

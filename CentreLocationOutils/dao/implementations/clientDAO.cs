@@ -126,7 +126,7 @@ namespace CentreLocationOutils.dao.implementations
                     clientDTO.Prenom = dataReader.GetString(3);
                     clientDTO.Telephone = dataReader.GetString(4);
                     clientDTO.Email = dataReader.GetString(5);
-                    clientDTO.DateInscription = dataReader.GetDateTime(6);
+                    clientDTO.DateInscription = dataReader.GetDateTime(6).ToString();
                     clientDTO.NbLocations = dataReader.GetString(7);
                     clientDTO.LimiteLocations = dataReader.GetString(8);
 
@@ -245,9 +245,9 @@ namespace CentreLocationOutils.dao.implementations
                         clientDTO.Prenom = dataReader.GetString(3);
                         clientDTO.Telephone = dataReader.GetString(4);
                         clientDTO.Email = dataReader.GetString(5);
-                        clientDTO.DateInscription = dataReader.GetDateTime(6);
-                        clientDTO.NbLocations = dataReader.GetString(7);
-                        clientDTO.LimiteLocations = dataReader.GetString(8);
+                        clientDTO.DateInscription = dataReader.GetDateTime(6).ToString();
+                        clientDTO.NbLocations = dataReader.GetString(7).ToString();
+                        clientDTO.LimiteLocations = dataReader.GetString(8).ToString();
                         clients.Add(clientDTO);
                     }
                     while (dataReader.NextResult());
@@ -297,7 +297,7 @@ namespace CentreLocationOutils.dao.implementations
                         clientDTO.Prenom = dataReader.GetString(3);
                         clientDTO.Telephone = dataReader.GetString(4);
                         clientDTO.Email = dataReader.GetString(5);
-                        clientDTO.DateInscription = dataReader.GetDateTime(6);
+                        clientDTO.DateInscription = dataReader.GetDateTime(6).ToString();
                         clientDTO.NbLocations = dataReader.GetString(7);
                         clientDTO.LimiteLocations = dataReader.GetString(8);
                         clients.Add(clientDTO);

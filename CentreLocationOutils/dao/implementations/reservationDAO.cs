@@ -125,8 +125,8 @@ namespace CentreLocationOutils.dao.implementations
                     outilDTO.IdOutil = dataReader.GetString(3);
                     reservationDTO.ClientDTO = clientDTO;
                     reservationDTO.OutilDTO = outilDTO;
-                    reservationDTO.DateReservation = dataReader.GetDateTime(4);
-                    reservationDTO.DateLimite = dataReader.GetDateTime(5);
+                    reservationDTO.DateReservation = dataReader.GetDateTime(4).ToString();
+                    reservationDTO.DateLimite = dataReader.GetDateTime(5).ToString();
 
                 }
             }
@@ -239,8 +239,8 @@ namespace CentreLocationOutils.dao.implementations
                         OutilDTO outilDTO = new OutilDTO();
                         outilDTO.IdOutil = dataReader.GetString(3);
                         reservationDTO.OutilDTO = outilDTO;
-                        reservationDTO.DateReservation = dataReader.GetDateTime(4);
-                        reservationDTO.DateLimite = dataReader.GetDateTime(5);
+                        reservationDTO.DateReservation = dataReader.GetDateTime(4).ToString();
+                        reservationDTO.DateLimite = dataReader.GetDateTime(5).ToString();
 
                         reservations.Add(reservationDTO);
                     }

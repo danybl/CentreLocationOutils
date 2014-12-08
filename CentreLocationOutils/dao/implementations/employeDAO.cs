@@ -109,7 +109,7 @@ namespace CentreLocationOutils.dao.implementations
                         employeDTO.Prenom = dataReader.GetString(3); 
                         employeDTO.Telephone = dataReader.GetString(4);
                         employeDTO.Email = dataReader.GetString(5);
-                        employeDTO.DateRecrutement = dataReader.GetDateTime(6);
+                        employeDTO.DateRecrutement = dataReader.GetDateTime(6).ToString();
 
                     }
             }
@@ -225,7 +225,7 @@ namespace CentreLocationOutils.dao.implementations
                         employeDTO.Prenom = dataReader.GetString(3);
                         employeDTO.Telephone = dataReader.GetString(4);
                         employeDTO.Email = dataReader.GetString(5);
-                        employeDTO.DateRecrutement = dataReader.GetDateTime(6);
+                        employeDTO.DateRecrutement = dataReader.GetDateTime(6).ToString();
                         employes.Add(employeDTO);
                     }
                         while(dataReader.NextResult());
@@ -273,7 +273,7 @@ namespace CentreLocationOutils.dao.implementations
                         employeDTO.Prenom = dataReader.GetString(3);
                         employeDTO.Telephone = dataReader.GetString(4);
                         employeDTO.Email = dataReader.GetString(5);
-                        employeDTO.DateRecrutement = dataReader.GetDateTime(6);
+                        employeDTO.DateRecrutement = dataReader.GetDateTime(6).ToString();
                         employes.Add(employeDTO);
                     }
                     while (dataReader.NextResult());

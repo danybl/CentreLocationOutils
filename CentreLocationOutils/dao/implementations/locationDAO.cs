@@ -119,9 +119,9 @@ namespace CentreLocationOutils.dao.implementations
                     outilDTO.IdOutil = dataReader.GetString(4);
                     locationDTO.ClientDTO = clientDTO;
                     locationDTO.OutilDTO = outilDTO;
-                    locationDTO.DateLocation = dataReader.GetDateTime(5);
-                    locationDTO.DateLimite = dataReader.GetDateTime(6);
-                    locationDTO.DateRetour = dataReader.GetDateTime(7);
+                    locationDTO.DateLocation = dataReader.GetDateTime(5).ToString();
+                    locationDTO.DateLimite = dataReader.GetDateTime(6).ToString();
+                    locationDTO.DateRetour = dataReader.GetDateTime(7).ToString();
 
                 }
             }
@@ -236,9 +236,9 @@ namespace CentreLocationOutils.dao.implementations
                         OutilDTO outilDTO = new OutilDTO();
                         outilDTO.IdOutil = dataReader.GetString(4);
                         locationDTO.OutilDTO = outilDTO;
-                        locationDTO.DateLocation = dataReader.GetDateTime(5);
-                        locationDTO.DateLimite = dataReader.GetDateTime(6);
-                        locationDTO.DateRetour = dataReader.GetDateTime(7);
+                        locationDTO.DateLocation = dataReader.GetDateTime(5).ToString();
+                        locationDTO.DateLimite = dataReader.GetDateTime(6).ToString();
+                        locationDTO.DateRetour = dataReader.GetDateTime(7).ToString();
 
                         locations.Add(locationDTO);
                     }
@@ -295,9 +295,9 @@ namespace CentreLocationOutils.dao.implementations
                         OutilDTO outilDTO = new OutilDTO();
                         outilDTO.IdOutil = dataReader.GetString(4);
                         locationDTO.OutilDTO = outilDTO;
-                        locationDTO.DateLocation = dataReader.GetDateTime(5);
-                        locationDTO.DateLimite = dataReader.GetDateTime(6);
-                        locationDTO.DateRetour = dataReader.GetDateTime(7);
+                        locationDTO.DateLocation = dataReader.GetDateTime(5).ToString();
+                        locationDTO.DateLimite = dataReader.GetString(6).ToString();
+                        locationDTO.DateRetour = dataReader.GetDateTime(7).ToString();
                         locations.Add(locationDTO);
                     } while (dataReader.NextResult());
                 }
@@ -352,9 +352,9 @@ namespace CentreLocationOutils.dao.implementations
                         OutilDTO outilDTO = new OutilDTO();
                         outilDTO.IdOutil = dataReader.GetString(4);
                         locationDTO.OutilDTO = outilDTO;
-                        locationDTO.DateLocation = dataReader.GetDateTime(5);
-                        locationDTO.DateLimite = dataReader.GetDateTime(6);
-                        locationDTO.DateRetour = dataReader.GetDateTime(7);
+                        locationDTO.DateLocation = dataReader.GetDateTime(5).ToString();
+                        locationDTO.DateLimite = dataReader.GetDateTime(6).ToString();
+                        locationDTO.DateRetour = dataReader.GetDateTime(7).ToString();
                         locations.Add(locationDTO);
                     } while (dataReader.NextResult());
                 }
