@@ -49,7 +49,7 @@ namespace CentreLocationOutils.service.interfaces
         * @param connection La connection à utiliser
         * @param clientDTO Le client à lire
         */
-        List<CategorieDTO> getAll(Connection connection,
+        List<ClientDTO> getAll(Connection connection,
         String sortByPropertyName);
         /*Trouve un client à partir d'un nom
         *
