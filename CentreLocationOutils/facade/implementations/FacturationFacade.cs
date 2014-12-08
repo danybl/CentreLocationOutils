@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using CentreLocationOutils.service.interfaces;
 
 namespace CentreLocationOutils.facade.implementations
 {
@@ -15,15 +16,15 @@ namespace CentreLocationOutils.facade.implementations
     /// </summary>
     public class FacturationFacade : Facade, IFacturationFacade
     {
-        private IFacturationFacade facturationFacade;
+        private IFacturationService facturationService;
 
-        public FacturationFacade(IFacturationFacade facturationFacade) : base() {
+        public FacturationFacade(IFacturationService facturationService) : base() {
 
-            if (facturationFacade == null)
+            if (facturationService == null)
             {
                 throw new InvalidServiceException("Le service de facture ne peut être null");
             }
-            setFacturationFacade(facturationFacade);
+            setFacturationService(facturationService);
         }
 
         #region Getters and Setters
@@ -32,18 +33,18 @@ namespace CentreLocationOutils.facade.implementations
         /// Getter de la variable d'instance <code>this.facturationFacade</code>.
         /// </summary>
         /// <returns>La variable d'instance <code>this.facturationFacade</code></returns>
-        private IFacturationFacade getFacturationFacade()
+        private IFacturationService getFacturationService()
         {
-            return this.facturationFacade;
+            return this.facturationService;
         }
 
         /// <summary>
         /// Setter de la variable d'instance <code>this.facturationFacade</code>.
         /// </summary>
         /// <param name="facturationFacade">La valeur à utiliser pour la variable d'instance <code>this.facturationFacade</code></param>
-        private void setFacturationFacade(IFacturationFacade facturationFacade)
+        private void setFacturationService(IFacturationService facturationService)
         {
-            this.facturationFacade = facturationFacade;
+            this.facturationService = facturationService;
         }
 
         #endregion
@@ -51,7 +52,7 @@ namespace CentreLocationOutils.facade.implementations
         public   List<FacturationDTO> findByClient(Connection connection, string idClient, string sortByPropertyName) {
             try
             {
-               return getFacturationFacade().findByClient(connection, idClient, sortByPropertyName);
+               return getFacturationService().findByClient(connection, idClient, sortByPropertyName);
             }
             catch (ServiceException serviceExcpetion)
             {
@@ -62,7 +63,7 @@ namespace CentreLocationOutils.facade.implementations
         public   List<FacturationDTO> findByEmploye(Connection connection, string idEmploye, string sortByPropertyName)
         {
             try {
-                return getFacturationFacade().findByEmploye(connection, idEmploye, sortByPropertyName);
+                return getFacturationService().findByEmploye(connection, idEmploye, sortByPropertyName);
             }
             catch (ServiceException serviceExcpetion) {
                 throw new FacadeException("", serviceExcpetion);
