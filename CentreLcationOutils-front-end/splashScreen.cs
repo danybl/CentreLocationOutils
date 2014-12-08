@@ -35,8 +35,8 @@ namespace CentreLocationOutils
             {
                 tmr.Stop();
                 //display mainform
-                AccueilForm accueil = new AccueilForm();
-                accueil.Show();
+               // AccueilForm accueil = new AccueilForm();
+                //accueil.Show();
                 //hide this form
                 this.Hide();
 

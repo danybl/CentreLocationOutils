@@ -28,24 +28,24 @@ namespace CentreLcationOutils_front_end
 
         private void startReading()
         {
-            StringReader streamReader = (StringReader)Console.In;
+            TextReader textReader = Console.In;
             gestionCentreOutils = new CentreLocationOutilsCreateur("local", "location", "tiger");
-            traiterTransaction(streamReader);
+            traiterTransaction(textReader);
 
         }
 
-        private string lireTransaction(StringReader stringReader)
+        private string lireTransaction(TextReader textReader)
         {
             Console.Write("> ");
-            string transaction = stringReader.ReadLine();
+            string transaction = textReader.ReadLine();
             Console.WriteLine(transaction);
             return transaction;
         }
 
-        private void traiterTransaction(StringReader stringReader)
+        private void traiterTransaction(TextReader textReader)
         {
             //AfficherAide()
-            string transaction = lireTransaction(stringReader);
+            string transaction = lireTransaction(textReader);
             while (!finTransaction(transaction))
             {
                 List<string> splitter = transaction.Split(' ').ToList<string>();

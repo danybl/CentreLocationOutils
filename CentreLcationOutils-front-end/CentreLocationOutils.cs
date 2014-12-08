@@ -12,7 +12,7 @@ namespace CentreLcationOutils_front_end
     {
         private static CentreLocationOutilsCreateur gestionCentreOutils;
 
-        public void inscrireClient(string[] champsClient, DateTime dateInscription)
+        public void inscrireClient(string[] champsClient)
         {
             //TODO vérifier dateInscription pas dans le futur => event sur le Time picker
 
@@ -21,7 +21,8 @@ namespace CentreLcationOutils_front_end
             string prenomClient = champsClient[1];
             string telephoneClient = champsClient[2];
             string email = champsClient[3];
-            string limiteLocationsClient = champsClient[4];
+            string dateInscription = champsClient[4];
+            string limiteLocationsClient = champsClient[5];
             ClientDTO clientDTO = new ClientDTO();
             clientDTO.Nom = nomClient;
             clientDTO.Prenom = prenomClient;
