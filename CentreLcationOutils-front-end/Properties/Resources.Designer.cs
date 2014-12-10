@@ -68,5 +68,15 @@ namespace CentreLcationOutils_front_end.Properties {
                 return ResourceManager.GetString("test", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tools_image {
+            get {
+                object obj = ResourceManager.GetObject("tools_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

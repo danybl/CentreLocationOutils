@@ -119,6 +119,9 @@
       <DependentUpon>splashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="util\CentreLocationOutilsCreateur.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\AccueilFormV2.resx">
       <DependentUpon>AccueilFormV2.cs</DependentUpon>
     </EmbeddedResource>
