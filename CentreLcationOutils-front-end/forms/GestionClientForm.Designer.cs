@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionClientForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.accueilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -423,7 +424,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.LemonChiffon;
-            this.button4.Image = global::CentreLcationOutils_front_end.Properties.Resources.searchUser;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.Location = new System.Drawing.Point(373, 180);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(50, 30);
@@ -433,7 +434,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.LightCoral;
-            this.button3.Image = global::CentreLcationOutils_front_end.Properties.Resources.deleteUser;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.Location = new System.Drawing.Point(593, 180);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(50, 30);
@@ -443,7 +444,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button2.Image = global::CentreLcationOutils_front_end.Properties.Resources.modifyUser;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(519, 180);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 30);
@@ -453,7 +454,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.PaleGreen;
-            this.button1.Image = global::CentreLcationOutils_front_end.Properties.Resources.addUser;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(446, 180);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(50, 30);

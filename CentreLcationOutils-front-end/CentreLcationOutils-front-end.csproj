@@ -87,29 +87,23 @@
     <Compile Include="forms\GestionClientForm.Designer.cs">
       <DependentUpon>GestionClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\AjoutOutilForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\AjoutOutilForm.Designer.cs">
-      <DependentUpon>AjoutOutilForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\ConnexionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\ConnexionForm.Designer.cs">
       <DependentUpon>ConnexionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\GestionLocationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\GestionLocationsForm.Designer.cs">
+      <DependentUpon>GestionLocationsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\GestionOutilsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\GestionOutilsForm.Designer.cs">
       <DependentUpon>GestionOutilsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\RechercherOutilForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\RechercherOutilForm.Designer.cs">
-      <DependentUpon>RechercherOutilForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,19 +123,16 @@
     <EmbeddedResource Include="forms\ConnexionForm.resx">
       <DependentUpon>ConnexionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\GestionLocationsForm.resx">
+      <DependentUpon>GestionLocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\GestionOutilsForm.resx">
       <DependentUpon>GestionOutilsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="splashScreen.resx">
       <DependentUpon>splashScreen.cs</DependentUpon>
     </EmbeddedResource>

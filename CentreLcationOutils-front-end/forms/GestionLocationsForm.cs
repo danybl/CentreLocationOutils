@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace CentreLcationOutils_front_end.forms
 {
-    public partial class RechercherOutilForm : Form
+    public partial class GestionLocationsForm : Form
     {
-        public RechercherOutilForm()
+        public GestionLocationsForm()
         {
             InitializeComponent();
         }
