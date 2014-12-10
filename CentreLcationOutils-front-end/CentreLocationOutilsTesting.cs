@@ -36,9 +36,9 @@ namespace CentreLcationOutils_front_end
                 
                 //string path = Path.GetFullPath(Properties.Resources.test);
                 Console.WriteLine("path: " + Application.StartupPath + @"\ress\test.txt");
-                StreamReader reader = new StreamReader(Application.StartupPath + @"\ress\test.txt");
+               // StreamReader reader = new StreamReader(Application.StartupPath + @"\ress\test.txt");
                 gestionCentreOutils = new CentreLocationOutilsCreateur("local", "location", "tiger");
-                traiterTransaction(reader);
+                //traiterTransaction(reader);
             }
             catch (IOException ioException)
             {

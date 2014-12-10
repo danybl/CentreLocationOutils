@@ -1,24 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using CentreLocationOutils.db;
-using CentreLocationOutils.facade.interfaces;
+﻿using CentreLocationOutils.dao.implementations;
 using CentreLocationOutils.dao.interfaces;
-using CentreLocationOutils.dao.implementations;
-using CentreLocationOutils.dto;
+using CentreLocationOutils.db;
 using CentreLocationOutils.exception.db;
-using CentreLocationOutils.exception.dao;
-using CentreLocationOutils.exception.util;
-using CentreLocationOutils.exception.service;
 using CentreLocationOutils.exception.facade;
-using CentreLocationOutils.exception;
-using CentreLocationOutils.service.interfaces;
-using CentreLocationOutils.service.implementations;
+using CentreLocationOutils.exception.service;
+using CentreLocationOutils.exception.util;
 using CentreLocationOutils.facade.implementations;
-//using System.Data.OracleClient;
+using CentreLocationOutils.facade.interfaces;
+using CentreLocationOutils.service.implementations;
+using CentreLocationOutils.service.interfaces;
 using System.Data.Common;
-//using ADODB;
 
 namespace CentreLcationOutils_front_end.util
 {
