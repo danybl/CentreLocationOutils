@@ -24,7 +24,7 @@ namespace CentreLcationOutils_front_end.util
 {
     public class CentreLocationOutilsCreateur
     {
-        public Connection Connection{ get; private set; }
+        public Connection Connexion{ get; private set; }
         public IClientFacade ClientFacade { get; private set; }
         public IEmployeFacade EmployeFacade { get; private set; }
         public IReservationFacade ReservationFacade { get; private set; }
@@ -46,7 +46,8 @@ namespace CentreLcationOutils_front_end.util
             {
                 //testConnection = new ADODB.Connection();
                 //testConnection.
-                Connection = new Connection(typeServeur, nomUtilisateur, motPasse);
+                Connexion = new Connection(typeServeur, nomUtilisateur, motPasse);
+                
 
                 IClientDAO clientDAO = new ClientDAO();
                 IEmployeDAO employeDAO = new EmployeDAO();
@@ -90,7 +91,7 @@ namespace CentreLcationOutils_front_end.util
         {
             try
             {
-                Transaction = Connection.getConnection().BeginTransaction();
+                Transaction = Connexion.getConnection().BeginTransaction();
             }
             catch (DbException dbException)
             {

@@ -64,6 +64,7 @@ namespace CentreLcationOutils_front_end
                     executerTransaction(splitter);
                     splitter.RemoveAt(0);
                 }
+                transaction = lireTransaction(reader);
             }
         }
 
@@ -75,9 +76,9 @@ namespace CentreLcationOutils_front_end
                 return true;
             }
             List<string> splitter = transaction.Split(' ').ToList<string>();
-            if (splitter.Count == 0)
+            if (splitter.Count >0)
             {
-                return true;
+                return false;
             }
             string commande = splitter.First<string>().ToLower();
             //splitter.RemoveAt(0);
@@ -100,7 +101,7 @@ namespace CentreLcationOutils_front_end
                         break;
                     case "louer": effectuerLocation(splitter);
                         break;
-                    case "engagerEmploye": engagerEmploye(splitter);
+                    case "engageremploye": engagerEmploye(splitter);
                         break;
                 }
             }
