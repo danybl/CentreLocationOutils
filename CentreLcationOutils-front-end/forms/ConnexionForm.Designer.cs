@@ -37,9 +37,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::CentreLcationOutils_front_end.Properties.Resources.tools_image;
-            this.pictureBox1.Location = new System.Drawing.Point(261, 51);
+            this.pictureBox1.Location = new System.Drawing.Point(333, 52);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 120);
+            this.pictureBox1.Size = new System.Drawing.Size(133, 128);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -48,7 +48,7 @@
             this.connexionControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.connexionControl1.labelPassword = "Password :";
             this.connexionControl1.labelUserName = "Username :";
-            this.connexionControl1.Location = new System.Drawing.Point(225, 254);
+            this.connexionControl1.Location = new System.Drawing.Point(299, 323);
             this.connexionControl1.Name = "connexionControl1";
             this.connexionControl1.Size = new System.Drawing.Size(201, 151);
             this.connexionControl1.TabIndex = 1;
@@ -56,11 +56,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Stencil", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(229, 212);
+            this.label1.Location = new System.Drawing.Point(262, 246);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 25);
+            this.label1.Size = new System.Drawing.Size(289, 38);
             this.label1.TabIndex = 2;
             this.label1.Text = "Connectez-vous!";
             // 
@@ -69,7 +69,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(650, 453);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.connexionControl1);
             this.Controls.Add(this.pictureBox1);

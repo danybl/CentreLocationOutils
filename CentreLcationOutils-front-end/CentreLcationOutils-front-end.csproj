@@ -93,6 +93,12 @@
     <Compile Include="forms\AjoutClientForm.Designer.cs">
       <DependentUpon>AjoutClientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\GestionClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\GestionClientForm.Designer.cs">
+      <DependentUpon>GestionClientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\AjoutOutilForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\AccueilFormV2.resx">
       <DependentUpon>AccueilFormV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\GestionClientForm.resx">
+      <DependentUpon>GestionClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\ConnexionForm.resx">
       <DependentUpon>ConnexionForm.cs</DependentUpon>
