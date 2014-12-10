@@ -47,7 +47,7 @@ namespace CentreLcationOutils_front_end.util
                 //testConnection = new ADODB.Connection();
                 //testConnection.
                 MaConnection = new Connection(typeServeur, nomUtilisateur, motPasse);
-                MaConnection.getConnection().Open();
+                MaConnection.
 
                 IClientDAO clientDAO = new ClientDAO();
                 IEmployeDAO employeDAO = new EmployeDAO();
