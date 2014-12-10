@@ -33,8 +33,10 @@ namespace CentreLcationOutils_front_end
             {
                 
                 //Console.WriteLine("path: " + Application.StartupPath + @"\ress\test.txt");
-                //Console.WriteLine("path: " );
-                StreamReader reader = new StreamReader(Properties.Resources.test);
+                
+                //string path = Path.GetFullPath(Properties.Resources.test);
+                Console.WriteLine("path: " + Application.StartupPath + @"\ress\test.txt");
+                StreamReader reader = new StreamReader(Application.StartupPath + @"\ress\test.txt");
                 gestionCentreOutils = new CentreLocationOutilsCreateur("local", "location", "tiger");
                 traiterTransaction(reader);
             }
@@ -149,20 +151,20 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.beginTransaction();
 
             string idClient = readString(splitter);
-            ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.Connection, idClient);
+            ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.MaConnection, idClient);
             if (clientDTO == null)
             {
                 throw new MissingDTOException("Le client " + idClient + " n'existe pas");
             }
 
             string idOutil = readString(splitter);
-            OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.Connection, idOutil);
+            OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.MaConnection, idOutil);
             if (outilDTO == null)
             {
                 throw new MissingDTOException("L'outil " + idOutil + " n'existe pas");
             }
             string idEmploye = readDate(splitter);
-            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.Connection, idEmploye);
+            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.MaConnection, idEmploye);
             if (employeDTO == null)
             {
                 throw new MissingDTOException("L'employé " + idEmploye + " n'existe pas");
@@ -175,7 +177,7 @@ namespace CentreLcationOutils_front_end
             locationDTO.DateLocation = DateTime.Now.Ticks.ToString();
             locationDTO.DateRetour = null;
             locationDTO.DateLimite = (DateTime.Now.Ticks + CentreLocationOutilsTesting.NB_JOUR_LOCATION).ToString();
-            gestionCentreOutils.LocationFacade.commencerLocation(gestionCentreOutils.Connection, locationDTO);
+            gestionCentreOutils.LocationFacade.commencerLocation(gestionCentreOutils.MaConnection, locationDTO);
             gestionCentreOutils.commitTransaction();
         }
 
@@ -186,13 +188,13 @@ namespace CentreLcationOutils_front_end
             outilDTO.IdOutil = readString(splitter);
             LocationDTO locationDTO = new LocationDTO();
             locationDTO.OutilDTO = outilDTO;
-            List<LocationDTO> locations = gestionCentreOutils.LocationFacade.findByOutil(gestionCentreOutils.Connection, locationDTO);
+            List<LocationDTO> locations = gestionCentreOutils.LocationFacade.findByOutil(gestionCentreOutils.MaConnection, locationDTO);
             if (locations.Count == 0)
             {
                 throw new MissingDTOException();
             }
             locationDTO = locations[0];
-            gestionCentreOutils.LocationFacade.terminerLocation(gestionCentreOutils.Connection, locationDTO);
+            gestionCentreOutils.LocationFacade.terminerLocation(gestionCentreOutils.MaConnection, locationDTO);
             gestionCentreOutils.commitTransaction();
             
         }
@@ -207,7 +209,7 @@ namespace CentreLcationOutils_front_end
             employeDTO.Email = readString(splitter);
             employeDTO.DateRecrutement = readDate(splitter);
             employeDTO.Poste = readString(splitter);
-            gestionCentreOutils.EmployeFacade.inscrireEmploye(gestionCentreOutils.Connection, employeDTO);
+            gestionCentreOutils.EmployeFacade.inscrireEmploye(gestionCentreOutils.MaConnection, employeDTO);
             gestionCentreOutils.commitTransaction();
 
         }
@@ -215,12 +217,12 @@ namespace CentreLcationOutils_front_end
         {
             gestionCentreOutils.beginTransaction();
             string idEmploye = readString(splitter);
-            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.Connection, idEmploye);
+            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.MaConnection, idEmploye);
             if (employeDTO == null)
             {
                 throw new MissingDTOException("L'employé " + idEmploye + " n'existe pas");
             }
-            gestionCentreOutils.EmployeFacade.desinscrireEmploye(gestionCentreOutils.Connection, employeDTO);
+            gestionCentreOutils.EmployeFacade.desinscrireEmploye(gestionCentreOutils.MaConnection, employeDTO);
             gestionCentreOutils.commitTransaction();
 
         }

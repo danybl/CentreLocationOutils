@@ -48,20 +48,20 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.beginTransaction();
 
             string idClient = faireLocation[0];
-            ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.Connection, idClient);
+            ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.MaConnection, idClient);
             if (clientDTO == null)
             {
                 throw new MissingDTOException("Le client " + idClient + " n'existe pas");
             }
 
             string idOutil = faireLocation[1];
-            OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.Connection, idOutil);
+            OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.MaConnection, idOutil);
             if (outilDTO == null)
             {
                 throw new MissingDTOException("L'outil " + idOutil + " n'existe pas");
             }
             string idEmploye = faireLocation[2];
-            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.Connection, idEmploye);
+            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.MaConnection, idEmploye);
             if (employeDTO == null)
             {
                 throw new MissingDTOException("L'employé " + idEmploye + " n'existe pas");
@@ -74,7 +74,7 @@ namespace CentreLcationOutils_front_end
             locationDTO.DateLocation = DateTime.Now.Ticks.ToString();
             locationDTO.DateRetour = null;
             locationDTO.DateLimite = (DateTime.Now.Ticks + CentreLocationOutils.NB_JOUR_LOCATION).ToString();
-            gestionCentreOutils.LocationFacade.commencerLocation(gestionCentreOutils.Connection, locationDTO);
+            gestionCentreOutils.LocationFacade.commencerLocation(gestionCentreOutils.MaConnection, locationDTO);
             gestionCentreOutils.commitTransaction();
         }
 
@@ -85,13 +85,13 @@ namespace CentreLcationOutils_front_end
             outilDTO.IdOutil = finirLocation[0];
             LocationDTO locationDTO = new LocationDTO();
             locationDTO.OutilDTO = outilDTO;
-            List<LocationDTO> locations = gestionCentreOutils.LocationFacade.findByOutil(gestionCentreOutils.Connection, locationDTO);
+            List<LocationDTO> locations = gestionCentreOutils.LocationFacade.findByOutil(gestionCentreOutils.MaConnection, locationDTO);
             if (locations.Count == 0)
             {
                 throw new MissingDTOException();
             }
             locationDTO = locations[0];
-            gestionCentreOutils.LocationFacade.terminerLocation(gestionCentreOutils.Connection, locationDTO);
+            gestionCentreOutils.LocationFacade.terminerLocation(gestionCentreOutils.MaConnection, locationDTO);
             gestionCentreOutils.commitTransaction();
 
         }
@@ -106,7 +106,7 @@ namespace CentreLcationOutils_front_end
             employeDTO.Email = hireEmploy[3];
             employeDTO.DateRecrutement = hireEmploy[4];
             employeDTO.Poste = hireEmploy[5];
-            gestionCentreOutils.EmployeFacade.inscrireEmploye(gestionCentreOutils.Connection, employeDTO);
+            gestionCentreOutils.EmployeFacade.inscrireEmploye(gestionCentreOutils.MaConnection, employeDTO);
             gestionCentreOutils.commitTransaction();
 
         }
@@ -114,12 +114,12 @@ namespace CentreLcationOutils_front_end
         {
             gestionCentreOutils.beginTransaction();
             string idEmploye = deleteEmploy[0];
-            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.Connection, idEmploye);
+            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.MaConnection, idEmploye);
             if (employeDTO == null)
             {
                 throw new MissingDTOException("L'employé " + idEmploye + " n'existe pas");
             }
-            gestionCentreOutils.EmployeFacade.desinscrireEmploye(gestionCentreOutils.Connection, employeDTO);
+            gestionCentreOutils.EmployeFacade.desinscrireEmploye(gestionCentreOutils.MaConnection, employeDTO);
             gestionCentreOutils.commitTransaction();
 
         }
