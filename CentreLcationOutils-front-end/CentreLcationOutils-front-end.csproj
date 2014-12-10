@@ -35,11 +35,12 @@
     <Reference Include="adodb, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="CentreLocationOutils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Projects\WebApp\WebApp\lib\CentreLocationOutils.dll</HintPath>
+    </Reference>
     <Reference Include="ConnexionControl">
       <HintPath>..\CentreLocationOutils\lib\ConnexionControl.dll</HintPath>
-    </Reference>
-    <Reference Include="ConsoleApplication">
-      <HintPath>..\..\CentreLocationOutils_Backend\CentreLocationOutils\bin\Debug\ConsoleApplication.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -140,6 +141,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\ConsoleApplication.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
