@@ -155,6 +155,15 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\background.jpg" />
+    <Content Include="images\icon.ico" />
+    <Content Include="images\icon2.ico" />
+    <Content Include="images\icon3.ico" />
+    <Content Include="images\icon4.ico" />
+    <Content Include="images\icon5.ico" />
+    <Content Include="images\icon6.ico" />
+    <Content Include="images\splashscreen_background.png" />
+    <Content Include="images\tools_image.png" />
     <Content Include="lib\CentreLocationOutils.dll" />
   </ItemGroup>
   <ItemGroup>
