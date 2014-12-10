@@ -10,6 +10,7 @@ using CentreLocationOutils.facade.interfaces;
 using CentreLocationOutils.service.implementations;
 using CentreLocationOutils.service.interfaces;
 using System.Data.Common;
+using Oracle.DataAccess.Client;
 
 namespace CentreLcationOutils_front_end.util
 {
