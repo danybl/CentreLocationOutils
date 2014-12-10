@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccueilForm));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.connexionControl1 = new ConnexionControl.ConnexionControl();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(265, 45);
+            this.pictureBox1.Image = global::CentreLcationOutils_front_end.Properties.Resources.tools_image;
+            this.pictureBox1.Location = new System.Drawing.Point(261, 51);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(129, 120);
             this.pictureBox1.TabIndex = 0;
@@ -48,25 +48,37 @@
             this.connexionControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.connexionControl1.labelPassword = "Password :";
             this.connexionControl1.labelUserName = "Username :";
-            this.connexionControl1.Location = new System.Drawing.Point(225, 253);
+            this.connexionControl1.Location = new System.Drawing.Point(225, 254);
             this.connexionControl1.Name = "connexionControl1";
-            this.connexionControl1.Size = new System.Drawing.Size(201, 146);
+            this.connexionControl1.Size = new System.Drawing.Size(201, 151);
             this.connexionControl1.TabIndex = 1;
             // 
-            // accueilForm
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gold;
+            this.label1.Location = new System.Drawing.Point(229, 212);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(188, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Connectez-vous!";
+            // 
+            // ConnexionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(650, 453);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.connexionControl1);
             this.Controls.Add(this.pictureBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "accueilForm";
+            this.Name = "ConnexionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OutilMate";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -74,5 +86,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private ConnexionControl.ConnexionControl connexionControl1;
+        private System.Windows.Forms.Label label1;
     }
 }

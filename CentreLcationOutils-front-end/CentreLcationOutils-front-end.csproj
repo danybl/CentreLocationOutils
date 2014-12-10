@@ -81,6 +81,12 @@
     <Compile Include="forms\AccueilForm.Designer.cs">
       <DependentUpon>AccueilForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\AccueilFormV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AccueilFormV2.Designer.cs">
+      <DependentUpon>AccueilFormV2.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\AjoutClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,12 @@
     <EmbeddedResource Include="forms\AccueilForm.resx">
       <DependentUpon>AccueilForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\AccueilFormV2.resx">
+      <DependentUpon>AccueilFormV2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ConnexionForm.resx">
+      <DependentUpon>ConnexionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -137,6 +149,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="splashScreen.resx">
       <DependentUpon>splashScreen.cs</DependentUpon>
@@ -162,10 +175,11 @@
     <Content Include="images\icon4.ico" />
     <Content Include="images\icon5.ico" />
     <Content Include="images\icon6.ico" />
+    <None Include="images\money1.png" />
     <Content Include="images\splashscreen_background.png" />
     <Content Include="images\tools_image.png" />
+    <None Include="images\user1.png" />
     <Content Include="lib\CentreLocationOutils.dll" />
-    <Content Include="resources\LOCATION.sql" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
