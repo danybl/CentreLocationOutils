@@ -165,6 +165,7 @@
     <Content Include="images\splashscreen_background.png" />
     <Content Include="images\tools_image.png" />
     <Content Include="lib\CentreLocationOutils.dll" />
+    <Content Include="resources\LOCATION.sql" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
