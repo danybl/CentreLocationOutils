@@ -95,5 +95,33 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
 
         }
+
+        private void engagerEmploye(string[] hireEmploy)
+        {
+            gestionCentreOutils.beginTransaction();
+            EmployeDTO employeDTO = new EmployeDTO();
+            employeDTO.Nom = hireEmploy[0];
+            employeDTO.Prenom = hireEmploy[1];
+            employeDTO.Telephone = hireEmploy[2];
+            employeDTO.Email = hireEmploy[3];
+            employeDTO.DateRecrutement = hireEmploy[4];
+            employeDTO.Poste = hireEmploy[5];
+            gestionCentreOutils.EmployeFacade.inscrireEmploye(gestionCentreOutils.Connection, employeDTO);
+            gestionCentreOutils.commitTransaction();
+
+        }
+        private void supprimerEmploye(string[] deleteEmploy)
+        {
+            gestionCentreOutils.beginTransaction();
+            string idEmploye = deleteEmploy[0];
+            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.Connection, idEmploye);
+            if (employeDTO == null)
+            {
+                throw new MissingDTOException("L'employé " + idEmploye + " n'existe pas");
+            }
+            gestionCentreOutils.EmployeFacade.desinscrireEmploye(gestionCentreOutils.Connection, employeDTO);
+            gestionCentreOutils.commitTransaction();
+
+        }
     }
 }
