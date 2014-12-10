@@ -10,6 +10,7 @@ using CentreLocationOutils.exception.dto;
 using CentreLocationOutils.exception.service;
 using CentreLocationOutils.exception.facade;
 using System.Data.OracleClient;
+using System.Windows.Forms;
 
 namespace CentreLcationOutils_front_end
 {
@@ -31,7 +32,8 @@ namespace CentreLcationOutils_front_end
             try
             {
                 //TextReader textReader = Console.In;
-                StreamReader reader = new StreamReader(@"~\ress\test.txt");
+                Console.WriteLine("path: " + Application.StartupPath + @"\ress\test.txt");
+                StreamReader reader = new StreamReader(Application.StartupPath + @"\ress\test.txt");
                 gestionCentreOutils = new CentreLocationOutilsCreateur("local", "location", "tiger");
                 traiterTransaction(reader);
             }
@@ -53,13 +55,14 @@ namespace CentreLcationOutils_front_end
         private void traiterTransaction(StreamReader reader)
         {
             //AfficherAide()
-            string transaction = Console.ReadLine();//lireTransaction(reader);
+            string transaction = lireTransaction(reader);
             while (!finTransaction(transaction))
             {
                 List<string> splitter = transaction.Split(' ').ToList<string>();
                 if (splitter.Count > 0)
                 {
                     executerTransaction(splitter);
+                    splitter.RemoveAt(0);
                 }
             }
         }
@@ -97,7 +100,7 @@ namespace CentreLcationOutils_front_end
                         break;
                     case "louer": effectuerLocation(splitter);
                         break;
-                    case "engagerEmplyer": engagerEmploye(splitter);
+                    case "engagerEmploye": engagerEmploye(splitter);
                         break;
                 }
             }
