@@ -28,24 +28,32 @@ namespace CentreLcationOutils_front_end
 
         private void startReading()
         {
-            TextReader textReader = Console.In;
-            gestionCentreOutils = new CentreLocationOutilsCreateur("local", "location", "tiger");
-            traiterTransaction(textReader);
+            try
+            {
+                //TextReader textReader = Console.In;
+                StreamReader reader = new StreamReader(new BufferedStream(System.Threading.Thread.CurrentContext));
+                gestionCentreOutils = new CentreLocationOutilsCreateur("local", "location", "tiger");
+                traiterTransaction(reader);
+            }
+            catch (IOException ioException)
+            {
+                Console.WriteLine("ERREUUUUUUURRR");
+            }
 
         }
 
-        private string lireTransaction(TextReader textReader)
+        private string lireTransaction(StreamReader reader)
         {
-            Console.Write("> ");
-            string transaction = textReader.ReadLine();
-            Console.WriteLine(transaction);
+            Console.Write(">");
+            string transaction = reader.ReadLine();
+            //Console.WriteLine(transaction);
             return transaction;
         }
 
-        private void traiterTransaction(TextReader textReader)
+        private void traiterTransaction(StreamReader reader)
         {
             //AfficherAide()
-            string transaction = lireTransaction(textReader);
+            string transaction = Console.ReadLine();//lireTransaction(reader);
             while (!finTransaction(transaction))
             {
                 List<string> splitter = transaction.Split(' ').ToList<string>();
@@ -66,10 +74,10 @@ namespace CentreLcationOutils_front_end
             List<string> splitter = transaction.Split(' ').ToList<string>();
             if (splitter.Count == 0)
             {
-                return false;
+                return true;
             }
             string commande = splitter.First<string>().ToLower();
-            splitter.RemoveAt(0);
+            //splitter.RemoveAt(0);
             if (commande.Equals("exit"))
             {
                 return true;
