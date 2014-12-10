@@ -31,7 +31,7 @@ namespace CentreLcationOutils_front_end
             try
             {
                 //TextReader textReader = Console.In;
-                StreamReader reader = new StreamReader(new BufferedStream(System.Threading.Thread.CurrentContext));
+                StreamReader reader = new StreamReader(System.Threading.Thread.CurrentContext + @"\ress\test.txt");
                 gestionCentreOutils = new CentreLocationOutilsCreateur("local", "location", "tiger");
                 traiterTransaction(reader);
             }
