@@ -47,7 +47,7 @@ namespace CentreLcationOutils_front_end.util
                 //testConnection = new ADODB.Connection();
                 //testConnection.
                 MaConnection = new Connection(typeServeur, nomUtilisateur, motPasse);
-                MaConnection.
+                MaConnection.ConnectionOracle.Open();
 
                 IClientDAO clientDAO = new ClientDAO();
                 IEmployeDAO employeDAO = new EmployeDAO();
@@ -91,7 +91,7 @@ namespace CentreLcationOutils_front_end.util
         {
             try
             {
-                Transaction = MaConnection.getConnection().BeginTransaction();
+                Transaction = MaConnection.ConnectionOracle.BeginTransaction();
             }
             catch (DbException dbException)
             {
