@@ -61,7 +61,7 @@ namespace CentreLcationOutils_front_end.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à inscrire toto eglantine 5148728728 toto.eglantine@bestfriend.com 10.
+        ///   Recherche une chaîne localisée semblable à engagerEmploye toto eglantine 5148728728 toto.eglantine@bestfriend.com 2011-12-07 demarmeladeur.
         /// </summary>
         internal static string test {
             get {
