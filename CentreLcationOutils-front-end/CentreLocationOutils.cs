@@ -5,13 +5,15 @@ using System.Text;
 using CentreLcationOutils_front_end.util;
 using CentreLocationOutils.dto;
 using CentreLocationOutils.facade;
+using CentreLocationOutils.exception.dto;
 
 namespace CentreLcationOutils_front_end
 {
     public class CentreLocationOutils
     {
         private static CentreLocationOutilsCreateur gestionCentreOutils;
-
+        private static double POURCENTAGE_DEPOT = 0.25;
+        private static int NB_JOUR_LOCATION = 7;
         public void inscrireClient(string[] champsClient)
         {
             //TODO vérifier dateInscription pas dans le futur => event sur le Time picker
@@ -39,6 +41,59 @@ namespace CentreLcationOutils_front_end
         public void attribuerAdresse(string[] champsAdresse)
         {
             //TODO 
+        }
+
+        private void effectuerLocation(string[] faireLocation)
+        {
+            gestionCentreOutils.beginTransaction();
+
+            string idClient = faireLocation[0];
+            ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.Connection, idClient);
+            if (clientDTO == null)
+            {
+                throw new MissingDTOException("Le client " + idClient + " n'existe pas");
+            }
+
+            string idOutil = faireLocation[1];
+            OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.Connection, idOutil);
+            if (outilDTO == null)
+            {
+                throw new MissingDTOException("L'outil " + idOutil + " n'existe pas");
+            }
+            string idEmploye = faireLocation[2];
+            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.Connection, idEmploye);
+            if (employeDTO == null)
+            {
+                throw new MissingDTOException("L'employé " + idEmploye + " n'existe pas");
+            }
+            LocationDTO locationDTO = new LocationDTO();
+            locationDTO.ClientDTO = clientDTO;
+            locationDTO.OutilDTO = outilDTO;
+            locationDTO.EmployeDTO = employeDTO;
+            locationDTO.Depot = (double.Parse(outilDTO.PrixLocation) * CentreLocationOutils.POURCENTAGE_DEPOT).ToString();
+            locationDTO.DateLocation = DateTime.Now.Ticks.ToString();
+            locationDTO.DateRetour = null;
+            locationDTO.DateLimite = (DateTime.Now.Ticks + CentreLocationOutils.NB_JOUR_LOCATION).ToString();
+            gestionCentreOutils.LocationFacade.commencerLocation(gestionCentreOutils.Connection, locationDTO);
+            gestionCentreOutils.commitTransaction();
+        }
+
+        private void terminerLocation(string[] finirLocation)
+        {
+            gestionCentreOutils.beginTransaction();
+            OutilDTO outilDTO = new OutilDTO();
+            outilDTO.IdOutil = finirLocation[0];
+            LocationDTO locationDTO = new LocationDTO();
+            locationDTO.OutilDTO = outilDTO;
+            List<LocationDTO> locations = gestionCentreOutils.LocationFacade.findByOutil(gestionCentreOutils.Connection, locationDTO);
+            if (locations.Count == 0)
+            {
+                throw new MissingDTOException();
+            }
+            locationDTO = locations[0];
+            gestionCentreOutils.LocationFacade.terminerLocation(gestionCentreOutils.Connection, locationDTO);
+            gestionCentreOutils.commitTransaction();
+
         }
     }
 }
