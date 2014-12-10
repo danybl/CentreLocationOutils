@@ -14,6 +14,7 @@ namespace CentreLcationOutils_front_end
         private static CentreLocationOutilsCreateur gestionCentreOutils;
         private static double POURCENTAGE_DEPOT = 0.25;
         private static int NB_JOUR_LOCATION = 7;
+        private static int NB_JOUR_RESERVATION = 3;
         public void inscrireClient(string[] champsClient)
         {
             //TODO vérifier dateInscription pas dans le futur => event sur le Time picker
@@ -122,6 +123,33 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.EmployeFacade.desinscrireEmploye(gestionCentreOutils.MaConnection, employeDTO);
             gestionCentreOutils.commitTransaction();
 
+        }
+
+        private void effectuerReservation(string[] faireReservation)
+        {
+            gestionCentreOutils.beginTransaction();
+
+            string idClient = faireReservation[0];
+            ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.MaConnection, idClient);
+            if (clientDTO == null)
+            {
+                throw new MissingDTOException("Le client " + idClient + " n'existe pas");
+            }
+
+            string idOutil = faireReservation[1];
+            OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.MaConnection, idOutil);
+            if (outilDTO == null)
+            {
+                throw new MissingDTOException("L'outil " + idOutil + " n'existe pas");
+            }
+
+            ReservationDTO reservationDTO = new ReservationDTO();
+            reservationDTO.ClientDTO = clientDTO;
+            reservationDTO.OutilDTO = outilDTO;
+            reservationDTO.DateReservation = DateTime.Now.Ticks.ToString();
+            reservationDTO.DateLimite = (DateTime.Now.Ticks + CentreLocationOutils.NB_JOUR_RESERVATION).ToString();
+            gestionCentreOutils.ReservationFacade.placerReservation(gestionCentreOutils.MaConnection, reservationDTO);
+            gestionCentreOutils.commitTransaction();
         }
     }
 }
