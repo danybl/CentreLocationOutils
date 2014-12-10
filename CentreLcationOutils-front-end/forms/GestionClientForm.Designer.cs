@@ -67,6 +67,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -192,6 +193,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
@@ -418,6 +420,16 @@
             this.textBox8.Size = new System.Drawing.Size(157, 20);
             this.textBox8.TabIndex = 18;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.LemonChiffon;
+            this.button4.Image = global::CentreLcationOutils_front_end.Properties.Resources.searchUser;
+            this.button4.Location = new System.Drawing.Point(373, 180);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(50, 30);
+            this.button4.TabIndex = 22;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.LightCoral;
@@ -516,5 +528,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button4;
     }
 }

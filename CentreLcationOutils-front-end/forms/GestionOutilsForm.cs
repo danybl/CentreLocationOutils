@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace CentreLcationOutils_front_end.forms
 {
-    public partial class RechercherClientForm : Form
+    public partial class GestionOutilsForm : Form
     {
-        public RechercherClientForm()
+        public GestionOutilsForm()
         {
             InitializeComponent();
         }

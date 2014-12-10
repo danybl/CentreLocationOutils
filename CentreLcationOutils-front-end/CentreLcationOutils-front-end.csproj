@@ -75,23 +75,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\AccueilForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\AccueilForm.Designer.cs">
-      <DependentUpon>AccueilForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\AccueilFormV2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\AccueilFormV2.Designer.cs">
       <DependentUpon>AccueilFormV2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\AjoutClientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\AjoutClientForm.Designer.cs">
-      <DependentUpon>AjoutClientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\GestionClientForm.cs">
       <SubType>Form</SubType>
@@ -111,17 +99,11 @@
     <Compile Include="forms\ConnexionForm.Designer.cs">
       <DependentUpon>ConnexionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\ModifierClientForm.cs">
+    <Compile Include="forms\GestionOutilsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\ModifierClientForm.Designer.cs">
-      <DependentUpon>ModifierClientForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\RechercherClientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\RechercherClientForm.Designer.cs">
-      <DependentUpon>RechercherClientForm.cs</DependentUpon>
+    <Compile Include="forms\GestionOutilsForm.Designer.cs">
+      <DependentUpon>GestionOutilsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\RechercherOutilForm.cs">
       <SubType>Form</SubType>
@@ -138,9 +120,6 @@
       <DependentUpon>splashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="util\CentreLocationOutilsCreateur.cs" />
-    <EmbeddedResource Include="forms\AccueilForm.resx">
-      <DependentUpon>AccueilForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\AccueilFormV2.resx">
       <DependentUpon>AccueilFormV2.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\ConnexionForm.resx">
       <DependentUpon>ConnexionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\GestionOutilsForm.resx">
+      <DependentUpon>GestionOutilsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -178,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\addUser.png" />
+    <None Include="images\addTool.png" />
     <Content Include="images\background.jpg" />
     <None Include="images\deleteUser.png" />
     <Content Include="images\icon.ico" />
@@ -187,6 +170,7 @@
     <Content Include="images\icon5.ico" />
     <Content Include="images\icon6.ico" />
     <None Include="images\modifyUser.png" />
+    <None Include="images\searchUser.png" />
     <Content Include="lib\CentreLocationOutils.dll" />
     <None Include="images\money1.png" />
     <Content Include="images\splashscreen_background.png" />
