@@ -177,13 +177,16 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\addUser.png" />
     <Content Include="images\background.jpg" />
+    <None Include="images\deleteUser.png" />
     <Content Include="images\icon.ico" />
     <Content Include="images\icon2.ico" />
     <Content Include="images\icon3.ico" />
     <Content Include="images\icon4.ico" />
     <Content Include="images\icon5.ico" />
     <Content Include="images\icon6.ico" />
+    <None Include="images\modifyUser.png" />
     <Content Include="lib\CentreLocationOutils.dll" />
     <None Include="images\money1.png" />
     <Content Include="images\splashscreen_background.png" />
