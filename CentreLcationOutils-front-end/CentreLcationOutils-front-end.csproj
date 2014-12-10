@@ -150,6 +150,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ress\LOCATION.sql" />
+    <Content Include="ress\tools_image.png" />
     <None Include="images\addUser.png" />
     <None Include="images\addTool.png" />
     <Content Include="images\background.jpg" />
