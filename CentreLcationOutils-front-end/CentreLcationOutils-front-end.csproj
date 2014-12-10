@@ -38,6 +38,9 @@
     <Reference Include="ConnexionControl">
       <HintPath>..\CentreLocationOutils\lib\ConnexionControl.dll</HintPath>
     </Reference>
+    <Reference Include="ConsoleApplication">
+      <HintPath>..\..\CentreLocationOutils_Backend\CentreLocationOutils\bin\Debug\ConsoleApplication.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
