@@ -161,13 +161,34 @@ namespace CentreLcationOutils_front_end
             outilDTO.IdOutil = cancelReservation[0];
             ReservationDTO reservationDTO = new ReservationDTO();
             reservationDTO.OutilDTO = outilDTO;
-            List<ReservationDTO> reservations = gestionCentreOutils.ReservationFacade.findByOutil(gestionCentreOutils.MaConnection, reservationDTO);
+            List<ReservationDTO> reservations = 
+                gestionCentreOutils.ReservationFacade.findByOutil(gestionCentreOutils.MaConnection, reservationDTO);
             if (reservations.Count == 0)
             {
                 throw new MissingDTOException();
             }
             reservationDTO = reservations[0];
-            gestionCentreOutils.ReservationFacade.annulerReservation(gestionCentreOutils.MaConnection, reservationDTO);
+            gestionCentreOutils.ReservationFacade.annulerReservation(
+                gestionCentreOutils.MaConnection, reservationDTO);
+            gestionCentreOutils.commitTransaction();
+        }
+
+        private void utiliserReservation(string[] useIt) {
+
+            gestionCentreOutils.beginTransaction();
+
+            OutilDTO outilDTO = new OutilDTO();
+            outilDTO.IdOutil = useIt[0];
+            ReservationDTO reservationDTO = new ReservationDTO();
+            reservationDTO.OutilDTO = outilDTO;
+            List<ReservationDTO> reservations = 
+                gestionCentreOutils.ReservationFacade.findByOutil(gestionCentreOutils.MaConnection, reservationDTO);
+            if(reservations.Count == 0){
+                throw new MissingDTOException();
+            }
+            reservationDTO = reservations[0];
+            gestionCentreOutils.ReservationFacade.utiliserReservation(
+                gestionCentreOutils.MaConnection, reservationDTO);
             gestionCentreOutils.commitTransaction();
         }
 
