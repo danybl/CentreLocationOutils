@@ -192,5 +192,37 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
+        private void inscrireClient(string[] register)
+        {
+            gestionCentreOutils.beginTransaction();
+
+            ClientDTO clientDTO = new ClientDTO();
+            clientDTO.Nom = register[0];
+            clientDTO.Prenom = register[1];
+            clientDTO.Telephone = register[2];
+            clientDTO.Email = register[3];
+            clientDTO.DateInscription = register[4];
+            clientDTO.IdClient = register[5];
+            clientDTO.LimiteLocations = register[6];
+            clientDTO.NbLocations = register[7];
+            gestionCentreOutils.ClientFacade.inscrire(gestionCentreOutils.MaConnection, clientDTO);
+            gestionCentreOutils.commitTransaction();
+        }
+
+        private void updateClient(string[] updateCustomer)
+        {
+
+            gestionCentreOutils.beginTransaction();
+            ClientDTO clientDTO = new ClientDTO();
+            clientDTO.IdClient = updateCustomer[0];
+            clientDTO.Nom = updateCustomer[1];
+            clientDTO.Prenom = updateCustomer[2];
+            clientDTO.Telephone = updateCustomer[3];
+            clientDTO.DateInscription = updateCustomer[4];
+            clientDTO.LimiteLocations = updateCustomer[5];
+            clientDTO.NbLocations = updateCustomer[6];
+            gestionCentreOutils.commitTransaction();
+        }
+
     }
 }
