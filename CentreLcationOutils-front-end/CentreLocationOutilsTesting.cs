@@ -42,7 +42,7 @@ namespace CentreLcationOutils_front_end
             }
             catch (IOException ioException)
             {
-                Console.WriteLine("ERREUUUUUUURRR");
+                Console.WriteLine("ERREUUUUUUURRR: " + ioException.Message );
             }
 
         }
