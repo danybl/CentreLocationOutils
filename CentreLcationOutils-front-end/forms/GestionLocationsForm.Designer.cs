@@ -484,7 +484,7 @@
             this.Controls.Add(this.panelGestionLocations_ListeLocations);
             this.Controls.Add(this.panelGestionLocations_InfoLocation);
             this.Name = "GestionLocationsForm";
-            this.Text = "GestionLocationsForm";
+            this.Text = "Gestion des Locations";
             this.panelGestionLocations_InfoLocation.ResumeLayout(false);
             this.panelGestionLocations_InfoLocation.PerformLayout();
             this.panelGestionLocations_ListeLocations.ResumeLayout(false);
