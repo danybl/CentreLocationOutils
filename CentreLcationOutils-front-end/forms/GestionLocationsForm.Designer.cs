@@ -62,9 +62,21 @@
             this.columnDateLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblGestionLocations_Titre2 = new System.Windows.Forms.Label();
+            this.menuGestionLocations = new System.Windows.Forms.MenuStrip();
+            this.mItemGestionLocations_Accueil = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionLocations_Gestionnaire = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionLocations_Connexion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionLocations_Deconnexion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionLocations_Quitter = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionLocations_Option = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionLocations_Parametres = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionClients_Aide = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionLocations_Apropos = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionLocations_SigneInterrogation = new System.Windows.Forms.ToolStripMenuItem();
             this.panelGestionLocations_InfoLocation.SuspendLayout();
             this.panelGestionLocations_ListeLocations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionLocations_ListeLocations)).BeginInit();
+            this.menuGestionLocations.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelGestionLocations_InfoLocation
@@ -91,7 +103,7 @@
             this.panelGestionLocations_InfoLocation.Controls.Add(this.tbGestionLocations_IdLocation);
             this.panelGestionLocations_InfoLocation.Controls.Add(this.lblGestionLocations_IdLocation);
             this.panelGestionLocations_InfoLocation.Controls.Add(this.lblGestionLocations_Titre1);
-            this.panelGestionLocations_InfoLocation.Location = new System.Drawing.Point(12, 12);
+            this.panelGestionLocations_InfoLocation.Location = new System.Drawing.Point(12, 30);
             this.panelGestionLocations_InfoLocation.Name = "panelGestionLocations_InfoLocation";
             this.panelGestionLocations_InfoLocation.Size = new System.Drawing.Size(762, 237);
             this.panelGestionLocations_InfoLocation.TabIndex = 3;
@@ -299,7 +311,7 @@
             this.panelGestionLocations_ListeLocations.BackColor = System.Drawing.Color.DimGray;
             this.panelGestionLocations_ListeLocations.Controls.Add(this.dgGestionLocations_ListeLocations);
             this.panelGestionLocations_ListeLocations.Controls.Add(this.lblGestionLocations_Titre2);
-            this.panelGestionLocations_ListeLocations.Location = new System.Drawing.Point(12, 264);
+            this.panelGestionLocations_ListeLocations.Location = new System.Drawing.Point(12, 273);
             this.panelGestionLocations_ListeLocations.Name = "panelGestionLocations_ListeLocations";
             this.panelGestionLocations_ListeLocations.Size = new System.Drawing.Size(762, 276);
             this.panelGestionLocations_ListeLocations.TabIndex = 23;
@@ -380,12 +392,95 @@
             this.lblGestionLocations_Titre2.TabIndex = 0;
             this.lblGestionLocations_Titre2.Text = "Liste des locations";
             // 
+            // menuGestionLocations
+            // 
+            this.menuGestionLocations.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mItemGestionLocations_Accueil,
+            this.mItemGestionLocations_Option,
+            this.mItemGestionClients_Aide});
+            this.menuGestionLocations.Location = new System.Drawing.Point(0, 0);
+            this.menuGestionLocations.Name = "menuGestionLocations";
+            this.menuGestionLocations.Size = new System.Drawing.Size(784, 24);
+            this.menuGestionLocations.TabIndex = 24;
+            this.menuGestionLocations.Text = "menuStrip1";
+            // 
+            // mItemGestionLocations_Accueil
+            // 
+            this.mItemGestionLocations_Accueil.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mItemGestionLocations_Gestionnaire,
+            this.mItemGestionLocations_Connexion,
+            this.mItemGestionLocations_Deconnexion,
+            this.mItemGestionLocations_Quitter});
+            this.mItemGestionLocations_Accueil.Name = "mItemGestionLocations_Accueil";
+            this.mItemGestionLocations_Accueil.Size = new System.Drawing.Size(58, 20);
+            this.mItemGestionLocations_Accueil.Text = "Accueil";
+            // 
+            // mItemGestionLocations_Gestionnaire
+            // 
+            this.mItemGestionLocations_Gestionnaire.Name = "mItemGestionLocations_Gestionnaire";
+            this.mItemGestionLocations_Gestionnaire.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionLocations_Gestionnaire.Text = "Gestionnaire";
+            // 
+            // mItemGestionLocations_Connexion
+            // 
+            this.mItemGestionLocations_Connexion.Name = "mItemGestionLocations_Connexion";
+            this.mItemGestionLocations_Connexion.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionLocations_Connexion.Text = "Connexion";
+            // 
+            // mItemGestionLocations_Deconnexion
+            // 
+            this.mItemGestionLocations_Deconnexion.Name = "mItemGestionLocations_Deconnexion";
+            this.mItemGestionLocations_Deconnexion.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionLocations_Deconnexion.Text = "Deconnexion";
+            // 
+            // mItemGestionLocations_Quitter
+            // 
+            this.mItemGestionLocations_Quitter.Name = "mItemGestionLocations_Quitter";
+            this.mItemGestionLocations_Quitter.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionLocations_Quitter.Text = "Quitter";
+            // 
+            // mItemGestionLocations_Option
+            // 
+            this.mItemGestionLocations_Option.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mItemGestionLocations_Parametres});
+            this.mItemGestionLocations_Option.Name = "mItemGestionLocations_Option";
+            this.mItemGestionLocations_Option.Size = new System.Drawing.Size(61, 20);
+            this.mItemGestionLocations_Option.Text = "Options";
+            // 
+            // mItemGestionLocations_Parametres
+            // 
+            this.mItemGestionLocations_Parametres.Name = "mItemGestionLocations_Parametres";
+            this.mItemGestionLocations_Parametres.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionLocations_Parametres.Text = "Paramètres";
+            // 
+            // mItemGestionClients_Aide
+            // 
+            this.mItemGestionClients_Aide.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mItemGestionLocations_Apropos,
+            this.mItemGestionLocations_SigneInterrogation});
+            this.mItemGestionClients_Aide.Name = "mItemGestionClients_Aide";
+            this.mItemGestionClients_Aide.Size = new System.Drawing.Size(43, 20);
+            this.mItemGestionClients_Aide.Text = "Aide";
+            // 
+            // mItemGestionLocations_Apropos
+            // 
+            this.mItemGestionLocations_Apropos.Name = "mItemGestionLocations_Apropos";
+            this.mItemGestionLocations_Apropos.Size = new System.Drawing.Size(165, 22);
+            this.mItemGestionLocations_Apropos.Text = "à propos de nous";
+            // 
+            // mItemGestionLocations_SigneInterrogation
+            // 
+            this.mItemGestionLocations_SigneInterrogation.Name = "mItemGestionLocations_SigneInterrogation";
+            this.mItemGestionLocations_SigneInterrogation.Size = new System.Drawing.Size(165, 22);
+            this.mItemGestionLocations_SigneInterrogation.Text = "?";
+            // 
             // GestionLocationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.menuGestionLocations);
             this.Controls.Add(this.panelGestionLocations_ListeLocations);
             this.Controls.Add(this.panelGestionLocations_InfoLocation);
             this.Name = "GestionLocationsForm";
@@ -395,7 +490,10 @@
             this.panelGestionLocations_ListeLocations.ResumeLayout(false);
             this.panelGestionLocations_ListeLocations.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionLocations_ListeLocations)).EndInit();
+            this.menuGestionLocations.ResumeLayout(false);
+            this.menuGestionLocations.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -434,6 +532,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDateLocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDateLimite;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDateRetour;
+        private System.Windows.Forms.MenuStrip menuGestionLocations;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Accueil;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Gestionnaire;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Connexion;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Deconnexion;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Quitter;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Option;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Parametres;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionClients_Aide;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Apropos;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_SigneInterrogation;
 
     }
 }
