@@ -1,6 +1,6 @@
 ﻿namespace CentreLcationOutils_front_end.forms
 {
-    partial class AccueilFormV2
+    partial class AccueilForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,141 +28,141 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccueilFormV2));
-            this.lblBonjour = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnGestionClients = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccueilForm));
+            this.lblAccueil_Titre = new System.Windows.Forms.Label();
+            this.lblAccueil_Soustitre = new System.Windows.Forms.Label();
+            this.lblAccueil_GestionClients = new System.Windows.Forms.Label();
+            this.lblAccueil_GestionOutils = new System.Windows.Forms.Label();
+            this.lblAccueil_GestionLocations = new System.Windows.Forms.Label();
+            this.btnAccueil_GestionFactures = new System.Windows.Forms.Button();
+            this.btnAccueil_GestionOutils = new System.Windows.Forms.Button();
+            this.btnAccueil_GestionClients = new System.Windows.Forms.Button();
+            this.btnAccueil_GestionLocations = new System.Windows.Forms.Button();
+            this.lblAccueil_GestionFactures = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblBonjour
+            // lblAccueil_Titre
             // 
-            this.lblBonjour.AutoSize = true;
-            this.lblBonjour.Font = new System.Drawing.Font("Stencil", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBonjour.ForeColor = System.Drawing.Color.Gold;
-            this.lblBonjour.Location = new System.Drawing.Point(235, 49);
-            this.lblBonjour.Name = "lblBonjour";
-            this.lblBonjour.Size = new System.Drawing.Size(345, 76);
-            this.lblBonjour.TabIndex = 0;
-            this.lblBonjour.Text = "Bonjour!";
-            this.lblBonjour.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblAccueil_Titre.AutoSize = true;
+            this.lblAccueil_Titre.Font = new System.Drawing.Font("Stencil", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccueil_Titre.ForeColor = System.Drawing.Color.Gold;
+            this.lblAccueil_Titre.Location = new System.Drawing.Point(235, 49);
+            this.lblAccueil_Titre.Name = "lblAccueil_Titre";
+            this.lblAccueil_Titre.Size = new System.Drawing.Size(345, 76);
+            this.lblAccueil_Titre.TabIndex = 0;
+            this.lblAccueil_Titre.Text = "Bonjour!";
+            this.lblAccueil_Titre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label1
+            // lblAccueil_Soustitre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Stencil", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(269, 171);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 34);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Employé(e) n.007";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblAccueil_Soustitre.AutoSize = true;
+            this.lblAccueil_Soustitre.Font = new System.Drawing.Font("Stencil", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccueil_Soustitre.Location = new System.Drawing.Point(269, 171);
+            this.lblAccueil_Soustitre.Name = "lblAccueil_Soustitre";
+            this.lblAccueil_Soustitre.Size = new System.Drawing.Size(267, 34);
+            this.lblAccueil_Soustitre.TabIndex = 1;
+            this.lblAccueil_Soustitre.Text = "Employé(e) n.007";
+            this.lblAccueil_Soustitre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label2
+            // lblAccueil_GestionClients
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(205, 222);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Gestion de clients";
+            this.lblAccueil_GestionClients.AutoSize = true;
+            this.lblAccueil_GestionClients.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccueil_GestionClients.Location = new System.Drawing.Point(205, 222);
+            this.lblAccueil_GestionClients.Name = "lblAccueil_GestionClients";
+            this.lblAccueil_GestionClients.Size = new System.Drawing.Size(135, 16);
+            this.lblAccueil_GestionClients.TabIndex = 3;
+            this.lblAccueil_GestionClients.Text = "Gestion de clients";
             // 
-            // label3
+            // lblAccueil_GestionOutils
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(480, 222);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Gestion d\'outils";
+            this.lblAccueil_GestionOutils.AutoSize = true;
+            this.lblAccueil_GestionOutils.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccueil_GestionOutils.Location = new System.Drawing.Point(480, 222);
+            this.lblAccueil_GestionOutils.Name = "lblAccueil_GestionOutils";
+            this.lblAccueil_GestionOutils.Size = new System.Drawing.Size(119, 16);
+            this.lblAccueil_GestionOutils.TabIndex = 5;
+            this.lblAccueil_GestionOutils.Text = "Gestion d\'outils";
             // 
-            // label4
+            // lblAccueil_GestionLocations
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(456, 386);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 16);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Gestion des locations";
+            this.lblAccueil_GestionLocations.AutoSize = true;
+            this.lblAccueil_GestionLocations.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccueil_GestionLocations.Location = new System.Drawing.Point(456, 386);
+            this.lblAccueil_GestionLocations.Name = "lblAccueil_GestionLocations";
+            this.lblAccueil_GestionLocations.Size = new System.Drawing.Size(158, 16);
+            this.lblAccueil_GestionLocations.TabIndex = 7;
+            this.lblAccueil_GestionLocations.Text = "Gestion des locations";
             // 
-            // button2
+            // btnAccueil_GestionFactures
             // 
-            this.button2.BackColor = System.Drawing.Color.Tan;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(196, 407);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 142);
-            this.button2.TabIndex = 6;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnAccueil_GestionFactures.BackColor = System.Drawing.Color.Tan;
+            this.btnAccueil_GestionFactures.Image = ((System.Drawing.Image)(resources.GetObject("btnAccueil_GestionFactures.Image")));
+            this.btnAccueil_GestionFactures.Location = new System.Drawing.Point(196, 407);
+            this.btnAccueil_GestionFactures.Name = "btnAccueil_GestionFactures";
+            this.btnAccueil_GestionFactures.Size = new System.Drawing.Size(155, 142);
+            this.btnAccueil_GestionFactures.TabIndex = 6;
+            this.btnAccueil_GestionFactures.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnAccueil_GestionOutils
             // 
-            this.button1.BackColor = System.Drawing.Color.Tan;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(459, 241);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 142);
-            this.button1.TabIndex = 4;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAccueil_GestionOutils.BackColor = System.Drawing.Color.Tan;
+            this.btnAccueil_GestionOutils.Image = ((System.Drawing.Image)(resources.GetObject("btnAccueil_GestionOutils.Image")));
+            this.btnAccueil_GestionOutils.Location = new System.Drawing.Point(459, 241);
+            this.btnAccueil_GestionOutils.Name = "btnAccueil_GestionOutils";
+            this.btnAccueil_GestionOutils.Size = new System.Drawing.Size(155, 142);
+            this.btnAccueil_GestionOutils.TabIndex = 4;
+            this.btnAccueil_GestionOutils.UseVisualStyleBackColor = false;
             // 
-            // btnGestionClients
+            // btnAccueil_GestionClients
             // 
-            this.btnGestionClients.BackColor = System.Drawing.Color.Tan;
-            this.btnGestionClients.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionClients.Image")));
-            this.btnGestionClients.Location = new System.Drawing.Point(196, 241);
-            this.btnGestionClients.Name = "btnGestionClients";
-            this.btnGestionClients.Size = new System.Drawing.Size(155, 142);
-            this.btnGestionClients.TabIndex = 2;
-            this.btnGestionClients.UseVisualStyleBackColor = false;
+            this.btnAccueil_GestionClients.BackColor = System.Drawing.Color.Tan;
+            this.btnAccueil_GestionClients.Image = ((System.Drawing.Image)(resources.GetObject("btnAccueil_GestionClients.Image")));
+            this.btnAccueil_GestionClients.Location = new System.Drawing.Point(196, 241);
+            this.btnAccueil_GestionClients.Name = "btnAccueil_GestionClients";
+            this.btnAccueil_GestionClients.Size = new System.Drawing.Size(155, 142);
+            this.btnAccueil_GestionClients.TabIndex = 2;
+            this.btnAccueil_GestionClients.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnAccueil_GestionLocations
             // 
-            this.button3.BackColor = System.Drawing.Color.Tan;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(459, 405);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(155, 142);
-            this.button3.TabIndex = 8;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnAccueil_GestionLocations.BackColor = System.Drawing.Color.Tan;
+            this.btnAccueil_GestionLocations.Image = ((System.Drawing.Image)(resources.GetObject("btnAccueil_GestionLocations.Image")));
+            this.btnAccueil_GestionLocations.Location = new System.Drawing.Point(459, 405);
+            this.btnAccueil_GestionLocations.Name = "btnAccueil_GestionLocations";
+            this.btnAccueil_GestionLocations.Size = new System.Drawing.Size(155, 142);
+            this.btnAccueil_GestionLocations.TabIndex = 8;
+            this.btnAccueil_GestionLocations.UseVisualStyleBackColor = false;
             // 
-            // label5
+            // lblAccueil_GestionFactures
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(193, 386);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(154, 16);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Gestion des Factures";
+            this.lblAccueil_GestionFactures.AutoSize = true;
+            this.lblAccueil_GestionFactures.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAccueil_GestionFactures.Location = new System.Drawing.Point(193, 386);
+            this.lblAccueil_GestionFactures.Name = "lblAccueil_GestionFactures";
+            this.lblAccueil_GestionFactures.Size = new System.Drawing.Size(154, 16);
+            this.lblAccueil_GestionFactures.TabIndex = 9;
+            this.lblAccueil_GestionFactures.Text = "Gestion des Factures";
             // 
-            // AccueilFormV2
+            // AccueilForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnGestionClients);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblBonjour);
+            this.Controls.Add(this.lblAccueil_GestionFactures);
+            this.Controls.Add(this.btnAccueil_GestionLocations);
+            this.Controls.Add(this.lblAccueil_GestionLocations);
+            this.Controls.Add(this.btnAccueil_GestionFactures);
+            this.Controls.Add(this.lblAccueil_GestionOutils);
+            this.Controls.Add(this.btnAccueil_GestionOutils);
+            this.Controls.Add(this.lblAccueil_GestionClients);
+            this.Controls.Add(this.btnAccueil_GestionClients);
+            this.Controls.Add(this.lblAccueil_Soustitre);
+            this.Controls.Add(this.lblAccueil_Titre);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AccueilFormV2";
-            this.Text = "AccueilFormV2";
+            this.Name = "AccueilForm";
+            this.Text = "Accueil";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,15 +170,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblBonjour;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnGestionClients;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblAccueil_Titre;
+        private System.Windows.Forms.Label lblAccueil_Soustitre;
+        private System.Windows.Forms.Button btnAccueil_GestionClients;
+        private System.Windows.Forms.Label lblAccueil_GestionClients;
+        private System.Windows.Forms.Button btnAccueil_GestionOutils;
+        private System.Windows.Forms.Label lblAccueil_GestionOutils;
+        private System.Windows.Forms.Button btnAccueil_GestionFactures;
+        private System.Windows.Forms.Label lblAccueil_GestionLocations;
+        private System.Windows.Forms.Button btnAccueil_GestionLocations;
+        private System.Windows.Forms.Label lblAccueil_GestionFactures;
     }
 }

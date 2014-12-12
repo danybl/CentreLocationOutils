@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace CentreLcationOutils_front_end.forms
 {
-    public partial class AccueilFormV2 : Form
+    public partial class AccueilForm : Form
     {
-        public AccueilFormV2()
+        public AccueilForm()
         {
             InitializeComponent();
         }
