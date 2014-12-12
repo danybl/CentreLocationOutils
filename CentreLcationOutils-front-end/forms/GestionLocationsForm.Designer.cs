@@ -61,7 +61,7 @@
             this.columnDateLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDateLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblGestionLocations_Titre2 = new System.Windows.Forms.Label();
             this.panelGestionLocations_InfoLocation.SuspendLayout();
             this.panelGestionLocations_ListeLocations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionLocations_ListeLocations)).BeginInit();
@@ -298,7 +298,7 @@
             // 
             this.panelGestionLocations_ListeLocations.BackColor = System.Drawing.Color.DimGray;
             this.panelGestionLocations_ListeLocations.Controls.Add(this.dgGestionLocations_ListeLocations);
-            this.panelGestionLocations_ListeLocations.Controls.Add(this.label1);
+            this.panelGestionLocations_ListeLocations.Controls.Add(this.lblGestionLocations_Titre2);
             this.panelGestionLocations_ListeLocations.Location = new System.Drawing.Point(12, 264);
             this.panelGestionLocations_ListeLocations.Name = "panelGestionLocations_ListeLocations";
             this.panelGestionLocations_ListeLocations.Size = new System.Drawing.Size(762, 276);
@@ -369,16 +369,16 @@
             this.columnDateRetour.Name = "columnDateRetour";
             this.columnDateRetour.ToolTipText = "DateRetour";
             // 
-            // label1
+            // lblGestionLocations_Titre2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(304, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Liste des locations";
+            this.lblGestionLocations_Titre2.AutoSize = true;
+            this.lblGestionLocations_Titre2.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionLocations_Titre2.ForeColor = System.Drawing.Color.Gold;
+            this.lblGestionLocations_Titre2.Location = new System.Drawing.Point(304, 20);
+            this.lblGestionLocations_Titre2.Name = "lblGestionLocations_Titre2";
+            this.lblGestionLocations_Titre2.Size = new System.Drawing.Size(172, 19);
+            this.lblGestionLocations_Titre2.TabIndex = 0;
+            this.lblGestionLocations_Titre2.Text = "Liste des locations";
             // 
             // GestionLocationsForm
             // 
@@ -425,7 +425,7 @@
         private System.Windows.Forms.Label lblGestionLocations_Titre1;
         private System.Windows.Forms.Panel panelGestionLocations_ListeLocations;
         private System.Windows.Forms.DataGridView dgGestionLocations_ListeLocations;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblGestionLocations_Titre2;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnIDLocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnIdClient;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnIdEmploye;
