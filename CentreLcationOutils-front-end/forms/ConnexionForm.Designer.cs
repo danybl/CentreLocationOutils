@@ -29,41 +29,41 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConnexionForm));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.connexionControl1 = new ConnexionControl.ConnexionControl();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pbConnexion_Image = new System.Windows.Forms.PictureBox();
+            this.controlConnexion = new ConnexionControl.ConnexionControl();
+            this.lblConnexion_Titre = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnexion_Image)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbConnexion_Image
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(333, 52);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 128);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbConnexion_Image.Image = ((System.Drawing.Image)(resources.GetObject("pbConnexion_Image.Image")));
+            this.pbConnexion_Image.Location = new System.Drawing.Point(333, 52);
+            this.pbConnexion_Image.Name = "pbConnexion_Image";
+            this.pbConnexion_Image.Size = new System.Drawing.Size(133, 128);
+            this.pbConnexion_Image.TabIndex = 0;
+            this.pbConnexion_Image.TabStop = false;
             // 
-            // connexionControl1
+            // controlConnexion
             // 
-            this.connexionControl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.connexionControl1.labelPassword = "Password :";
-            this.connexionControl1.labelUserName = "Username :";
-            this.connexionControl1.Location = new System.Drawing.Point(299, 323);
-            this.connexionControl1.Name = "connexionControl1";
-            this.connexionControl1.Size = new System.Drawing.Size(201, 151);
-            this.connexionControl1.TabIndex = 1;
+            this.controlConnexion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.controlConnexion.labelPassword = "Password :";
+            this.controlConnexion.labelUserName = "Username :";
+            this.controlConnexion.Location = new System.Drawing.Point(299, 323);
+            this.controlConnexion.Name = "controlConnexion";
+            this.controlConnexion.Size = new System.Drawing.Size(201, 151);
+            this.controlConnexion.TabIndex = 1;
             // 
-            // label1
+            // lblConnexion_Titre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Stencil", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(262, 246);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(289, 38);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Connectez-vous!";
+            this.lblConnexion_Titre.AutoSize = true;
+            this.lblConnexion_Titre.Font = new System.Drawing.Font("Stencil", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConnexion_Titre.ForeColor = System.Drawing.Color.Gold;
+            this.lblConnexion_Titre.Location = new System.Drawing.Point(262, 246);
+            this.lblConnexion_Titre.Name = "lblConnexion_Titre";
+            this.lblConnexion_Titre.Size = new System.Drawing.Size(289, 38);
+            this.lblConnexion_Titre.TabIndex = 2;
+            this.lblConnexion_Titre.Text = "Connectez-vous!";
             // 
             // ConnexionForm
             // 
@@ -71,13 +71,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.connexionControl1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblConnexion_Titre);
+            this.Controls.Add(this.controlConnexion);
+            this.Controls.Add(this.pbConnexion_Image);
             this.Name = "ConnexionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OutilMate";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbConnexion_Image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -85,8 +85,8 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private ConnexionControl.ConnexionControl connexionControl1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbConnexion_Image;
+        private ConnexionControl.ConnexionControl controlConnexion;
+        private System.Windows.Forms.Label lblConnexion_Titre;
     }
 }
