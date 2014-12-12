@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnGestionLocations_Rechercher.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAblJREFUSEvt
         kz9LAzEYh1vFwUFQUCeL4CZuFvR6+fM2yV1nl+4OLgq6OAhOKoIKrpWCOoiCn0LBwcXi4hcQxFEUijop
@@ -131,7 +131,7 @@
         8sYC2MUz66e4QxJSqQ9es8UkRZHaJQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnGestionLocations_Annuler.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAA8BJREFUSEvF
         VVtsDFEYHpd44IE3xC20M2dsGhIN2XZmdhEVQopI6xoRQhDhgURCVMpLPQgvNPHiySV1S1ySZXd2tmip
@@ -153,7 +153,7 @@
         iwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnGestionLocations_Renouveler.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAABFNJREFUSEu1
         VVtMY0UY7nIr1xBcE91EQ3gQgQd4k/gAhDuRBMM+GQwhJiQGXkzABEIqEeTB1TU8rOsWdxNckeUBNWDi
@@ -177,18 +177,18 @@
         2PMLDXgnIhN6llhUnGvw3xOKvwFH2hMQ7B1ipgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnGestionLocations_Ajouter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAHVSURBVEhL3ZTNSsNAFIULLvQt3NikJpn4MKKiqBlLLVi1
-        E30Bn0FE0ZV7jdOdrbooWtDm5wncKIq68B9UEME4UydMaidphOLCAx+EzD3nJnMzSf1v9VaXeoBrGsBF
-        WPfQheahDwq9btxzzAlaw8p/JxIwSrjRvQU/DuAUrwc8c5jZ2mtoa6gLeOa6KCwWF61SL4uJluqiDWFA
-        AjTHXGMxYtFtERkD7p6eG4jWAiK3iw5Ltc1HkSkgSQMyk/u+0/luFssFbDMnMoRJ0oAy4C1CFssF6kVP
-        VBwmaQNwMuewWC7NKb6JisMkbaCeoFcWy6W7ZlNREJaUsJccwE8Wy6V7HWxAHpbFcoE6aiqSMWwhCBOt
-        hb3gGLW+gXJY6NgMlNrsC4vlUg7yHfuKMvvTNovlknE2C+zmbfpJkgY0I4OhwWK5ejeNHrmSexCZApI0
-        UMq5275dwUmmkiw4olYLQiNFNNAw1CuXjEEWJ1amZKzFNYlCrc74UslYYTExIv90GRurSiXv//x0RdA9
-        7y/nfQnDZeplKe0l4cnhNDaulL28r9Vmv5vR006g19rRnN9P1sjDXLbdlijRYUl4alzagVYaT56nMXxv
-        YMEz0nxbtuBY5ED/RqnUFzGog7/btZ71AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAdVJREFUSEvdlM1Kw0AUhQsu9C3c2KQmmfgwoqKoGUstWLUTfQGfQUTRlXuN052t
+        uiha0ObnCdwoirrwH1QQwThTJ0xqJ2mE4sIDH4TMPecmczNJ/W/1Vpd6gGsawEVY99CF5qEPCr1u3HPM
+        CVrDyn8nEjBKuNG9BT8O4BSvBzxzmNnaa2hrqAt45rooLBYXrVIvi4mW6qINYUACNMdcYzFi0W0RGQPu
+        np4biNYCIreLDku1zUeRKSBJAzKT+77T+W4WywVsMycyhEnSgDLgLUIWywXqRU9UHCZpA3Ay57BYLs0p
+        vomKwyRtoJ6gVxbLpbtmU1EQlpSwlxzATxbLpXsdbEAelsVygTpqKpIxbCEIE62FveAYtb6Bcljo2AyU
+        2uwLi+VSDvId+4oy+9M2i+WScTYL7OZt+kmSBjQjg6HBYrl6N40euZJ7EJkCkjRQyrnbvl3BSaaSLDii
+        VgtCI0U00DDUK5eMQRYnVqZkrMU1iUKtzvhSyVhhMTEi/3QZG6tKJe///HRF0D3vL+d9CcNl6mUp7SXh
+        yeE0Nq6Uvbyv1Wa/m9HTTqDX2tGc30/WyMNctt2WKNFhSXhqXNqBVhpPnqcxfG9gwTPSfFu24FjkQP9G
+        qdQXMaiDv9u1nvUAAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="columnIDLocation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

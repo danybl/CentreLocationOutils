@@ -29,31 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionLocationsForm));
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panelGestionLocations_InfoLocation = new System.Windows.Forms.Panel();
+            this.btnGestionLocations_Rechercher = new System.Windows.Forms.Button();
+            this.btnGestionLocations_Annuler = new System.Windows.Forms.Button();
+            this.btnGestionLocations_Renouveler = new System.Windows.Forms.Button();
+            this.btnGestionLocations_Ajouter = new System.Windows.Forms.Button();
+            this.tbGestionLocations_DateRetour = new System.Windows.Forms.TextBox();
+            this.tbGestionLocations_DateLimite = new System.Windows.Forms.TextBox();
+            this.tbGestionLocations_DateLocation = new System.Windows.Forms.TextBox();
+            this.tbGestionLocations_Depot = new System.Windows.Forms.TextBox();
+            this.tbGestionLocations_IdOutil = new System.Windows.Forms.TextBox();
+            this.tbGestionLocations_IdEmploye = new System.Windows.Forms.TextBox();
+            this.tbGestionLocations_IdClient = new System.Windows.Forms.TextBox();
+            this.lblGestionLocations_DateRetour = new System.Windows.Forms.Label();
+            this.lblGestionLocations_DateLimite = new System.Windows.Forms.Label();
+            this.lblGestionLocations_DateLocation = new System.Windows.Forms.Label();
+            this.lblGestionLocations_Depot = new System.Windows.Forms.Label();
+            this.lblGestionLocations_IdOutil = new System.Windows.Forms.Label();
+            this.lblGestionLocations_IdEmploye = new System.Windows.Forms.Label();
+            this.lblGestionLocations_IdClient = new System.Windows.Forms.Label();
+            this.tbGestionLocations_IdLocation = new System.Windows.Forms.TextBox();
+            this.lblGestionLocations_IdLocation = new System.Windows.Forms.Label();
+            this.lblGestionLocations_Titre1 = new System.Windows.Forms.Label();
+            this.panelGestionLocations_ListeLocations = new System.Windows.Forms.Panel();
+            this.dgGestionLocations_ListeLocations = new System.Windows.Forms.DataGridView();
             this.columnIDLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnIdClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnIdEmploye = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,252 +61,253 @@
             this.columnDateLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDateLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelGestionLocations_InfoLocation.SuspendLayout();
+            this.panelGestionLocations_ListeLocations.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgGestionLocations_ListeLocations)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
+            // panelGestionLocations_InfoLocation
             // 
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.textBox8);
-            this.panel2.Controls.Add(this.textBox7);
-            this.panel2.Controls.Add(this.textBox6);
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(762, 237);
-            this.panel2.TabIndex = 3;
+            this.panelGestionLocations_InfoLocation.BackColor = System.Drawing.Color.DimGray;
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.btnGestionLocations_Rechercher);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.btnGestionLocations_Annuler);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.btnGestionLocations_Renouveler);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.btnGestionLocations_Ajouter);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.tbGestionLocations_DateRetour);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.tbGestionLocations_DateLimite);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.tbGestionLocations_DateLocation);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.tbGestionLocations_Depot);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.tbGestionLocations_IdOutil);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.tbGestionLocations_IdEmploye);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.tbGestionLocations_IdClient);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.lblGestionLocations_DateRetour);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.lblGestionLocations_DateLimite);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.lblGestionLocations_DateLocation);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.lblGestionLocations_Depot);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.lblGestionLocations_IdOutil);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.lblGestionLocations_IdEmploye);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.lblGestionLocations_IdClient);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.tbGestionLocations_IdLocation);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.lblGestionLocations_IdLocation);
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.lblGestionLocations_Titre1);
+            this.panelGestionLocations_InfoLocation.Location = new System.Drawing.Point(12, 12);
+            this.panelGestionLocations_InfoLocation.Name = "panelGestionLocations_InfoLocation";
+            this.panelGestionLocations_InfoLocation.Size = new System.Drawing.Size(762, 237);
+            this.panelGestionLocations_InfoLocation.TabIndex = 3;
             // 
-            // button4
+            // btnGestionLocations_Rechercher
             // 
-            this.button4.BackColor = System.Drawing.Color.LemonChiffon;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(373, 180);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 30);
-            this.button4.TabIndex = 22;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnGestionLocations_Rechercher.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btnGestionLocations_Rechercher.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionLocations_Rechercher.Image")));
+            this.btnGestionLocations_Rechercher.Location = new System.Drawing.Point(373, 180);
+            this.btnGestionLocations_Rechercher.Name = "btnGestionLocations_Rechercher";
+            this.btnGestionLocations_Rechercher.Size = new System.Drawing.Size(50, 30);
+            this.btnGestionLocations_Rechercher.TabIndex = 22;
+            this.btnGestionLocations_Rechercher.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnGestionLocations_Annuler
             // 
-            this.button3.BackColor = System.Drawing.Color.LightCoral;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(593, 180);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 30);
-            this.button3.TabIndex = 21;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnGestionLocations_Annuler.BackColor = System.Drawing.Color.LightCoral;
+            this.btnGestionLocations_Annuler.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionLocations_Annuler.Image")));
+            this.btnGestionLocations_Annuler.Location = new System.Drawing.Point(593, 180);
+            this.btnGestionLocations_Annuler.Name = "btnGestionLocations_Annuler";
+            this.btnGestionLocations_Annuler.Size = new System.Drawing.Size(50, 30);
+            this.btnGestionLocations_Annuler.TabIndex = 21;
+            this.btnGestionLocations_Annuler.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnGestionLocations_Renouveler
             // 
-            this.button2.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(519, 180);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 30);
-            this.button2.TabIndex = 20;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnGestionLocations_Renouveler.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnGestionLocations_Renouveler.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionLocations_Renouveler.Image")));
+            this.btnGestionLocations_Renouveler.Location = new System.Drawing.Point(519, 180);
+            this.btnGestionLocations_Renouveler.Name = "btnGestionLocations_Renouveler";
+            this.btnGestionLocations_Renouveler.Size = new System.Drawing.Size(50, 30);
+            this.btnGestionLocations_Renouveler.TabIndex = 20;
+            this.btnGestionLocations_Renouveler.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnGestionLocations_Ajouter
             // 
-            this.button1.BackColor = System.Drawing.Color.PaleGreen;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(446, 180);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 30);
-            this.button1.TabIndex = 19;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnGestionLocations_Ajouter.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnGestionLocations_Ajouter.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionLocations_Ajouter.Image")));
+            this.btnGestionLocations_Ajouter.Location = new System.Drawing.Point(446, 180);
+            this.btnGestionLocations_Ajouter.Name = "btnGestionLocations_Ajouter";
+            this.btnGestionLocations_Ajouter.Size = new System.Drawing.Size(50, 30);
+            this.btnGestionLocations_Ajouter.TabIndex = 19;
+            this.btnGestionLocations_Ajouter.UseVisualStyleBackColor = false;
             // 
-            // textBox8
+            // tbGestionLocations_DateRetour
             // 
-            this.textBox8.Location = new System.Drawing.Point(519, 124);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(157, 20);
-            this.textBox8.TabIndex = 18;
+            this.tbGestionLocations_DateRetour.Location = new System.Drawing.Point(519, 124);
+            this.tbGestionLocations_DateRetour.Name = "tbGestionLocations_DateRetour";
+            this.tbGestionLocations_DateRetour.Size = new System.Drawing.Size(157, 20);
+            this.tbGestionLocations_DateRetour.TabIndex = 18;
             // 
-            // textBox7
+            // tbGestionLocations_DateLimite
             // 
-            this.textBox7.Location = new System.Drawing.Point(519, 93);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(157, 20);
-            this.textBox7.TabIndex = 17;
+            this.tbGestionLocations_DateLimite.Location = new System.Drawing.Point(519, 93);
+            this.tbGestionLocations_DateLimite.Name = "tbGestionLocations_DateLimite";
+            this.tbGestionLocations_DateLimite.ReadOnly = true;
+            this.tbGestionLocations_DateLimite.Size = new System.Drawing.Size(157, 20);
+            this.tbGestionLocations_DateLimite.TabIndex = 17;
             // 
-            // textBox6
+            // tbGestionLocations_DateLocation
             // 
-            this.textBox6.Location = new System.Drawing.Point(519, 62);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(157, 20);
-            this.textBox6.TabIndex = 16;
+            this.tbGestionLocations_DateLocation.Location = new System.Drawing.Point(519, 62);
+            this.tbGestionLocations_DateLocation.Name = "tbGestionLocations_DateLocation";
+            this.tbGestionLocations_DateLocation.ReadOnly = true;
+            this.tbGestionLocations_DateLocation.Size = new System.Drawing.Size(157, 20);
+            this.tbGestionLocations_DateLocation.TabIndex = 16;
             // 
-            // textBox5
+            // tbGestionLocations_Depot
             // 
-            this.textBox5.Location = new System.Drawing.Point(116, 184);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(202, 20);
-            this.textBox5.TabIndex = 15;
+            this.tbGestionLocations_Depot.Location = new System.Drawing.Point(116, 184);
+            this.tbGestionLocations_Depot.Name = "tbGestionLocations_Depot";
+            this.tbGestionLocations_Depot.Size = new System.Drawing.Size(202, 20);
+            this.tbGestionLocations_Depot.TabIndex = 15;
             // 
-            // textBox4
+            // tbGestionLocations_IdOutil
             // 
-            this.textBox4.Location = new System.Drawing.Point(116, 153);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(67, 20);
-            this.textBox4.TabIndex = 14;
+            this.tbGestionLocations_IdOutil.Location = new System.Drawing.Point(116, 153);
+            this.tbGestionLocations_IdOutil.Name = "tbGestionLocations_IdOutil";
+            this.tbGestionLocations_IdOutil.Size = new System.Drawing.Size(67, 20);
+            this.tbGestionLocations_IdOutil.TabIndex = 14;
             // 
-            // textBox3
+            // tbGestionLocations_IdEmploye
             // 
-            this.textBox3.Location = new System.Drawing.Point(116, 124);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(67, 20);
-            this.textBox3.TabIndex = 13;
+            this.tbGestionLocations_IdEmploye.Location = new System.Drawing.Point(116, 124);
+            this.tbGestionLocations_IdEmploye.Name = "tbGestionLocations_IdEmploye";
+            this.tbGestionLocations_IdEmploye.Size = new System.Drawing.Size(67, 20);
+            this.tbGestionLocations_IdEmploye.TabIndex = 13;
             // 
-            // textBox2
+            // tbGestionLocations_IdClient
             // 
-            this.textBox2.Location = new System.Drawing.Point(116, 93);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(67, 20);
-            this.textBox2.TabIndex = 12;
+            this.tbGestionLocations_IdClient.Location = new System.Drawing.Point(116, 93);
+            this.tbGestionLocations_IdClient.Name = "tbGestionLocations_IdClient";
+            this.tbGestionLocations_IdClient.Size = new System.Drawing.Size(67, 20);
+            this.tbGestionLocations_IdClient.TabIndex = 12;
             // 
-            // label10
+            // lblGestionLocations_DateRetour
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(355, 128);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 16);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "DATE RETOUR : ";
+            this.lblGestionLocations_DateRetour.AutoSize = true;
+            this.lblGestionLocations_DateRetour.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionLocations_DateRetour.ForeColor = System.Drawing.Color.White;
+            this.lblGestionLocations_DateRetour.Location = new System.Drawing.Point(355, 128);
+            this.lblGestionLocations_DateRetour.Name = "lblGestionLocations_DateRetour";
+            this.lblGestionLocations_DateRetour.Size = new System.Drawing.Size(104, 16);
+            this.lblGestionLocations_DateRetour.TabIndex = 11;
+            this.lblGestionLocations_DateRetour.Text = "DATE RETOUR : ";
             // 
-            // label9
+            // lblGestionLocations_DateLimite
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(355, 97);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 16);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "DATE LIMITIE :";
+            this.lblGestionLocations_DateLimite.AutoSize = true;
+            this.lblGestionLocations_DateLimite.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionLocations_DateLimite.ForeColor = System.Drawing.Color.White;
+            this.lblGestionLocations_DateLimite.Location = new System.Drawing.Point(355, 97);
+            this.lblGestionLocations_DateLimite.Name = "lblGestionLocations_DateLimite";
+            this.lblGestionLocations_DateLimite.Size = new System.Drawing.Size(98, 16);
+            this.lblGestionLocations_DateLimite.TabIndex = 10;
+            this.lblGestionLocations_DateLimite.Text = "DATE LIMITIE :";
             // 
-            // label8
+            // lblGestionLocations_DateLocation
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(355, 66);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(111, 16);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "DATE LOCATION :";
+            this.lblGestionLocations_DateLocation.AutoSize = true;
+            this.lblGestionLocations_DateLocation.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionLocations_DateLocation.ForeColor = System.Drawing.Color.White;
+            this.lblGestionLocations_DateLocation.Location = new System.Drawing.Point(355, 66);
+            this.lblGestionLocations_DateLocation.Name = "lblGestionLocations_DateLocation";
+            this.lblGestionLocations_DateLocation.Size = new System.Drawing.Size(111, 16);
+            this.lblGestionLocations_DateLocation.TabIndex = 9;
+            this.lblGestionLocations_DateLocation.Text = "DATE LOCATION :";
             // 
-            // label7
+            // lblGestionLocations_Depot
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(15, 188);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 16);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "DÉPÔT :";
+            this.lblGestionLocations_Depot.AutoSize = true;
+            this.lblGestionLocations_Depot.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionLocations_Depot.ForeColor = System.Drawing.Color.White;
+            this.lblGestionLocations_Depot.Location = new System.Drawing.Point(15, 188);
+            this.lblGestionLocations_Depot.Name = "lblGestionLocations_Depot";
+            this.lblGestionLocations_Depot.Size = new System.Drawing.Size(55, 16);
+            this.lblGestionLocations_Depot.TabIndex = 8;
+            this.lblGestionLocations_Depot.Text = "DÉPÔT :";
             // 
-            // label6
+            // lblGestionLocations_IdOutil
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(15, 157);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 16);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "OUTIL :";
+            this.lblGestionLocations_IdOutil.AutoSize = true;
+            this.lblGestionLocations_IdOutil.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionLocations_IdOutil.ForeColor = System.Drawing.Color.White;
+            this.lblGestionLocations_IdOutil.Location = new System.Drawing.Point(15, 157);
+            this.lblGestionLocations_IdOutil.Name = "lblGestionLocations_IdOutil";
+            this.lblGestionLocations_IdOutil.Size = new System.Drawing.Size(52, 16);
+            this.lblGestionLocations_IdOutil.TabIndex = 7;
+            this.lblGestionLocations_IdOutil.Text = "OUTIL :";
             // 
-            // label5
+            // lblGestionLocations_IdEmploye
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(15, 128);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 16);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "EMPLOYÉ(E) :";
+            this.lblGestionLocations_IdEmploye.AutoSize = true;
+            this.lblGestionLocations_IdEmploye.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionLocations_IdEmploye.ForeColor = System.Drawing.Color.White;
+            this.lblGestionLocations_IdEmploye.Location = new System.Drawing.Point(15, 128);
+            this.lblGestionLocations_IdEmploye.Name = "lblGestionLocations_IdEmploye";
+            this.lblGestionLocations_IdEmploye.Size = new System.Drawing.Size(90, 16);
+            this.lblGestionLocations_IdEmploye.TabIndex = 6;
+            this.lblGestionLocations_IdEmploye.Text = "EMPLOYÉ(E) :";
             // 
-            // label4
+            // lblGestionLocations_IdClient
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(15, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 16);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "CLIENT : ";
+            this.lblGestionLocations_IdClient.AutoSize = true;
+            this.lblGestionLocations_IdClient.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionLocations_IdClient.ForeColor = System.Drawing.Color.White;
+            this.lblGestionLocations_IdClient.Location = new System.Drawing.Point(15, 97);
+            this.lblGestionLocations_IdClient.Name = "lblGestionLocations_IdClient";
+            this.lblGestionLocations_IdClient.Size = new System.Drawing.Size(63, 16);
+            this.lblGestionLocations_IdClient.TabIndex = 5;
+            this.lblGestionLocations_IdClient.Text = "CLIENT : ";
             // 
-            // textBox1
+            // tbGestionLocations_IdLocation
             // 
-            this.textBox1.Location = new System.Drawing.Point(116, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(67, 20);
-            this.textBox1.TabIndex = 4;
+            this.tbGestionLocations_IdLocation.Location = new System.Drawing.Point(116, 62);
+            this.tbGestionLocations_IdLocation.Name = "tbGestionLocations_IdLocation";
+            this.tbGestionLocations_IdLocation.ReadOnly = true;
+            this.tbGestionLocations_IdLocation.Size = new System.Drawing.Size(67, 20);
+            this.tbGestionLocations_IdLocation.TabIndex = 4;
             // 
-            // label3
+            // lblGestionLocations_IdLocation
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(15, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "ID :";
+            this.lblGestionLocations_IdLocation.AutoSize = true;
+            this.lblGestionLocations_IdLocation.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionLocations_IdLocation.ForeColor = System.Drawing.Color.White;
+            this.lblGestionLocations_IdLocation.Location = new System.Drawing.Point(15, 66);
+            this.lblGestionLocations_IdLocation.Name = "lblGestionLocations_IdLocation";
+            this.lblGestionLocations_IdLocation.Size = new System.Drawing.Size(28, 16);
+            this.lblGestionLocations_IdLocation.TabIndex = 3;
+            this.lblGestionLocations_IdLocation.Text = "ID :";
             // 
-            // label2
+            // lblGestionLocations_Titre1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(264, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(253, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Information sur la location";
+            this.lblGestionLocations_Titre1.AutoSize = true;
+            this.lblGestionLocations_Titre1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionLocations_Titre1.ForeColor = System.Drawing.Color.Gold;
+            this.lblGestionLocations_Titre1.Location = new System.Drawing.Point(264, 20);
+            this.lblGestionLocations_Titre1.Name = "lblGestionLocations_Titre1";
+            this.lblGestionLocations_Titre1.Size = new System.Drawing.Size(253, 19);
+            this.lblGestionLocations_Titre1.TabIndex = 2;
+            this.lblGestionLocations_Titre1.Text = "Information sur la location";
             // 
-            // panel1
+            // panelGestionLocations_ListeLocations
             // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 264);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(762, 276);
-            this.panel1.TabIndex = 23;
+            this.panelGestionLocations_ListeLocations.BackColor = System.Drawing.Color.DimGray;
+            this.panelGestionLocations_ListeLocations.Controls.Add(this.dgGestionLocations_ListeLocations);
+            this.panelGestionLocations_ListeLocations.Controls.Add(this.label1);
+            this.panelGestionLocations_ListeLocations.Location = new System.Drawing.Point(12, 264);
+            this.panelGestionLocations_ListeLocations.Name = "panelGestionLocations_ListeLocations";
+            this.panelGestionLocations_ListeLocations.Size = new System.Drawing.Size(762, 276);
+            this.panelGestionLocations_ListeLocations.TabIndex = 23;
             // 
-            // dataGridView1
+            // dgGestionLocations_ListeLocations
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgGestionLocations_ListeLocations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgGestionLocations_ListeLocations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnIDLocation,
             this.columnIdClient,
             this.columnIdEmploye,
@@ -316,21 +316,10 @@
             this.columnDateLocation,
             this.columnDateLimite,
             this.columnDateRetour});
-            this.dataGridView1.Location = new System.Drawing.Point(18, 48);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(731, 209);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gold;
-            this.label1.Location = new System.Drawing.Point(304, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Liste des locations";
+            this.dgGestionLocations_ListeLocations.Location = new System.Drawing.Point(18, 48);
+            this.dgGestionLocations_ListeLocations.Name = "dgGestionLocations_ListeLocations";
+            this.dgGestionLocations_ListeLocations.Size = new System.Drawing.Size(731, 209);
+            this.dgGestionLocations_ListeLocations.TabIndex = 1;
             // 
             // columnIDLocation
             // 
@@ -380,51 +369,62 @@
             this.columnDateRetour.Name = "columnDateRetour";
             this.columnDateRetour.ToolTipText = "DateRetour";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gold;
+            this.label1.Location = new System.Drawing.Point(304, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(172, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Liste des locations";
+            // 
             // GestionLocationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelGestionLocations_ListeLocations);
+            this.Controls.Add(this.panelGestionLocations_InfoLocation);
             this.Name = "GestionLocationsForm";
             this.Text = "GestionLocationsForm";
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panelGestionLocations_InfoLocation.ResumeLayout(false);
+            this.panelGestionLocations_InfoLocation.PerformLayout();
+            this.panelGestionLocations_ListeLocations.ResumeLayout(false);
+            this.panelGestionLocations_ListeLocations.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgGestionLocations_ListeLocations)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panelGestionLocations_InfoLocation;
+        private System.Windows.Forms.Button btnGestionLocations_Rechercher;
+        private System.Windows.Forms.Button btnGestionLocations_Annuler;
+        private System.Windows.Forms.Button btnGestionLocations_Renouveler;
+        private System.Windows.Forms.Button btnGestionLocations_Ajouter;
+        private System.Windows.Forms.TextBox tbGestionLocations_DateRetour;
+        private System.Windows.Forms.TextBox tbGestionLocations_DateLimite;
+        private System.Windows.Forms.TextBox tbGestionLocations_DateLocation;
+        private System.Windows.Forms.TextBox tbGestionLocations_Depot;
+        private System.Windows.Forms.TextBox tbGestionLocations_IdOutil;
+        private System.Windows.Forms.TextBox tbGestionLocations_IdEmploye;
+        private System.Windows.Forms.TextBox tbGestionLocations_IdClient;
+        private System.Windows.Forms.Label lblGestionLocations_DateRetour;
+        private System.Windows.Forms.Label lblGestionLocations_DateLimite;
+        private System.Windows.Forms.Label lblGestionLocations_DateLocation;
+        private System.Windows.Forms.Label lblGestionLocations_Depot;
+        private System.Windows.Forms.Label lblGestionLocations_IdOutil;
+        private System.Windows.Forms.Label lblGestionLocations_IdEmploye;
+        private System.Windows.Forms.Label lblGestionLocations_IdClient;
+        private System.Windows.Forms.TextBox tbGestionLocations_IdLocation;
+        private System.Windows.Forms.Label lblGestionLocations_IdLocation;
+        private System.Windows.Forms.Label lblGestionLocations_Titre1;
+        private System.Windows.Forms.Panel panelGestionLocations_ListeLocations;
+        private System.Windows.Forms.DataGridView dgGestionLocations_ListeLocations;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnIDLocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnIdClient;
