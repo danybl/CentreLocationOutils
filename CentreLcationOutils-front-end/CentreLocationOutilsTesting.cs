@@ -152,8 +152,12 @@ namespace CentreLcationOutils_front_end
         public void updateCategorie(List<string> splitter)
         {
             gestionCentreOutils.beginTransaction();
-            string idCategorie = readString(splitter);
-            CategorieDTO categorieDTO = gestionCentreOutils.CategorieFacade
+            string nom = readString(splitter);
+            List<CategorieDTO> categories = gestionCentreOutils.CategorieFacade.findByNom(gestionCentreOutils.MaConnection, nom, CategorieDTO.NOM_COLUMN_NAME);
+            if (categories.Count == 0)
+            {
+
+            }
         }
         private void effectuerLocation(List<string> splitter)
         {

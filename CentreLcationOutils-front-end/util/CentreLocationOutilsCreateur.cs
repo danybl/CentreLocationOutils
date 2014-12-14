@@ -67,6 +67,7 @@ namespace CentreLcationOutils_front_end.util
                 OutilFacade = new OutilFacade(outilService);
                 AdresseFacade = new AdresseFacade(adresseService);
                 FacturationFacade = new FacturationFacade(facturationService);
+                CategorieFacade = new CategorieFacade(categorieService);
             }
             catch (ConnectionException connectionException)
             {
