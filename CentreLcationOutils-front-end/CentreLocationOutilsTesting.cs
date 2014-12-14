@@ -106,6 +106,9 @@ namespace CentreLcationOutils_front_end
                         break;
                     case "engageremploye": engagerEmploye(splitter);
                         break;
+                    case "updatecategorie": updateCategorie(splitter);
+                        break;
+
                 }
             }
             catch (NullReferenceException nullRefException)
@@ -146,6 +149,12 @@ namespace CentreLcationOutils_front_end
             Console.WriteLine("  annulerReservation <idReservation>");
         }
 
+        public void updateCategorie(List<string> splitter)
+        {
+            gestionCentreOutils.beginTransaction();
+            string idCategorie = readString(splitter);
+            CategorieDTO categorieDTO = gestionCentreOutils.CategorieFacade
+        }
         private void effectuerLocation(List<string> splitter)
         {
             gestionCentreOutils.beginTransaction();

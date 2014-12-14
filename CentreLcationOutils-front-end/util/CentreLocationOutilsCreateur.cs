@@ -16,7 +16,7 @@ namespace CentreLcationOutils_front_end.util
 {
     public class CentreLocationOutilsCreateur
     {
-        public Connection MaConnection{ get; private set; }
+        public Connection MaConnection { get; private set; }
         public IClientFacade ClientFacade { get; private set; }
         public IEmployeFacade EmployeFacade { get; private set; }
         public IReservationFacade ReservationFacade { get; private set; }
@@ -47,7 +47,8 @@ namespace CentreLcationOutils_front_end.util
                 ILocationDAO locationDAO = new LocationDAO();
                 IOutilDAO outilDAO = new OutilDAO();
                 IAdresseDAO adresseDAO = new AdresseDAO();
-                IFacturationDAO facturationDAO= new FacturationDAO();
+                IFacturationDAO facturationDAO = new FacturationDAO();
+                ICategorieDAO categorieDAO = new CategorieDAO();
 
                 IClientService clientService = new ClientService(clientDAO);
                 IEmployeService employeService = new EmployeService(employeDAO);
@@ -56,6 +57,7 @@ namespace CentreLcationOutils_front_end.util
                 IOutilService outilService = new OutilService(outilDAO);
                 IAdresseService adresseService = new AdresseService(adresseDAO);
                 IFacturationService facturationService = new FacturationService(facturationDAO);
+                ICategorieService categorieService = new Ca(categorieDAO);
 
                 ClientFacade = new ClientFacade(clientService);
                 EmployeFacade = new EmployeFacade(employeService);
