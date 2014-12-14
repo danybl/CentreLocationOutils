@@ -73,9 +73,9 @@
     <OutputPath>bin\x86\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CentreLocationOutils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CentreLocationOutils, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Projects\WebApp\WebApp\lib\CentreLocationOutils.dll</HintPath>
+      <HintPath>..\..\CentreLocationOutils_Backend\CentreLocationOutils\bin\Debug\CentreLocationOutils.dll</HintPath>
     </Reference>
     <Reference Include="ConnexionControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
