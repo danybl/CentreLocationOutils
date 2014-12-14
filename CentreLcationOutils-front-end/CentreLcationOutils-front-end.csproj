@@ -75,7 +75,7 @@
   <ItemGroup>
     <Reference Include="CentreLocationOutils, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CentreLocationOutils_Backend\CentreLocationOutils\bin\Debug\CentreLocationOutils.dll</HintPath>
+      <HintPath>lib\CentreLocationOutils.dll</HintPath>
     </Reference>
     <Reference Include="ConnexionControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
