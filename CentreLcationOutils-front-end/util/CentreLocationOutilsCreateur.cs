@@ -24,6 +24,7 @@ namespace CentreLcationOutils_front_end.util
         public IOutilFacade OutilFacade { get; private set; }
         public IAdresseFacade AdresseFacade { get; private set; }
         public IFacturationFacade FacturationFacade { get; private set; }
+        public ICategorieFacade CategorieFacade { get; set; }
 
         public DbTransaction Transaction;
         //public ADODB._Connection testConnection;
@@ -57,7 +58,7 @@ namespace CentreLcationOutils_front_end.util
                 IOutilService outilService = new OutilService(outilDAO);
                 IAdresseService adresseService = new AdresseService(adresseDAO);
                 IFacturationService facturationService = new FacturationService(facturationDAO);
-                ICategorieService categorieService = new Ca(categorieDAO);
+                ICategorieService categorieService = new CategorieService(categorieDAO);
 
                 ClientFacade = new ClientFacade(clientService);
                 EmployeFacade = new EmployeFacade(employeService);
