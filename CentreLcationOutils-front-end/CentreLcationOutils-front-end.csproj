@@ -97,11 +97,11 @@
   <ItemGroup>
     <Compile Include="CentreLocationOutils.cs" />
     <Compile Include="CentreLocationOutilsTesting.cs" />
-    <Compile Include="forms\AccueilFormV2.cs">
+    <Compile Include="forms\AccueilForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\AccueilFormV2.Designer.cs">
-      <DependentUpon>AccueilFormV2.cs</DependentUpon>
+    <Compile Include="forms\AccueilForm.Designer.cs">
+      <DependentUpon>AccueilForm.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\GestionClientForm.cs">
       <SubType>Form</SubType>
@@ -141,8 +141,8 @@
       <DependentUpon>splashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="util\CentreLocationOutilsCreateur.cs" />
-    <EmbeddedResource Include="forms\AccueilFormV2.resx">
-      <DependentUpon>AccueilFormV2.cs</DependentUpon>
+    <EmbeddedResource Include="forms\AccueilForm.resx">
+      <DependentUpon>AccueilForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\GestionClientForm.resx">
       <DependentUpon>GestionClientForm.cs</DependentUpon>

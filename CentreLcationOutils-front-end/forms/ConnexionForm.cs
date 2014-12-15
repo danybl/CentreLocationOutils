@@ -15,5 +15,18 @@ namespace CentreLcationOutils_front_end.forms
         {
             InitializeComponent();
         }
+
+        private void controlConnexion_connexionEchec(object sender, EventArgs e)
+        {
+            lblResultatConnexion.Text = "Échec de connexion";
+        }
+
+        private void controlConnexion_connexionReussie(object sender, EventArgs e)
+        {
+            lblResultatConnexion.Text = "Connexion Reussie!";
+            this.Hide();
+            AccueilForm accueilForm = new AccueilForm();
+            accueilForm.Show();
+        }
     }
 }
