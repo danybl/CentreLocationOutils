@@ -70,7 +70,7 @@
             this.mItemGestionLocations_Quitter = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionLocations_Option = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionLocations_Parametres = new System.Windows.Forms.ToolStripMenuItem();
-            this.mItemGestionClients_Aide = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionLocations_Aide = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionLocations_Apropos = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionLocations_SigneInterrogation = new System.Windows.Forms.ToolStripMenuItem();
             this.panelGestionLocations_InfoLocation.SuspendLayout();
@@ -397,7 +397,7 @@
             this.menuGestionLocations.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mItemGestionLocations_Accueil,
             this.mItemGestionLocations_Option,
-            this.mItemGestionClients_Aide});
+            this.mItemGestionLocations_Aide});
             this.menuGestionLocations.Location = new System.Drawing.Point(0, 0);
             this.menuGestionLocations.Name = "menuGestionLocations";
             this.menuGestionLocations.Size = new System.Drawing.Size(784, 24);
@@ -418,25 +418,25 @@
             // mItemGestionLocations_Gestionnaire
             // 
             this.mItemGestionLocations_Gestionnaire.Name = "mItemGestionLocations_Gestionnaire";
-            this.mItemGestionLocations_Gestionnaire.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionLocations_Gestionnaire.Size = new System.Drawing.Size(143, 22);
             this.mItemGestionLocations_Gestionnaire.Text = "Gestionnaire";
             // 
             // mItemGestionLocations_Connexion
             // 
             this.mItemGestionLocations_Connexion.Name = "mItemGestionLocations_Connexion";
-            this.mItemGestionLocations_Connexion.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionLocations_Connexion.Size = new System.Drawing.Size(143, 22);
             this.mItemGestionLocations_Connexion.Text = "Connexion";
             // 
             // mItemGestionLocations_Deconnexion
             // 
             this.mItemGestionLocations_Deconnexion.Name = "mItemGestionLocations_Deconnexion";
-            this.mItemGestionLocations_Deconnexion.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionLocations_Deconnexion.Size = new System.Drawing.Size(143, 22);
             this.mItemGestionLocations_Deconnexion.Text = "Deconnexion";
             // 
             // mItemGestionLocations_Quitter
             // 
             this.mItemGestionLocations_Quitter.Name = "mItemGestionLocations_Quitter";
-            this.mItemGestionLocations_Quitter.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionLocations_Quitter.Size = new System.Drawing.Size(143, 22);
             this.mItemGestionLocations_Quitter.Text = "Quitter";
             // 
             // mItemGestionLocations_Option
@@ -453,14 +453,14 @@
             this.mItemGestionLocations_Parametres.Size = new System.Drawing.Size(152, 22);
             this.mItemGestionLocations_Parametres.Text = "Paramètres";
             // 
-            // mItemGestionClients_Aide
+            // mItemGestionLocations_Aide
             // 
-            this.mItemGestionClients_Aide.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mItemGestionLocations_Aide.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mItemGestionLocations_Apropos,
             this.mItemGestionLocations_SigneInterrogation});
-            this.mItemGestionClients_Aide.Name = "mItemGestionClients_Aide";
-            this.mItemGestionClients_Aide.Size = new System.Drawing.Size(43, 20);
-            this.mItemGestionClients_Aide.Text = "Aide";
+            this.mItemGestionLocations_Aide.Name = "mItemGestionLocations_Aide";
+            this.mItemGestionLocations_Aide.Size = new System.Drawing.Size(43, 20);
+            this.mItemGestionLocations_Aide.Text = "Aide";
             // 
             // mItemGestionLocations_Apropos
             // 
@@ -540,7 +540,7 @@
         private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Quitter;
         private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Option;
         private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Parametres;
-        private System.Windows.Forms.ToolStripMenuItem mItemGestionClients_Aide;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Aide;
         private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Apropos;
         private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_SigneInterrogation;
 
