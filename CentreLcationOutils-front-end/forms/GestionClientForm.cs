@@ -15,5 +15,13 @@ namespace CentreLcationOutils_front_end.forms
         {
             InitializeComponent();
         }
+
+        private void btnGestionAccueil_Rechercher_Click(object sender, EventArgs e)
+        {
+            if (tbGestionClients_Id.Text.Length > 0)
+            {
+
+            }
+        }
     }
 }

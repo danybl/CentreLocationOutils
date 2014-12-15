@@ -21,7 +21,7 @@ namespace CentreLcationOutils_front_end
         {
             //TODO 
         }
-
+        #region Commandes location
         private void effectuerLocation(Hashtable champsLocation)
         {
             gestionCentreOutils.beginTransaction();
@@ -78,6 +78,8 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
 
         }
+        #endregion fin commande location
+
         #region Commandes employé
         private void engagerEmploye(Hashtable champsEmploye)
         {
@@ -220,6 +222,19 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.ClientFacade.mettreAJourClient(gestionCentreOutils.MaConnection, clientDTO);
             gestionCentreOutils.commitTransaction();
         }
+
+        public ClientDTO findClientById(Hashtable champsClient)
+        {
+            string idClient = champsClient["idClient"].ToString();
+            gestionCentreOutils.beginTransaction();
+            ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.MaConnection, idClient);
+            if (clientDTO == null)
+            {
+                throw new MissingDTOException("Le client " + idClient + "n'existe pas");
+            }
+            return clientDTO;
+        }
+
          #endregion
 
         private void ajouterOutil(Hashtable champOutil)

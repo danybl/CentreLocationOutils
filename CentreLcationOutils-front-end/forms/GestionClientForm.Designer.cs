@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionClientForm));
             this.menuGestionClients = new System.Windows.Forms.MenuStrip();
             this.mItemGestionClients_Accueil = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionClients_Gestionnaire = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionClients_Connexion = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionClients_Deconnexion = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionClients_Quitter = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +73,6 @@
             this.tbGestionClients_Id = new System.Windows.Forms.TextBox();
             this.lblGestionClient_Id = new System.Windows.Forms.Label();
             this.lblGestionClients_InfoClient = new System.Windows.Forms.Label();
-            this.mItemGestionClients_Gestionnaire = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGestionClients.SuspendLayout();
             this.panelGestionClients_ListeClients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionClients_ListeClients)).BeginInit();
@@ -101,6 +101,12 @@
             this.mItemGestionClients_Accueil.Name = "mItemGestionClients_Accueil";
             this.mItemGestionClients_Accueil.Size = new System.Drawing.Size(58, 20);
             this.mItemGestionClients_Accueil.Text = "Accueil";
+            // 
+            // mItemGestionClients_Gestionnaire
+            // 
+            this.mItemGestionClients_Gestionnaire.Name = "mItemGestionClients_Gestionnaire";
+            this.mItemGestionClients_Gestionnaire.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionClients_Gestionnaire.Text = "Gestionnaire";
             // 
             // mItemGestionClients_Connexion
             // 
@@ -131,7 +137,7 @@
             // mItemGestionClients_Parametres
             // 
             this.mItemGestionClients_Parametres.Name = "mItemGestionClients_Parametres";
-            this.mItemGestionClients_Parametres.Size = new System.Drawing.Size(133, 22);
+            this.mItemGestionClients_Parametres.Size = new System.Drawing.Size(152, 22);
             this.mItemGestionClients_Parametres.Text = "Paramètres";
             // 
             // mItemGestionClients_Aide
@@ -274,6 +280,7 @@
             this.btnGestionAccueil_Rechercher.Size = new System.Drawing.Size(50, 30);
             this.btnGestionAccueil_Rechercher.TabIndex = 22;
             this.btnGestionAccueil_Rechercher.UseVisualStyleBackColor = false;
+            this.btnGestionAccueil_Rechercher.Click += new System.EventHandler(this.btnGestionAccueil_Rechercher_Click);
             // 
             // btnGestionAccueil_Supprimer
             // 
@@ -462,12 +469,6 @@
             this.lblGestionClients_InfoClient.Size = new System.Drawing.Size(231, 19);
             this.lblGestionClients_InfoClient.TabIndex = 2;
             this.lblGestionClients_InfoClient.Text = "Information sur le client";
-            // 
-            // mItemGestionClients_Gestionnaire
-            // 
-            this.mItemGestionClients_Gestionnaire.Name = "mItemGestionClients_Gestionnaire";
-            this.mItemGestionClients_Gestionnaire.Size = new System.Drawing.Size(152, 22);
-            this.mItemGestionClients_Gestionnaire.Text = "Gestionnaire";
             // 
             // GestionClientForm
             // 
