@@ -32,6 +32,7 @@
             this.pbConnexion_Image = new System.Windows.Forms.PictureBox();
             this.controlConnexion = new ConnexionControl.ConnexionControl();
             this.lblConnexion_Titre = new System.Windows.Forms.Label();
+            this.lblResultatConnexion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbConnexion_Image)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,12 +48,14 @@
             // controlConnexion
             // 
             this.controlConnexion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.controlConnexion.labelPassword = "Password :";
             this.controlConnexion.labelEmail = "Email :";
+            this.controlConnexion.labelPassword = "Password :";
             this.controlConnexion.Location = new System.Drawing.Point(299, 323);
             this.controlConnexion.Name = "controlConnexion";
             this.controlConnexion.Size = new System.Drawing.Size(201, 151);
             this.controlConnexion.TabIndex = 1;
+            this.controlConnexion.connexionReussie += new ConnexionControl.ConnexionControl.EventHandler(this.controlConnexion_connexionReussie);
+            this.controlConnexion.connexionEchec += new ConnexionControl.ConnexionControl.EventHandler(this.controlConnexion_connexionEchec);
             // 
             // lblConnexion_Titre
             // 
@@ -65,12 +68,23 @@
             this.lblConnexion_Titre.TabIndex = 2;
             this.lblConnexion_Titre.Text = "Connectez-vous!";
             // 
+            // lblResultatConnexion
+            // 
+            this.lblResultatConnexion.AutoSize = true;
+            this.lblResultatConnexion.Font = new System.Drawing.Font("Impact", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultatConnexion.ForeColor = System.Drawing.Color.Gold;
+            this.lblResultatConnexion.Location = new System.Drawing.Point(349, 295);
+            this.lblResultatConnexion.Name = "lblResultatConnexion";
+            this.lblResultatConnexion.Size = new System.Drawing.Size(0, 15);
+            this.lblResultatConnexion.TabIndex = 3;
+            // 
             // ConnexionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.lblResultatConnexion);
             this.Controls.Add(this.lblConnexion_Titre);
             this.Controls.Add(this.controlConnexion);
             this.Controls.Add(this.pbConnexion_Image);
@@ -88,5 +102,6 @@
         private System.Windows.Forms.PictureBox pbConnexion_Image;
         private ConnexionControl.ConnexionControl controlConnexion;
         private System.Windows.Forms.Label lblConnexion_Titre;
+        private System.Windows.Forms.Label lblResultatConnexion;
     }
 }
