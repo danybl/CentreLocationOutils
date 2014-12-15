@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace CentreLcationOutils_front_end.forms
 {
-    public static class GestionOutilsForm : Form
+    public partial class GestionOutilsForm : Form
     {
         public GestionOutilsForm()
         {
