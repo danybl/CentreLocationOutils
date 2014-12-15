@@ -123,6 +123,7 @@
             this.btnAccueil_GestionClients.Size = new System.Drawing.Size(155, 142);
             this.btnAccueil_GestionClients.TabIndex = 2;
             this.btnAccueil_GestionClients.UseVisualStyleBackColor = false;
+            this.btnAccueil_GestionClients.Click += new System.EventHandler(this.btnAccueil_GestionClients_Click);
             // 
             // btnAccueil_GestionLocations
             // 

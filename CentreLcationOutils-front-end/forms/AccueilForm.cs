@@ -15,5 +15,12 @@ namespace CentreLcationOutils_front_end.forms
         {
             InitializeComponent();
         }
+
+        private void btnAccueil_GestionClients_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GestionClientForm gestionnaireForm = new GestionClientForm();
+            gestionnaireForm.Show();
+        }
     }
 }
