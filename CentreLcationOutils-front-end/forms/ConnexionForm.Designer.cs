@@ -48,7 +48,7 @@
             // controlConnexion
             // 
             this.controlConnexion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.controlConnexion.labelEmail = "Email :";
+            this.controlConnexion.labelUsername = "Username :";
             this.controlConnexion.labelPassword = "Password :";
             this.controlConnexion.Location = new System.Drawing.Point(299, 323);
             this.controlConnexion.Name = "controlConnexion";
