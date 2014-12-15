@@ -105,25 +105,25 @@
             // mItemGestionClients_Gestionnaire
             // 
             this.mItemGestionClients_Gestionnaire.Name = "mItemGestionClients_Gestionnaire";
-            this.mItemGestionClients_Gestionnaire.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionClients_Gestionnaire.Size = new System.Drawing.Size(143, 22);
             this.mItemGestionClients_Gestionnaire.Text = "Gestionnaire";
             // 
             // mItemGestionClients_Connexion
             // 
             this.mItemGestionClients_Connexion.Name = "mItemGestionClients_Connexion";
-            this.mItemGestionClients_Connexion.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionClients_Connexion.Size = new System.Drawing.Size(143, 22);
             this.mItemGestionClients_Connexion.Text = "Connexion";
             // 
             // mItemGestionClients_Deconnexion
             // 
             this.mItemGestionClients_Deconnexion.Name = "mItemGestionClients_Deconnexion";
-            this.mItemGestionClients_Deconnexion.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionClients_Deconnexion.Size = new System.Drawing.Size(143, 22);
             this.mItemGestionClients_Deconnexion.Text = "Deconnexion";
             // 
             // mItemGestionClients_Quitter
             // 
             this.mItemGestionClients_Quitter.Name = "mItemGestionClients_Quitter";
-            this.mItemGestionClients_Quitter.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionClients_Quitter.Size = new System.Drawing.Size(143, 22);
             this.mItemGestionClients_Quitter.Text = "Quitter";
             // 
             // mItemGestionClients_Option
@@ -137,7 +137,7 @@
             // mItemGestionClients_Parametres
             // 
             this.mItemGestionClients_Parametres.Name = "mItemGestionClients_Parametres";
-            this.mItemGestionClients_Parametres.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionClients_Parametres.Size = new System.Drawing.Size(133, 22);
             this.mItemGestionClients_Parametres.Text = "Paramètres";
             // 
             // mItemGestionClients_Aide
@@ -311,6 +311,7 @@
             this.btnGestionAccueil_Ajouter.Size = new System.Drawing.Size(50, 30);
             this.btnGestionAccueil_Ajouter.TabIndex = 19;
             this.btnGestionAccueil_Ajouter.UseVisualStyleBackColor = false;
+            this.btnGestionAccueil_Ajouter.Click += new System.EventHandler(this.btnGestionAccueil_Ajouter_Click);
             // 
             // tbGestionClients_LimiteLocations
             // 

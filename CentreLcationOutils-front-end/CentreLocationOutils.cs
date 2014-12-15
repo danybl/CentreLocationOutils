@@ -22,7 +22,7 @@ namespace CentreLcationOutils_front_end
             //TODO 
         }
         #region Commandes location
-        private void effectuerLocation(Hashtable champsLocation)
+        public void effectuerLocation(Hashtable champsLocation)
         {
             gestionCentreOutils.beginTransaction();
 
@@ -57,7 +57,7 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        private void terminerLocation(Hashtable finirLocation)
+        public void terminerLocation(Hashtable finirLocation)
         {
             gestionCentreOutils.beginTransaction();
             string idOutil = finirLocation["idOutil"].ToString();
@@ -81,7 +81,7 @@ namespace CentreLcationOutils_front_end
         #endregion fin commande location
 
         #region Commandes employé
-        private void engagerEmploye(Hashtable champsEmploye)
+        public void engagerEmploye(Hashtable champsEmploye)
         {
             gestionCentreOutils.beginTransaction();
             EmployeDTO employeDTO = new EmployeDTO();
@@ -95,7 +95,7 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
 
         }
-        private void supprimerEmploye(Hashtable champsEmploye)
+        public void supprimerEmploye(Hashtable champsEmploye)
         {
             gestionCentreOutils.beginTransaction();
             string idEmploye = champsEmploye["idEmploye"].ToString();
@@ -110,7 +110,7 @@ namespace CentreLcationOutils_front_end
         }
         #endregion
 
-        private void effectuerReservation(Hashtable champsReservation)
+        public void effectuerReservation(Hashtable champsReservation)
         {
             gestionCentreOutils.beginTransaction();
 
@@ -137,7 +137,7 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        private void annulerReservation(Hashtable champsReservation)
+        public void annulerReservation(Hashtable champsReservation)
         {
 
             gestionCentreOutils.beginTransaction();
@@ -158,7 +158,7 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        private void utiliserReservation(Hashtable champsReservation)
+        public void utiliserReservation(Hashtable champsReservation)
         {
 
             gestionCentreOutils.beginTransaction();
@@ -179,7 +179,7 @@ namespace CentreLcationOutils_front_end
         }
 
         #region Commandes pour clients
-        private void inscrireClient(Hashtable champsClient)
+        public void inscrireClient(Hashtable champsClient)
         {
             gestionCentreOutils.beginTransaction();
             string nomClient = champsClient["nomClient"].ToString();
@@ -199,7 +199,7 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        private void updateClient(Hashtable champsClient)
+        public void updateClient(Hashtable champsClient)
         {
 
             gestionCentreOutils.beginTransaction();
@@ -237,7 +237,7 @@ namespace CentreLcationOutils_front_end
 
          #endregion
 
-        private void ajouterOutil(Hashtable champOutil)
+        public void ajouterOutil(Hashtable champOutil)
         {
             gestionCentreOutils.beginTransaction();
             string idOutil = champOutil["idOutil"].ToString();
