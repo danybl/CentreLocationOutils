@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReservationForm));
-            this.menuGestionLocations = new System.Windows.Forms.MenuStrip();
-            this.mItemGestionLocations_Accueil = new System.Windows.Forms.ToolStripMenuItem();
-            this.mItemGestionLocations_Gestionnaire = new System.Windows.Forms.ToolStripMenuItem();
-            this.mItemGestionLocations_Connexion = new System.Windows.Forms.ToolStripMenuItem();
-            this.mItemGestionLocations_Deconnexion = new System.Windows.Forms.ToolStripMenuItem();
-            this.mItemGestionLocations_Quitter = new System.Windows.Forms.ToolStripMenuItem();
-            this.mItemGestionLocations_Option = new System.Windows.Forms.ToolStripMenuItem();
-            this.mItemGestionLocations_Parametres = new System.Windows.Forms.ToolStripMenuItem();
-            this.mItemGestionClients_Aide = new System.Windows.Forms.ToolStripMenuItem();
-            this.mItemGestionLocations_Apropos = new System.Windows.Forms.ToolStripMenuItem();
-            this.mItemGestionLocations_SigneInterrogation = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuGestionReservations = new System.Windows.Forms.MenuStrip();
+            this.mItemGestionReservations_Accueil = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionReservations_Gestionnaire = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionReservations_Connexion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionReservations_Deconnexion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionReservations_Quitter = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionReservations_Option = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionReservations_Parametres = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionReservations_Aide = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionReservations_Apropos = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionReservations_SigneInterrogation = new System.Windows.Forms.ToolStripMenuItem();
             this.panelGestionLocations_InfoLocation = new System.Windows.Forms.Panel();
             this.btnGestionLocations_Rechercher = new System.Windows.Forms.Button();
             this.btnGestionLocations_Annuler = new System.Windows.Forms.Button();
@@ -73,93 +73,93 @@
             this.columnDateLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblGestionLocations_Titre2 = new System.Windows.Forms.Label();
-            this.menuGestionLocations.SuspendLayout();
+            this.menuGestionReservations.SuspendLayout();
             this.panelGestionLocations_InfoLocation.SuspendLayout();
             this.panelGestionLocations_ListeLocations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionLocations_ListeLocations)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuGestionLocations
+            // menuGestionReservations
             // 
-            this.menuGestionLocations.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mItemGestionLocations_Accueil,
-            this.mItemGestionLocations_Option,
-            this.mItemGestionClients_Aide});
-            this.menuGestionLocations.Location = new System.Drawing.Point(0, 0);
-            this.menuGestionLocations.Name = "menuGestionLocations";
-            this.menuGestionLocations.Size = new System.Drawing.Size(784, 24);
-            this.menuGestionLocations.TabIndex = 25;
-            this.menuGestionLocations.Text = "menuStrip1";
+            this.menuGestionReservations.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mItemGestionReservations_Accueil,
+            this.mItemGestionReservations_Option,
+            this.mItemGestionReservations_Aide});
+            this.menuGestionReservations.Location = new System.Drawing.Point(0, 0);
+            this.menuGestionReservations.Name = "menuGestionReservations";
+            this.menuGestionReservations.Size = new System.Drawing.Size(784, 24);
+            this.menuGestionReservations.TabIndex = 25;
+            this.menuGestionReservations.Text = "menuStrip1";
             // 
-            // mItemGestionLocations_Accueil
+            // mItemGestionReservations_Accueil
             // 
-            this.mItemGestionLocations_Accueil.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mItemGestionLocations_Gestionnaire,
-            this.mItemGestionLocations_Connexion,
-            this.mItemGestionLocations_Deconnexion,
-            this.mItemGestionLocations_Quitter});
-            this.mItemGestionLocations_Accueil.Name = "mItemGestionLocations_Accueil";
-            this.mItemGestionLocations_Accueil.Size = new System.Drawing.Size(58, 20);
-            this.mItemGestionLocations_Accueil.Text = "Accueil";
+            this.mItemGestionReservations_Accueil.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mItemGestionReservations_Gestionnaire,
+            this.mItemGestionReservations_Connexion,
+            this.mItemGestionReservations_Deconnexion,
+            this.mItemGestionReservations_Quitter});
+            this.mItemGestionReservations_Accueil.Name = "mItemGestionReservations_Accueil";
+            this.mItemGestionReservations_Accueil.Size = new System.Drawing.Size(58, 20);
+            this.mItemGestionReservations_Accueil.Text = "Accueil";
             // 
-            // mItemGestionLocations_Gestionnaire
+            // mItemGestionReservations_Gestionnaire
             // 
-            this.mItemGestionLocations_Gestionnaire.Name = "mItemGestionLocations_Gestionnaire";
-            this.mItemGestionLocations_Gestionnaire.Size = new System.Drawing.Size(143, 22);
-            this.mItemGestionLocations_Gestionnaire.Text = "Gestionnaire";
+            this.mItemGestionReservations_Gestionnaire.Name = "mItemGestionReservations_Gestionnaire";
+            this.mItemGestionReservations_Gestionnaire.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionReservations_Gestionnaire.Text = "Gestionnaire";
             // 
-            // mItemGestionLocations_Connexion
+            // mItemGestionReservations_Connexion
             // 
-            this.mItemGestionLocations_Connexion.Name = "mItemGestionLocations_Connexion";
-            this.mItemGestionLocations_Connexion.Size = new System.Drawing.Size(143, 22);
-            this.mItemGestionLocations_Connexion.Text = "Connexion";
+            this.mItemGestionReservations_Connexion.Name = "mItemGestionReservations_Connexion";
+            this.mItemGestionReservations_Connexion.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionReservations_Connexion.Text = "Connexion";
             // 
-            // mItemGestionLocations_Deconnexion
+            // mItemGestionReservations_Deconnexion
             // 
-            this.mItemGestionLocations_Deconnexion.Name = "mItemGestionLocations_Deconnexion";
-            this.mItemGestionLocations_Deconnexion.Size = new System.Drawing.Size(143, 22);
-            this.mItemGestionLocations_Deconnexion.Text = "Deconnexion";
+            this.mItemGestionReservations_Deconnexion.Name = "mItemGestionReservations_Deconnexion";
+            this.mItemGestionReservations_Deconnexion.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionReservations_Deconnexion.Text = "Deconnexion";
             // 
-            // mItemGestionLocations_Quitter
+            // mItemGestionReservations_Quitter
             // 
-            this.mItemGestionLocations_Quitter.Name = "mItemGestionLocations_Quitter";
-            this.mItemGestionLocations_Quitter.Size = new System.Drawing.Size(143, 22);
-            this.mItemGestionLocations_Quitter.Text = "Quitter";
+            this.mItemGestionReservations_Quitter.Name = "mItemGestionReservations_Quitter";
+            this.mItemGestionReservations_Quitter.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionReservations_Quitter.Text = "Quitter";
             // 
-            // mItemGestionLocations_Option
+            // mItemGestionReservations_Option
             // 
-            this.mItemGestionLocations_Option.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mItemGestionLocations_Parametres});
-            this.mItemGestionLocations_Option.Name = "mItemGestionLocations_Option";
-            this.mItemGestionLocations_Option.Size = new System.Drawing.Size(61, 20);
-            this.mItemGestionLocations_Option.Text = "Options";
+            this.mItemGestionReservations_Option.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mItemGestionReservations_Parametres});
+            this.mItemGestionReservations_Option.Name = "mItemGestionReservations_Option";
+            this.mItemGestionReservations_Option.Size = new System.Drawing.Size(61, 20);
+            this.mItemGestionReservations_Option.Text = "Options";
             // 
-            // mItemGestionLocations_Parametres
+            // mItemGestionReservations_Parametres
             // 
-            this.mItemGestionLocations_Parametres.Name = "mItemGestionLocations_Parametres";
-            this.mItemGestionLocations_Parametres.Size = new System.Drawing.Size(133, 22);
-            this.mItemGestionLocations_Parametres.Text = "Paramètres";
+            this.mItemGestionReservations_Parametres.Name = "mItemGestionReservations_Parametres";
+            this.mItemGestionReservations_Parametres.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionReservations_Parametres.Text = "Paramètres";
             // 
-            // mItemGestionClients_Aide
+            // mItemGestionReservations_Aide
             // 
-            this.mItemGestionClients_Aide.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mItemGestionLocations_Apropos,
-            this.mItemGestionLocations_SigneInterrogation});
-            this.mItemGestionClients_Aide.Name = "mItemGestionClients_Aide";
-            this.mItemGestionClients_Aide.Size = new System.Drawing.Size(43, 20);
-            this.mItemGestionClients_Aide.Text = "Aide";
+            this.mItemGestionReservations_Aide.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mItemGestionReservations_Apropos,
+            this.mItemGestionReservations_SigneInterrogation});
+            this.mItemGestionReservations_Aide.Name = "mItemGestionReservations_Aide";
+            this.mItemGestionReservations_Aide.Size = new System.Drawing.Size(43, 20);
+            this.mItemGestionReservations_Aide.Text = "Aide";
             // 
-            // mItemGestionLocations_Apropos
+            // mItemGestionReservations_Apropos
             // 
-            this.mItemGestionLocations_Apropos.Name = "mItemGestionLocations_Apropos";
-            this.mItemGestionLocations_Apropos.Size = new System.Drawing.Size(165, 22);
-            this.mItemGestionLocations_Apropos.Text = "à propos de nous";
+            this.mItemGestionReservations_Apropos.Name = "mItemGestionReservations_Apropos";
+            this.mItemGestionReservations_Apropos.Size = new System.Drawing.Size(165, 22);
+            this.mItemGestionReservations_Apropos.Text = "à propos de nous";
             // 
-            // mItemGestionLocations_SigneInterrogation
+            // mItemGestionReservations_SigneInterrogation
             // 
-            this.mItemGestionLocations_SigneInterrogation.Name = "mItemGestionLocations_SigneInterrogation";
-            this.mItemGestionLocations_SigneInterrogation.Size = new System.Drawing.Size(165, 22);
-            this.mItemGestionLocations_SigneInterrogation.Text = "?";
+            this.mItemGestionReservations_SigneInterrogation.Name = "mItemGestionReservations_SigneInterrogation";
+            this.mItemGestionReservations_SigneInterrogation.Size = new System.Drawing.Size(165, 22);
+            this.mItemGestionReservations_SigneInterrogation.Text = "?";
             // 
             // panelGestionLocations_InfoLocation
             // 
@@ -482,11 +482,11 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panelGestionLocations_ListeLocations);
             this.Controls.Add(this.panelGestionLocations_InfoLocation);
-            this.Controls.Add(this.menuGestionLocations);
+            this.Controls.Add(this.menuGestionReservations);
             this.Name = "ReservationForm";
-            this.Text = "ReservationForm";
-            this.menuGestionLocations.ResumeLayout(false);
-            this.menuGestionLocations.PerformLayout();
+            this.Text = "Gestion des reservations";
+            this.menuGestionReservations.ResumeLayout(false);
+            this.menuGestionReservations.PerformLayout();
             this.panelGestionLocations_InfoLocation.ResumeLayout(false);
             this.panelGestionLocations_InfoLocation.PerformLayout();
             this.panelGestionLocations_ListeLocations.ResumeLayout(false);
@@ -499,17 +499,17 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuGestionLocations;
-        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Accueil;
-        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Gestionnaire;
-        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Connexion;
-        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Deconnexion;
-        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Quitter;
-        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Option;
-        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Parametres;
-        private System.Windows.Forms.ToolStripMenuItem mItemGestionClients_Aide;
-        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Apropos;
-        private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_SigneInterrogation;
+        private System.Windows.Forms.MenuStrip menuGestionReservations;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionReservations_Accueil;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionReservations_Gestionnaire;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionReservations_Connexion;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionReservations_Deconnexion;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionReservations_Quitter;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionReservations_Option;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionReservations_Parametres;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionReservations_Aide;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionReservations_Apropos;
+        private System.Windows.Forms.ToolStripMenuItem mItemGestionReservations_SigneInterrogation;
         private System.Windows.Forms.Panel panelGestionLocations_InfoLocation;
         private System.Windows.Forms.Button btnGestionLocations_Rechercher;
         private System.Windows.Forms.Button btnGestionLocations_Annuler;
