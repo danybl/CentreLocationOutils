@@ -241,11 +241,16 @@ namespace CentreLcationOutils_front_end
             }
 
             OutilDTO outilDTO = new OutilDTO();
-            outilDTO.IdCategorie = categorieDTO.IdCategorie;
+            outilDTO.CategorieDTO= categorieDTO;
             outilDTO.Nom = nom;
             outilDTO.NumSerie = numSerie;
             outilDTO.DateAcquisition = dateAcquisiton;
             outilDTO.PrixLocation = prixLocation;
+            outilDTO.Description = description;
+            //outilDTO.image
+
+            gestionCentreOutils.OutilFacade.acquerirOutil(gestionCentreOutils.MaConnection, outilDTO);
+            gestionCentreOutils.commitTransaction();
         }
 
     }
