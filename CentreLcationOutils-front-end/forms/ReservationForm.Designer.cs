@@ -40,30 +40,24 @@
             this.mItemGestionReservations_Aide = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionReservations_Apropos = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionReservations_SigneInterrogation = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelGestionReservations_InfoLocation = new System.Windows.Forms.Panel();
+            this.panelGestionReservations_InfoReservation = new System.Windows.Forms.Panel();
             this.btnGestionLocations_Rechercher = new System.Windows.Forms.Button();
             this.btnGestionLocations_Annuler = new System.Windows.Forms.Button();
             this.btnGestionLocations_Renouveler = new System.Windows.Forms.Button();
             this.btnGestionLocations_Ajouter = new System.Windows.Forms.Button();
-            this.tbGestionLocations_DateRetour = new System.Windows.Forms.TextBox();
-            this.tbGestionLocations_DateLimite = new System.Windows.Forms.TextBox();
-            this.tbGestionLocations_DateLocation = new System.Windows.Forms.TextBox();
-            this.tbGestionLocations_Depot = new System.Windows.Forms.TextBox();
-            this.tbGestionLocations_IdOutil = new System.Windows.Forms.TextBox();
-            this.tbGestionLocations_IdEmploye = new System.Windows.Forms.TextBox();
-            this.tbGestionLocations_IdClient = new System.Windows.Forms.TextBox();
-            this.lblGestionLocations_DateRetour = new System.Windows.Forms.Label();
-            this.lblGestionLocations_DateLimite = new System.Windows.Forms.Label();
-            this.lblGestionLocations_DateLocation = new System.Windows.Forms.Label();
-            this.lblGestionReservations_Depot = new System.Windows.Forms.Label();
+            this.tbGestionReservations_DateLimite = new System.Windows.Forms.TextBox();
+            this.tbGestionReservations_DateReservation = new System.Windows.Forms.TextBox();
+            this.tbGestionReservations_IdOutil = new System.Windows.Forms.TextBox();
+            this.tbGestionReservations_IdClient = new System.Windows.Forms.TextBox();
+            this.lblGestionReservation_DateLimite = new System.Windows.Forms.Label();
+            this.lblGestionReservations_DateReservation = new System.Windows.Forms.Label();
             this.lblGestionReservations_IdOutil = new System.Windows.Forms.Label();
-            this.lblGestionReservation_IdEmploye = new System.Windows.Forms.Label();
-            this.lblGestionReservation_IdClient = new System.Windows.Forms.Label();
-            this.tbGestionLocations_IdLocation = new System.Windows.Forms.TextBox();
-            this.lblGestionReservations_IdLocation = new System.Windows.Forms.Label();
+            this.lblGestionReservations_IdClient = new System.Windows.Forms.Label();
+            this.tbGestionReservations_IdReservation = new System.Windows.Forms.TextBox();
+            this.lblGestionReservations_IdReservation = new System.Windows.Forms.Label();
             this.lblGestionReservations_Titre1 = new System.Windows.Forms.Label();
-            this.panelGestionLocations_ListeLocations = new System.Windows.Forms.Panel();
-            this.dgGestionLocations_ListeLocations = new System.Windows.Forms.DataGridView();
+            this.panelGestionReservations_ListeReservations = new System.Windows.Forms.Panel();
+            this.dgGestionReservations_ListeReservations = new System.Windows.Forms.DataGridView();
             this.columnIDLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnIdClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnIdEmploye = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,11 +66,11 @@
             this.columnDateLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDateLimite = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnDateRetour = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblGestionLocations_Titre2 = new System.Windows.Forms.Label();
+            this.lblGestionReservations_Titre2 = new System.Windows.Forms.Label();
             this.menuGestionReservations.SuspendLayout();
-            this.panelGestionReservations_InfoLocation.SuspendLayout();
-            this.panelGestionLocations_ListeLocations.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgGestionLocations_ListeLocations)).BeginInit();
+            this.panelGestionReservations_InfoReservation.SuspendLayout();
+            this.panelGestionReservations_ListeReservations.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgGestionReservations_ListeReservations)).BeginInit();
             this.SuspendLayout();
             // 
             // menuGestionReservations
@@ -105,25 +99,25 @@
             // mItemGestionReservations_Gestionnaire
             // 
             this.mItemGestionReservations_Gestionnaire.Name = "mItemGestionReservations_Gestionnaire";
-            this.mItemGestionReservations_Gestionnaire.Size = new System.Drawing.Size(143, 22);
+            this.mItemGestionReservations_Gestionnaire.Size = new System.Drawing.Size(152, 22);
             this.mItemGestionReservations_Gestionnaire.Text = "Gestionnaire";
             // 
             // mItemGestionReservations_Connexion
             // 
             this.mItemGestionReservations_Connexion.Name = "mItemGestionReservations_Connexion";
-            this.mItemGestionReservations_Connexion.Size = new System.Drawing.Size(143, 22);
+            this.mItemGestionReservations_Connexion.Size = new System.Drawing.Size(152, 22);
             this.mItemGestionReservations_Connexion.Text = "Connexion";
             // 
             // mItemGestionReservations_Deconnexion
             // 
             this.mItemGestionReservations_Deconnexion.Name = "mItemGestionReservations_Deconnexion";
-            this.mItemGestionReservations_Deconnexion.Size = new System.Drawing.Size(143, 22);
+            this.mItemGestionReservations_Deconnexion.Size = new System.Drawing.Size(152, 22);
             this.mItemGestionReservations_Deconnexion.Text = "Deconnexion";
             // 
             // mItemGestionReservations_Quitter
             // 
             this.mItemGestionReservations_Quitter.Name = "mItemGestionReservations_Quitter";
-            this.mItemGestionReservations_Quitter.Size = new System.Drawing.Size(143, 22);
+            this.mItemGestionReservations_Quitter.Size = new System.Drawing.Size(152, 22);
             this.mItemGestionReservations_Quitter.Text = "Quitter";
             // 
             // mItemGestionReservations_Option
@@ -161,40 +155,34 @@
             this.mItemGestionReservations_SigneInterrogation.Size = new System.Drawing.Size(165, 22);
             this.mItemGestionReservations_SigneInterrogation.Text = "?";
             // 
-            // panelGestionReservations_InfoLocation
+            // panelGestionReservations_InfoReservation
             // 
-            this.panelGestionReservations_InfoLocation.BackColor = System.Drawing.Color.DimGray;
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.btnGestionLocations_Rechercher);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.btnGestionLocations_Annuler);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.btnGestionLocations_Renouveler);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.btnGestionLocations_Ajouter);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.tbGestionLocations_DateRetour);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.tbGestionLocations_DateLimite);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.tbGestionLocations_DateLocation);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.tbGestionLocations_Depot);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.tbGestionLocations_IdOutil);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.tbGestionLocations_IdEmploye);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.tbGestionLocations_IdClient);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.lblGestionLocations_DateRetour);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.lblGestionLocations_DateLimite);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.lblGestionLocations_DateLocation);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.lblGestionReservations_Depot);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.lblGestionReservations_IdOutil);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.lblGestionReservation_IdEmploye);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.lblGestionReservation_IdClient);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.tbGestionLocations_IdLocation);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.lblGestionReservations_IdLocation);
-            this.panelGestionReservations_InfoLocation.Controls.Add(this.lblGestionReservations_Titre1);
-            this.panelGestionReservations_InfoLocation.Location = new System.Drawing.Point(10, 27);
-            this.panelGestionReservations_InfoLocation.Name = "panelGestionReservations_InfoLocation";
-            this.panelGestionReservations_InfoLocation.Size = new System.Drawing.Size(762, 237);
-            this.panelGestionReservations_InfoLocation.TabIndex = 26;
+            this.panelGestionReservations_InfoReservation.BackColor = System.Drawing.Color.DimGray;
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.btnGestionLocations_Rechercher);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.btnGestionLocations_Annuler);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.btnGestionLocations_Renouveler);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.btnGestionLocations_Ajouter);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.tbGestionReservations_DateLimite);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.tbGestionReservations_DateReservation);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.tbGestionReservations_IdOutil);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.tbGestionReservations_IdClient);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.lblGestionReservation_DateLimite);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.lblGestionReservations_DateReservation);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.lblGestionReservations_IdOutil);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.lblGestionReservations_IdClient);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.tbGestionReservations_IdReservation);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.lblGestionReservations_IdReservation);
+            this.panelGestionReservations_InfoReservation.Controls.Add(this.lblGestionReservations_Titre1);
+            this.panelGestionReservations_InfoReservation.Location = new System.Drawing.Point(10, 27);
+            this.panelGestionReservations_InfoReservation.Name = "panelGestionReservations_InfoReservation";
+            this.panelGestionReservations_InfoReservation.Size = new System.Drawing.Size(762, 237);
+            this.panelGestionReservations_InfoReservation.TabIndex = 26;
             // 
             // btnGestionLocations_Rechercher
             // 
             this.btnGestionLocations_Rechercher.BackColor = System.Drawing.Color.LemonChiffon;
             this.btnGestionLocations_Rechercher.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionLocations_Rechercher.Image")));
-            this.btnGestionLocations_Rechercher.Location = new System.Drawing.Point(373, 180);
+            this.btnGestionLocations_Rechercher.Location = new System.Drawing.Point(263, 176);
             this.btnGestionLocations_Rechercher.Name = "btnGestionLocations_Rechercher";
             this.btnGestionLocations_Rechercher.Size = new System.Drawing.Size(50, 30);
             this.btnGestionLocations_Rechercher.TabIndex = 22;
@@ -204,7 +192,7 @@
             // 
             this.btnGestionLocations_Annuler.BackColor = System.Drawing.Color.LightCoral;
             this.btnGestionLocations_Annuler.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionLocations_Annuler.Image")));
-            this.btnGestionLocations_Annuler.Location = new System.Drawing.Point(593, 180);
+            this.btnGestionLocations_Annuler.Location = new System.Drawing.Point(483, 176);
             this.btnGestionLocations_Annuler.Name = "btnGestionLocations_Annuler";
             this.btnGestionLocations_Annuler.Size = new System.Drawing.Size(50, 30);
             this.btnGestionLocations_Annuler.TabIndex = 21;
@@ -214,7 +202,7 @@
             // 
             this.btnGestionLocations_Renouveler.BackColor = System.Drawing.Color.LightSkyBlue;
             this.btnGestionLocations_Renouveler.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionLocations_Renouveler.Image")));
-            this.btnGestionLocations_Renouveler.Location = new System.Drawing.Point(519, 180);
+            this.btnGestionLocations_Renouveler.Location = new System.Drawing.Point(409, 176);
             this.btnGestionLocations_Renouveler.Name = "btnGestionLocations_Renouveler";
             this.btnGestionLocations_Renouveler.Size = new System.Drawing.Size(50, 30);
             this.btnGestionLocations_Renouveler.TabIndex = 20;
@@ -224,184 +212,130 @@
             // 
             this.btnGestionLocations_Ajouter.BackColor = System.Drawing.Color.PaleGreen;
             this.btnGestionLocations_Ajouter.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionLocations_Ajouter.Image")));
-            this.btnGestionLocations_Ajouter.Location = new System.Drawing.Point(446, 180);
+            this.btnGestionLocations_Ajouter.Location = new System.Drawing.Point(336, 176);
             this.btnGestionLocations_Ajouter.Name = "btnGestionLocations_Ajouter";
             this.btnGestionLocations_Ajouter.Size = new System.Drawing.Size(50, 30);
             this.btnGestionLocations_Ajouter.TabIndex = 19;
             this.btnGestionLocations_Ajouter.UseVisualStyleBackColor = false;
             // 
-            // tbGestionLocations_DateRetour
+            // tbGestionReservations_DateLimite
             // 
-            this.tbGestionLocations_DateRetour.Location = new System.Drawing.Point(519, 124);
-            this.tbGestionLocations_DateRetour.Name = "tbGestionLocations_DateRetour";
-            this.tbGestionLocations_DateRetour.Size = new System.Drawing.Size(157, 20);
-            this.tbGestionLocations_DateRetour.TabIndex = 18;
+            this.tbGestionReservations_DateLimite.Location = new System.Drawing.Point(519, 93);
+            this.tbGestionReservations_DateLimite.Name = "tbGestionReservations_DateLimite";
+            this.tbGestionReservations_DateLimite.ReadOnly = true;
+            this.tbGestionReservations_DateLimite.Size = new System.Drawing.Size(157, 20);
+            this.tbGestionReservations_DateLimite.TabIndex = 17;
             // 
-            // tbGestionLocations_DateLimite
+            // tbGestionReservations_DateReservation
             // 
-            this.tbGestionLocations_DateLimite.Location = new System.Drawing.Point(519, 93);
-            this.tbGestionLocations_DateLimite.Name = "tbGestionLocations_DateLimite";
-            this.tbGestionLocations_DateLimite.ReadOnly = true;
-            this.tbGestionLocations_DateLimite.Size = new System.Drawing.Size(157, 20);
-            this.tbGestionLocations_DateLimite.TabIndex = 17;
+            this.tbGestionReservations_DateReservation.Location = new System.Drawing.Point(519, 62);
+            this.tbGestionReservations_DateReservation.Name = "tbGestionReservations_DateReservation";
+            this.tbGestionReservations_DateReservation.ReadOnly = true;
+            this.tbGestionReservations_DateReservation.Size = new System.Drawing.Size(157, 20);
+            this.tbGestionReservations_DateReservation.TabIndex = 16;
             // 
-            // tbGestionLocations_DateLocation
+            // tbGestionReservations_IdOutil
             // 
-            this.tbGestionLocations_DateLocation.Location = new System.Drawing.Point(519, 62);
-            this.tbGestionLocations_DateLocation.Name = "tbGestionLocations_DateLocation";
-            this.tbGestionLocations_DateLocation.ReadOnly = true;
-            this.tbGestionLocations_DateLocation.Size = new System.Drawing.Size(157, 20);
-            this.tbGestionLocations_DateLocation.TabIndex = 16;
+            this.tbGestionReservations_IdOutil.Location = new System.Drawing.Point(212, 124);
+            this.tbGestionReservations_IdOutil.Name = "tbGestionReservations_IdOutil";
+            this.tbGestionReservations_IdOutil.Size = new System.Drawing.Size(67, 20);
+            this.tbGestionReservations_IdOutil.TabIndex = 14;
             // 
-            // tbGestionLocations_Depot
+            // tbGestionReservations_IdClient
             // 
-            this.tbGestionLocations_Depot.Location = new System.Drawing.Point(116, 184);
-            this.tbGestionLocations_Depot.Name = "tbGestionLocations_Depot";
-            this.tbGestionLocations_Depot.Size = new System.Drawing.Size(202, 20);
-            this.tbGestionLocations_Depot.TabIndex = 15;
+            this.tbGestionReservations_IdClient.Location = new System.Drawing.Point(212, 93);
+            this.tbGestionReservations_IdClient.Name = "tbGestionReservations_IdClient";
+            this.tbGestionReservations_IdClient.Size = new System.Drawing.Size(67, 20);
+            this.tbGestionReservations_IdClient.TabIndex = 12;
             // 
-            // tbGestionLocations_IdOutil
+            // lblGestionReservation_DateLimite
             // 
-            this.tbGestionLocations_IdOutil.Location = new System.Drawing.Point(116, 153);
-            this.tbGestionLocations_IdOutil.Name = "tbGestionLocations_IdOutil";
-            this.tbGestionLocations_IdOutil.Size = new System.Drawing.Size(67, 20);
-            this.tbGestionLocations_IdOutil.TabIndex = 14;
+            this.lblGestionReservation_DateLimite.AutoSize = true;
+            this.lblGestionReservation_DateLimite.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionReservation_DateLimite.ForeColor = System.Drawing.Color.White;
+            this.lblGestionReservation_DateLimite.Location = new System.Drawing.Point(355, 97);
+            this.lblGestionReservation_DateLimite.Name = "lblGestionReservation_DateLimite";
+            this.lblGestionReservation_DateLimite.Size = new System.Drawing.Size(98, 16);
+            this.lblGestionReservation_DateLimite.TabIndex = 10;
+            this.lblGestionReservation_DateLimite.Text = "DATE LIMITIE :";
             // 
-            // tbGestionLocations_IdEmploye
+            // lblGestionReservations_DateReservation
             // 
-            this.tbGestionLocations_IdEmploye.Location = new System.Drawing.Point(116, 124);
-            this.tbGestionLocations_IdEmploye.Name = "tbGestionLocations_IdEmploye";
-            this.tbGestionLocations_IdEmploye.Size = new System.Drawing.Size(67, 20);
-            this.tbGestionLocations_IdEmploye.TabIndex = 13;
-            // 
-            // tbGestionLocations_IdClient
-            // 
-            this.tbGestionLocations_IdClient.Location = new System.Drawing.Point(116, 93);
-            this.tbGestionLocations_IdClient.Name = "tbGestionLocations_IdClient";
-            this.tbGestionLocations_IdClient.Size = new System.Drawing.Size(67, 20);
-            this.tbGestionLocations_IdClient.TabIndex = 12;
-            // 
-            // lblGestionLocations_DateRetour
-            // 
-            this.lblGestionLocations_DateRetour.AutoSize = true;
-            this.lblGestionLocations_DateRetour.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionLocations_DateRetour.ForeColor = System.Drawing.Color.White;
-            this.lblGestionLocations_DateRetour.Location = new System.Drawing.Point(355, 128);
-            this.lblGestionLocations_DateRetour.Name = "lblGestionLocations_DateRetour";
-            this.lblGestionLocations_DateRetour.Size = new System.Drawing.Size(104, 16);
-            this.lblGestionLocations_DateRetour.TabIndex = 11;
-            this.lblGestionLocations_DateRetour.Text = "DATE RETOUR : ";
-            // 
-            // lblGestionLocations_DateLimite
-            // 
-            this.lblGestionLocations_DateLimite.AutoSize = true;
-            this.lblGestionLocations_DateLimite.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionLocations_DateLimite.ForeColor = System.Drawing.Color.White;
-            this.lblGestionLocations_DateLimite.Location = new System.Drawing.Point(355, 97);
-            this.lblGestionLocations_DateLimite.Name = "lblGestionLocations_DateLimite";
-            this.lblGestionLocations_DateLimite.Size = new System.Drawing.Size(98, 16);
-            this.lblGestionLocations_DateLimite.TabIndex = 10;
-            this.lblGestionLocations_DateLimite.Text = "DATE LIMITIE :";
-            // 
-            // lblGestionLocations_DateLocation
-            // 
-            this.lblGestionLocations_DateLocation.AutoSize = true;
-            this.lblGestionLocations_DateLocation.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionLocations_DateLocation.ForeColor = System.Drawing.Color.White;
-            this.lblGestionLocations_DateLocation.Location = new System.Drawing.Point(355, 66);
-            this.lblGestionLocations_DateLocation.Name = "lblGestionLocations_DateLocation";
-            this.lblGestionLocations_DateLocation.Size = new System.Drawing.Size(111, 16);
-            this.lblGestionLocations_DateLocation.TabIndex = 9;
-            this.lblGestionLocations_DateLocation.Text = "DATE LOCATION :";
-            // 
-            // lblGestionReservations_Depot
-            // 
-            this.lblGestionReservations_Depot.AutoSize = true;
-            this.lblGestionReservations_Depot.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionReservations_Depot.ForeColor = System.Drawing.Color.White;
-            this.lblGestionReservations_Depot.Location = new System.Drawing.Point(15, 188);
-            this.lblGestionReservations_Depot.Name = "lblGestionReservations_Depot";
-            this.lblGestionReservations_Depot.Size = new System.Drawing.Size(55, 16);
-            this.lblGestionReservations_Depot.TabIndex = 8;
-            this.lblGestionReservations_Depot.Text = "DÉPÔT :";
+            this.lblGestionReservations_DateReservation.AutoSize = true;
+            this.lblGestionReservations_DateReservation.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionReservations_DateReservation.ForeColor = System.Drawing.Color.White;
+            this.lblGestionReservations_DateReservation.Location = new System.Drawing.Point(355, 66);
+            this.lblGestionReservations_DateReservation.Name = "lblGestionReservations_DateReservation";
+            this.lblGestionReservations_DateReservation.Size = new System.Drawing.Size(137, 16);
+            this.lblGestionReservations_DateReservation.TabIndex = 9;
+            this.lblGestionReservations_DateReservation.Text = "DATE RESERVATION :";
             // 
             // lblGestionReservations_IdOutil
             // 
             this.lblGestionReservations_IdOutil.AutoSize = true;
             this.lblGestionReservations_IdOutil.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGestionReservations_IdOutil.ForeColor = System.Drawing.Color.White;
-            this.lblGestionReservations_IdOutil.Location = new System.Drawing.Point(15, 157);
+            this.lblGestionReservations_IdOutil.Location = new System.Drawing.Point(111, 128);
             this.lblGestionReservations_IdOutil.Name = "lblGestionReservations_IdOutil";
             this.lblGestionReservations_IdOutil.Size = new System.Drawing.Size(52, 16);
             this.lblGestionReservations_IdOutil.TabIndex = 7;
             this.lblGestionReservations_IdOutil.Text = "OUTIL :";
             // 
-            // lblGestionReservation_IdEmploye
+            // lblGestionReservations_IdClient
             // 
-            this.lblGestionReservation_IdEmploye.AutoSize = true;
-            this.lblGestionReservation_IdEmploye.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionReservation_IdEmploye.ForeColor = System.Drawing.Color.White;
-            this.lblGestionReservation_IdEmploye.Location = new System.Drawing.Point(15, 128);
-            this.lblGestionReservation_IdEmploye.Name = "lblGestionReservation_IdEmploye";
-            this.lblGestionReservation_IdEmploye.Size = new System.Drawing.Size(90, 16);
-            this.lblGestionReservation_IdEmploye.TabIndex = 6;
-            this.lblGestionReservation_IdEmploye.Text = "EMPLOYÉ(E) :";
+            this.lblGestionReservations_IdClient.AutoSize = true;
+            this.lblGestionReservations_IdClient.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionReservations_IdClient.ForeColor = System.Drawing.Color.White;
+            this.lblGestionReservations_IdClient.Location = new System.Drawing.Point(111, 97);
+            this.lblGestionReservations_IdClient.Name = "lblGestionReservations_IdClient";
+            this.lblGestionReservations_IdClient.Size = new System.Drawing.Size(63, 16);
+            this.lblGestionReservations_IdClient.TabIndex = 5;
+            this.lblGestionReservations_IdClient.Text = "CLIENT : ";
             // 
-            // lblGestionReservation_IdClient
+            // tbGestionReservations_IdReservation
             // 
-            this.lblGestionReservation_IdClient.AutoSize = true;
-            this.lblGestionReservation_IdClient.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionReservation_IdClient.ForeColor = System.Drawing.Color.White;
-            this.lblGestionReservation_IdClient.Location = new System.Drawing.Point(15, 97);
-            this.lblGestionReservation_IdClient.Name = "lblGestionReservation_IdClient";
-            this.lblGestionReservation_IdClient.Size = new System.Drawing.Size(63, 16);
-            this.lblGestionReservation_IdClient.TabIndex = 5;
-            this.lblGestionReservation_IdClient.Text = "CLIENT : ";
+            this.tbGestionReservations_IdReservation.Location = new System.Drawing.Point(212, 62);
+            this.tbGestionReservations_IdReservation.Name = "tbGestionReservations_IdReservation";
+            this.tbGestionReservations_IdReservation.ReadOnly = true;
+            this.tbGestionReservations_IdReservation.Size = new System.Drawing.Size(67, 20);
+            this.tbGestionReservations_IdReservation.TabIndex = 4;
             // 
-            // tbGestionLocations_IdLocation
+            // lblGestionReservations_IdReservation
             // 
-            this.tbGestionLocations_IdLocation.Location = new System.Drawing.Point(116, 62);
-            this.tbGestionLocations_IdLocation.Name = "tbGestionLocations_IdLocation";
-            this.tbGestionLocations_IdLocation.ReadOnly = true;
-            this.tbGestionLocations_IdLocation.Size = new System.Drawing.Size(67, 20);
-            this.tbGestionLocations_IdLocation.TabIndex = 4;
-            // 
-            // lblGestionReservations_IdLocation
-            // 
-            this.lblGestionReservations_IdLocation.AutoSize = true;
-            this.lblGestionReservations_IdLocation.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionReservations_IdLocation.ForeColor = System.Drawing.Color.White;
-            this.lblGestionReservations_IdLocation.Location = new System.Drawing.Point(15, 66);
-            this.lblGestionReservations_IdLocation.Name = "lblGestionReservations_IdLocation";
-            this.lblGestionReservations_IdLocation.Size = new System.Drawing.Size(28, 16);
-            this.lblGestionReservations_IdLocation.TabIndex = 3;
-            this.lblGestionReservations_IdLocation.Text = "ID :";
+            this.lblGestionReservations_IdReservation.AutoSize = true;
+            this.lblGestionReservations_IdReservation.Font = new System.Drawing.Font("Stencil", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionReservations_IdReservation.ForeColor = System.Drawing.Color.White;
+            this.lblGestionReservations_IdReservation.Location = new System.Drawing.Point(111, 66);
+            this.lblGestionReservations_IdReservation.Name = "lblGestionReservations_IdReservation";
+            this.lblGestionReservations_IdReservation.Size = new System.Drawing.Size(28, 16);
+            this.lblGestionReservations_IdReservation.TabIndex = 3;
+            this.lblGestionReservations_IdReservation.Text = "ID :";
             // 
             // lblGestionReservations_Titre1
             // 
             this.lblGestionReservations_Titre1.AutoSize = true;
             this.lblGestionReservations_Titre1.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGestionReservations_Titre1.ForeColor = System.Drawing.Color.Gold;
-            this.lblGestionReservations_Titre1.Location = new System.Drawing.Point(264, 20);
+            this.lblGestionReservations_Titre1.Location = new System.Drawing.Point(249, 19);
             this.lblGestionReservations_Titre1.Name = "lblGestionReservations_Titre1";
-            this.lblGestionReservations_Titre1.Size = new System.Drawing.Size(253, 19);
+            this.lblGestionReservations_Titre1.Size = new System.Drawing.Size(284, 19);
             this.lblGestionReservations_Titre1.TabIndex = 2;
-            this.lblGestionReservations_Titre1.Text = "Information sur la location";
+            this.lblGestionReservations_Titre1.Text = "Information sur la reservation";
             // 
-            // panelGestionLocations_ListeLocations
+            // panelGestionReservations_ListeReservations
             // 
-            this.panelGestionLocations_ListeLocations.BackColor = System.Drawing.Color.DimGray;
-            this.panelGestionLocations_ListeLocations.Controls.Add(this.dgGestionLocations_ListeLocations);
-            this.panelGestionLocations_ListeLocations.Controls.Add(this.lblGestionLocations_Titre2);
-            this.panelGestionLocations_ListeLocations.Location = new System.Drawing.Point(10, 273);
-            this.panelGestionLocations_ListeLocations.Name = "panelGestionLocations_ListeLocations";
-            this.panelGestionLocations_ListeLocations.Size = new System.Drawing.Size(762, 276);
-            this.panelGestionLocations_ListeLocations.TabIndex = 24;
+            this.panelGestionReservations_ListeReservations.BackColor = System.Drawing.Color.DimGray;
+            this.panelGestionReservations_ListeReservations.Controls.Add(this.dgGestionReservations_ListeReservations);
+            this.panelGestionReservations_ListeReservations.Controls.Add(this.lblGestionReservations_Titre2);
+            this.panelGestionReservations_ListeReservations.Location = new System.Drawing.Point(10, 273);
+            this.panelGestionReservations_ListeReservations.Name = "panelGestionReservations_ListeReservations";
+            this.panelGestionReservations_ListeReservations.Size = new System.Drawing.Size(762, 276);
+            this.panelGestionReservations_ListeReservations.TabIndex = 24;
             // 
-            // dgGestionLocations_ListeLocations
+            // dgGestionReservations_ListeReservations
             // 
-            this.dgGestionLocations_ListeLocations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgGestionLocations_ListeLocations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgGestionReservations_ListeReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgGestionReservations_ListeReservations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnIDLocation,
             this.columnIdClient,
             this.columnIdEmploye,
@@ -410,10 +344,10 @@
             this.columnDateLocation,
             this.columnDateLimite,
             this.columnDateRetour});
-            this.dgGestionLocations_ListeLocations.Location = new System.Drawing.Point(18, 48);
-            this.dgGestionLocations_ListeLocations.Name = "dgGestionLocations_ListeLocations";
-            this.dgGestionLocations_ListeLocations.Size = new System.Drawing.Size(731, 209);
-            this.dgGestionLocations_ListeLocations.TabIndex = 1;
+            this.dgGestionReservations_ListeReservations.Location = new System.Drawing.Point(18, 48);
+            this.dgGestionReservations_ListeReservations.Name = "dgGestionReservations_ListeReservations";
+            this.dgGestionReservations_ListeReservations.Size = new System.Drawing.Size(731, 209);
+            this.dgGestionReservations_ListeReservations.TabIndex = 1;
             // 
             // columnIDLocation
             // 
@@ -463,16 +397,16 @@
             this.columnDateRetour.Name = "columnDateRetour";
             this.columnDateRetour.ToolTipText = "DateRetour";
             // 
-            // lblGestionLocations_Titre2
+            // lblGestionReservations_Titre2
             // 
-            this.lblGestionLocations_Titre2.AutoSize = true;
-            this.lblGestionLocations_Titre2.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionLocations_Titre2.ForeColor = System.Drawing.Color.Gold;
-            this.lblGestionLocations_Titre2.Location = new System.Drawing.Point(304, 20);
-            this.lblGestionLocations_Titre2.Name = "lblGestionLocations_Titre2";
-            this.lblGestionLocations_Titre2.Size = new System.Drawing.Size(172, 19);
-            this.lblGestionLocations_Titre2.TabIndex = 0;
-            this.lblGestionLocations_Titre2.Text = "Liste des locations";
+            this.lblGestionReservations_Titre2.AutoSize = true;
+            this.lblGestionReservations_Titre2.Font = new System.Drawing.Font("Stencil", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionReservations_Titre2.ForeColor = System.Drawing.Color.Gold;
+            this.lblGestionReservations_Titre2.Location = new System.Drawing.Point(304, 20);
+            this.lblGestionReservations_Titre2.Name = "lblGestionReservations_Titre2";
+            this.lblGestionReservations_Titre2.Size = new System.Drawing.Size(203, 19);
+            this.lblGestionReservations_Titre2.TabIndex = 0;
+            this.lblGestionReservations_Titre2.Text = "Liste des reservations";
             // 
             // ReservationForm
             // 
@@ -480,18 +414,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.panelGestionLocations_ListeLocations);
-            this.Controls.Add(this.panelGestionReservations_InfoLocation);
+            this.Controls.Add(this.panelGestionReservations_ListeReservations);
+            this.Controls.Add(this.panelGestionReservations_InfoReservation);
             this.Controls.Add(this.menuGestionReservations);
             this.Name = "ReservationForm";
             this.Text = "Gestion des reservations";
             this.menuGestionReservations.ResumeLayout(false);
             this.menuGestionReservations.PerformLayout();
-            this.panelGestionReservations_InfoLocation.ResumeLayout(false);
-            this.panelGestionReservations_InfoLocation.PerformLayout();
-            this.panelGestionLocations_ListeLocations.ResumeLayout(false);
-            this.panelGestionLocations_ListeLocations.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgGestionLocations_ListeLocations)).EndInit();
+            this.panelGestionReservations_InfoReservation.ResumeLayout(false);
+            this.panelGestionReservations_InfoReservation.PerformLayout();
+            this.panelGestionReservations_ListeReservations.ResumeLayout(false);
+            this.panelGestionReservations_ListeReservations.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgGestionReservations_ListeReservations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,30 +444,24 @@
         private System.Windows.Forms.ToolStripMenuItem mItemGestionReservations_Aide;
         private System.Windows.Forms.ToolStripMenuItem mItemGestionReservations_Apropos;
         private System.Windows.Forms.ToolStripMenuItem mItemGestionReservations_SigneInterrogation;
-        private System.Windows.Forms.Panel panelGestionReservations_InfoLocation;
+        private System.Windows.Forms.Panel panelGestionReservations_InfoReservation;
         private System.Windows.Forms.Button btnGestionLocations_Rechercher;
         private System.Windows.Forms.Button btnGestionLocations_Annuler;
         private System.Windows.Forms.Button btnGestionLocations_Renouveler;
         private System.Windows.Forms.Button btnGestionLocations_Ajouter;
-        private System.Windows.Forms.TextBox tbGestionLocations_DateRetour;
-        private System.Windows.Forms.TextBox tbGestionLocations_DateLimite;
-        private System.Windows.Forms.TextBox tbGestionLocations_DateLocation;
-        private System.Windows.Forms.TextBox tbGestionLocations_Depot;
-        private System.Windows.Forms.TextBox tbGestionLocations_IdOutil;
-        private System.Windows.Forms.TextBox tbGestionLocations_IdEmploye;
-        private System.Windows.Forms.TextBox tbGestionLocations_IdClient;
-        private System.Windows.Forms.Label lblGestionLocations_DateRetour;
-        private System.Windows.Forms.Label lblGestionLocations_DateLimite;
-        private System.Windows.Forms.Label lblGestionLocations_DateLocation;
-        private System.Windows.Forms.Label lblGestionReservations_Depot;
+        private System.Windows.Forms.TextBox tbGestionReservations_DateLimite;
+        private System.Windows.Forms.TextBox tbGestionReservations_DateReservation;
+        private System.Windows.Forms.TextBox tbGestionReservations_IdOutil;
+        private System.Windows.Forms.TextBox tbGestionReservations_IdClient;
+        private System.Windows.Forms.Label lblGestionReservation_DateLimite;
+        private System.Windows.Forms.Label lblGestionReservations_DateReservation;
         private System.Windows.Forms.Label lblGestionReservations_IdOutil;
-        private System.Windows.Forms.Label lblGestionReservation_IdEmploye;
-        private System.Windows.Forms.Label lblGestionReservation_IdClient;
-        private System.Windows.Forms.TextBox tbGestionLocations_IdLocation;
-        private System.Windows.Forms.Label lblGestionReservations_IdLocation;
+        private System.Windows.Forms.Label lblGestionReservations_IdClient;
+        private System.Windows.Forms.TextBox tbGestionReservations_IdReservation;
+        private System.Windows.Forms.Label lblGestionReservations_IdReservation;
         private System.Windows.Forms.Label lblGestionReservations_Titre1;
-        private System.Windows.Forms.Panel panelGestionLocations_ListeLocations;
-        private System.Windows.Forms.DataGridView dgGestionLocations_ListeLocations;
+        private System.Windows.Forms.Panel panelGestionReservations_ListeReservations;
+        private System.Windows.Forms.DataGridView dgGestionReservations_ListeReservations;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnIDLocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnIdClient;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnIdEmploye;
@@ -542,6 +470,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDateLocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDateLimite;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDateRetour;
-        private System.Windows.Forms.Label lblGestionLocations_Titre2;
+        private System.Windows.Forms.Label lblGestionReservations_Titre2;
     }
 }
