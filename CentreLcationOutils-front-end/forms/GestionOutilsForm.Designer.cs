@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionOutilsForm));
             this.menuGestionOutils = new System.Windows.Forms.MenuStrip();
             this.mItemGestionOutils_Accueil = new System.Windows.Forms.ToolStripMenuItem();
+            this.mItemGestionOutils_Gestionnaire = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionOutils_Connexion = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionOutils_Deconnexion = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionOutils_Quitter = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +42,13 @@
             this.mItemGestionOutils_SigneInterrogation = new System.Windows.Forms.ToolStripMenuItem();
             this.panelGestionOutils_ListeOutils = new System.Windows.Forms.Panel();
             this.dgGestionOutils_ListeOutils = new System.Windows.Forms.DataGridView();
+            this.columnIdOutil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnIdCategorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnNumSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnNomOutil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnPrixLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnDateAcquisition = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblGestionOutils_ListeOutils = new System.Windows.Forms.Label();
             this.panelGestionOutils_InfoOutil = new System.Windows.Forms.Panel();
             this.btnGestionOutils_Rechercher = new System.Windows.Forms.Button();
@@ -62,14 +70,6 @@
             this.tbGestionOutils_Id = new System.Windows.Forms.TextBox();
             this.lblGestionOutils_Id = new System.Windows.Forms.Label();
             this.lblGestionOutils_InfoOutils = new System.Windows.Forms.Label();
-            this.columnIdOutil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnIdCategorie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnNumSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnNomOutil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnPrixLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnDateAcquisition = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mItemGestionOutils_Gestionnaire = new System.Windows.Forms.ToolStripMenuItem();
             this.menuGestionOutils.SuspendLayout();
             this.panelGestionOutils_ListeOutils.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionOutils_ListeOutils)).BeginInit();
@@ -99,22 +99,28 @@
             this.mItemGestionOutils_Accueil.Size = new System.Drawing.Size(58, 20);
             this.mItemGestionOutils_Accueil.Text = "Accueil";
             // 
+            // mItemGestionOutils_Gestionnaire
+            // 
+            this.mItemGestionOutils_Gestionnaire.Name = "mItemGestionOutils_Gestionnaire";
+            this.mItemGestionOutils_Gestionnaire.Size = new System.Drawing.Size(143, 22);
+            this.mItemGestionOutils_Gestionnaire.Text = "Gestionnaire";
+            // 
             // mItemGestionOutils_Connexion
             // 
             this.mItemGestionOutils_Connexion.Name = "mItemGestionOutils_Connexion";
-            this.mItemGestionOutils_Connexion.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionOutils_Connexion.Size = new System.Drawing.Size(143, 22);
             this.mItemGestionOutils_Connexion.Text = "Connexion";
             // 
             // mItemGestionOutils_Deconnexion
             // 
             this.mItemGestionOutils_Deconnexion.Name = "mItemGestionOutils_Deconnexion";
-            this.mItemGestionOutils_Deconnexion.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionOutils_Deconnexion.Size = new System.Drawing.Size(143, 22);
             this.mItemGestionOutils_Deconnexion.Text = "Deconnexion";
             // 
             // mItemGestionOutils_Quitter
             // 
             this.mItemGestionOutils_Quitter.Name = "mItemGestionOutils_Quitter";
-            this.mItemGestionOutils_Quitter.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionOutils_Quitter.Size = new System.Drawing.Size(143, 22);
             this.mItemGestionOutils_Quitter.Text = "Quitter";
             // 
             // mItemGestionOutils_Options
@@ -128,7 +134,7 @@
             // mItemGestionOutils_Parametres
             // 
             this.mItemGestionOutils_Parametres.Name = "mItemGestionOutils_Parametres";
-            this.mItemGestionOutils_Parametres.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionOutils_Parametres.Size = new System.Drawing.Size(133, 22);
             this.mItemGestionOutils_Parametres.Text = "Paramètres";
             // 
             // mItemGestionOutils_Aide
@@ -178,6 +184,43 @@
             this.dgGestionOutils_ListeOutils.Size = new System.Drawing.Size(731, 209);
             this.dgGestionOutils_ListeOutils.TabIndex = 1;
             // 
+            // columnIdOutil
+            // 
+            this.columnIdOutil.HeaderText = "ID";
+            this.columnIdOutil.Name = "columnIdOutil";
+            this.columnIdOutil.ReadOnly = true;
+            // 
+            // columnIdCategorie
+            // 
+            this.columnIdCategorie.HeaderText = "Categorie";
+            this.columnIdCategorie.Name = "columnIdCategorie";
+            // 
+            // columnNumSerie
+            // 
+            this.columnNumSerie.HeaderText = "NumeroSerie";
+            this.columnNumSerie.Name = "columnNumSerie";
+            // 
+            // columnNomOutil
+            // 
+            this.columnNomOutil.HeaderText = "Nom";
+            this.columnNomOutil.Name = "columnNomOutil";
+            this.columnNomOutil.ToolTipText = "Nom";
+            // 
+            // columnDescription
+            // 
+            this.columnDescription.HeaderText = "Description";
+            this.columnDescription.Name = "columnDescription";
+            // 
+            // columnPrixLocation
+            // 
+            this.columnPrixLocation.HeaderText = "PrixLocation";
+            this.columnPrixLocation.Name = "columnPrixLocation";
+            // 
+            // columnDateAcquisition
+            // 
+            this.columnDateAcquisition.HeaderText = "DateAcquisition";
+            this.columnDateAcquisition.Name = "columnDateAcquisition";
+            // 
             // lblGestionOutils_ListeOutils
             // 
             this.lblGestionOutils_ListeOutils.AutoSize = true;
@@ -225,6 +268,7 @@
             this.btnGestionOutils_Rechercher.Size = new System.Drawing.Size(50, 30);
             this.btnGestionOutils_Rechercher.TabIndex = 22;
             this.btnGestionOutils_Rechercher.UseVisualStyleBackColor = false;
+            this.btnGestionOutils_Rechercher.Click += new System.EventHandler(this.btnGestionOutils_Rechercher_Click);
             // 
             // btnGestionOutils_Supprimer
             // 
@@ -235,6 +279,7 @@
             this.btnGestionOutils_Supprimer.Size = new System.Drawing.Size(50, 30);
             this.btnGestionOutils_Supprimer.TabIndex = 21;
             this.btnGestionOutils_Supprimer.UseVisualStyleBackColor = false;
+            this.btnGestionOutils_Supprimer.Click += new System.EventHandler(this.btnGestionOutils_Supprimer_Click);
             // 
             // btnGestionOutils_Modifier
             // 
@@ -245,6 +290,7 @@
             this.btnGestionOutils_Modifier.Size = new System.Drawing.Size(50, 30);
             this.btnGestionOutils_Modifier.TabIndex = 20;
             this.btnGestionOutils_Modifier.UseVisualStyleBackColor = false;
+            this.btnGestionOutils_Modifier.Click += new System.EventHandler(this.btnGestionOutils_Modifier_Click);
             // 
             // btnGestionOutils_Ajouter
             // 
@@ -255,6 +301,7 @@
             this.btnGestionOutils_Ajouter.Size = new System.Drawing.Size(50, 30);
             this.btnGestionOutils_Ajouter.TabIndex = 19;
             this.btnGestionOutils_Ajouter.UseVisualStyleBackColor = false;
+            this.btnGestionOutils_Ajouter.Click += new System.EventHandler(this.btnGestionOutils_Ajouter_Click);
             // 
             // tbGestionOutils_DateAcquisition
             // 
@@ -395,49 +442,6 @@
             this.lblGestionOutils_InfoOutils.Size = new System.Drawing.Size(214, 19);
             this.lblGestionOutils_InfoOutils.TabIndex = 2;
             this.lblGestionOutils_InfoOutils.Text = "Information sur l\'outil";
-            // 
-            // columnIdOutil
-            // 
-            this.columnIdOutil.HeaderText = "ID";
-            this.columnIdOutil.Name = "columnIdOutil";
-            this.columnIdOutil.ReadOnly = true;
-            // 
-            // columnIdCategorie
-            // 
-            this.columnIdCategorie.HeaderText = "Categorie";
-            this.columnIdCategorie.Name = "columnIdCategorie";
-            // 
-            // columnNumSerie
-            // 
-            this.columnNumSerie.HeaderText = "NumeroSerie";
-            this.columnNumSerie.Name = "columnNumSerie";
-            // 
-            // columnNomOutil
-            // 
-            this.columnNomOutil.HeaderText = "Nom";
-            this.columnNomOutil.Name = "columnNomOutil";
-            this.columnNomOutil.ToolTipText = "Nom";
-            // 
-            // columnDescription
-            // 
-            this.columnDescription.HeaderText = "Description";
-            this.columnDescription.Name = "columnDescription";
-            // 
-            // columnPrixLocation
-            // 
-            this.columnPrixLocation.HeaderText = "PrixLocation";
-            this.columnPrixLocation.Name = "columnPrixLocation";
-            // 
-            // columnDateAcquisition
-            // 
-            this.columnDateAcquisition.HeaderText = "DateAcquisition";
-            this.columnDateAcquisition.Name = "columnDateAcquisition";
-            // 
-            // mItemGestionOutils_Gestionnaire
-            // 
-            this.mItemGestionOutils_Gestionnaire.Name = "mItemGestionOutils_Gestionnaire";
-            this.mItemGestionOutils_Gestionnaire.Size = new System.Drawing.Size(152, 22);
-            this.mItemGestionOutils_Gestionnaire.Text = "Gestionnaire";
             // 
             // GestionOutilsForm
             // 
