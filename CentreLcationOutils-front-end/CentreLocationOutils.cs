@@ -6,6 +6,7 @@ using CentreLcationOutils_front_end.util;
 using CentreLocationOutils.dto;
 using CentreLocationOutils.facade;
 using CentreLocationOutils.exception.dto;
+using System.Collections;
 
 namespace CentreLcationOutils_front_end
 {
@@ -15,6 +16,7 @@ namespace CentreLcationOutils_front_end
         private static double POURCENTAGE_DEPOT = 0.25;
         private static int NB_JOUR_LOCATION = 7;
         private static int NB_JOUR_RESERVATION = 3;
+
         //public void inscrireClient(string[] champsClient)
         //{
         //    //TODO vérifier dateInscription pas dans le futur => event sur le Time picker
@@ -39,29 +41,29 @@ namespace CentreLcationOutils_front_end
         //    gestionCentreOutils.commitTransaction();
         //}
 
-        public void attribuerAdresse(string[] champsAdresse)
+        public void attribuerAdresse(Hashtable champsAdresse)
         {
             //TODO 
         }
 
-        private void effectuerLocation(string[] faireLocation)
+        private void effectuerLocation(Hashtable champsLocation)
         {
             gestionCentreOutils.beginTransaction();
 
-            string idClient = faireLocation[0];
+            string idClient = champsLocation["idClient"].ToString();
             ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.MaConnection, idClient);
             if (clientDTO == null)
             {
                 throw new MissingDTOException("Le client " + idClient + " n'existe pas");
             }
 
-            string idOutil = faireLocation[1];
+            string idOutil = champsLocation["idOutil"].ToString();
             OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.MaConnection, idOutil);
             if (outilDTO == null)
             {
                 throw new MissingDTOException("L'outil " + idOutil + " n'existe pas");
             }
-            string idEmploye = faireLocation[2];
+            string idEmploye = champsLocation["idEmploye"].ToString();
             EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.MaConnection, idEmploye);
             if (employeDTO == null)
             {
@@ -79,17 +81,21 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        private void terminerLocation(string[] finirLocation)
+        private void terminerLocation(Hashtable finirLocation)
         {
             gestionCentreOutils.beginTransaction();
-            OutilDTO outilDTO = new OutilDTO();
-            outilDTO.IdOutil = finirLocation[0];
+            string idOutil = finirLocation["idOutil"].ToString();
+            OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.MaConnection, idOutil);
+            if (outilDTO == null)
+            {
+                throw new MissingDTOException("L'outil " + idOutil + "n'existe pas");
+            }
             LocationDTO locationDTO = new LocationDTO();
             locationDTO.OutilDTO = outilDTO;
             List<LocationDTO> locations = gestionCentreOutils.LocationFacade.findByOutil(gestionCentreOutils.MaConnection, locationDTO);
-            if (locations.Count == 0)
+            if (locations == null)
             {
-                throw new MissingDTOException();
+                throw new MissingDTOException("Aucune location pour l'outil " + idOutil);
             }
             locationDTO = locations[0];
             gestionCentreOutils.LocationFacade.terminerLocation(gestionCentreOutils.MaConnection, locationDTO);
@@ -97,24 +103,24 @@ namespace CentreLcationOutils_front_end
 
         }
 
-        private void engagerEmploye(string[] hireEmploy)
+        private void engagerEmploye(Hashtable champsEmploye)
         {
             gestionCentreOutils.beginTransaction();
             EmployeDTO employeDTO = new EmployeDTO();
-            employeDTO.Nom = hireEmploy[0];
-            employeDTO.Prenom = hireEmploy[1];
-            employeDTO.Telephone = hireEmploy[2];
-            employeDTO.Email = hireEmploy[3];
-            employeDTO.DateRecrutement = hireEmploy[4];
-            employeDTO.Poste = hireEmploy[5];
+            employeDTO.Nom = champsEmploye["nom"].ToString();
+            employeDTO.Prenom = champsEmploye["prenom"].ToString();
+            employeDTO.Telephone = champsEmploye["telephone"].ToString();
+            employeDTO.Email = champsEmploye["email"].ToString();
+            employeDTO.DateRecrutement = champsEmploye["dateRecrutement"].ToString();
+            employeDTO.Poste = champsEmploye["poste"].ToString();
             gestionCentreOutils.EmployeFacade.inscrireEmploye(gestionCentreOutils.MaConnection, employeDTO);
             gestionCentreOutils.commitTransaction();
 
         }
-        private void supprimerEmploye(string[] deleteEmploy)
+        private void supprimerEmploye(Hashtable champsEmploye)
         {
             gestionCentreOutils.beginTransaction();
-            string idEmploye = deleteEmploy[0];
+            string idEmploye = champsEmploye["idEmploye"].ToString();
             EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.MaConnection, idEmploye);
             if (employeDTO == null)
             {
@@ -125,18 +131,18 @@ namespace CentreLcationOutils_front_end
 
         }
 
-        private void effectuerReservation(string[] faireReservation)
+        private void effectuerReservation(Hashtable champsReservation)
         {
             gestionCentreOutils.beginTransaction();
 
-            string idClient = faireReservation[0];
+            string idClient = champsReservation["idClient"].ToString();
             ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.MaConnection, idClient);
             if (clientDTO == null)
             {
                 throw new MissingDTOException("Le client " + idClient + " n'existe pas");
             }
 
-            string idOutil = faireReservation[1];
+            string idOutil = champsReservation["idOutil"].ToString();
             OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.MaConnection, idOutil);
             if (outilDTO == null)
             {
@@ -152,20 +158,20 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        private void annulerReservation(string[] cancelReservation)
+        private void annulerReservation(Hashtable champsReservation)
         {
 
             gestionCentreOutils.beginTransaction();
-
+            string idOutil = champsReservation["idOutil"].ToString();
             OutilDTO outilDTO = new OutilDTO();
-            outilDTO.IdOutil = cancelReservation[0];
+            outilDTO.IdOutil = idOutil;
             ReservationDTO reservationDTO = new ReservationDTO();
             reservationDTO.OutilDTO = outilDTO;
             List<ReservationDTO> reservations = 
                 gestionCentreOutils.ReservationFacade.findByOutil(gestionCentreOutils.MaConnection, reservationDTO);
             if (reservations.Count == 0)
             {
-                throw new MissingDTOException();
+                throw new MissingDTOException("Aucune réservation pour l'outil " + idOutil);
             }
             reservationDTO = reservations[0];
             gestionCentreOutils.ReservationFacade.annulerReservation(
@@ -173,18 +179,19 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        private void utiliserReservation(string[] useIt) {
+        private void utiliserReservation(Hashtable champsReservation)
+        {
 
             gestionCentreOutils.beginTransaction();
-
+            string idOutil = champsReservation["idOutil"].ToString();
             OutilDTO outilDTO = new OutilDTO();
-            outilDTO.IdOutil = useIt[0];
+            outilDTO.IdOutil = idOutil;
             ReservationDTO reservationDTO = new ReservationDTO();
             reservationDTO.OutilDTO = outilDTO;
             List<ReservationDTO> reservations = 
                 gestionCentreOutils.ReservationFacade.findByOutil(gestionCentreOutils.MaConnection, reservationDTO);
             if(reservations.Count == 0){
-                throw new MissingDTOException();
+                throw new MissingDTOException("Aucune réservation pour l'outil " + idOutil);
             }
             reservationDTO = reservations[0];
             gestionCentreOutils.ReservationFacade.utiliserReservation(
@@ -192,35 +199,47 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        private void inscrireClient(string[] register)
+        private void inscrireClient(Hashtable champsClient)
         {
             gestionCentreOutils.beginTransaction();
-
+            string nomClient = champsClient["nomClient"].ToString();
+            string prenomClient = champsClient["prenomClient"].ToString();
+            string telephoneClient = champsClient["telephoneClient"].ToString();
+            string email = champsClient["email"].ToString();
+            string dateInscription = champsClient["dateInscription"].ToString();
+            string limiteLocationsClient = champsClient["limiteLocation"].ToString();
             ClientDTO clientDTO = new ClientDTO();
-            clientDTO.Nom = register[0];
-            clientDTO.Prenom = register[1];
-            clientDTO.Telephone = register[2];
-            clientDTO.Email = register[3];
-            clientDTO.DateInscription = register[4];
-            clientDTO.IdClient = register[5];
-            clientDTO.LimiteLocations = register[6];
-            clientDTO.NbLocations = register[7];
+            clientDTO.Nom = nomClient;
+            clientDTO.Prenom = prenomClient;
+            clientDTO.Telephone = telephoneClient;
+            clientDTO.LimiteLocations = limiteLocationsClient;
+            clientDTO.NbLocations = "0";
+            clientDTO.DateInscription = dateInscription;
             gestionCentreOutils.ClientFacade.inscrire(gestionCentreOutils.MaConnection, clientDTO);
             gestionCentreOutils.commitTransaction();
         }
 
-        private void updateClient(string[] updateCustomer)
+        private void updateClient(Hashtable champsClient)
         {
 
             gestionCentreOutils.beginTransaction();
-            ClientDTO clientDTO = new ClientDTO();
-            clientDTO.IdClient = updateCustomer[0];
-            clientDTO.Nom = updateCustomer[1];
-            clientDTO.Prenom = updateCustomer[2];
-            clientDTO.Telephone = updateCustomer[3];
-            clientDTO.DateInscription = updateCustomer[4];
-            clientDTO.LimiteLocations = updateCustomer[5];
-            clientDTO.NbLocations = updateCustomer[6];
+            string idClient = champsClient["idClient"].ToString();
+            string nomClient = champsClient["nomClient"].ToString();
+            string prenomClient = champsClient["prenomClient"].ToString();
+            string telephoneClient = champsClient["telephoneClient"].ToString();
+            string email = champsClient["email"].ToString();
+            string limiteLocationsClient = champsClient["limiteLocation"].ToString();
+            ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.MaConnection, idClient);
+            if (clientDTO == null)
+            {
+                throw new MissingDTOException("Le client " + idClient + " n'existe pas");
+            }
+            clientDTO.Nom = nomClient;
+            clientDTO.Prenom = prenomClient;
+            clientDTO.Telephone = telephoneClient;
+            clientDTO.LimiteLocations = limiteLocationsClient;
+            clientDTO.NbLocations = "0";
+            gestionCentreOutils.ClientFacade.
             gestionCentreOutils.commitTransaction();
         }
 
