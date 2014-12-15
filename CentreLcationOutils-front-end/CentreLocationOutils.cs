@@ -235,6 +235,11 @@ namespace CentreLcationOutils_front_end
             return clientDTO;
         }
 
+        public List<ClientDTO> getAllClients()
+        {
+            return gestionCentreOutils.ClientFacade.get
+        }
+
          #endregion
 
         public void ajouterOutil(Hashtable champOutil)

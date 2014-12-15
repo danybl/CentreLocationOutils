@@ -93,6 +93,9 @@ namespace CentreLcationOutils_front_end.forms
             }
         }
 
-        public void listerClient
+        public void listerClient()
+        {
+            //dgGestionClients_ListeClients.DataSource = centreLocationOutils.
+        }
     }
 }
