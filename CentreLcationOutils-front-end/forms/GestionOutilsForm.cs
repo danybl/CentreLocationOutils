@@ -13,10 +13,11 @@ namespace CentreLocationOutils_front_end.forms
 {
     public partial class GestionOutilsForm : Form
     {
-        CentreLocationOutils centreLocationOutils = new CentreLocationOutils();
+        CentreLocationOutils centreLocationOutils;
         public GestionOutilsForm()
         {
             InitializeComponent();
+            centreLocationOutils = CentreLocationOutils.getInstance();
         }
 
         private void btnGestionOutils_Rechercher_Click(object sender, EventArgs e)

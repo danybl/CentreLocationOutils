@@ -229,6 +229,34 @@ namespace CentreLocationOutils_front_end
             gestionCentreOutils.commitTransaction();
 
         }
+
+        public EmployeDTO getEmploye(Hashtable champsEmploye)
+        {
+            gestionCentreOutils.beginTransaction();
+            string idEmploye = champsEmploye["idEmploye"].ToString();
+            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.MaConnection, idEmploye);
+            if (employeDTO == null)
+            {
+                throw new MissingDTOException("L'employé " + idEmploye + " n'existe pas");
+            }
+            gestionCentreOutils.commitTransaction();
+            return employeDTO;
+        }
+
+        public void updateEmploye(Hashtable champsEmploye)
+        {
+            gestionCentreOutils.beginTransaction();
+            string idEmploye = champsEmploye["idEmploye"].ToString();
+            EmployeDTO employeDTO = gestionCentreOutils.EmployeFacade.getEmploye(gestionCentreOutils.MaConnection, idEmploye);
+            employeDTO.Nom = champsEmploye["nom"].ToString();
+            employeDTO.Prenom = champsEmploye["prenom"].ToString();
+            employeDTO.Telephone = champsEmploye["telephone"].ToString();
+            employeDTO.Email = champsEmploye["email"].ToString();
+            employeDTO.DateRecrutement = champsEmploye["dateRecrutement"].ToString();
+            employeDTO.Poste = champsEmploye["poste"].ToString();
+            gestionCentreOutils.EmployeFacade.mettreAJourEmploye(gestionCentreOutils.MaConnection, employeDTO);
+            gestionCentreOutils.commitTransaction();
+        }
         #endregion
 
         #region commandes Réservation
