@@ -6,6 +6,9 @@ using CentreLocationOutils.exception.facade;
 using System;
 using System.Collections;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using CentreLocationOutils.exception.db;
+using CentreLocationOutils.exception.dao;
 
 namespace CentreLocationOutils_front_end.forms
 {
@@ -63,6 +66,7 @@ namespace CentreLocationOutils_front_end.forms
 
         private void btnGestionAccueil_Rechercher_Click(object sender, EventArgs e)
         {
+            lblMessage.Text = "";
             bool aucunChampVide = true;
             if (tbGestionClients_Nom.TextLength == 0)
             {
@@ -76,19 +80,17 @@ namespace CentreLocationOutils_front_end.forms
                 champsClient.Add("idClient", idClient);
 
                 ClientDTO clientDTO = centreLocationOutils.findClientById(champsClient);
-                if(clientDTO)
-                tbGestionClients_Id.Text = clientDTO.IdClient;
-                tbGestionClients_Nom.Text = clientDTO.Nom;
-                tbGestionClients_Prenom.Text = clientDTO.Prenom;
-                tbGestionClients_Telephone.Text = clientDTO.Telephone;
-                tbGestionClients_Email.Text = clientDTO.Email;
-                tbGestionClients_NbLocations.Text = clientDTO.NbLocations;
-                tbGestionClients_LimiteLocations.Text = clientDTO.LimiteLocations;
+                if (clientDTO == null)
+                {
+                    dgGestionClients_ListeClients.Rows.Clear();
+                    dgGestionClients_ListeClients.Rows.Add(clientDTO.IdClient, clientDTO.Nom, clientDTO.Prenom, clientDTO.Telephone, clientDTO.Email, clientDTO.NbLocations, clientDTO.LimiteLocations);
+                }
             }
         }
 
         private void btnGestionAccueil_Ajouter_Click(object sender, EventArgs e)
         {
+            lblMessage.Text = "";
             bool aucunChampVide = true;
             if (tbGestionClients_Nom.TextLength == 0)
             {
@@ -144,11 +146,28 @@ namespace CentreLocationOutils_front_end.forms
 
         public void listerClient()
         {
-            //dgGestionClients_ListeClients.DataSource = centreLocationOutils.
+            lblMessage.Text = "";
+            dgGestionClients_ListeClients.Rows.Clear();
+            try{
+            List<ClientDTO> clients = centreLocationOutils.getAllClients();
+                dgGestionClients_ListeClients.Rows.Clear();
+                if(clients.Count != null){
+            foreach (ClientDTO clientDTO in clients)
+            {
+                dgGestionClients_ListeClients.Rows.Add(clientDTO.IdClient, clientDTO.Nom, clientDTO.Prenom, clientDTO.Telephone, clientDTO.Email, clientDTO.NbLocations, clientDTO.LimiteLocations);
+            }
+                }
+            }
+            catch (InvalidConnectionException invalidConnectionException)
+            {
+                centreLocationOutils.rollbackTransaction();
+                lblMessage.Text = invalidConnectionException.Message;
+            }
         }
 
         private void btnGestionAccueil_Modifier_Click(object sender, EventArgs e)
         {
+            lblMessage.Text = "";
             bool aucunChampVide = true;
             if (tbGestionClients_Nom.TextLength == 0)
             {
@@ -212,6 +231,7 @@ namespace CentreLocationOutils_front_end.forms
 
         private void btnGestionAccueil_Supprimer_Click(object sender, EventArgs e)
         {
+            lblMessage.Text = "";
             bool aucunChampVide = true;
             if (tbGestionClients_Nom.TextLength == 0)
             {

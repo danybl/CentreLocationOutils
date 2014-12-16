@@ -81,6 +81,7 @@
             this.errorProviderId = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderEmail = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderLimiteLocation = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.menuGestionClients.SuspendLayout();
             this.panelGestionClients_ListeClients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionClients_ListeClients)).BeginInit();
@@ -119,25 +120,25 @@
             // mItemGestionClients_Gestionnaire
             // 
             this.mItemGestionClients_Gestionnaire.Name = "mItemGestionClients_Gestionnaire";
-            this.mItemGestionClients_Gestionnaire.Size = new System.Drawing.Size(143, 22);
+            this.mItemGestionClients_Gestionnaire.Size = new System.Drawing.Size(152, 22);
             this.mItemGestionClients_Gestionnaire.Text = "Gestionnaire";
             // 
             // mItemGestionClients_Connexion
             // 
             this.mItemGestionClients_Connexion.Name = "mItemGestionClients_Connexion";
-            this.mItemGestionClients_Connexion.Size = new System.Drawing.Size(143, 22);
+            this.mItemGestionClients_Connexion.Size = new System.Drawing.Size(152, 22);
             this.mItemGestionClients_Connexion.Text = "Connexion";
             // 
             // mItemGestionClients_Deconnexion
             // 
             this.mItemGestionClients_Deconnexion.Name = "mItemGestionClients_Deconnexion";
-            this.mItemGestionClients_Deconnexion.Size = new System.Drawing.Size(143, 22);
+            this.mItemGestionClients_Deconnexion.Size = new System.Drawing.Size(152, 22);
             this.mItemGestionClients_Deconnexion.Text = "Deconnexion";
             // 
             // mItemGestionClients_Quitter
             // 
             this.mItemGestionClients_Quitter.Name = "mItemGestionClients_Quitter";
-            this.mItemGestionClients_Quitter.Size = new System.Drawing.Size(143, 22);
+            this.mItemGestionClients_Quitter.Size = new System.Drawing.Size(152, 22);
             this.mItemGestionClients_Quitter.Text = "Quitter";
             // 
             // mItemGestionClients_Option
@@ -269,6 +270,7 @@
             this.panelGestionClients_InfoClient.BackColor = System.Drawing.Color.DimGray;
             this.panelGestionClients_InfoClient.Controls.Add(this.lblMessage);
             this.panelGestionClients_InfoClient.Controls.Add(this.btnGestionAccueil_Rechercher);
+            this.panelGestionClients_InfoClient.Controls.Add(this.button1);
             this.panelGestionClients_InfoClient.Controls.Add(this.btnGestionAccueil_Supprimer);
             this.panelGestionClients_InfoClient.Controls.Add(this.btnGestionAccueil_Modifier);
             this.panelGestionClients_InfoClient.Controls.Add(this.btnGestionAccueil_Ajouter);
@@ -530,6 +532,17 @@
             // 
             this.errorProviderLimiteLocation.ContainerControl = this;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightCoral;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(666, 180);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 30);
+            this.button1.TabIndex = 21;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btnGestionAccueil_Supprimer_Click);
+            // 
             // GestionClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -613,5 +626,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderId;
         private System.Windows.Forms.ErrorProvider errorProviderEmail;
         private System.Windows.Forms.ErrorProvider errorProviderLimiteLocation;
+        private System.Windows.Forms.Button button1;
     }
 }
