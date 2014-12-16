@@ -176,27 +176,27 @@ namespace CentreLocationOutils_front_end.forms
             bool aucunChampVide = true;
             if (tbGestionClients_Nom.TextLength == 0)
             {
-                //TODO ajouter un warning a cote du champ
+                errorProviderNom.SetError(tbGestionClients_Nom, Constants.CHAMP_OBLIGATOIRE);
                 aucunChampVide = false;
             }
             if (tbGestionClients_Prenom.TextLength == 0)
             {
-
+                errorProviderNom.SetError(tbGestionClients_Prenom, Constants.CHAMP_OBLIGATOIRE);
                 aucunChampVide = false;
             }
             if (tbGestionClients_Telephone.TextLength == 0)
             {
-
+                errorProviderNom.SetError(tbGestionClients_Telephone, Constants.CHAMP_OBLIGATOIRE);
                 aucunChampVide = false;
             }
             if (tbGestionClients_Email.TextLength == 0)
             {
-
+                errorProviderNom.SetError(tbGestionClients_Email, Constants.CHAMP_OBLIGATOIRE);
                 aucunChampVide = false;
             }
             if (tbGestionClients_LimiteLocations.TextLength == 0)
             {
-
+                errorProviderNom.SetError(tbGestionClients_LimiteLocations, Constants.CHAMP_OBLIGATOIRE);
                 aucunChampVide = false;
             }
 
