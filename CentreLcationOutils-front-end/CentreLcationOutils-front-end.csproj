@@ -154,6 +154,7 @@
       <DependentUpon>splashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="util\CentreLocationOutilsCreateur.cs" />
+    <Compile Include="util\Constants.cs" />
     <EmbeddedResource Include="forms\AccueilForm.resx">
       <DependentUpon>AccueilForm.cs</DependentUpon>
     </EmbeddedResource>
