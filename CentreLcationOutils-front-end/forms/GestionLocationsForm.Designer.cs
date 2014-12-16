@@ -80,6 +80,7 @@
             this.errorProviderOutil = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderDepot = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderDateLimite = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblMessage = new System.Windows.Forms.Label();
             this.panelGestionLocations_InfoLocation.SuspendLayout();
             this.panelGestionLocations_ListeLocations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionLocations_ListeLocations)).BeginInit();
@@ -95,6 +96,7 @@
             // panelGestionLocations_InfoLocation
             // 
             this.panelGestionLocations_InfoLocation.BackColor = System.Drawing.Color.DimGray;
+            this.panelGestionLocations_InfoLocation.Controls.Add(this.lblMessage);
             this.panelGestionLocations_InfoLocation.Controls.Add(this.btnGestionLocations_Rechercher);
             this.panelGestionLocations_InfoLocation.Controls.Add(this.btnGestionLocations_Annuler);
             this.panelGestionLocations_InfoLocation.Controls.Add(this.btnGestionLocations_Renouveler);
@@ -515,6 +517,16 @@
             // 
             this.errorProviderDateLimite.ContainerControl = this;
             // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblMessage.Location = new System.Drawing.Point(15, 20);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 20);
+            this.lblMessage.TabIndex = 23;
+            // 
             // GestionLocationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -596,6 +608,7 @@
         private System.Windows.Forms.ErrorProvider errorProviderOutil;
         private System.Windows.Forms.ErrorProvider errorProviderDepot;
         private System.Windows.Forms.ErrorProvider errorProviderDateLimite;
+        private System.Windows.Forms.Label lblMessage;
 
     }
 }

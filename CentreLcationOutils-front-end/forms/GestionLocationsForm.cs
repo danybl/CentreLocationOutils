@@ -60,6 +60,7 @@ namespace CentreLocationOutils_front_end.forms
 
         private void btnGestionLocations_Rechercher_Click(object sender, EventArgs e)
         {
+            lblMessage.Text = "";
             bool aucunChampVide = true;
             if (tbGestionLocations_IdLocation.TextLength == 0)
             {
@@ -72,29 +73,27 @@ namespace CentreLocationOutils_front_end.forms
                 Hashtable champsLocation = new Hashtable();
                 champsLocation.Add("idLocation", idLocation);
                 LocationDTO locationDTO = centreLocationOutil.findLocationById(champsLocation);
-                tbGestionLocations_IdLocation.Text = locationDTO.IdLocation;
-                tbGestionLocations_IdClient.Text = locationDTO.ClientDTO.IdClient;
-                tbGestionLocations_IdOutil.Text = locationDTO.OutilDTO.IdOutil;
-                tbGestionLocations_IdEmploye.Text = locationDTO.EmployeDTO.IdEmploye;
-                tbGestionLocations_Depot.Text = locationDTO.Depot;
-                tbGestionLocations_DateLocation.te
+                if(locationDTO !=null){
+                    dgGestionLocations_ListeLocations.Rows.Clear();
+                    dgGestionLocations_ListeLocations.Rows.Add(locationDTO.IdLocation, locationDTO.ClientDTO.IdClient, locationDTO.OutilDTO.IdOutil, locationDTO.EmployeDTO.IdEmploye, locationDTO.Depot, locationDTO.DateLocation, locationDTO.DateLimite, locationDTO.DateRetour);
+                }
 
             }
         }
 
         private void btnGestionLocations_Ajouter_Click(object sender, EventArgs e)
         {
-
+            lblMessage.Text = "";
         }
 
         private void btnGestionLocations_Renouveler_Click(object sender, EventArgs e)
         {
-
+            lblMessage.Text = "";
         }
 
         private void btnGestionLocations_Annuler_Click(object sender, EventArgs e)
         {
-
+            lblMessage.Text = "";
         }
     }
 }

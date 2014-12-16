@@ -67,6 +67,7 @@ namespace CentreLocationOutils_front_end.forms
         private void btnGestionAccueil_Rechercher_Click(object sender, EventArgs e)
         {
             lblMessage.Text = "";
+            dgGestionClients_ListeClients.Rows.Clear();
             bool aucunChampVide = true;
             if (tbGestionClients_Nom.TextLength == 0)
             {
@@ -80,7 +81,7 @@ namespace CentreLocationOutils_front_end.forms
                 champsClient.Add("idClient", idClient);
 
                 ClientDTO clientDTO = centreLocationOutils.findClientById(champsClient);
-                if (clientDTO == null)
+                if (clientDTO != null)
                 {
                     dgGestionClients_ListeClients.Rows.Clear();
                     dgGestionClients_ListeClients.Rows.Add(clientDTO.IdClient, clientDTO.Nom, clientDTO.Prenom, clientDTO.Telephone, clientDTO.Email, clientDTO.NbLocations, clientDTO.LimiteLocations);
@@ -162,6 +163,11 @@ namespace CentreLocationOutils_front_end.forms
             {
                 centreLocationOutils.rollbackTransaction();
                 lblMessage.Text = invalidConnectionException.Message;
+            }
+            catch (InvalidSortByPropertyException invalidSortByPropertyName)
+            {
+                centreLocationOutils.rollbackTransaction();
+                lblMessage.Text = invalidSortByPropertyName.Message;
             }
         }
 
@@ -269,6 +275,11 @@ namespace CentreLocationOutils_front_end.forms
                 }
                 else { lblMessage.Text = Constants.ANNULATION_SUPPRESSION; }
             }
+        }
+
+        private void btnGestionAccueil_Lister_Click(object sender, EventArgs e)
+        {
+            listerClient();
         }
 
     }
