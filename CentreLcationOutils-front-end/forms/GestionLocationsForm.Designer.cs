@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionLocationsForm));
             this.panelGestionLocations_InfoLocation = new System.Windows.Forms.Panel();
             this.btnGestionLocations_Rechercher = new System.Windows.Forms.Button();
@@ -73,10 +74,22 @@
             this.mItemGestionLocations_Aide = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionLocations_Apropos = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionLocations_SigneInterrogation = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorProviderId = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderClient = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderEmploye = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderOutil = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderDepot = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderDateLimite = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelGestionLocations_InfoLocation.SuspendLayout();
             this.panelGestionLocations_ListeLocations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionLocations_ListeLocations)).BeginInit();
             this.menuGestionLocations.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderClient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmploye)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderOutil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDepot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDateLimite)).BeginInit();
             this.SuspendLayout();
             // 
             // panelGestionLocations_InfoLocation
@@ -117,6 +130,7 @@
             this.btnGestionLocations_Rechercher.Size = new System.Drawing.Size(50, 30);
             this.btnGestionLocations_Rechercher.TabIndex = 22;
             this.btnGestionLocations_Rechercher.UseVisualStyleBackColor = false;
+            this.btnGestionLocations_Rechercher.Click += new System.EventHandler(this.btnGestionLocations_Rechercher_Click);
             // 
             // btnGestionLocations_Annuler
             // 
@@ -127,6 +141,7 @@
             this.btnGestionLocations_Annuler.Size = new System.Drawing.Size(50, 30);
             this.btnGestionLocations_Annuler.TabIndex = 21;
             this.btnGestionLocations_Annuler.UseVisualStyleBackColor = false;
+            this.btnGestionLocations_Annuler.Click += new System.EventHandler(this.btnGestionLocations_Annuler_Click);
             // 
             // btnGestionLocations_Renouveler
             // 
@@ -137,6 +152,7 @@
             this.btnGestionLocations_Renouveler.Size = new System.Drawing.Size(50, 30);
             this.btnGestionLocations_Renouveler.TabIndex = 20;
             this.btnGestionLocations_Renouveler.UseVisualStyleBackColor = false;
+            this.btnGestionLocations_Renouveler.Click += new System.EventHandler(this.btnGestionLocations_Renouveler_Click);
             // 
             // btnGestionLocations_Ajouter
             // 
@@ -147,6 +163,7 @@
             this.btnGestionLocations_Ajouter.Size = new System.Drawing.Size(50, 30);
             this.btnGestionLocations_Ajouter.TabIndex = 19;
             this.btnGestionLocations_Ajouter.UseVisualStyleBackColor = false;
+            this.btnGestionLocations_Ajouter.Click += new System.EventHandler(this.btnGestionLocations_Ajouter_Click);
             // 
             // tbGestionLocations_DateRetour
             // 
@@ -450,7 +467,7 @@
             // mItemGestionLocations_Parametres
             // 
             this.mItemGestionLocations_Parametres.Name = "mItemGestionLocations_Parametres";
-            this.mItemGestionLocations_Parametres.Size = new System.Drawing.Size(152, 22);
+            this.mItemGestionLocations_Parametres.Size = new System.Drawing.Size(133, 22);
             this.mItemGestionLocations_Parametres.Text = "Paramètres";
             // 
             // mItemGestionLocations_Aide
@@ -474,6 +491,30 @@
             this.mItemGestionLocations_SigneInterrogation.Size = new System.Drawing.Size(165, 22);
             this.mItemGestionLocations_SigneInterrogation.Text = "?";
             // 
+            // errorProviderId
+            // 
+            this.errorProviderId.ContainerControl = this;
+            // 
+            // errorProviderClient
+            // 
+            this.errorProviderClient.ContainerControl = this;
+            // 
+            // errorProviderEmploye
+            // 
+            this.errorProviderEmploye.ContainerControl = this;
+            // 
+            // errorProviderOutil
+            // 
+            this.errorProviderOutil.ContainerControl = this;
+            // 
+            // errorProviderDepot
+            // 
+            this.errorProviderDepot.ContainerControl = this;
+            // 
+            // errorProviderDateLimite
+            // 
+            this.errorProviderDateLimite.ContainerControl = this;
+            // 
             // GestionLocationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,6 +533,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionLocations_ListeLocations)).EndInit();
             this.menuGestionLocations.ResumeLayout(false);
             this.menuGestionLocations.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderClient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmploye)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderOutil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDepot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDateLimite)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -543,6 +590,12 @@
         private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Aide;
         private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_Apropos;
         private System.Windows.Forms.ToolStripMenuItem mItemGestionLocations_SigneInterrogation;
+        private System.Windows.Forms.ErrorProvider errorProviderId;
+        private System.Windows.Forms.ErrorProvider errorProviderClient;
+        private System.Windows.Forms.ErrorProvider errorProviderEmploye;
+        private System.Windows.Forms.ErrorProvider errorProviderOutil;
+        private System.Windows.Forms.ErrorProvider errorProviderDepot;
+        private System.Windows.Forms.ErrorProvider errorProviderDateLimite;
 
     }
 }

@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Collections;
+﻿using CentreLcationOutils_front_end.util;
 using CentreLocationOutils.dto;
-using CentreLocationOutils.exception.dto;
 using CentreLocationOutils.exception.db;
+using CentreLocationOutils.exception.dto;
 using CentreLocationOutils.exception.facade;
-using CentreLocationOutils.exception.service;
-using CentreLcationOutils_front_end.util;
+using System;
+using System.Collections;
+using System.Windows.Forms;
 
 namespace CentreLcationOutils_front_end.forms
 {
@@ -22,7 +15,7 @@ namespace CentreLcationOutils_front_end.forms
         public GestionClientForm()
         {
             InitializeComponent();
-            centreLocationOutils = new CentreLocationOutils();
+            centreLocationOutils = CentreLocationOutils.getInstance();
             tbGestionClients_DateInscription.Text = System.DateTime.Now.Ticks.ToString();
             tbGestionClients_Nom.TextChanged += new EventHandler(resetErrorProviderNom);
             tbGestionClients_Prenom.TextChanged += new EventHandler(resetErrorProviderPrenom);
@@ -70,7 +63,13 @@ namespace CentreLcationOutils_front_end.forms
 
         private void btnGestionAccueil_Rechercher_Click(object sender, EventArgs e)
         {
-            if (tbGestionClients_Id.Text.Length > 0)
+            bool aucunChampVide = true;
+            if (tbGestionClients_Nom.TextLength == 0)
+            {
+                errorProviderNom.SetError(tbGestionClients_Id, Constants.CHAMP_OBLIGATOIRE);
+                aucunChampVide = false;
+            }
+            if (aucunChampVide)
             {
                 string idClient = tbGestionClients_Id.Text;
                 Hashtable champsClient = new Hashtable();
@@ -84,10 +83,6 @@ namespace CentreLcationOutils_front_end.forms
                 tbGestionClients_Email.Text = clientDTO.Email;
                 tbGestionClients_NbLocations.Text = clientDTO.NbLocations;
                 tbGestionClients_LimiteLocations.Text = clientDTO.LimiteLocations;
-            }
-            else
-            {
-
             }
         }
 
@@ -138,7 +133,9 @@ namespace CentreLcationOutils_front_end.forms
                     champsClient.Add("limiteLocation", limiteLocation);
                     champsClient.Add("dateInscription", dateInscription);
                     centreLocationOutils.inscrireClient(champsClient);
-                }catch(MissingDTOException missingDTOException){
+                }
+                catch (MissingDTOException missingDTOException)
+                {
                     lblMessage.Text = missingDTOException.Message;
                 }
             }
@@ -223,10 +220,11 @@ namespace CentreLcationOutils_front_end.forms
             if (aucunChampVide)
             {
                 string idClient = tbGestionClients_Id.Text;
-            ConfirmationSuppression confirmationSuppression = new ConfirmationSuppression();
-            confirmationSuppression.Message = Constants.DEMANDE_CONFIRMATION_SUPPRESSION_CLIENT + idClient + " ?";
-            DialogResult result = confirmationSuppression.ShowDialog();
-                if(result.Equals(DialogResult.OK)){
+                ConfirmationSuppression confirmationSuppression = new ConfirmationSuppression();
+                confirmationSuppression.Message = Constants.DEMANDE_CONFIRMATION_SUPPRESSION_CLIENT + idClient + " ?";
+                DialogResult result = confirmationSuppression.ShowDialog();
+                if (result.Equals(DialogResult.OK))
+                {
                     try
                     {
 

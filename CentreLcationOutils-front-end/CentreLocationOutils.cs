@@ -13,46 +13,24 @@ namespace CentreLcationOutils_front_end
     public class CentreLocationOutils
     {
         private static CentreLocationOutilsCreateur gestionCentreOutils;
+        private static CentreLocationOutils centreLocationOutil;
         private static double POURCENTAGE_DEPOT = 0.25;
         private static int NB_JOUR_LOCATION = 7;
         private static int NB_JOUR_RESERVATION = 3;
 
-        public CentreLocationOutils() : base() { }
+        public CentreLocationOutils() : base() { gestionCentreOutils = new CentreLocationOutilsCreateur("local", "location", "tiger")}
 
-        //public void executerTransaction(string commande, Hashtable champs)
-        //{
-        //        switch (commande)
-        //        {
-        //            case "inscrireClient": inscrireClient(champs);
-        //                break;
-        //            case "updateClient": updateClient(champs);
-        //                break;
-        //            case "getAllClients": getAllClients();
-        //                break;
-        //            case "findClientById": findClientById(champs);
-        //                break;
-        //            case "effectuerLocation": effectuerLocation(champs);
-        //                break;
-        //            case "terminerLocation": terminerLocation(champs);
-        //                break;
-        //            case "renouvelerLocation": renouvelerLocation(champs);
-        //                break;
-        //            case "effectuerReservation": effectuerLocation(champs);
-        //                break;
-        //            case "annulerReservation": annulerReservation(champs);
-        //                break;
-        //            case "utiliserReservation": utiliserReservation(champs);
-        //                break;
-        //            case "findOutilById": findOutilById(champs);
-        //                break;
-        //            case "ajouterOutil": ajouterOutil(champs);
-        //                break;
-        //            case "modifierOutil": modifierOutil(champs);
-        //                break;
-        //            case "supprimerOutil": supprimerOutil(champs);
-        //                break;
-        //        }                
-        //}
+        public static CentreLocationOutils getInstance()
+        {
+            lock(typeof(CentreLocationOutils))
+            {
+                if (centreLocationOutil == null)
+                {
+                    centreLocationOutil = new CentreLocationOutils();
+                }
+            }
+            return centreLocationOutil;
+        }
 
         public void rollbackTransaction()
         {
