@@ -128,11 +128,11 @@
     <Compile Include="forms\GestionOutilsForm.Designer.cs">
       <DependentUpon>GestionOutilsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\ReservationForm.cs">
+    <Compile Include="forms\GestionReservationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\ReservationForm.Designer.cs">
-      <DependentUpon>ReservationForm.cs</DependentUpon>
+    <Compile Include="forms\GestionReservationsForm.Designer.cs">
+      <DependentUpon>GestionReservationsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -163,8 +163,8 @@
     <EmbeddedResource Include="forms\GestionOutilsForm.resx">
       <DependentUpon>GestionOutilsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\ReservationForm.resx">
-      <DependentUpon>ReservationForm.cs</DependentUpon>
+    <EmbeddedResource Include="forms\GestionReservationsForm.resx">
+      <DependentUpon>GestionReservationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace CentreLcationOutils_front_end.forms
 {
-    public partial class ReservationForm : Form
+    public partial class GestionReservationsForm : Form
     {
-        public ReservationForm()
+        public GestionReservationsForm()
         {
             InitializeComponent();
         }

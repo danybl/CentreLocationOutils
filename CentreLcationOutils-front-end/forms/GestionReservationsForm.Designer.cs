@@ -1,6 +1,6 @@
 ﻿namespace CentreLcationOutils_front_end.forms
 {
-    partial class ReservationForm
+    partial class GestionReservationsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReservationForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionReservationsForm));
             this.menuGestionReservations = new System.Windows.Forms.MenuStrip();
             this.mItemGestionReservations_Accueil = new System.Windows.Forms.ToolStripMenuItem();
             this.mItemGestionReservations_Gestionnaire = new System.Windows.Forms.ToolStripMenuItem();

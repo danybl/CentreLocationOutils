@@ -167,6 +167,7 @@
             this.btnAccueil_GestionReservations.Size = new System.Drawing.Size(155, 142);
             this.btnAccueil_GestionReservations.TabIndex = 11;
             this.btnAccueil_GestionReservations.UseVisualStyleBackColor = false;
+            this.btnAccueil_GestionReservations.Click += new System.EventHandler(this.btnAccueil_GestionReservations_Click);
             // 
             // AccueilForm
             // 

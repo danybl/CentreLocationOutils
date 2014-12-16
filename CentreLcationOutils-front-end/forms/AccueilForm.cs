@@ -29,5 +29,12 @@ namespace CentreLcationOutils_front_end.forms
             GestionOutilsForm gestionOutilsForm = new GestionOutilsForm();
             gestionOutilsForm.Show();
         }
+
+        private void btnAccueil_GestionReservations_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GestionReservationsForm gestionReservationsForm = new GestionReservationsForm();
+            gestionReservationsForm.Show();
+        }
     }
 }
