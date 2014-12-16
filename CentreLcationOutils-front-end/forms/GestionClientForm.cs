@@ -9,6 +9,9 @@ using System.Windows.Forms;
 using System.Collections;
 using CentreLocationOutils.dto;
 using CentreLocationOutils.exception.dto;
+using CentreLocationOutils.exception.db;
+using CentreLocationOutils.exception.facade;
+using CentreLocationOutils.exception.service;
 
 namespace CentreLcationOutils_front_end.forms
 {
@@ -196,7 +199,7 @@ namespace CentreLcationOutils_front_end.forms
                 catch (MissingDTOException missingDTOException)
                 {
                     lblMessage.Text = missingDTOException.Message;
-                }
+                }catch(Inva)
             }
         }
 
