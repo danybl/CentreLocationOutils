@@ -73,6 +73,7 @@
             this.tbGestionClients_Id = new System.Windows.Forms.TextBox();
             this.lblGestionClient_Id = new System.Windows.Forms.Label();
             this.lblGestionClients_InfoClient = new System.Windows.Forms.Label();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.menuGestionClients.SuspendLayout();
             this.panelGestionClients_ListeClients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionClients_ListeClients)).BeginInit();
@@ -245,6 +246,7 @@
             // panelGestionClients_InfoClient
             // 
             this.panelGestionClients_InfoClient.BackColor = System.Drawing.Color.DimGray;
+            this.panelGestionClients_InfoClient.Controls.Add(this.lblMessage);
             this.panelGestionClients_InfoClient.Controls.Add(this.btnGestionAccueil_Rechercher);
             this.panelGestionClients_InfoClient.Controls.Add(this.btnGestionAccueil_Supprimer);
             this.panelGestionClients_InfoClient.Controls.Add(this.btnGestionAccueil_Modifier);
@@ -471,6 +473,16 @@
             this.lblGestionClients_InfoClient.TabIndex = 2;
             this.lblGestionClients_InfoClient.Text = "Information sur le client";
             // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblMessage.Location = new System.Drawing.Point(40, 14);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 18);
+            this.lblMessage.TabIndex = 23;
+            // 
             // GestionClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -541,5 +553,6 @@
         private System.Windows.Forms.Button btnGestionAccueil_Ajouter;
         private System.Windows.Forms.Button btnGestionAccueil_Rechercher;
         private System.Windows.Forms.ToolStripMenuItem mItemGestionClients_Gestionnaire;
+        private System.Windows.Forms.Label lblMessage;
     }
 }

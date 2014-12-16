@@ -17,6 +17,42 @@ namespace CentreLcationOutils_front_end
         private static int NB_JOUR_LOCATION = 7;
         private static int NB_JOUR_RESERVATION = 3;
 
+        public CentreLocationOutils() : base() { }
+
+        public void executerTransaction(string commande, Hashtable champs)
+        {
+            try {
+                switch (commande)
+                {
+                    case "inscrireClient": inscrireClient(champs);
+                        break;
+                    case "updateClient": updateClient(champs);
+                        break;
+                    case "getAllClients": getAllClients();
+                        break;
+                    case "findClientById": findClientById(champs);
+                        break;
+                    case "effectuerLocation": effectuerLocation(champs);
+                        break;
+                    case "terminerLocation": terminerLocation(champs);
+                        break;
+                    case "renouvelerLocation": renouvelerLocation(champs);
+                        break;
+                    case "effectuerReservation": effectuerLocation(champs);
+                        break;
+                    case "annulerReservation": annulerReservation(champs);
+                        break;
+                    case "utiliserReservation": utiliserReservation(champs);
+                        break;
+                    case "ajouterOutil": ajouterOutil(champs);
+                        break;
+                }                
+                }catch(MissingDTOException missingDTOException){
+                    gestionCentreOutils.rollbackTransaction();
+
+                }            
+        }
+
         public void attribuerAdresse(Hashtable champsAdresse)
         {
             //TODO 
@@ -57,10 +93,10 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        public void terminerLocation(Hashtable finirLocation)
+        public void terminerLocation(Hashtable champsLocation)
         {
             gestionCentreOutils.beginTransaction();
-            string idOutil = finirLocation["idOutil"].ToString();
+            string idOutil = champsLocation["idOutil"].ToString();
             OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.MaConnection, idOutil);
             if (outilDTO == null)
             {
@@ -77,6 +113,21 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.LocationFacade.terminerLocation(gestionCentreOutils.MaConnection, locationDTO);
             gestionCentreOutils.commitTransaction();
 
+        }
+
+        public void renouvelerLocation(Hashtable champsLocation)
+        {
+            gestionCentreOutils.beginTransaction();
+            string idLocation = champsLocation["idLocation"].ToString();
+            LocationDTO locationDTO = gestionCentreOutils.LocationFacade.getLocation(gestionCentreOutils.MaConnection, locationDTO);
+            if (locationDTO == null)
+            {
+                throw new MissingDTOException("La location " + idLocation + " n'existe pas");
+            }
+            locationDTO.DateLimite = champsLocation["dateLimite"].ToString();
+            gestionCentreOutils.LocationFacade.renouvelerLocation(gestionCentreOutils.MaConnection, locationDTO);
+            gestionCentreOutils.commitTransaction();
+            
         }
         #endregion fin commande location
 
@@ -110,6 +161,7 @@ namespace CentreLcationOutils_front_end
         }
         #endregion
 
+        #region commandes Réservation
         public void effectuerReservation(Hashtable champsReservation)
         {
             gestionCentreOutils.beginTransaction();
@@ -177,6 +229,7 @@ namespace CentreLcationOutils_front_end
                 gestionCentreOutils.MaConnection, reservationDTO);
             gestionCentreOutils.commitTransaction();
         }
+        #endregion Fin commande réservation
 
         #region Commandes pour clients
         public void inscrireClient(Hashtable champsClient)
@@ -245,8 +298,7 @@ namespace CentreLcationOutils_front_end
         public void ajouterOutil(Hashtable champOutil)
         {
             gestionCentreOutils.beginTransaction();
-            try
-            {
+
                 string idOutil = champOutil["idOutil"].ToString();
                 string idCategorie = champOutil["idCategorie"].ToString();
                 string nom = champOutil["nom"].ToString();
@@ -273,7 +325,6 @@ namespace CentreLcationOutils_front_end
 
                 gestionCentreOutils.OutilFacade.acquerirOutil(gestionCentreOutils.MaConnection, outilDTO);
                 gestionCentreOutils.commitTransaction();
-            }catch(MissingDTOException missingDTOExeption)
         }
 
     }
