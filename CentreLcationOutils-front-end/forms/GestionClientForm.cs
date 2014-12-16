@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Collections;
 using CentreLocationOutils.dto;
+using CentreLocationOutils.exception.dto;
 
 namespace CentreLcationOutils_front_end.forms
 {
@@ -75,21 +76,25 @@ namespace CentreLcationOutils_front_end.forms
 
             if (aucunChampVide)
             {
-                string nom = tbGestionClients_Nom.Text;
-                string prenom = tbGestionClients_Prenom.Text;
-                string telephone = tbGestionClients_Telephone.Text;
-                string email = tbGestionClients_Email.Text;
-                string limiteLocation = tbGestionClients_LimiteLocations.Text;
-                string dateInscription = tbGestionClients_DateInscription.Text;
-                Hashtable champsClient = new Hashtable();
-                champsClient.Add("nom", nom);
-                champsClient.Add("prenom", prenom);
-                champsClient.Add("telephone", telephone);
-                champsClient.Add("email", email);
-                champsClient.Add("limiteLocation", limiteLocation);
-                champsClient.Add("dateInscription", dateInscription);
-                centreLocationOutils.inscrireClient(champsClient);
+                try
+                {
+                    string nom = tbGestionClients_Nom.Text;
+                    string prenom = tbGestionClients_Prenom.Text;
+                    string telephone = tbGestionClients_Telephone.Text;
+                    string email = tbGestionClients_Email.Text;
+                    string limiteLocation = tbGestionClients_LimiteLocations.Text;
+                    string dateInscription = tbGestionClients_DateInscription.Text;
+                    Hashtable champsClient = new Hashtable();
+                    champsClient.Add("nom", nom);
+                    champsClient.Add("prenom", prenom);
+                    champsClient.Add("telephone", telephone);
+                    champsClient.Add("email", email);
+                    champsClient.Add("limiteLocation", limiteLocation);
+                    champsClient.Add("dateInscription", dateInscription);
+                    centreLocationOutils.inscrireClient(champsClient);
+                }catch(MissingDTOException missingDTOException){
 
+                }
             }
         }
 
