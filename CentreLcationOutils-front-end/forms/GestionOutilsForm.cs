@@ -28,7 +28,7 @@ namespace CentreLcationOutils_front_end.forms
                 string idOuitl = tbGestionOutils_Id.Text;
                 Hashtable champsOutil = new Hashtable();
                 champsOutil.Add("idOutil", idOuitl);
-                OutilDTO outilDTO = centreLocationOutils.;
+                OutilDTO outilDTO = centreLocationOutils.findOutilById(champsOutil);
 
                 tbGestionOutils_IdCategorie.Text = outilDTO.CategorieDTO.IdCategorie;
                 tbGestionOutils_Nom.Text = outilDTO.Nom;
@@ -132,12 +132,43 @@ namespace CentreLcationOutils_front_end.forms
 
         private void btnGestionOutils_Modifier_Click(object sender, EventArgs e)
         {
+            bool aucunChampVide = champVide();
 
+            if (aucunChampVide)
+            {
+                string idCatgegorie = tbGestionOutils_IdCategorie.Text;
+                string nomOutil = tbGestionOutils_Nom.Text;
+                string description = tbGestionOutils_Description.Text;
+                string prixLocation = tbGestionOutils_PrixLocation.Text;
+                string numeroSerie = tbGestionOutils_NumeroSerie.Text;
+                string dateAcquisition = tbGestionOutils_DateAcquisition.Text;
+
+                Hashtable champsOutil = new Hashtable();
+                champsOutil.Add("idCatgegorie", idCatgegorie);
+                champsOutil.Add("nomOutil", nomOutil);
+                champsOutil.Add("description", description);
+                champsOutil.Add("prixLocation", prixLocation);
+                champsOutil.Add("numeroSerie", numeroSerie);
+                champsOutil.Add("dateAcquisition", dateAcquisition);
+                centreLocationOutils.ajouterOutil(champsOutil);
+
+            }
         }
 
         private void btnGestionOutils_Supprimer_Click(object sender, EventArgs e)
         {
+            if (tbGestionOutils_Id.Text.Length > 0)
+            {
+                errorProviderOutil.SetError(null, "");
 
+                string idOuitl = tbGestionOutils_Id.Text;
+                Hashtable champsOutil = new Hashtable();
+                champsOutil.Add("idOutil", idOuitl);
+            }
+            else
+            {
+                errorProviderOutil.SetError(tbGestionOutils_Id, "Ce champ doit contenir une valeur numérique positive");
+            }
         }
     }
 }

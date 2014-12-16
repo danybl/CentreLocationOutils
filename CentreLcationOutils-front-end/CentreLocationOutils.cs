@@ -44,10 +44,16 @@ namespace CentreLcationOutils_front_end
                         break;
                     case "utiliserReservation": utiliserReservation(champs);
                         break;
+                    case "findOutilById": findOutilById(champs);
+                        break;
                     case "ajouterOutil": ajouterOutil(champs);
+                        break;
+                    case "modifierOutil": modifierOutil(champs);
                         break;
                 }                
                 }catch(MissingDTOException missingDTOException){
+
+                    throw new MissingDTOException("Oh look what we got here it's an error : " + missingDTOException);
                     gestionCentreOutils.rollbackTransaction();
 
                 }            
@@ -295,7 +301,7 @@ namespace CentreLcationOutils_front_end
 
          #endregion
 
-        public void ajouterOutil(Hashtable champOutil)
+        public void ajouterOutil2(Hashtable champOutil)
         {
             gestionCentreOutils.beginTransaction();
 
@@ -326,6 +332,86 @@ namespace CentreLcationOutils_front_end
                 gestionCentreOutils.OutilFacade.acquerirOutil(gestionCentreOutils.MaConnection, outilDTO);
                 gestionCentreOutils.commitTransaction();
         }
+
+        #region Commandes pour OUTILS
+
+        public OutilDTO findOutilById(Hashtable champsOutil)
+        {
+            string idOutil = champsOutil["idOutil"].ToString();
+            gestionCentreOutils.beginTransaction();
+
+            OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.MaConnection, idOutil);
+            if (outilDTO == null)
+            {
+                throw new MissingDTOException("Le outil " + idOutil + "n'existe pas");
+            }
+            return outilDTO;
+        }
+
+        public void ajouterOutil(Hashtable champOutil)
+        {
+                gestionCentreOutils.beginTransaction();
+                string idOutil = champOutil["idOutil"].ToString();
+                string idCategorie = champOutil["idCategorie"].ToString();
+                string nom = champOutil["nom"].ToString();
+                string numSerie = champOutil["numSerie"].ToString();
+                string dateAcquisiton = champOutil["dateAcquisition"].ToString();
+                string prixLocation = champOutil["prixLocation"].ToString();
+                string description = champOutil["description"].ToString();
+                //TODO image
+
+                CategorieDTO categorieDTO = gestionCentreOutils.CategorieFacade.getCategorie(gestionCentreOutils.MaConnection, idCategorie);
+                if (categorieDTO == null)
+                {
+                    throw new MissingDTOException("La catégorie " + idCategorie + " n'existe pas");
+                }
+
+                OutilDTO outilDTO = new OutilDTO();
+                outilDTO.CategorieDTO = categorieDTO;
+                outilDTO.Nom = nom;
+                outilDTO.NumSerie = numSerie;
+                outilDTO.DateAcquisition = dateAcquisiton;
+                outilDTO.PrixLocation = prixLocation;
+                outilDTO.Description = description;
+                //outilDTO.image
+
+                gestionCentreOutils.OutilFacade.acquerirOutil(gestionCentreOutils.MaConnection, outilDTO);
+                gestionCentreOutils.commitTransaction();
+
+        }
+
+        public void modifierOutil(Hashtable champOutil)
+        {
+                gestionCentreOutils.beginTransaction();
+                string idOutil = champOutil["idOutil"].ToString();
+                string idCategorie = champOutil["idCategorie"].ToString();
+                string nom = champOutil["nom"].ToString();
+                string numSerie = champOutil["numSerie"].ToString();
+                string dateAcquisiton = champOutil["dateAcquisition"].ToString();
+                string prixLocation = champOutil["prixLocation"].ToString();
+                string description = champOutil["description"].ToString();
+                //TODO image
+
+                CategorieDTO categorieDTO = gestionCentreOutils.CategorieFacade.getCategorie(gestionCentreOutils.MaConnection, idCategorie);
+                if (categorieDTO == null)
+                {
+                    throw new MissingDTOException("La catégorie " + idCategorie + " n'existe pas");
+                }
+
+                OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.MaConnection, idOutil);
+                outilDTO.CategorieDTO = categorieDTO;
+                outilDTO.Nom = nom;
+                outilDTO.NumSerie = numSerie;
+                outilDTO.DateAcquisition = dateAcquisiton;
+                outilDTO.PrixLocation = prixLocation;
+                outilDTO.Description = description;
+                //outilDTO.image
+
+                gestionCentreOutils.OutilFacade.updateOutil(gestionCentreOutils.MaConnection, outilDTO);
+                gestionCentreOutils.commitTransaction();
+        }
+
+        #endregion
 
     }
 }
