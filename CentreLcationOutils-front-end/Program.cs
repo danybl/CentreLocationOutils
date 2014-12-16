@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using CentreLocationOutils_front_end.forms;
 
 namespace CentreLocationOutils_front_end
 {
@@ -13,10 +14,10 @@ namespace CentreLocationOutils_front_end
         [STAThread]
         static void Main()
         {
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
-            CentreLocationOutilsTesting centre = new CentreLocationOutilsTesting();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new ConnexionForm());
+            CentreLocationOutils centre = CentreLocationOutils.getInstance();
         }
     }
 }
