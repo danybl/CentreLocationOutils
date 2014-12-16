@@ -105,6 +105,7 @@
             this.btnAccueil_GestionFactures.Size = new System.Drawing.Size(155, 142);
             this.btnAccueil_GestionFactures.TabIndex = 6;
             this.btnAccueil_GestionFactures.UseVisualStyleBackColor = false;
+            this.btnAccueil_GestionFactures.Click += new System.EventHandler(this.btnAccueil_GestionFactures_Click);
             // 
             // btnAccueil_GestionOutils
             // 
@@ -137,6 +138,7 @@
             this.btnAccueil_GestionLocations.Size = new System.Drawing.Size(155, 142);
             this.btnAccueil_GestionLocations.TabIndex = 8;
             this.btnAccueil_GestionLocations.UseVisualStyleBackColor = false;
+            this.btnAccueil_GestionLocations.Click += new System.EventHandler(this.btnAccueil_GestionLocations_Click);
             // 
             // lblAccueil_GestionFactures
             // 
