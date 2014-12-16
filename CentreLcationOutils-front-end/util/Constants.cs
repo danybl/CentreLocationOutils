@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CentreLcationOutils_front_end.util
+namespace CentreLocationOutils_front_end.util
 {
-    public interface Constants
+    public class Constants
     {
         public static string CHAMP_OBLIGATOIRE = "Champ obligatoire";
 

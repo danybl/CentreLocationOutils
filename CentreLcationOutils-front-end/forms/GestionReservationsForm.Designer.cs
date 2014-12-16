@@ -1,4 +1,4 @@
-﻿namespace CentreLcationOutils_front_end.forms
+﻿namespace CentreLocationOutils_front_end.forms
 {
     partial class GestionReservationsForm
     {

@@ -8,9 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Collections;
 using CentreLocationOutils.dto;
-using CentreLcationOutils_front_end.util;
+using CentreLocationOutils_front_end.util;
 
-namespace CentreLcationOutils_front_end.forms
+namespace CentreLocationOutils_front_end.forms
 {
     public partial class GestionLocationsForm : Form
     {

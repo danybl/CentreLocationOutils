@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using CentreLocationOutils;
 using System.Collections;
 using CentreLocationOutils.dto;
-namespace CentreLcationOutils_front_end.forms
+namespace CentreLocationOutils_front_end.forms
 {
     public partial class GestionOutilsForm : Form
     {

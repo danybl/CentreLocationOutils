@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace CentreLcationOutils_front_end
+namespace CentreLocationOutils_front_end
 {
     static class Program
     {

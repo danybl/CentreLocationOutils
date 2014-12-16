@@ -1,4 +1,4 @@
-﻿using CentreLcationOutils_front_end.util;
+﻿using CentreLocationOutils_front_end.util;
 using CentreLocationOutils.dto;
 using CentreLocationOutils.exception.db;
 using CentreLocationOutils.exception.dto;
@@ -7,7 +7,7 @@ using System;
 using System.Collections;
 using System.Windows.Forms;
 
-namespace CentreLcationOutils_front_end.forms
+namespace CentreLocationOutils_front_end.forms
 {
     public partial class GestionClientForm : Form
     {

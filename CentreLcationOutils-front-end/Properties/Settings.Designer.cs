@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CentreLcationOutils_front_end.Properties
+namespace CentreLocationOutils_front_end.Properties
 {
 
 

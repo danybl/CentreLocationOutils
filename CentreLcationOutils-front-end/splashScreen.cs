@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CentreLcationOutils_front_end {
+namespace CentreLocationOutils_front_end {
     public partial class splashScreen : Form
     {
         Timer tmr;

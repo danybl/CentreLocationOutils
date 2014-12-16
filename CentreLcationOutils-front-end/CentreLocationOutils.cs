@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CentreLcationOutils_front_end.util;
+using CentreLocationOutils_front_end.util;
 using CentreLocationOutils.dto;
 using CentreLocationOutils.facade;
 using CentreLocationOutils.exception.dto;
 using System.Collections;
 
-namespace CentreLcationOutils_front_end
+namespace CentreLocationOutils_front_end
 {
     public class CentreLocationOutils
     {

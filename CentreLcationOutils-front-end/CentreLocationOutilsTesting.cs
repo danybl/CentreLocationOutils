@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CentreLcationOutils_front_end.util;
+using CentreLocationOutils_front_end.util;
 using System.IO;
 using CentreLocationOutils.exception;
 using CentreLocationOutils.dto;
@@ -12,7 +12,7 @@ using CentreLocationOutils.exception.facade;
 using System.Data.OracleClient;
 using System.Windows.Forms;
 
-namespace CentreLcationOutils_front_end
+namespace CentreLocationOutils_front_end
 {
     public class CentreLocationOutilsTesting
     {

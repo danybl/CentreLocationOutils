@@ -12,7 +12,7 @@ using CentreLocationOutils.service.interfaces;
 using System.Data.Common;
 using Oracle.DataAccess.Client;
 
-namespace CentreLcationOutils_front_end.util
+namespace CentreLocationOutils_front_end.util
 {
     public class CentreLocationOutilsCreateur
     {
