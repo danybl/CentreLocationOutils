@@ -125,7 +125,7 @@ namespace CentreLcationOutils_front_end
         {
             gestionCentreOutils.beginTransaction();
             string idLocation = champsLocation["idLocation"].ToString();
-            LocationDTO locationDTO = gestionCentreOutils.LocationFacade.getLocation(gestionCentreOutils.MaConnection, locationDTO);
+            LocationDTO locationDTO = gestionCentreOutils.LocationFacade.getLocation(gestionCentreOutils.MaConnection, idLocation);
             if (locationDTO == null)
             {
                 throw new MissingDTOException("La location " + idLocation + " n'existe pas");
@@ -284,6 +284,7 @@ namespace CentreLcationOutils_front_end
 
         public ClientDTO findClientById(Hashtable champsClient)
         {
+            gestionCentreOutils.beginTransaction();
             string idClient = champsClient["idClient"].ToString();
             gestionCentreOutils.beginTransaction();
             ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.MaConnection, idClient);
@@ -291,12 +292,30 @@ namespace CentreLcationOutils_front_end
             {
                 throw new MissingDTOException("Le client " + idClient + "n'existe pas");
             }
+            gestionCentreOutils.commitTransaction();
             return clientDTO;
         }
 
         public List<ClientDTO> getAllClients()
         {
-            return gestionCentreOutils.ClientFacade.getAllClients(gestionCentreOutils.MaConnection, ClientDTO.ID_CLIENT_COLUMN_NAME);
+            gestionCentreOutils.beginTransaction();
+            List<ClientDTO> clients = new List<ClientDTO>();
+            clients = gestionCentreOutils.ClientFacade.getAllClients(gestionCentreOutils.MaConnection, ClientDTO.ID_CLIENT_COLUMN_NAME);
+            gestionCentreOutils.commitTransaction();
+            return clients;
+        }
+
+        public void desinscrireClient(Hashtable champsClient)
+        {
+            gestionCentreOutils.beginTransaction();
+            string idClient = champsClient["idClient"].ToString();
+            ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.MaConnection, idClient);
+            if (clientDTO == null)
+            {
+                throw new MissingDTOException("Le client " + idClient + " n'existe pas");
+            }
+            gestionCentreOutils.ClientFacade.desinscrire(gestionCentreOutils.MaConnection, clientDTO);
+            gestionCentreOutils.commitTransaction();
         }
 
          #endregion

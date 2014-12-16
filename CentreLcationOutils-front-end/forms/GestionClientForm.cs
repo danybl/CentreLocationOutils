@@ -199,13 +199,21 @@ namespace CentreLcationOutils_front_end.forms
                 catch (MissingDTOException missingDTOException)
                 {
                     lblMessage.Text = missingDTOException.Message;
-                }catch(Inva)
+                }
+                catch (ConnectionException connection)
+                {
+                    lblMessage.Text = connection.Message;
+                }
+                catch (FacadeException facadeException)
+                {
+                    lblMessage.Text = facadeException.Message;
+                }
             }
         }
 
         private void btnGestionAccueil_Supprimer_Click(object sender, EventArgs e)
         {
-
+            string id
         }
     }
 }
