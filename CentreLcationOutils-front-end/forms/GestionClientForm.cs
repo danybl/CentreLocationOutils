@@ -7,7 +7,6 @@ using System;
 using System.Collections;
 using System.Windows.Forms;
 using System.Collections.Generic;
-using CentreLocationOutils.exception.db;
 using CentreLocationOutils.exception.dao;
 
 namespace CentreLocationOutils_front_end.forms
@@ -152,7 +151,7 @@ namespace CentreLocationOutils_front_end.forms
             try{
             List<ClientDTO> clients = centreLocationOutils.getAllClients();
                 dgGestionClients_ListeClients.Rows.Clear();
-                if(clients.Count != null){
+                if(clients.Count != 0){
             foreach (ClientDTO clientDTO in clients)
             {
                 dgGestionClients_ListeClients.Rows.Add(clientDTO.IdClient, clientDTO.Nom, clientDTO.Prenom, clientDTO.Telephone, clientDTO.Email, clientDTO.NbLocations, clientDTO.LimiteLocations);
