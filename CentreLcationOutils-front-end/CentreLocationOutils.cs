@@ -52,10 +52,7 @@ namespace CentreLcationOutils_front_end
                         break;
                 }                
                 }catch(MissingDTOException missingDTOException){
-
-                    throw new MissingDTOException("Oh look what we got here it's an error : " + missingDTOException);
                     gestionCentreOutils.rollbackTransaction();
-
                 }            
         }
 
