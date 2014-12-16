@@ -20,6 +20,7 @@ namespace CentreLcationOutils_front_end.forms
             InitializeComponent();
             centreLocationOutils = new CentreLocationOutils();
             tbGestionClients_DateInscription.Text = System.DateTime.Now.Ticks.ToString();
+            tbGestionClients_Nom.TextChanged += new EventHandler
         }
 
         private void btnGestionAccueil_Rechercher_Click(object sender, EventArgs e)
@@ -46,6 +47,64 @@ namespace CentreLcationOutils_front_end.forms
         }
 
         private void btnGestionAccueil_Ajouter_Click(object sender, EventArgs e)
+        {
+            bool aucunChampVide = true;
+            if (tbGestionClients_Nom.TextLength == 0)
+            {
+                errorProviderClient.SetError(tbGestionClients_Nom, "Ce champ est obligatoire");
+                aucunChampVide = false;
+            }
+            if (tbGestionClients_Prenom.TextLength == 0)
+            {
+                errorProviderClient.SetError(tbGestionClients_Prenom, "Ce champ est obligatoire");
+                aucunChampVide = false;
+            }
+            if (tbGestionClients_Telephone.TextLength == 0)
+            {
+                errorProviderClient.SetError(tbGestionClients_Telephone, "Ce champ est obligatoire");
+                aucunChampVide = false;
+            }
+            if (tbGestionClients_Email.TextLength == 0)
+            {
+                errorProviderClient.SetError(tbGestionClients_Email, "Ce champ est obligatoire");
+                aucunChampVide = false;
+            }
+            if (tbGestionClients_LimiteLocations.TextLength == 0)
+            {
+                errorProviderClient.SetError(tbGestionClients_LimiteLocations, "Ce champ est obligatoire");
+                aucunChampVide = false;
+            }
+
+            if (aucunChampVide)
+            {
+                try
+                {
+                    string nom = tbGestionClients_Nom.Text;
+                    string prenom = tbGestionClients_Prenom.Text;
+                    string telephone = tbGestionClients_Telephone.Text;
+                    string email = tbGestionClients_Email.Text;
+                    string limiteLocation = tbGestionClients_LimiteLocations.Text;
+                    string dateInscription = tbGestionClients_DateInscription.Text;
+                    Hashtable champsClient = new Hashtable();
+                    champsClient.Add("nom", nom);
+                    champsClient.Add("prenom", prenom);
+                    champsClient.Add("telephone", telephone);
+                    champsClient.Add("email", email);
+                    champsClient.Add("limiteLocation", limiteLocation);
+                    champsClient.Add("dateInscription", dateInscription);
+                    centreLocationOutils.inscrireClient(champsClient);
+                }catch(MissingDTOException missingDTOException){
+                    lblMessage.Text = missingDTOException.Message;
+                }
+            }
+        }
+
+        public void listerClient()
+        {
+            //dgGestionClients_ListeClients.DataSource = centreLocationOutils.
+        }
+
+        private void btnGestionAccueil_Modifier_Click(object sender, EventArgs e)
         {
             bool aucunChampVide = true;
             if (tbGestionClients_Nom.TextLength == 0)
@@ -92,15 +151,17 @@ namespace CentreLcationOutils_front_end.forms
                     champsClient.Add("limiteLocation", limiteLocation);
                     champsClient.Add("dateInscription", dateInscription);
                     centreLocationOutils.inscrireClient(champsClient);
-                }catch(MissingDTOException missingDTOException){
+                }
+                catch (MissingDTOException missingDTOException)
+                {
                     lblMessage.Text = missingDTOException.Message;
                 }
             }
         }
 
-        public void listerClient()
+        private void btnGestionAccueil_Supprimer_Click(object sender, EventArgs e)
         {
-            //dgGestionClients_ListeClients.DataSource = centreLocationOutils.
+
         }
     }
 }

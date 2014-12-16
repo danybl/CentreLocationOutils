@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionClientForm));
             this.menuGestionClients = new System.Windows.Forms.MenuStrip();
             this.mItemGestionClients_Accueil = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +53,7 @@
             this.columnLimiteLocations = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblGestionClients_ListeClients = new System.Windows.Forms.Label();
             this.panelGestionClients_InfoClient = new System.Windows.Forms.Panel();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.btnGestionAccueil_Rechercher = new System.Windows.Forms.Button();
             this.btnGestionAccueil_Supprimer = new System.Windows.Forms.Button();
             this.btnGestionAccueil_Modifier = new System.Windows.Forms.Button();
@@ -73,11 +75,12 @@
             this.tbGestionClients_Id = new System.Windows.Forms.TextBox();
             this.lblGestionClient_Id = new System.Windows.Forms.Label();
             this.lblGestionClients_InfoClient = new System.Windows.Forms.Label();
-            this.lblMessage = new System.Windows.Forms.Label();
+            this.errorProviderClient = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuGestionClients.SuspendLayout();
             this.panelGestionClients_ListeClients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionClients_ListeClients)).BeginInit();
             this.panelGestionClients_InfoClient.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderClient)).BeginInit();
             this.SuspendLayout();
             // 
             // menuGestionClients
@@ -273,6 +276,16 @@
             this.panelGestionClients_InfoClient.Size = new System.Drawing.Size(762, 237);
             this.panelGestionClients_InfoClient.TabIndex = 2;
             // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.ForeColor = System.Drawing.Color.Red;
+            this.lblMessage.Location = new System.Drawing.Point(40, 14);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 18);
+            this.lblMessage.TabIndex = 23;
+            // 
             // btnGestionAccueil_Rechercher
             // 
             this.btnGestionAccueil_Rechercher.BackColor = System.Drawing.Color.LemonChiffon;
@@ -293,6 +306,7 @@
             this.btnGestionAccueil_Supprimer.Size = new System.Drawing.Size(50, 30);
             this.btnGestionAccueil_Supprimer.TabIndex = 21;
             this.btnGestionAccueil_Supprimer.UseVisualStyleBackColor = false;
+            this.btnGestionAccueil_Supprimer.Click += new System.EventHandler(this.btnGestionAccueil_Supprimer_Click);
             // 
             // btnGestionAccueil_Modifier
             // 
@@ -303,6 +317,7 @@
             this.btnGestionAccueil_Modifier.Size = new System.Drawing.Size(50, 30);
             this.btnGestionAccueil_Modifier.TabIndex = 20;
             this.btnGestionAccueil_Modifier.UseVisualStyleBackColor = false;
+            this.btnGestionAccueil_Modifier.Click += new System.EventHandler(this.btnGestionAccueil_Modifier_Click);
             // 
             // btnGestionAccueil_Ajouter
             // 
@@ -473,15 +488,9 @@
             this.lblGestionClients_InfoClient.TabIndex = 2;
             this.lblGestionClients_InfoClient.Text = "Information sur le client";
             // 
-            // lblMessage
+            // errorProviderClient
             // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.ForeColor = System.Drawing.Color.Red;
-            this.lblMessage.Location = new System.Drawing.Point(40, 14);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 18);
-            this.lblMessage.TabIndex = 23;
+            this.errorProviderClient.ContainerControl = this;
             // 
             // GestionClientForm
             // 
@@ -502,6 +511,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionClients_ListeClients)).EndInit();
             this.panelGestionClients_InfoClient.ResumeLayout(false);
             this.panelGestionClients_InfoClient.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderClient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -554,5 +564,6 @@
         private System.Windows.Forms.Button btnGestionAccueil_Rechercher;
         private System.Windows.Forms.ToolStripMenuItem mItemGestionClients_Gestionnaire;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.ErrorProvider errorProviderClient;
     }
 }
