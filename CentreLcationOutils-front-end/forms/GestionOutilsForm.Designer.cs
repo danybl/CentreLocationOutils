@@ -72,11 +72,19 @@
             this.lblGestionOutils_Id = new System.Windows.Forms.Label();
             this.lblGestionOutils_InfoOutils = new System.Windows.Forms.Label();
             this.errorProviderOutil = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderId = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPrixLocation = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderDescription = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderNumSerie = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuGestionOutils.SuspendLayout();
             this.panelGestionOutils_ListeOutils.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionOutils_ListeOutils)).BeginInit();
             this.panelGestionOutils_InfoOutil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderOutil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPrixLocation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDescription)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNumSerie)).BeginInit();
             this.SuspendLayout();
             // 
             // menuGestionOutils
@@ -450,6 +458,22 @@
             // 
             this.errorProviderOutil.ContainerControl = this;
             // 
+            // errorProviderId
+            // 
+            this.errorProviderId.ContainerControl = this;
+            // 
+            // errorProviderPrixLocation
+            // 
+            this.errorProviderPrixLocation.ContainerControl = this;
+            // 
+            // errorProviderDescription
+            // 
+            this.errorProviderDescription.ContainerControl = this;
+            // 
+            // errorProviderNumSerie
+            // 
+            this.errorProviderNumSerie.ContainerControl = this;
+            // 
             // GestionOutilsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,6 +494,10 @@
             this.panelGestionOutils_InfoOutil.ResumeLayout(false);
             this.panelGestionOutils_InfoOutil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderOutil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPrixLocation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDescription)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNumSerie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,5 +547,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDateAcquisition;
         private System.Windows.Forms.ToolStripMenuItem mItemGestionOutils_Gestionnaire;
         private System.Windows.Forms.ErrorProvider errorProviderOutil;
+        private System.Windows.Forms.ErrorProvider errorProviderId;
+        private System.Windows.Forms.ErrorProvider errorProviderPrixLocation;
+        private System.Windows.Forms.ErrorProvider errorProviderDescription;
+        private System.Windows.Forms.ErrorProvider errorProviderNumSerie;
     }
 }

@@ -20,7 +20,48 @@ namespace CentreLcationOutils_front_end.forms
             InitializeComponent();
             centreLocationOutils = new CentreLocationOutils();
             tbGestionClients_DateInscription.Text = System.DateTime.Now.Ticks.ToString();
-            tbGestionClients_Nom.TextChanged += new EventHandler
+            tbGestionClients_Nom.TextChanged += new EventHandler(resetErrorProviderNom);
+            tbGestionClients_Prenom.TextChanged += new EventHandler(resetErrorProviderPrenom);
+            tbGestionClients_Telephone.TextChanged += new EventHandler(resetErrorProviderTelephone);
+            tbGestionClients_Email.TextChanged += new EventHandler(resetErrorProviderEmail);
+            tbGestionClients_Id.TextChanged += new EventHandler(resetErrorProviderId);
+            tbGestionClients_LimiteLocations.TextChanged += new EventHandler(resetErrorProviderLimiteLocation);
+        }
+
+        private void resetErrorProviderLimiteLocation(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            errorProviderLimiteLocation.SetError(null, "");
+        }
+
+        private void resetErrorProviderId(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            errorProviderId.SetError(null, "");
+        }
+
+        private void resetErrorProviderEmail(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            errorProviderEmail.SetError(null, "");
+        }
+
+        private void resetErrorProviderTelephone(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            errorProviderTelephone.SetError(null, "");
+        }
+
+        private void resetErrorProviderPrenom(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            errorProviderPrenom.SetError(null, "");
+        }
+
+        private void resetErrorProviderNom(object sender, EventArgs e)
+        {
+            Label label = (Label)sender;
+            errorProviderNom.SetError(null, "");
         }
 
         private void btnGestionAccueil_Rechercher_Click(object sender, EventArgs e)
@@ -51,27 +92,27 @@ namespace CentreLcationOutils_front_end.forms
             bool aucunChampVide = true;
             if (tbGestionClients_Nom.TextLength == 0)
             {
-                errorProviderClient.SetError(tbGestionClients_Nom, "Ce champ est obligatoire");
+                errorProviderNom.SetError(tbGestionClients_Nom, "Ce champ est obligatoire");
                 aucunChampVide = false;
             }
             if (tbGestionClients_Prenom.TextLength == 0)
             {
-                errorProviderClient.SetError(tbGestionClients_Prenom, "Ce champ est obligatoire");
+                errorProviderNom.SetError(tbGestionClients_Prenom, "Ce champ est obligatoire");
                 aucunChampVide = false;
             }
             if (tbGestionClients_Telephone.TextLength == 0)
             {
-                errorProviderClient.SetError(tbGestionClients_Telephone, "Ce champ est obligatoire");
+                errorProviderNom.SetError(tbGestionClients_Telephone, "Ce champ est obligatoire");
                 aucunChampVide = false;
             }
             if (tbGestionClients_Email.TextLength == 0)
             {
-                errorProviderClient.SetError(tbGestionClients_Email, "Ce champ est obligatoire");
+                errorProviderNom.SetError(tbGestionClients_Email, "Ce champ est obligatoire");
                 aucunChampVide = false;
             }
             if (tbGestionClients_LimiteLocations.TextLength == 0)
             {
-                errorProviderClient.SetError(tbGestionClients_LimiteLocations, "Ce champ est obligatoire");
+                errorProviderNom.SetError(tbGestionClients_LimiteLocations, "Ce champ est obligatoire");
                 aucunChampVide = false;
             }
 

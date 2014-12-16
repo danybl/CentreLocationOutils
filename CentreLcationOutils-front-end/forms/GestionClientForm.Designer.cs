@@ -75,12 +75,22 @@
             this.tbGestionClients_Id = new System.Windows.Forms.TextBox();
             this.lblGestionClient_Id = new System.Windows.Forms.Label();
             this.lblGestionClients_InfoClient = new System.Windows.Forms.Label();
-            this.errorProviderClient = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderNom = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderPrenom = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderTelephone = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderId = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderEmail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderLimiteLocation = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuGestionClients.SuspendLayout();
             this.panelGestionClients_ListeClients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionClients_ListeClients)).BeginInit();
             this.panelGestionClients_InfoClient.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderClient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPrenom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTelephone)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderId)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLimiteLocation)).BeginInit();
             this.SuspendLayout();
             // 
             // menuGestionClients
@@ -488,9 +498,29 @@
             this.lblGestionClients_InfoClient.TabIndex = 2;
             this.lblGestionClients_InfoClient.Text = "Information sur le client";
             // 
-            // errorProviderClient
+            // errorProviderNom
             // 
-            this.errorProviderClient.ContainerControl = this;
+            this.errorProviderNom.ContainerControl = this;
+            // 
+            // errorProviderPrenom
+            // 
+            this.errorProviderPrenom.ContainerControl = this;
+            // 
+            // errorProviderTelephone
+            // 
+            this.errorProviderTelephone.ContainerControl = this;
+            // 
+            // errorProviderId
+            // 
+            this.errorProviderId.ContainerControl = this;
+            // 
+            // errorProviderEmail
+            // 
+            this.errorProviderEmail.ContainerControl = this;
+            // 
+            // errorProviderLimiteLocation
+            // 
+            this.errorProviderLimiteLocation.ContainerControl = this;
             // 
             // GestionClientForm
             // 
@@ -511,7 +541,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionClients_ListeClients)).EndInit();
             this.panelGestionClients_InfoClient.ResumeLayout(false);
             this.panelGestionClients_InfoClient.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderClient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderPrenom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTelephone)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderId)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLimiteLocation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -564,6 +599,11 @@
         private System.Windows.Forms.Button btnGestionAccueil_Rechercher;
         private System.Windows.Forms.ToolStripMenuItem mItemGestionClients_Gestionnaire;
         private System.Windows.Forms.Label lblMessage;
-        private System.Windows.Forms.ErrorProvider errorProviderClient;
+        private System.Windows.Forms.ErrorProvider errorProviderNom;
+        private System.Windows.Forms.ErrorProvider errorProviderPrenom;
+        private System.Windows.Forms.ErrorProvider errorProviderTelephone;
+        private System.Windows.Forms.ErrorProvider errorProviderId;
+        private System.Windows.Forms.ErrorProvider errorProviderEmail;
+        private System.Windows.Forms.ErrorProvider errorProviderLimiteLocation;
     }
 }
