@@ -19,40 +19,40 @@ namespace CentreLcationOutils_front_end
 
         public CentreLocationOutils() : base() { }
 
-        public void executerTransaction(string commande, Hashtable champs)
-        {
-                switch (commande)
-                {
-                    case "inscrireClient": inscrireClient(champs);
-                        break;
-                    case "updateClient": updateClient(champs);
-                        break;
-                    case "getAllClients": getAllClients();
-                        break;
-                    case "findClientById": findClientById(champs);
-                        break;
-                    case "effectuerLocation": effectuerLocation(champs);
-                        break;
-                    case "terminerLocation": terminerLocation(champs);
-                        break;
-                    case "renouvelerLocation": renouvelerLocation(champs);
-                        break;
-                    case "effectuerReservation": effectuerLocation(champs);
-                        break;
-                    case "annulerReservation": annulerReservation(champs);
-                        break;
-                    case "utiliserReservation": utiliserReservation(champs);
-                        break;
-                    case "findOutilById": findOutilById(champs);
-                        break;
-                    case "ajouterOutil": ajouterOutil(champs);
-                        break;
-                    case "modifierOutil": modifierOutil(champs);
-                        break;
-                    case "supprimerOutil": supprimerOutil(champs);
-                        break;
-                }                
-        }
+        //public void executerTransaction(string commande, Hashtable champs)
+        //{
+        //        switch (commande)
+        //        {
+        //            case "inscrireClient": inscrireClient(champs);
+        //                break;
+        //            case "updateClient": updateClient(champs);
+        //                break;
+        //            case "getAllClients": getAllClients();
+        //                break;
+        //            case "findClientById": findClientById(champs);
+        //                break;
+        //            case "effectuerLocation": effectuerLocation(champs);
+        //                break;
+        //            case "terminerLocation": terminerLocation(champs);
+        //                break;
+        //            case "renouvelerLocation": renouvelerLocation(champs);
+        //                break;
+        //            case "effectuerReservation": effectuerLocation(champs);
+        //                break;
+        //            case "annulerReservation": annulerReservation(champs);
+        //                break;
+        //            case "utiliserReservation": utiliserReservation(champs);
+        //                break;
+        //            case "findOutilById": findOutilById(champs);
+        //                break;
+        //            case "ajouterOutil": ajouterOutil(champs);
+        //                break;
+        //            case "modifierOutil": modifierOutil(champs);
+        //                break;
+        //            case "supprimerOutil": supprimerOutil(champs);
+        //                break;
+        //        }                
+        //}
 
         public void rollbackTransaction()
         {
@@ -64,7 +64,7 @@ namespace CentreLcationOutils_front_end
             //TODO 
         }
         #region Commandes location
-        private void effectuerLocation(Hashtable champsLocation)
+        public void effectuerLocation(Hashtable champsLocation)
         {
             gestionCentreOutils.beginTransaction();
 
@@ -99,7 +99,7 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        private void terminerLocation(Hashtable champsLocation)
+        public void terminerLocation(Hashtable champsLocation)
         {
             gestionCentreOutils.beginTransaction();
             string idOutil = champsLocation["idOutil"].ToString();
@@ -121,7 +121,7 @@ namespace CentreLcationOutils_front_end
 
         }
 
-        private void renouvelerLocation(Hashtable champsLocation)
+        public void renouvelerLocation(Hashtable champsLocation)
         {
             gestionCentreOutils.beginTransaction();
             string idLocation = champsLocation["idLocation"].ToString();
@@ -138,7 +138,7 @@ namespace CentreLcationOutils_front_end
         #endregion fin commande location
 
         #region Commandes employé
-        private void engagerEmploye(Hashtable champsEmploye)
+        public void engagerEmploye(Hashtable champsEmploye)
         {
             gestionCentreOutils.beginTransaction();
             EmployeDTO employeDTO = new EmployeDTO();
@@ -152,7 +152,7 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
 
         }
-        private void supprimerEmploye(Hashtable champsEmploye)
+        public void supprimerEmploye(Hashtable champsEmploye)
         {
             gestionCentreOutils.beginTransaction();
             string idEmploye = champsEmploye["idEmploye"].ToString();
@@ -168,7 +168,7 @@ namespace CentreLcationOutils_front_end
         #endregion
 
         #region commandes Réservation
-        private void effectuerReservation(Hashtable champsReservation)
+        public void effectuerReservation(Hashtable champsReservation)
         {
             gestionCentreOutils.beginTransaction();
 
@@ -195,7 +195,7 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        private void annulerReservation(Hashtable champsReservation)
+        public void annulerReservation(Hashtable champsReservation)
         {
 
             gestionCentreOutils.beginTransaction();
@@ -216,7 +216,7 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        private void utiliserReservation(Hashtable champsReservation)
+        public void utiliserReservation(Hashtable champsReservation)
         {
 
             gestionCentreOutils.beginTransaction();
@@ -238,7 +238,7 @@ namespace CentreLcationOutils_front_end
         #endregion Fin commande réservation
 
         #region Commandes pour clients
-        private void inscrireClient(Hashtable champsClient)
+        public void inscrireClient(Hashtable champsClient)
         {
             gestionCentreOutils.beginTransaction();
             string nomClient = champsClient["nomClient"].ToString();
@@ -258,7 +258,7 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        private void updateClient(Hashtable champsClient)
+        public void updateClient(Hashtable champsClient)
         {
 
             gestionCentreOutils.beginTransaction();
@@ -282,7 +282,7 @@ namespace CentreLcationOutils_front_end
             gestionCentreOutils.commitTransaction();
         }
 
-        private ClientDTO findClientById(Hashtable champsClient)
+        public ClientDTO findClientById(Hashtable champsClient)
         {
             string idClient = champsClient["idClient"].ToString();
             gestionCentreOutils.beginTransaction();
@@ -294,7 +294,7 @@ namespace CentreLcationOutils_front_end
             return clientDTO;
         }
 
-        private List<ClientDTO> getAllClients()
+        public List<ClientDTO> getAllClients()
         {
             return gestionCentreOutils.ClientFacade.getAllClients(gestionCentreOutils.MaConnection, ClientDTO.ID_CLIENT_COLUMN_NAME);
         }
@@ -304,7 +304,7 @@ namespace CentreLcationOutils_front_end
 
         #region Commandes pour OUTILS
 
-        private OutilDTO findOutilById(Hashtable champsOutil)
+        public OutilDTO findOutilById(Hashtable champsOutil)
         {
             string idOutil = champsOutil["idOutil"].ToString();
             gestionCentreOutils.beginTransaction();
@@ -317,7 +317,7 @@ namespace CentreLcationOutils_front_end
             return outilDTO;
         }
 
-        private void ajouterOutil(Hashtable champOutil)
+        public void ajouterOutil(Hashtable champOutil)
         {
                 gestionCentreOutils.beginTransaction();
                 string idOutil = champOutil["idOutil"].ToString();
@@ -349,7 +349,7 @@ namespace CentreLcationOutils_front_end
 
         }
 
-        private void modifierOutil(Hashtable champOutil)
+        public void modifierOutil(Hashtable champOutil)
         {
                 gestionCentreOutils.beginTransaction();
                 string idOutil = champOutil["idOutil"].ToString();
