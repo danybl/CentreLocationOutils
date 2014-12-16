@@ -69,7 +69,7 @@
             this.Controls.Add(this.btnAnnuler);
             this.Controls.Add(this.btnOk);
             this.Name = "ConfirmationSuppression";
-            this.Text = "ConfirmationSuppression";
+            this.Text = "Confirmer Suppression";
             this.ResumeLayout(false);
             this.PerformLayout();
 
