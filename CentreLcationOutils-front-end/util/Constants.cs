@@ -5,7 +5,14 @@ using System.Text;
 
 namespace CentreLcationOutils_front_end.util
 {
-    class Constants
+    public interface Constants
     {
+        public static string CHAMP_OBLIGATOIRE = "Champ obligatoire";
+
+        public static string CONFIRMATION_SUPPRESSION = "Suppression effectuée";
+
+        public static string ANNULATION_SUPPRESSION = "Suppression annulée";
+
+        public static string DEMANDE_CONFIRMATION_SUPPRESSION_CLIENT = "Supprimer définitivement le client ";
     }
 }

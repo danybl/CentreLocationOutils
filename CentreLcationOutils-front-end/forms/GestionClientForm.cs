@@ -12,6 +12,7 @@ using CentreLocationOutils.exception.dto;
 using CentreLocationOutils.exception.db;
 using CentreLocationOutils.exception.facade;
 using CentreLocationOutils.exception.service;
+using CentreLcationOutils_front_end.util;
 
 namespace CentreLcationOutils_front_end.forms
 {
@@ -95,27 +96,27 @@ namespace CentreLcationOutils_front_end.forms
             bool aucunChampVide = true;
             if (tbGestionClients_Nom.TextLength == 0)
             {
-                errorProviderNom.SetError(tbGestionClients_Nom, "Ce champ est obligatoire");
+                errorProviderNom.SetError(tbGestionClients_Nom, Constants.CHAMP_OBLIGATOIRE);
                 aucunChampVide = false;
             }
             if (tbGestionClients_Prenom.TextLength == 0)
             {
-                errorProviderNom.SetError(tbGestionClients_Prenom, "Ce champ est obligatoire");
+                errorProviderNom.SetError(tbGestionClients_Prenom, Constants.CHAMP_OBLIGATOIRE);
                 aucunChampVide = false;
             }
             if (tbGestionClients_Telephone.TextLength == 0)
             {
-                errorProviderNom.SetError(tbGestionClients_Telephone, "Ce champ est obligatoire");
+                errorProviderNom.SetError(tbGestionClients_Telephone, Constants.CHAMP_OBLIGATOIRE);
                 aucunChampVide = false;
             }
             if (tbGestionClients_Email.TextLength == 0)
             {
-                errorProviderNom.SetError(tbGestionClients_Email, "Ce champ est obligatoire");
+                errorProviderNom.SetError(tbGestionClients_Email, Constants.CHAMP_OBLIGATOIRE);
                 aucunChampVide = false;
             }
             if (tbGestionClients_LimiteLocations.TextLength == 0)
             {
-                errorProviderNom.SetError(tbGestionClients_LimiteLocations, "Ce champ est obligatoire");
+                errorProviderNom.SetError(tbGestionClients_LimiteLocations, Constants.CHAMP_OBLIGATOIRE);
                 aucunChampVide = false;
             }
 
@@ -216,14 +217,14 @@ namespace CentreLcationOutils_front_end.forms
             bool aucunChampVide = true;
             if (tbGestionClients_Nom.TextLength == 0)
             {
-                errorProviderNom.SetError(tbGestionClients_Nom, "Ce champ est obligatoire");
+                errorProviderNom.SetError(tbGestionClients_Nom, Constants.CHAMP_OBLIGATOIRE);
                 aucunChampVide = false;
             }
             if (aucunChampVide)
             {
                 string idClient = tbGestionClients_Id.Text;
             ConfirmationSuppression confirmationSuppression = new ConfirmationSuppression();
-            confirmationSuppression.Message = "Supprimer le client " + idClient + " ?";
+            confirmationSuppression.Message = Constants.DEMANDE_CONFIRMATION_SUPPRESSION_CLIENT + idClient + " ?";
             DialogResult result = confirmationSuppression.ShowDialog();
                 if(result.Equals(DialogResult.OK)){
                     try
@@ -232,7 +233,7 @@ namespace CentreLcationOutils_front_end.forms
                         Hashtable champsClient = new Hashtable();
                         champsClient.Add("idClient", idClient);
                         centreLocationOutils.desinscrireClient(champsClient);
-                        lblMessage.Text = "Suppression effectuée";
+                        lblMessage.Text = Constants.CONFIRMATION_SUPPRESSION;
                     }
                     catch (MissingDTOException missingDTOException)
                     {
@@ -247,7 +248,7 @@ namespace CentreLcationOutils_front_end.forms
                         lblMessage.Text = facadeException.Message;
                     }
                 }
-                else { lblMessage.Text = "Suppression annulée"; }
+                else { lblMessage.Text = Constants.ANNULATION_SUPPRESSION; }
             }
         }
 
