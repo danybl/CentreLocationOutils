@@ -200,6 +200,7 @@
   <ItemGroup>
     <Content Include="images\listTool.png" />
     <Content Include="lib\CentreLocationOutils.dll" />
+    <Content Include="lib\ConnexionControl.dll" />
     <Content Include="ress\LOCATION.sql" />
     <Content Include="ress\test.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

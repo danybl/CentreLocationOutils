@@ -26,7 +26,7 @@ namespace CentreLocationOutils_front_end.util
         public IFacturationFacade FacturationFacade { get; private set; }
         public ICategorieFacade CategorieFacade { get; set; }
 
-        public DbTransaction Transaction;
+        public OracleTransaction Transaction;
         //public ADODB._Connection testConnection;
         //public ADO
 
@@ -89,9 +89,9 @@ namespace CentreLocationOutils_front_end.util
             {
                 Transaction = MaConnection.ConnectionOracle.BeginTransaction();
             }
-            catch (DbException dbException)
+            catch (OracleException oracleException)
             {
-                throw new CentreCreateurException("", dbException);
+                throw new CentreCreateurException("", oracleException);
             }
         }
 
@@ -102,9 +102,9 @@ namespace CentreLocationOutils_front_end.util
                 Transaction.Commit();
                 close();
             }
-            catch (DbException dbException)
+            catch (OracleException oracleException)
             {
-                throw new CentreCreateurException("", dbException);
+                throw new CentreCreateurException("", oracleException);
             }
         }
 
@@ -115,9 +115,9 @@ namespace CentreLocationOutils_front_end.util
                 Transaction.Rollback();
                 close();
             }
-            catch (DbException dbException)
+            catch (OracleException oracleException)
             {
-                throw new CentreCreateurException("", dbException);
+                throw new CentreCreateurException("", oracleException);
             }
         }
 
@@ -127,9 +127,9 @@ namespace CentreLocationOutils_front_end.util
             {
                 Transaction.Dispose();
             }
-            catch (DbException dbException)
+            catch (OracleException oracleException)
             {
-                throw new CentreCreateurException("", dbException);
+                throw new CentreCreateurException("", oracleException);
             }
         }
         public void closeConnection()

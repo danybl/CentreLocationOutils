@@ -35,12 +35,83 @@ namespace CentreLocationOutils_front_end
         public void rollbackTransaction()
         {
                     gestionCentreOutils.rollbackTransaction();
-                }            
-
+                }
+        #region Commandes adresse
         private void attribuerAdresse(Hashtable champsAdresse)
         {
-            //TODO 
+            gestionCentreOutils.beginTransaction();
+            string numero = champsAdresse["numero"].ToString();
+            string rue = champsAdresse["rue"].ToString();
+            string appartement = champsAdresse["appartement"].ToString();
+            string codePostal = champsAdresse["codePostal"].ToString();
+            string ville = champsAdresse["ville"].ToString();
+            string province = champsAdresse["province"].ToString();
+            string pays = champsAdresse["pays"].ToString();
+            AdresseDTO adresseDTO = new AdresseDTO();
+            adresseDTO.Numero = numero;
+            adresseDTO.Rue = rue;
+            adresseDTO.Appartement = appartement;
+            adresseDTO.CodePostal = codePostal;
+            adresseDTO.Ville = ville;
+            adresseDTO.Province = province;
+            adresseDTO.Pays = pays;
+            gestionCentreOutils.AdresseFacade.ajouterAdresse(gestionCentreOutils.MaConnection,adresseDTO);
+            gestionCentreOutils.commitTransaction();
         }
+
+        private void changerAdresse(Hashtable champsAdresse)
+        {
+            gestionCentreOutils.beginTransaction();
+            string idAdresse = champsAdresse["idAdresse"].ToString();
+            string numero = champsAdresse["numero"].ToString();
+            string rue = champsAdresse["rue"].ToString();
+            string appartement = champsAdresse["appartement"].ToString();
+            string codePostal = champsAdresse["codePostal"].ToString();
+            string ville = champsAdresse["ville"].ToString();
+            string province = champsAdresse["province"].ToString();
+            string pays = champsAdresse["pays"].ToString();
+            AdresseDTO adresseDTO = gestionCentreOutils.AdresseFacade.getAdresse(gestionCentreOutils.MaConnection, idAdresse);
+            if (adresseDTO == null)
+            {
+                throw new MissingDTOException("L'adresse " + idAdresse + " n'existe pas");
+            }
+            adresseDTO.Numero = numero;
+            adresseDTO.Rue = rue;
+            adresseDTO.Appartement = appartement;
+            adresseDTO.CodePostal = codePostal;
+            adresseDTO.Ville = ville;
+            adresseDTO.Province = province;
+            adresseDTO.Pays = pays;
+            gestionCentreOutils.AdresseFacade.mettreAJourAdresse(gestionCentreOutils.MaConnection, adresseDTO);
+            gestionCentreOutils.commitTransaction();
+            
+        }
+
+        private void supprimerAdresse(Hashtable champsAdresse)
+        {
+            gestionCentreOutils.beginTransaction();
+            string idAdresse = champsAdresse["idAdresse"].ToString();
+            AdresseDTO adresseDTO = gestionCentreOutils.AdresseFacade.getAdresse(gestionCentreOutils.MaConnection, idAdresse);
+            if (adresseDTO == null)
+            {
+                throw new MissingDTOException("L'adresse " + idAdresse + " n'existe pas");
+            }
+            gestionCentreOutils.AdresseFacade.supprimerAdresse(gestionCentreOutils.MaConnection, adresseDTO);
+            gestionCentreOutils.commitTransaction();
+        }
+
+        private AdresseDTO obtenirAdresse(Hashtable champAdresse)
+        {
+            gestionCentreOutils.beginTransaction();
+            string idAdresse = champAdresse["idAdresse"].ToString();
+            AdresseDTO adresseDTO = gestionCentreOutils.AdresseFacade.getAdresse(gestionCentreOutils.MaConnection, idAdresse);
+            if (adresseDTO == null)
+            {
+                throw new MissingDTOException("L'adresse " + idAdresse + " n'existe pas");
+            }
+            return adresseDTO;
+        }
+        #endregion
         #region Commandes location
         public void effectuerLocation(Hashtable champsLocation)
         {
@@ -279,7 +350,6 @@ namespace CentreLocationOutils_front_end
         {
             gestionCentreOutils.beginTransaction();
             string idClient = champsClient["idClient"].ToString();
-            gestionCentreOutils.beginTransaction();
             ClientDTO clientDTO = gestionCentreOutils.ClientFacade.getClient(gestionCentreOutils.MaConnection, idClient);
             if (clientDTO == null)
             {
@@ -388,7 +458,7 @@ namespace CentreLocationOutils_front_end
                 outilDTO.Description = description;
                 //outilDTO.image
 
-                gestionCentreOutils.OutilFacade.updateOutil(gestionCentreOutils.MaConnection, outilDTO);
+                gestionCentreOutils.OutilFacade.mettreAJourOutil(gestionCentreOutils.MaConnection, outilDTO);
                 gestionCentreOutils.commitTransaction();
         }
 
@@ -403,7 +473,7 @@ namespace CentreLocationOutils_front_end
                 throw new MissingDTOException("Le outil " + idOutil + "n'existe pas");
             }
 
-            gestionCentreOutils.OutilFacade.deleteOutil(gestionCentreOutils.MaConnection, outilDTO);
+            gestionCentreOutils.OutilFacade.supprimerOutil(gestionCentreOutils.MaConnection, outilDTO);
 
 
         }
