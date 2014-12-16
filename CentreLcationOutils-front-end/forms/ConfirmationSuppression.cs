@@ -14,6 +14,13 @@ namespace CentreLcationOutils_front_end.forms
         public ConfirmationSuppression()
         {
             InitializeComponent();
+            btnOk.DialogResult = DialogResult.OK;
+            btnAnnuler.DialogResult = DialogResult.Cancel;
+        }
+
+        public string Message {
+            get { return this.lblMessage.Text; }
+            set { this.lblMessage.Text = value; }
         }
     }
 }

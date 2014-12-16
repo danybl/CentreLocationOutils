@@ -213,7 +213,43 @@ namespace CentreLcationOutils_front_end.forms
 
         private void btnGestionAccueil_Supprimer_Click(object sender, EventArgs e)
         {
-            
+            bool aucunChampVide = true;
+            if (tbGestionClients_Nom.TextLength == 0)
+            {
+                errorProviderNom.SetError(tbGestionClients_Nom, "Ce champ est obligatoire");
+                aucunChampVide = false;
+            }
+            if (aucunChampVide)
+            {
+                string idClient = tbGestionClients_Id.Text;
+            ConfirmationSuppression confirmationSuppression = new ConfirmationSuppression();
+            confirmationSuppression.Message = "Supprimer le client " + idClient + " ?";
+            DialogResult result = confirmationSuppression.ShowDialog();
+                if(result.Equals(DialogResult.OK)){
+                    try
+                    {
+
+                        Hashtable champsClient = new Hashtable();
+                        champsClient.Add("idClient", idClient);
+                        centreLocationOutils.desinscrireClient(champsClient);
+                        lblMessage.Text = "Suppression effectuée";
+                    }
+                    catch (MissingDTOException missingDTOException)
+                    {
+                        lblMessage.Text = missingDTOException.Message;
+                    }
+                    catch (ConnectionException connection)
+                    {
+                        lblMessage.Text = connection.Message;
+                    }
+                    catch (FacadeException facadeException)
+                    {
+                        lblMessage.Text = facadeException.Message;
+                    }
+                }
+                else { lblMessage.Text = "Suppression annulée"; }
+            }
         }
+
     }
 }
