@@ -50,6 +50,8 @@ namespace CentreLcationOutils_front_end
                         break;
                     case "modifierOutil": modifierOutil(champs);
                         break;
+                    case "supprimerOutil": supprimerOutil(champs);
+                        break;
                 }                
                 }catch(MissingDTOException missingDTOException){
                     gestionCentreOutils.rollbackTransaction();
@@ -375,6 +377,22 @@ namespace CentreLcationOutils_front_end
 
                 gestionCentreOutils.OutilFacade.updateOutil(gestionCentreOutils.MaConnection, outilDTO);
                 gestionCentreOutils.commitTransaction();
+        }
+
+        public void supprimerOutil(Hashtable champsOutil)
+        {
+            string idOutil = champsOutil["idOutil"].ToString();
+            gestionCentreOutils.beginTransaction();
+
+            OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.MaConnection, idOutil);
+            if (outilDTO == null)
+            {
+                throw new MissingDTOException("Le outil " + idOutil + "n'existe pas");
+            }
+
+            gestionCentreOutils.OutilFacade.deleteOutil(gestionCentreOutils.MaConnection, outilDTO);
+
+
         }
 
         #endregion
