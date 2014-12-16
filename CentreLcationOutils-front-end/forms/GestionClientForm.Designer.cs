@@ -199,6 +199,7 @@
             this.columnLimiteLocations});
             this.dgGestionClients_ListeClients.Location = new System.Drawing.Point(18, 48);
             this.dgGestionClients_ListeClients.Name = "dgGestionClients_ListeClients";
+            this.dgGestionClients_ListeClients.ReadOnly = true;
             this.dgGestionClients_ListeClients.Size = new System.Drawing.Size(731, 209);
             this.dgGestionClients_ListeClients.TabIndex = 1;
             // 
@@ -212,38 +213,45 @@
             // 
             this.columnNom.HeaderText = "Nom";
             this.columnNom.Name = "columnNom";
+            this.columnNom.ReadOnly = true;
             this.columnNom.ToolTipText = "Nom";
             // 
             // columnPrenom
             // 
             this.columnPrenom.HeaderText = "Prénom";
             this.columnPrenom.Name = "columnPrenom";
+            this.columnPrenom.ReadOnly = true;
             this.columnPrenom.ToolTipText = "Prénom";
             // 
             // columnTelephone
             // 
             this.columnTelephone.HeaderText = "Telephone";
             this.columnTelephone.Name = "columnTelephone";
+            this.columnTelephone.ReadOnly = true;
             // 
             // columnEmail
             // 
             this.columnEmail.HeaderText = "Email";
             this.columnEmail.Name = "columnEmail";
+            this.columnEmail.ReadOnly = true;
             // 
             // columnDateInscription
             // 
             this.columnDateInscription.HeaderText = "DateInscription";
             this.columnDateInscription.Name = "columnDateInscription";
+            this.columnDateInscription.ReadOnly = true;
             // 
             // columnNbLocations
             // 
             this.columnNbLocations.HeaderText = "NbLocations";
             this.columnNbLocations.Name = "columnNbLocations";
+            this.columnNbLocations.ReadOnly = true;
             // 
             // columnLimiteLocations
             // 
             this.columnLimiteLocations.HeaderText = "LimiteLocations";
             this.columnLimiteLocations.Name = "columnLimiteLocations";
+            this.columnLimiteLocations.ReadOnly = true;
             // 
             // lblGestionClients_ListeClients
             // 

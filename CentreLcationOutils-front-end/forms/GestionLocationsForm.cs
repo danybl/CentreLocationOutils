@@ -68,10 +68,16 @@ namespace CentreLocationOutils_front_end.forms
             }
             if (aucunChampVide)
             {
-                
+                string idLocation = tbGestionLocations_IdLocation.Text;
                 Hashtable champsLocation = new Hashtable();
                 champsLocation.Add("idLocation", idLocation);
-                LocationDTO lcoationDTO = CentreLocationOutils
+                LocationDTO locationDTO = centreLocationOutil.findLocationById(champsLocation);
+                tbGestionLocations_IdLocation.Text = locationDTO.IdLocation;
+                tbGestionLocations_IdClient.Text = locationDTO.ClientDTO.IdClient;
+                tbGestionLocations_IdOutil.Text = locationDTO.OutilDTO.IdOutil;
+                tbGestionLocations_IdEmploye.Text = locationDTO.EmployeDTO.IdEmploye;
+                tbGestionLocations_Depot.Text = locationDTO.Depot;
+                tbGestionLocations_DateLocation.te
 
             }
         }

@@ -18,7 +18,7 @@ namespace CentreLocationOutils_front_end
         private static int NB_JOUR_LOCATION = 7;
         private static int NB_JOUR_RESERVATION = 3;
 
-        public CentreLocationOutils() : base() { gestionCentreOutils = new CentreLocationOutilsCreateur("local", "location", "tiger")}
+        public CentreLocationOutils() : base() { gestionCentreOutils = new CentreLocationOutilsCreateur("local", "location", "tiger"); }
 
         public static CentreLocationOutils getInstance()
         {
@@ -113,6 +113,21 @@ namespace CentreLocationOutils_front_end
             gestionCentreOutils.commitTransaction();
             
         }
+
+        public LocationDTO findLocationById(Hashtable champsLocation)
+        {
+            gestionCentreOutils.beginTransaction();
+            string idLocation = champsLocation["idLocation"].ToString();
+            LocationDTO locationDTO = gestionCentreOutils.LocationFacade.getLocation(gestionCentreOutils.MaConnection, idLocation);
+            if (locationDTO == null)
+            {
+                throw new MissingDTOException("La location " + idLocation + " n'existe pas");
+            }
+            gestionCentreOutils.commitTransaction();
+            return locationDTO;
+
+        }
+
         #endregion fin commande location
 
         #region Commandes employé

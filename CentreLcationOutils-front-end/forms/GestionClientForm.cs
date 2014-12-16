@@ -74,8 +74,9 @@ namespace CentreLocationOutils_front_end.forms
                 string idClient = tbGestionClients_Id.Text;
                 Hashtable champsClient = new Hashtable();
                 champsClient.Add("idClient", idClient);
-                ClientDTO clientDTO = centreLocationOutils.findClientById(champsClient);
 
+                ClientDTO clientDTO = centreLocationOutils.findClientById(champsClient);
+                if(clientDTO)
                 tbGestionClients_Id.Text = clientDTO.IdClient;
                 tbGestionClients_Nom.Text = clientDTO.Nom;
                 tbGestionClients_Prenom.Text = clientDTO.Prenom;
