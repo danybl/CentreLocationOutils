@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionOutilsForm));
             this.menuGestionOutils = new System.Windows.Forms.MenuStrip();
             this.mItemGestionOutils_Accueil = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,10 +71,12 @@
             this.tbGestionOutils_Id = new System.Windows.Forms.TextBox();
             this.lblGestionOutils_Id = new System.Windows.Forms.Label();
             this.lblGestionOutils_InfoOutils = new System.Windows.Forms.Label();
+            this.errorProviderOutil = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuGestionOutils.SuspendLayout();
             this.panelGestionOutils_ListeOutils.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionOutils_ListeOutils)).BeginInit();
             this.panelGestionOutils_InfoOutil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderOutil)).BeginInit();
             this.SuspendLayout();
             // 
             // menuGestionOutils
@@ -443,6 +446,10 @@
             this.lblGestionOutils_InfoOutils.TabIndex = 2;
             this.lblGestionOutils_InfoOutils.Text = "Information sur l\'outil";
             // 
+            // errorProviderOutil
+            // 
+            this.errorProviderOutil.ContainerControl = this;
+            // 
             // GestionOutilsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,6 +469,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgGestionOutils_ListeOutils)).EndInit();
             this.panelGestionOutils_InfoOutil.ResumeLayout(false);
             this.panelGestionOutils_InfoOutil.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderOutil)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,5 +518,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnPrixLocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnDateAcquisition;
         private System.Windows.Forms.ToolStripMenuItem mItemGestionOutils_Gestionnaire;
+        private System.Windows.Forms.ErrorProvider errorProviderOutil;
     }
 }
