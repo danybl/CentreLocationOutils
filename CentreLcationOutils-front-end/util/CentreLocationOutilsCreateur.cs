@@ -81,6 +81,10 @@ namespace CentreLocationOutils_front_end.util
             {
                 throw new CentreCreateurException("", invalidServiceException);
             }
+            catch (OracleException oracleException)
+            {
+                throw new CentreCreateurException("", oracleException);
+            }
         }
 
         public void beginTransaction()
