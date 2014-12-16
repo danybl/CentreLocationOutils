@@ -104,6 +104,12 @@
     <Compile Include="forms\AccueilForm.Designer.cs">
       <DependentUpon>AccueilForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\ConfirmationSuppression.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ConfirmationSuppression.Designer.cs">
+      <DependentUpon>ConfirmationSuppression.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\GestionClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     <Compile Include="util\CentreLocationOutilsCreateur.cs" />
     <EmbeddedResource Include="forms\AccueilForm.resx">
       <DependentUpon>AccueilForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ConfirmationSuppression.resx">
+      <DependentUpon>ConfirmationSuppression.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\GestionClientForm.resx">
       <DependentUpon>GestionClientForm.cs</DependentUpon>

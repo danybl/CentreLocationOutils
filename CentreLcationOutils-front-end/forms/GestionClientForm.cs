@@ -213,7 +213,7 @@ namespace CentreLcationOutils_front_end.forms
 
         private void btnGestionAccueil_Supprimer_Click(object sender, EventArgs e)
         {
-            string id
+            
         }
     }
 }
