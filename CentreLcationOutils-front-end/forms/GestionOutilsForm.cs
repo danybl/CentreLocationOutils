@@ -150,7 +150,7 @@ namespace CentreLcationOutils_front_end.forms
                 champsOutil.Add("prixLocation", prixLocation);
                 champsOutil.Add("numeroSerie", numeroSerie);
                 champsOutil.Add("dateAcquisition", dateAcquisition);
-                centreLocationOutils.ajouterOutil(champsOutil);
+                centreLocationOutils.modifierOutil(champsOutil);
 
             }
         }
@@ -164,6 +164,7 @@ namespace CentreLcationOutils_front_end.forms
                 string idOuitl = tbGestionOutils_Id.Text;
                 Hashtable champsOutil = new Hashtable();
                 champsOutil.Add("idOutil", idOuitl);
+                centreLocationOutils.supprimerOutil(champsOutil);
             }
             else
             {
