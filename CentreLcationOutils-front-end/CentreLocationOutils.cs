@@ -237,7 +237,7 @@ namespace CentreLcationOutils_front_end
 
         public List<ClientDTO> getAllClients()
         {
-            return gestionCentreOutils.ClientFacade.get
+            return gestionCentreOutils.ClientFacade.getAllClients(gestionCentreOutils.MaConnection, ClientDTO.ID_CLIENT_COLUMN_NAME);
         }
 
          #endregion
@@ -245,32 +245,35 @@ namespace CentreLcationOutils_front_end
         public void ajouterOutil(Hashtable champOutil)
         {
             gestionCentreOutils.beginTransaction();
-            string idOutil = champOutil["idOutil"].ToString();
-            string idCategorie = champOutil["idCategorie"].ToString();
-            string nom = champOutil["nom"].ToString();
-            string numSerie = champOutil["numSerie"].ToString();
-            string dateAcquisiton = champOutil["dateAcquisition"].ToString();
-            string prixLocation = champOutil["prixLocation"].ToString();
-            string description = champOutil["description"].ToString();
-            //TODO image
-
-            CategorieDTO categorieDTO = gestionCentreOutils.CategorieFacade.getCategorie(gestionCentreOutils.MaConnection, idCategorie);
-            if (categorieDTO == null)
+            try
             {
-                throw new MissingDTOException("La catégorie " + idCategorie + " n'existe pas");
-            }
+                string idOutil = champOutil["idOutil"].ToString();
+                string idCategorie = champOutil["idCategorie"].ToString();
+                string nom = champOutil["nom"].ToString();
+                string numSerie = champOutil["numSerie"].ToString();
+                string dateAcquisiton = champOutil["dateAcquisition"].ToString();
+                string prixLocation = champOutil["prixLocation"].ToString();
+                string description = champOutil["description"].ToString();
+                //TODO image
 
-            OutilDTO outilDTO = new OutilDTO();
-            outilDTO.CategorieDTO= categorieDTO;
-            outilDTO.Nom = nom;
-            outilDTO.NumSerie = numSerie;
-            outilDTO.DateAcquisition = dateAcquisiton;
-            outilDTO.PrixLocation = prixLocation;
-            outilDTO.Description = description;
-            //outilDTO.image
+                CategorieDTO categorieDTO = gestionCentreOutils.CategorieFacade.getCategorie(gestionCentreOutils.MaConnection, idCategorie);
+                if (categorieDTO == null)
+                {
+                    throw new MissingDTOException("La catégorie " + idCategorie + " n'existe pas");
+                }
 
-            gestionCentreOutils.OutilFacade.acquerirOutil(gestionCentreOutils.MaConnection, outilDTO);
-            gestionCentreOutils.commitTransaction();
+                OutilDTO outilDTO = new OutilDTO();
+                outilDTO.CategorieDTO = categorieDTO;
+                outilDTO.Nom = nom;
+                outilDTO.NumSerie = numSerie;
+                outilDTO.DateAcquisition = dateAcquisiton;
+                outilDTO.PrixLocation = prixLocation;
+                outilDTO.Description = description;
+                //outilDTO.image
+
+                gestionCentreOutils.OutilFacade.acquerirOutil(gestionCentreOutils.MaConnection, outilDTO);
+                gestionCentreOutils.commitTransaction();
+            }catch(MissingDTOException missingDTOExeption)
         }
 
     }
