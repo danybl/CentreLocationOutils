@@ -21,41 +21,43 @@ namespace CentreLcationOutils_front_end
 
         public void executerTransaction(string commande, Hashtable champs)
         {
-            switch (commande)
-            {
-                case "inscrireClient": inscrireClient(champs);
-                    break;
-                case "updateClient": updateClient(champs);
-                    break;
-                case "getAllClients": getAllClients();
-                    break;
-                case "findClientById": findClientById(champs);
-                    break;
-                case "effectuerLocation": effectuerLocation(champs);
-                    break;
-                case "terminerLocation": terminerLocation(champs);
-                    break;
-                case "renouvelerLocation": renouvelerLocation(champs);
-                    break;
-                case "effectuerReservation": effectuerLocation(champs);
-                    break;
-                case "annulerReservation": annulerReservation(champs);
-                    break;
-                case "utiliserReservation": utiliserReservation(champs);
-                    break;
-                case "findOutilById": findOutilById(champs);
-                    break;
-                case "ajouterOutil": ajouterOutil(champs);
-                    break;
-                case "modifierOutil": modifierOutil(champs);
-                    break;
-            }
+                switch (commande)
+                {
+                    case "inscrireClient": inscrireClient(champs);
+                        break;
+                    case "updateClient": updateClient(champs);
+                        break;
+                    case "getAllClients": getAllClients();
+                        break;
+                    case "findClientById": findClientById(champs);
+                        break;
+                    case "effectuerLocation": effectuerLocation(champs);
+                        break;
+                    case "terminerLocation": terminerLocation(champs);
+                        break;
+                    case "renouvelerLocation": renouvelerLocation(champs);
+                        break;
+                    case "effectuerReservation": effectuerLocation(champs);
+                        break;
+                    case "annulerReservation": annulerReservation(champs);
+                        break;
+                    case "utiliserReservation": utiliserReservation(champs);
+                        break;
+                    case "findOutilById": findOutilById(champs);
+                        break;
+                    case "ajouterOutil": ajouterOutil(champs);
+                        break;
+                    case "modifierOutil": modifierOutil(champs);
+                        break;
+                    case "supprimerOutil": supprimerOutil(champs);
+                        break;
+                }                
         }
 
         public void rollbackTransaction()
         {
-            gestionCentreOutils.rollbackTransaction();
-        }
+                    gestionCentreOutils.rollbackTransaction();
+                }            
 
         private void attribuerAdresse(Hashtable champsAdresse)
         {
@@ -376,6 +378,22 @@ namespace CentreLcationOutils_front_end
 
                 gestionCentreOutils.OutilFacade.updateOutil(gestionCentreOutils.MaConnection, outilDTO);
                 gestionCentreOutils.commitTransaction();
+        }
+
+        public void supprimerOutil(Hashtable champsOutil)
+        {
+            string idOutil = champsOutil["idOutil"].ToString();
+            gestionCentreOutils.beginTransaction();
+
+            OutilDTO outilDTO = gestionCentreOutils.OutilFacade.getOutil(gestionCentreOutils.MaConnection, idOutil);
+            if (outilDTO == null)
+            {
+                throw new MissingDTOException("Le outil " + idOutil + "n'existe pas");
+            }
+
+            gestionCentreOutils.OutilFacade.deleteOutil(gestionCentreOutils.MaConnection, outilDTO);
+
+
         }
 
         #endregion

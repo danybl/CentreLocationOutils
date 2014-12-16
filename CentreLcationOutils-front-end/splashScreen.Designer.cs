@@ -1,4 +1,4 @@
-﻿namespace CentreLocationOutils
+﻿namespace CentreLcationOutils_front_end
 {
     partial class splashScreen
     {

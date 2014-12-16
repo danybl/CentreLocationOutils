@@ -91,9 +91,9 @@ namespace CentreLcationOutils_front_end.forms
                     champsClient.Add("email", email);
                     champsClient.Add("limiteLocation", limiteLocation);
                     champsClient.Add("dateInscription", dateInscription);
-                    centreLocationOutils.inscrireClient(champsClient);
+                    centreLocationOutils.executerTransaction("inscrireClient" ,champsClient);
                 }catch(MissingDTOException missingDTOException){
-
+                    lblMessage.Text = missingDTOException.Message;
                 }
             }
         }
